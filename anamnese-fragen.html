@@ -41,7 +41,7 @@
     .blank-mode .learn-item,.blank-mode .learn-item * { color:transparent !important; }
     .word { display:inline-block; white-space:pre; }.first-letter,.punctuation{color:var(--text-color)}
     @media(max-width:760px){.study-toolbar{top:0}.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
-</style></head><body class="initial-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
+</style></head><body class="full-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
 <a href="anamnese-fragen.html" data-page="fragen">Anamnese-Fragen</a>
@@ -209,6 +209,6 @@ function decodeHtml(text){const t=document.createElement("textarea");t.innerHTML
 function maskText(text){const tokens=text.match(/[\p{L}\p{N}]+|[^\p{L}\p{N}]/gu)||[];return tokens.map(token=>{if(/^[\p{L}\p{N}]+$/u.test(token)){return '<span class="word"><span class="first-letter">'+escapeHtml(token.charAt(0))+'</span><span class="hidden-part">'+escapeHtml(token.slice(1))+'</span></span>';}return '<span class="punctuation">'+escapeHtml(token)+'</span>';}).join('');}
 document.querySelectorAll('.learn-item.masked').forEach(el=>{const t=el.querySelector('template');if(t)el.innerHTML=maskText(decodeHtml(t.innerHTML).trim());});
 const modes=['full-mode','initial-mode','blank-mode']; const buttons={'full-mode':document.getElementById('btnFull'),'initial-mode':document.getElementById('btnInitial'),'blank-mode':document.getElementById('btnBlank')};
-function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');localStorage.setItem('anamneseMode',mode);}
-Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode(localStorage.getItem('anamneseMode')||'initial-mode');
+function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');}
+Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode('full-mode');
 document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='fragen')a.classList.add('active')});</script></body></html>
