@@ -14,20 +14,21 @@
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background-color);color:var(--text-color);font-size:17px;line-height:1.55}
-    .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border-color);backdrop-filter:blur(8px)}
+    .site-header{position:sticky;top:0;z-index:40;padding:6px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border-color);backdrop-filter:blur(8px)}
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
     .site-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
     .site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}
     .site-nav a:hover{background:#eef1f5}
     .site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
+    .mode-switch{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
     main{max-width:1200px;margin:18px auto;padding:0 16px 42px}
-    button{font:inherit;font-size:14px;padding:6px 10px;border:0;border-radius:7px;color:#fff;background:var(--button-color);cursor:pointer}
+    button{font:inherit;font-size:12px;padding:4px 8px;border:0;border-radius:6px;color:#fff;background:var(--button-color);cursor:pointer;line-height:1.2}
     button:hover{background:var(--button-hover)}
-    @media(max-width:760px){body{font-size:16px}.site-header{position:static}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}}
+    @media(max-width:760px){body{font-size:16px}.site-header{position:static}.header-inner{justify-content:flex-start;gap:8px}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}}
 
 
-    .study-toolbar { position:sticky; top:66px; z-index:20; display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:11px max(18px,calc((100vw - 1200px)/2)); background:rgba(255,255,255,.96); border-bottom:1px solid var(--border-color); backdrop-filter:blur(8px); }
-    .study-toolbar button.active { background:#173d91; box-shadow:0 0 0 3px var(--accent-soft); }
-    .study-toolbar button:not(.active){opacity:.78}
+    .mode-switch button.active { background:#173d91; box-shadow:0 0 0 2px var(--accent-soft); }
+    .mode-switch button:not(.active){opacity:.78}
     .document { padding:8px 26px 28px; border:1px solid var(--border-color); border-radius:14px; background:var(--surface); }
     .document h1 { display:none; }
     .document h2 { margin:30px -26px 12px; padding:11px 26px; font-size:22px; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); background:var(--header-bg); }
@@ -49,13 +50,13 @@
     .case-summary.active{display:block}
     .case-summary-title{margin:0 0 8px;font-size:16px;font-weight:700;color:#1f2937}
     .case-summary ul{margin-top:8px}
-    @media(max-width:760px){.study-toolbar{top:0}.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
-</style></head><body class="full-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
+    @media(max-width:760px){.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
+</style></head><body class="full-mode"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
 <a href="anamnese-fragen.html" data-page="fragen">Anamnese-Fragen</a>
 <a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
-</nav></header><div class="study-toolbar"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><main><article class="document"><h1>Anamnese</h1>
+</nav></div></header><main><article class="document"><h1>Anamnese</h1>
 <h2>1. Begrüßung und Personalien</h2>
 <ul>
 <li class="learn-item masked"><template>Guten Tag. Mein Name ist Temiz und ich bin Allgemeinarzt.</template></li>
