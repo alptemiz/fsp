@@ -40,6 +40,13 @@
     .initial-mode .learn-item .word:hover .hidden-part { color:var(--text-color); }
     .blank-mode .learn-item,.blank-mode .learn-item * { color:transparent !important; }
     .word { display:inline-block; white-space:pre; }.first-letter,.punctuation{color:var(--text-color)}
+
+    .case-selector-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:14px 0 10px;padding:10px 12px;background:#f8fafc;border:1px solid var(--border-color);border-radius:9px}
+    .case-selector-row label{font-size:14px;font-weight:700;color:#374151}
+    .case-selector-row select{min-width:230px;max-width:100%;padding:6px 30px 6px 9px;border:1px solid #cbd5e1;border-radius:7px;background:#fff;color:var(--text-color);font:inherit;font-size:14px}
+    .case-summary{display:none}
+    .case-summary.active{display:block}
+    .case-summary ul{margin-top:8px}
     @media(max-width:760px){.study-toolbar{top:0}.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
 </style></head><body class="full-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
@@ -82,17 +89,120 @@
 <li class="learn-item masked"><template>Haben Sie Schwierigkeiten, einzuschlafen oder durchzuschlafen?</template></li>
 </ul>
 <h2>4. Zwischenzusammenfassung</h2>
+<div class="case-selector-row">
+<label for="caseSelector">Fall auswählen:</label>
+<select id="caseSelector" aria-label="Anamnese-Fall auswählen">
+<option value="case-0" selected>Harnsteinleiden</option>
+<option value="case-1">Schulterschmerzen</option>
+<option value="case-2">Brustenge (KHK)</option>
+<option value="case-3">Lumbaler Bandscheibenvorfall</option>
+<option value="case-4">Fatigue und Halsschmerzen</option>
+<option value="case-5">Knieschmerzen</option>
+<option value="case-6">Divertikulitis</option>
+<option value="case-7">Asthma bronchiale</option>
+<option value="case-8">Bauchschmerzen</option>
+<option value="case-9">Migräne</option>
+<option value="case-10">Kolonkarzinom</option>
+<option value="case-11">COVID-19</option>
+<option value="case-12">Obere GI-Blutung</option>
+<option value="case-13">Bronchialkarzinom</option>
+<option value="case-14">Burn-out nach Dengue</option>
+<option value="case-15">Ösophaguskarzinom</option>
+<option value="case-16">Schwindel</option>
+</select>
+</div>
 <ul>
 <li class="learn-item masked"><template>Vielen Dank für die Informationen.</template></li>
 <li class="learn-item masked"><template>Bevor ich weitere Fragen stelle, möchte ich kurz zusammenfassen, ob ich alles richtig verstanden habe.</template></li>
-<ul>
-<li class="learn-item masked"><template>Sie berichten über […] Beschwerden seit etwa […] Tagen.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden treten [bei Belastung / auch in Ruhe] auf.</template></li>
-<li class="learn-item masked"><template>Die Schmerzen strahlen [nach … / nicht] aus.</template></li>
-<li class="learn-item masked"><template>Begleitend haben Sie […] bemerkt.</template></li>
 </ul>
-<li class="learn-item masked"><template>Habe ich das so richtig verstanden, oder möchten Sie noch etwas ergänzen?</template></li>
-</ul>
+<div class="case-summaries">
+<div class="case-summary active" id="case-0" role="region" aria-label="Zwischenzusammenfassung: Harnsteinleiden"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit fünf Tagen bestehende leichte, ziehende Schmerzen in der rechten Flanke.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie häufigeren Harndrang, Brennen beim Wasserlassen und einen schwachen Harnstrahl.</template></li>
+<li class="learn-item masked"><template>Fieber, Übelkeit, Erbrechen oder Blut im Urin bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-1" role="region" aria-label="Zwischenzusammenfassung: Schulterschmerzen"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit einem Sturz beim Handball bestehende starke Schmerzen in der rechten Schulter.</template></li>
+<li class="learn-item masked"><template>Die Schulter ist leicht geschwollen und deutlich in ihrer Bewegung eingeschränkt.</template></li>
+<li class="learn-item masked"><template>Taubheitsgefühl oder Kribbeln im Arm bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-2" role="region" aria-label="Zwischenzusammenfassung: Brustenge (KHK)"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Monaten wiederkehrenden Druck und Enge hinter dem Brustbein bei körperlicher Belastung.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden verschwinden nach wenigen Minuten in Ruhe wieder.</template></li>
+<li class="learn-item masked"><template>Begleitend haben Sie Belastungsatemnot, jedoch keine Beschwerden in Ruhe.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-3" role="region" aria-label="Zwischenzusammenfassung: Lumbaler Bandscheibenvorfall"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit zwei Wochen zunehmende Schmerzen im unteren Rücken nach dem Heben eines schweren Gegenstands.</template></li>
+<li class="learn-item masked"><template>Die Schmerzen strahlen in das rechte Bein bis zum Fuß aus und werden beim Sitzen und Bücken stärker.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Kribbeln und ein Schwächegefühl im rechten Bein, jedoch keine Stuhl- oder Harninkontinenz.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-4" role="region" aria-label="Zwischenzusammenfassung: Fatigue und Halsschmerzen"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit fünf bis sechs Tagen bestehende starke Erschöpfung und seit drei Tagen Halsschmerzen.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Fieber, Kopf- und Gliederschmerzen, Nachtschweiß und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template>Husten, Schnupfen, Atemnot, Erbrechen oder Durchfall bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-5" role="region" aria-label="Zwischenzusammenfassung: Knieschmerzen"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit einer Verdrehung beim Badminton bestehende starke Schmerzen im linken Knie.</template></li>
+<li class="learn-item masked"><template>Das Knie ist deutlich geschwollen, instabil und kaum belastbar.</template></li>
+<li class="learn-item masked"><template>Taubheitsgefühl, Fieber oder sichtbare Blutergüsse bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-6" role="region" aria-label="Zwischenzusammenfassung: Divertikulitis"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit vier Tagen zunehmende, dauerhafte Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen leichtes Fieber, Übelkeit, Appetitlosigkeit und wechselnder Stuhlgang.</template></li>
+<li class="learn-item masked"><template>Blut im Stuhl oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-7" role="region" aria-label="Zwischenzusammenfassung: Asthma bronchiale"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit mehreren Wochen bestehenden trockenen Husten und Brustenge, besonders bei Staubkontakt und in geschlossenen Räumen.</template></li>
+<li class="learn-item masked"><template>Zusätzlich treten nächtliche Hustenanfälle und gelegentliche Belastungsatemnot auf.</template></li>
+<li class="learn-item masked"><template>Gewichtsverlust, Nachtschweiß oder blutiger Auswurf bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-8" role="region" aria-label="Zwischenzusammenfassung: Bauchschmerzen"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Tagen zunehmende diffuse Bauchschmerzen, vor allem im Oberbauch, teilweise mit Ausstrahlung in den Rücken.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Übelkeit, Appetitlosigkeit und ein veränderter Stuhlgang.</template></li>
+<li class="learn-item masked"><template>Fieber, Erbrechen, Blut im Stuhl oder Gewichtsverlust bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-9" role="region" aria-label="Zwischenzusammenfassung: Migräne"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Monaten etwa zweimal monatlich auftretende, einseitige pochende Kopfschmerzattacken.</template></li>
+<li class="learn-item masked"><template>Die Attacken dauern vier bis 24 Stunden und gehen mit Übelkeit sowie Licht- und Geräuschempfindlichkeit einher.</template></li>
+<li class="learn-item masked"><template>Vor den Kopfschmerzen treten für 15 bis 30 Minuten Sehstörungen auf.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-10" role="region" aria-label="Zwischenzusammenfassung: Kolonkarzinom"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit vier Monaten wiederkehrende, zuletzt zunehmende Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen wechselnder Stuhlgang mit Schleim und Blut, Appetitlosigkeit, Müdigkeit und ein ungewollter Gewichtsverlust von etwa fünf Kilogramm.</template></li>
+<li class="learn-item masked"><template>Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-11" role="region" aria-label="Zwischenzusammenfassung: COVID-19"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit vier Tagen zunehmenden trockenen Husten mit Fieber und starkem Krankheitsgefühl.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Kopfweh, Müdigkeit sowie ein deutlich verminderter Geruchs- und Geschmackssinn.</template></li>
+<li class="learn-item masked"><template>In Ruhe besteht keine Atemnot, bei Belastung geraten Sie jedoch schneller außer Atem.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-12" role="region" aria-label="Zwischenzusammenfassung: Obere GI-Blutung"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit gestern bestehenden schwarzen, teerartigen Stuhl sowie zunehmende Schwäche und Belastungsatemnot.</template></li>
+<li class="learn-item masked"><template>Heute haben Sie zweimal erbrochen, zuletzt mit vermutlich kaffeesatzartigen Beimengungen.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen seit zwei Wochen leichte Oberbauchschmerzen.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-13" role="region" aria-label="Zwischenzusammenfassung: Bronchialkarzinom"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Monaten bestehenden Husten mit Brustenge und seit vier Wochen Blut im Auswurf.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Belastungsatemnot, Nachtschweiß, Appetitminderung und ein ungewollter Gewichtsverlust von etwa vier Kilogramm.</template></li>
+<li class="learn-item masked"><template>Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-14" role="region" aria-label="Zwischenzusammenfassung: Burn-out nach Dengue"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Monaten zunehmende Erschöpfung, Konzentrationsprobleme, Schlafstörungen und innere Unruhe.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Herzklopfen, Kopfdruck, unspezifische Schmerzen, verminderter Appetit und ein Gewichtsverlust von etwa drei Kilogramm.</template></li>
+<li class="learn-item masked"><template>Fieber oder andere akute Infektzeichen bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-15" role="region" aria-label="Zwischenzusammenfassung: Ösophaguskarzinom"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit sechs Wochen zunehmende Schluckbeschwerden, zunächst bei fester Nahrung und inzwischen auch bei Flüssigkeiten.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Schmerzen hinter dem Brustbein, Hochkommen von Nahrung und Husten beim Essen.</template></li>
+<li class="learn-item masked"><template>Sie haben etwa vier Kilogramm ungewollt abgenommen, jedoch kein Fieber, keine Übelkeit und kein Erbrechen.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div><div class="case-summary" id="case-16" role="region" aria-label="Zwischenzusammenfassung: Schwindel"><ul>
+<li class="learn-item masked"><template>Sie berichten über seit drei Tagen zunehmenden Schwankschwindel, besonders beim Aufstehen, Gehen und Drehen des Kopfes.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Benommenheit, Konzentrationsprobleme und leichte dumpfe Kopfschmerzen.</template></li>
+<li class="learn-item masked"><template>Seh-, Sprach- oder Hörstörungen, Erbrechen, Bewusstseinsverlust oder Fieber bestehen nicht.</template></li>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden?</template></li>
+</ul></div>
+</div>
 <h2>5. Vorerkrankungen, Voroperationen, Medikamente und Allergien</h2>
 <ul>
 <li class="learn-item masked"><template>Leiden Sie an irgendwelchen Erkrankungen wie Blutzuckerkrankheit, Bluthochdruck, Krebserkrankung oder an einer ansteckenden Krankheit?</template></li>
@@ -211,4 +321,11 @@ document.querySelectorAll('.learn-item.masked').forEach(el=>{const t=el.querySel
 const modes=['full-mode','initial-mode','blank-mode']; const buttons={'full-mode':document.getElementById('btnFull'),'initial-mode':document.getElementById('btnInitial'),'blank-mode':document.getElementById('btnBlank')};
 function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');}
 Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode('full-mode');
+
+const caseSelector=document.getElementById('caseSelector');
+if(caseSelector){
+  caseSelector.addEventListener('change',()=>{
+    document.querySelectorAll('.case-summary').forEach(el=>el.classList.toggle('active',el.id===caseSelector.value));
+  });
+}
 document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='fragen')a.classList.add('active')});</script></body></html>
