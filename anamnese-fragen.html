@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anamnese-Fragen | FSP Trainer</title><style>
+
+    :root {
+      --text-color:#1f2937;
+      --background-color:#f7f8fa;
+      --surface:#ffffff;
+      --muted-color:#6b7280;
+      --border-color:#d9dee7;
+      --header-bg:#eef1f5;
+      --left-bg:#fafafa;
+      --button-color:#315fbd;
+      --button-hover:#244b98;
+      --accent-soft:#e7edfa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background-color);color:var(--text-color);font-size:17px;line-height:1.55}
+    .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border-color);backdrop-filter:blur(8px)}
+    .site-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
+    .site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}
+    .site-nav a:hover{background:#eef1f5}
+    .site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
+    main{max-width:1200px;margin:18px auto;padding:0 16px 42px}
+    button{font:inherit;font-size:14px;padding:6px 10px;border:0;border-radius:7px;color:#fff;background:var(--button-color);cursor:pointer}
+    button:hover{background:var(--button-hover)}
+    @media(max-width:760px){body{font-size:16px}.site-header{position:static}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}}
+
+
+    .study-toolbar { position:sticky; top:66px; z-index:20; display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:11px max(18px,calc((100vw - 1200px)/2)); background:rgba(255,255,255,.96); border-bottom:1px solid var(--border-color); backdrop-filter:blur(8px); }
+    .study-toolbar button.active { background:#173d91; box-shadow:0 0 0 3px var(--accent-soft); }
+    .study-toolbar button:not(.active){opacity:.78}
+    .document { padding:8px 26px 28px; border:1px solid var(--border-color); border-radius:14px; background:var(--surface); }
+    .document h1 { display:none; }
+    .document h2 { margin:30px -26px 12px; padding:11px 26px; font-size:22px; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); background:var(--header-bg); }
+    .document h2:first-of-type { margin-top:0; border-top:0; border-radius:14px 14px 0 0; }
+    .document h3 { margin:25px 0 8px; font-size:19px; color:#1c438f; }
+    .document ul { margin:7px 0 7px 23px; padding:0; }
+    .document li { margin:7px 0; padding-left:3px; }
+    .document ul ul { margin-top:4px; color:#39445a; }
+    .initial-mode .learn-item .hidden-part { color:var(--surface); }
+    .initial-mode .learn-item .word:hover .hidden-part { color:var(--text-color); }
+    .blank-mode .learn-item,.blank-mode .learn-item * { color:transparent !important; }
+    .word { display:inline-block; white-space:pre; }.first-letter,.punctuation{color:var(--text-color)}
+    @media(max-width:760px){.study-toolbar{top:0}.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
+</style></head><body class="initial-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
+<a href="index.html" data-page="home">Start</a>
+<a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
+<a href="anamnese-fragen.html" data-page="fragen">Anamnese-Fragen</a>
+<a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
+</nav></header><div class="study-toolbar"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><main><article class="document"><h1>Anamnese</h1>
+<h2>1. Begrüßung und Personalien</h2>
+<ul>
+<li class="learn-item masked"><template>Guten Tag. Mein Name ist Temiz und ich bin Allgemeinarzt.</template></li>
+<li class="learn-item masked"><template>Bevor wir zu Ihren aktuellen Beschwerden kommen, möchte ich nur ein paar Informationen zu Ihrer Person erfragen.</template></li>
+<ul>
+<li class="learn-item masked"><template>Wie lautet Ihr vollständiger Name?</template></li>
+<li class="learn-item masked"><template>Wie alt sind Sie beziehungsweise wann sind Sie geboren?</template></li>
+<li class="learn-item masked"><template>Wie groß und wie schwer sind Sie?</template></li>
+<li class="learn-item masked"><template>Was führt Sie zu uns?</template></li>
+</ul>
+</ul>
+<h2>2. Aktuelle Beschwerden</h2>
+<ul>
+<li class="learn-item masked"><template>Seit wann haben Sie diese Beschwerden?</template></li>
+<li class="learn-item masked"><template>Können Sie mir beschreiben, wie die Beschwerden begonnen haben?</template></li>
+<ul>
+<li class="learn-item masked"><template>Eher plötzlich oder allmählich, oder gab es vielleicht einen Unfall?</template></li>
+</ul>
+<li class="learn-item masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></li>
+<li class="learn-item masked"><template>Haben sich die Beschwerden im Verlauf verändert oder sind sie eher konstant geblieben?</template></li>
+<li class="learn-item masked"><template>Haben Sie die Beschwerden nur bei Belastung oder auch in Ruhe?</template></li>
+<li class="learn-item masked"><template>Haben Sie etwas gegen die Beschwerden eingenommen?</template></li>
+<li class="learn-item masked"><template>Hatten Sie so etwas früher schon einmal?</template></li>
+<li class="learn-item masked"><template>Waren Sie wegen dieser Beschwerden schon beim Arzt?</template></li>
+<li class="learn-item masked"><template>Haben Sie noch etwas bemerkt?</template></li>
+</ul>
+<h2>3. Allgemeine Anamnese</h2>
+<ul>
+<li class="learn-item masked"><template>Abgesehen von Ihren aktuellen Beschwerden, haben Sie Fieber, Schüttelfrost oder Nachtschweiß?</template></li>
+<li class="learn-item masked"><template>Wie ist Ihr Appetit?</template></li>
+<li class="learn-item masked"><template>Haben Sie in der letzten Zeit ungewollt ab- oder zugenommen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Probleme mit dem Stuhlgang oder beim Wasserlassen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Schwierigkeiten, einzuschlafen oder durchzuschlafen?</template></li>
+</ul>
+<h2>4. Zwischenzusammenfassung</h2>
+<ul>
+<li class="learn-item masked"><template>Vielen Dank für die Informationen.</template></li>
+<li class="learn-item masked"><template>Bevor ich weitere Fragen stelle, möchte ich kurz zusammenfassen, ob ich alles richtig verstanden habe.</template></li>
+<ul>
+<li class="learn-item masked"><template>Sie berichten über […] Beschwerden seit etwa […] Tagen.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden treten [bei Belastung / auch in Ruhe] auf.</template></li>
+<li class="learn-item masked"><template>Die Schmerzen strahlen [nach … / nicht] aus.</template></li>
+<li class="learn-item masked"><template>Begleitend haben Sie […] bemerkt.</template></li>
+</ul>
+<li class="learn-item masked"><template>Habe ich das so richtig verstanden, oder möchten Sie noch etwas ergänzen?</template></li>
+</ul>
+<h2>5. Vorerkrankungen, Voroperationen, Medikamente und Allergien</h2>
+<ul>
+<li class="learn-item masked"><template>Leiden Sie an irgendwelchen Erkrankungen wie Blutzuckerkrankheit, Bluthochdruck, Krebserkrankung oder an einer ansteckenden Krankheit?</template></li>
+<li class="learn-item masked"><template>Wurden Sie schon einmal operiert?</template></li>
+<li class="learn-item masked"><template>Welche Medikamente nehmen Sie ein?</template></li>
+<li class="learn-item masked"><template>Sind bei Ihnen Allergien oder Unverträglichkeiten bekannt?</template></li>
+</ul>
+<h2>6. Noxen</h2>
+<ul>
+<li class="learn-item masked"><template>Rauchen Sie, Herr Müller?</template></li>
+<li class="learn-item masked"><template>Trinken Sie Alkohol?</template></li>
+<li class="learn-item masked"><template>Hatten Sie jemals Kontakt mit Drogen?</template></li>
+</ul>
+<h2>7. Familienanamnese</h2>
+<ul>
+<li class="learn-item masked"><template>Sind in Ihrer Familie bestimmte Erkrankungen bekannt?</template></li>
+<li class="learn-item masked"><template>Haben Sie Geschwister?</template></li>
+</ul>
+<h2>8. Sozialanamnese</h2>
+<ul>
+<li class="learn-item masked"><template>Was machen Sie beruflich?</template></li>
+<li class="learn-item masked"><template>Sind Sie verheiratet?</template></li>
+<li class="learn-item masked"><template>Haben Sie Kinder?</template></li>
+</ul>
+<h2>9. Impfstatus</h2>
+<ul>
+<li class="learn-item masked"><template>Haben Sie alle empfohlenen Impfungen?</template></li>
+<li class="learn-item masked"><template>Sind Sie gegen Corona geimpft?</template></li>
+</ul>
+<h2>10. Reiseanamnese</h2>
+<ul>
+<li class="learn-item masked"><template>Waren Sie in der letzten Zeit im Ausland?</template></li>
+</ul>
+<h2>11. Weiteres Vorgehen und Abschluss</h2>
+<ul>
+<li class="learn-item masked"><template>Damit sind wir mit den Fragen durch.</template></li>
+<li class="learn-item masked"><template>Um herauszufinden, was genau bei Ihnen vorliegt, werde ich Sie nun untersuchen.</template></li>
+<li class="learn-item masked"><template>Danach wird Ihnen Blut abgenommen.</template></li>
+<ul>
+<li class="learn-item masked"><template>Anschließend lassen wir einen Ultraschall und ein Röntgenbild machen.</template></li>
+</ul>
+<li class="learn-item masked"><template>Wenn wir die Ergebnisse der Untersuchungen haben, besprechen wir die weiteren Schritte.</template></li>
+<li class="learn-item masked"><template>Möchten Sie noch etwas ergänzen oder fehlt etwas Wichtiges?</template></li>
+</ul>
+<h1>Fachspezifische Fragen</h1>
+<h2>Kopfschmerzen und Schwindel</h2>
+<ul>
+<li class="learn-item masked"><template>Sind die Schmerzen einseitig oder beidseitig?</template></li>
+<li class="learn-item masked"><template>Sind die Schmerzen pochend, drückend oder stechend?</template></li>
+<li class="learn-item masked"><template>Dreht sich alles oder fühlen Sie sich unsicher?</template></li>
+<li class="learn-item masked"><template>Wird es bei Bewegung schlimmer?</template></li>
+<li class="learn-item masked"><template>Wie lange dauert eine Attacke?</template></li>
+<li class="learn-item masked"><template>Ist Ihnen übel oder mussten Sie erbrechen?</template></li>
+<li class="learn-item masked"><template>Stören Licht oder Geräusche?</template></li>
+<li class="learn-item masked"><template>Haben Sie Ohrgeräusche oder hören Sie schlechter?</template></li>
+<li class="learn-item masked"><template>Haben Sie Sehstörungen, Taubheit oder Lähmungen bemerkt?</template></li>
+<li class="learn-item masked"><template>Haben Sie Doppelbilder, Sprachprobleme oder Lähmungen?</template></li>
+</ul>
+<h2>Brustschmerzen und kardiologische Beschwerden</h2>
+<ul>
+<li class="learn-item masked"><template>Strahlen die Schmerzen in Arm, Schulter, Rücken oder Kiefer aus?</template></li>
+<li class="learn-item masked"><template>Sind die Schmerzen eher Druck, Enge, Brennen oder Stechen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Atemnot, Übelkeit oder kalten Schweiß?</template></li>
+<li class="learn-item masked"><template>Dauert der Schmerz länger als 20 Minuten?</template></li>
+</ul>
+<h2>Bauchschmerzen</h2>
+<ul>
+<li class="learn-item masked"><template>Sind die Schmerzen krampfartig, stechend oder dumpf?</template></li>
+<li class="learn-item masked"><template>Wird es beim Gehen oder Husten schlimmer?</template></li>
+<li class="learn-item masked"><template>Ist Ihnen übel oder mussten Sie erbrechen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Fieber, Durchfall oder Blut im Stuhl?</template></li>
+</ul>
+<h2>Halsschmerzen, Husten und Atemnot</h2>
+<ul>
+<li class="learn-item masked"><template>Haben Sie Schmerzen beim Schlucken?</template></li>
+<li class="learn-item masked"><template>Strahlen die Schmerzen in die Ohren aus?</template></li>
+<li class="learn-item masked"><template>Haben Sie Husten oder Schnupfen?</template></li>
+<li class="learn-item masked"><template>Ist der Husten trocken oder mit Schleim?</template></li>
+<ul>
+<li class="learn-item masked"><template>Welche Farbe hat der Schleim?</template></li>
+</ul>
+<li class="learn-item masked"><template>Hören Sie ein Pfeifen beim Atmen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Mundgeruch oder Beläge bemerkt?</template></li>
+</ul>
+<h2>Müdigkeit und Erschöpfung</h2>
+<ul>
+<li class="learn-item masked"><template>Seit wann fühlen Sie sich so erschöpft?</template></li>
+<li class="learn-item masked"><template>Wird es durch Schlaf besser?</template></li>
+<li class="learn-item masked"><template>Können Sie Ihren Alltag noch schaffen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Gewicht verloren?</template></li>
+<li class="learn-item masked"><template>Frieren Sie mehr als sonst?</template></li>
+<li class="learn-item masked"><template>Ist Ihre Stimmung gedrückt?</template></li>
+</ul>
+<h2>Gelenkverletzung</h2>
+<ul>
+<li class="learn-item masked"><template>Wie ist der Unfall passiert?</template></li>
+<li class="learn-item masked"><template>Haben Sie ein Knacken gehört?</template></li>
+<li class="learn-item masked"><template>Ist das Gelenk geschwollen?</template></li>
+<li class="learn-item masked"><template>Können Sie auftreten oder belasten?</template></li>
+<li class="learn-item masked"><template>Fühlt sich das Gelenk instabil an?</template></li>
+<li class="learn-item masked"><template>Haben Sie Taubheit, Kältegefühl oder Blässe bemerkt?</template></li>
+</ul>
+<h2>Flankenschmerzen und Beschwerden beim Wasserlassen</h2>
+<ul>
+<li class="learn-item masked"><template>Wo genau sind die Schmerzen?</template></li>
+<li class="learn-item masked"><template>Ziehen die Schmerzen in die Leiste?</template></li>
+<li class="learn-item masked"><template>Kommen die Schmerzen in Wellen?</template></li>
+<li class="learn-item masked"><template>Ist Ihnen übel?</template></li>
+<li class="learn-item masked"><template>Brennt es beim Wasserlassen?</template></li>
+<li class="learn-item masked"><template>Haben Sie Blut im Urin gesehen?</template></li>
+</ul></article></main><script>
+function escapeHtml(text){return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
+function decodeHtml(text){const t=document.createElement("textarea");t.innerHTML=text;return t.value;}
+function maskText(text){const tokens=text.match(/[\p{L}\p{N}]+|[^\p{L}\p{N}]/gu)||[];return tokens.map(token=>{if(/^[\p{L}\p{N}]+$/u.test(token)){return '<span class="word"><span class="first-letter">'+escapeHtml(token.charAt(0))+'</span><span class="hidden-part">'+escapeHtml(token.slice(1))+'</span></span>';}return '<span class="punctuation">'+escapeHtml(token)+'</span>';}).join('');}
+document.querySelectorAll('.learn-item.masked').forEach(el=>{const t=el.querySelector('template');if(t)el.innerHTML=maskText(decodeHtml(t.innerHTML).trim());});
+const modes=['full-mode','initial-mode','blank-mode']; const buttons={'full-mode':document.getElementById('btnFull'),'initial-mode':document.getElementById('btnInitial'),'blank-mode':document.getElementById('btnBlank')};
+function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');localStorage.setItem('anamneseMode',mode);}
+Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode(localStorage.getItem('anamneseMode')||'initial-mode');
+document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='fragen')a.classList.add('active')});</script></body></html>

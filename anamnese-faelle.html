@@ -1,0 +1,1039 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anamnese-Fälle | FSP Trainer</title><style>
+
+    :root {
+      --text-color:#1f2937;
+      --background-color:#f7f8fa;
+      --surface:#ffffff;
+      --muted-color:#6b7280;
+      --border-color:#d9dee7;
+      --header-bg:#eef1f5;
+      --left-bg:#fafafa;
+      --button-color:#315fbd;
+      --button-hover:#244b98;
+      --accent-soft:#e7edfa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background-color);color:var(--text-color);font-size:17px;line-height:1.55}
+    .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border-color);backdrop-filter:blur(8px)}
+    .site-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
+    .site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}
+    .site-nav a:hover{background:#eef1f5}
+    .site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
+    main{max-width:1200px;margin:18px auto;padding:0 16px 42px}
+    button{font:inherit;font-size:14px;padding:6px 10px;border:0;border-radius:7px;color:#fff;background:var(--button-color);cursor:pointer}
+    button:hover{background:var(--button-hover)}
+    @media(max-width:760px){body{font-size:16px}.site-header{position:static}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}}
+
+
+    .case-tools { display:flex; gap:10px; align-items:center; margin:0 0 18px; }
+    .case-tools input { width:100%; padding:11px 13px; border:1px solid var(--border-color); border-radius:9px; background:var(--surface); font:inherit; }
+    .cases h1{display:none}.cases h2{margin:24px 0 10px;padding:14px 18px;border:1px solid var(--border-color);border-radius:12px 12px 0 0;background:var(--nav-dark);color:#fff;font-size:23px}.case-card{margin-bottom:28px;padding:2px 22px 22px;border:1px solid var(--border-color);border-top:0;border-radius:0 0 12px 12px;background:var(--surface)}
+    .case-card h3{margin:20px 0 7px;padding-bottom:5px;border-bottom:1px solid var(--border-color);font-size:18px;color:#1c438f}.case-card p{margin:8px 0}.case-card ul{margin:7px 0 7px 22px;padding:0}.case-card li{margin:6px 0}.case-card strong{color:#29354b}
+    .no-results{display:none;padding:20px;border:1px solid var(--border-color);border-radius:12px;background:var(--surface);color:var(--muted-color)}
+</style></head><body><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
+<a href="index.html" data-page="home">Start</a>
+<a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
+<a href="anamnese-fragen.html" data-page="fragen">Anamnese-Fragen</a>
+<a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
+</nav></header><main><div class="case-tools"><input id="caseSearch" type="search" placeholder="Fall, Beschwerde oder Stichwort suchen …" aria-label="Fälle durchsuchen"></div><div class="no-results">Kein passender Fall gefunden.</div><article class="cases"><section class="case" data-title="harnsteinleiden"><h2>Harnsteinleiden</h2><div class="case-card">
+<p><strong>Name:</strong> Stefan/Lisa Müller</p>
+<p><strong>Beruf:</strong> Bankangestellter/Bankangestellte</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 42 Jahre (Geb.: 15.05.1983); 1,78 m; 82 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa fünf Tagen verspüren Sie einen leichten ziehenden Schmerz im rechten Flankenbereich, der besonders nach längerem Sitzen oder beim Trinken größerer Mengen Flüssigkeit auffällt.</li>
+<li>Das Ziehen ist bisher nicht stark, aber konstant spürbar.</li>
+<li>Sie berichten, dass Sie in den letzten Tagen häufiger auf die Toilette mussten, sowie ein leichtes Brennen beim Wasserlassen.</li>
+<li>Der Urin kommt in Tröpfchen mit schwachem Strahl.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Blut im Urin ist Ihnen nicht aufgefallen.</li>
+<li>Übelkeit, Erbrechen oder Fieber haben Sie nicht.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Sie hatten vor 3 Jahren Harnsteinleiden, die Steine sind von alleine ausgeschieden worden.</li>
+<li>In der Jugend wurde eine Appendektomie durchgeführt.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Regelmäßig nehmen Sie keine Medikamente.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Heuschnupfen im Frühjahr.</li>
+<li>Allergien gegen Medikamente sind bei Ihnen nicht bekannt.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Impfungen sind vollständig, inkl. 3 COVID-Impfungen (Biontech).</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol trinken Sie selten, höchstens gelegentlich ein Glas Wein oder Bier am Wochenende.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Beide Eltern leben, Ihre Mutter hat Diabetes mellitus Typ 2, Ihr Vater Bluthochdruck.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet, Ihre Frau arbeitet als Physiotherapeutin.</li>
+<li>Sie haben eine 15-jährige Tochter.</li>
+<li>Sie bewegen sich regelmäßig, gehen zweimal pro Woche joggen und achten auf gesunde Ernährung, trinken aber oft zu wenig Wasser während des Arbeitstags.</li>
+<li>Ihre letzte Reise war ein Kurzurlaub nach Italien vor drei Monaten.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Kann das von den Nieren kommen?</li>
+<li>Muss ich mir Sorgen machen, dass sich das verschlimmert?</li>
+<li>Soll ich jetzt viel trinken oder eher vorsichtig sein?</li>
+<li>Brauche ich eine spezielle Untersuchung, z. B. Ultraschall?</li>
+<li>Ist das etwas Gefährliches oder geht das von allein weg?</li>
+</ul>
+</div></section><section class="case" data-title="schulterschmerzen"><h2>Schulterschmerzen</h2><div class="case-card">
+<p><strong>Name:</strong> A. Schneider</p>
+<p><strong>Beruf:</strong> Student/Studentin der Betriebswirtschaftslehre</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 24 Jahre (Geb.: 12.03.2002); 1,72 m; 66 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Gestern Abend haben Sie beim Handballtraining einen Zusammenstoß mit einem Gegenspieler gehabt.</li>
+<li>Dabei sind Sie unglücklich auf die rechte Schulter gefallen.</li>
+<li>Seitdem haben Sie starke Schmerzen in der rechten Schulter, die Bewegung ist deutlich eingeschränkt.</li>
+<li>Besonders das Anheben des Arms nach vorne oder zur Seite ist fast unmöglich.</li>
+<li>Sie können den Arm kaum über Schulterhöhe bewegen.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Die Schmerzen sind seit gestern Abend konstant, nachts konnten Sie kaum schlafen, da Sie keine bequeme Position gefunden haben.</li>
+<li>Sie haben eine leichte Schwellung und meinen, die Schulter sei etwas „verschoben“.</li>
+<li>Taubheitsgefühle oder Kribbeln im Arm sind bisher nicht aufgetreten.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Vorerkrankungen bestehen keine.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Schmerzmittel haben Sie nicht eingenommen, Sie haben nur einen Kühlbeutel aufgelegt, was die Schmerzen etwas gelindert hat.</li>
+<li>Medikamente nehmen Sie nicht ein.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien sind keine bekannt.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Gelegentlich trinken Sie am Wochenende zwei bis drei Bier mit Freunden.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern leben beide und sind gesund.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie wohnen in einer Wohngemeinschaft mit zwei Kommilitonen.</li>
+<li>Sie treiben regelmäßig Sport, neben Handball auch gelegentlich Joggen.</li>
+<li>Ihre letzte Reise war ein Skiurlaub in Österreich im vergangenen Winter.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Ist meine Schulter ausgekugelt?</li>
+<li>Muss man das sofort röntgen?</li>
+<li>Besteht die Gefahr, dass etwas gebrochen ist?</li>
+<li>Soll ich den Arm lieber ruhigstellen oder bewegen?</li>
+<li>Wie lange dauert es ungefähr, bis ich wieder Handball spielen kann?</li>
+<li>Muss ich mit einer Operation rechnen?</li>
+<li>Soll ich für die nächsten Tage krankgeschrieben werden?</li>
+</ul>
+</div></section><section class="case" data-title="brustenge (khk)"><h2>Brustenge (KHK)</h2><div class="case-card">
+<p><strong>Name:</strong> H. Weber</p>
+<p><strong>Beruf:</strong> Bankkauffrau / Bankkaufmann</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 59 Jahre (Geb.: 12.05.1966); 1,80 m; 92 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa 3 Monaten bemerken Sie immer wieder ein unangenehmes „Druckgefühl“ und eine gewisse „Enge“ in der Brust, direkt hinter dem Brustbein.</li>
+<li>Diese Beschwerden treten vor allem dann auf, wenn Sie sich körperlich anstrengen – zum Beispiel, wenn Sie die Treppen zu Ihrer Wohnung im 3. Stock steigen oder wenn Sie es eilig haben, den Bus zu erreichen.</li>
+<li>Sobald Sie stehen bleiben und sich kurz ausruhen, verschwindet der Druck nach etwa zwei bis drei Minuten wieder vollständig.</li>
+<li>In Ruhe (wie jetzt gerade während des Gesprächs) haben Sie keinerlei Beschwerden.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Sie haben keine Luftnot im Ruhezustand, aber bei Belastung kommen Sie schneller aus der Puste als früher.</li>
+<li>Sie verneinen Husten, Fieber oder nächtliches Schwitzen.</li>
+<li>Übelkeit oder Schmerzen im Oberbauch sind Ihnen nicht aufgefallen.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Sie haben seit etwa 10 Jahren einen bekannten Bluthochdruck und zu hohe Blutfettwerte (Cholesterin).</li>
+<li>Vor fünf Jahren wurden Sie an der Leiste operiert (Leistenbruch).</li>
+<li>Ansonsten gab es keine schweren Erkrankungen oder Operationen.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Ramipril 5 mg (1-0-0) gegen den Bluthochdruck.</li>
+<li>Simvastatin 20 mg (0-0-1) gegen das Cholesterin.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Keine bekannten Allergien.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol trinken Sie gelegentlich (ca. 2 bis 3 Gläser Wein pro Woche, meist am Wochenende).</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit Ihrem 20. Lebensjahr ca. 10 bis 15 Zigaretten am Tag.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihr Vater verstarb mit 62 Jahren an einem Herzinfarkt.</li>
+<li>Ihre Mutter ist 84 Jahre alt und leidet an Altersdiabetes.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und haben zwei erwachsene Töchter, die nicht mehr im Haus wohnen.</li>
+<li>Beruflich sind Sie viel im Büro tätig (sitzende Tätigkeit) und haben in den letzten Monaten recht viel Stress aufgrund einer Umstrukturierung in der Bank.</li>
+<li>Sport treiben Sie derzeit kaum, da Sie sich nach der Arbeit oft zu erschöpft fühlen.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Glauben Sie, dass das etwas mit meinem Herzen zu tun hat? Mein Vater hatte ja auch Probleme?</li>
+<li>Muss ich jetzt operiert werden oder reicht da eine Tablette?</li>
+<li>Darf ich mich denn überhaupt noch belasten oder ist Sport jetzt gefährlich für mich?</li>
+<li>Könnte das auch vom Rücken kommen? Ich sitze ja viel am Schreibtisch?</li>
+<li>Welche Untersuchungen kommen jetzt auf mich zu?</li>
+</ul>
+</div></section><section class="case" data-title="lumbaler bandscheibenvorfall"><h2>Lumbaler Bandscheibenvorfall</h2><div class="case-card">
+<p><strong>Name:</strong> Thomas/Claudia Meier</p>
+<p><strong>Beruf:</strong> Steuerberater</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 42 Jahre (Geb.: 15.03.1984); 1,78 m; 84 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa zwei Wochen haben Sie zunehmende Schmerzen im unteren Rücken nach dem Heben eines schweren Klaviers im Keller.</li>
+<li>Anfangs traten diese Schmerzen nur gelegentlich auf, seit ca. fünf Tagen sind sie jedoch fast dauerhaft vorhanden und strahlen in das rechte Bein bis zum Fuß aus.</li>
+<li>Besonders beim längeren Sitzen und beim Bücken verstärken sich die Beschwerden.</li>
+<li>Beim Gehen verspüren Sie ein Ziehen in der Lendenwirbelsäule mit Ausstrahlung in den Oberschenkel.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Sie beschreiben ein gelegentliches Kribbeln im rechten Unterschenkel und in den Zehen.</li>
+<li>Manchmal fühlt sich das rechte Bein schwächer an, vor allem beim Treppensteigen.</li>
+<li>In den letzten Nächten konnten Sie schlecht schlafen, da die Schmerzen im Liegen ebenfalls auftreten.</li>
+<li>Fieber, Stuhl- oder Harninkontinenz verneinen Sie.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>„Hexenschuss“ vor 5 Jahren, seitdem gelegentlich unspezifische Kreuzschmerzen.</li>
+<li>Operationen bisher nicht.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Schmerzmittel haben Sie bisher nicht eingenommen, nur Wärmflasche ausprobiert, die aber nur kurzfristig geholfen hat.</li>
+<li>Medikamente nehmen Sie keine ein.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien sind nicht bekannt.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Am Wochenende trinken Sie gelegentlich ein bis zwei Gläser Bier oder Wein.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern sind beide über 70 Jahre alt und leiden an Bluthochdruck.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und haben eine Tochter (8 Jahre).</li>
+<li>Sie arbeiten überwiegend im Büro, verbringen also viel Zeit im Sitzen.</li>
+<li>Ein Ausgleich durch Sport findet nur selten statt, gelegentlich gehen Sie schwimmen.</li>
+<li>Ihre letzte Reise war ein Städtetrip nach Prag vor vier Monaten.</li>
+<li>Im Beruf empfinden Sie den Arbeitsalltag derzeit als belastend, da Sie häufiger Überstunden machen müssen und deshalb weniger Bewegung haben.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Könnte das ein Bandscheibenvorfall sein?</li>
+<li>Muss ich ins Krankenhaus oder reicht eine Behandlung beim Hausarzt?</li>
+<li>Sollte ich mich lieber schonen oder bewegen?</li>
+<li>Wie gefährlich ist es, wenn mein Bein manchmal kribbelt?</li>
+<li>Muss man das operieren oder geht es auch ohne OP?</li>
+<li>Welche Untersuchungen sind notwendig, um die Ursache festzustellen?</li>
+<li>Kann ich weiterhin Auto fahren und zur Arbeit gehen?</li>
+</ul>
+</div></section><section class="case" data-title="fatigue und halsschmerzen"><h2>Fatigue und Halsschmerzen</h2><div class="case-card">
+<p><strong>Name:</strong> Thomas/Katrin Weber</p>
+<p><strong>Beruf:</strong> Projektleiter/in in einer IT-Firma</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 42 Jahre (Geb.: 14.02.1983); 1,78 m; 81 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Der Hals fühlt sich rau, gereizt und leicht geschwollen an.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit etwa 5–6 Tagen fühlen Sie sich matt, kraftlos und deutlich abgeschlagen.</li>
+<li>Begonnen haben die Beschwerden mit Frösteln, Kopf- und Gliederschmerzen.</li>
+<li>Seit 3 Tagen bestehen zusätzlich Halsschmerzen, die sich beim Schlucken verstärken.</li>
+<li>In den letzten zwei Tagen hatten Sie Fieber bis 38,8°C, zu Hause gemessen.</li>
+<li>Nachts schwitzen Sie vermehrt, schlafen unruhig und fühlen sich morgens nicht erholt.</li>
+<li>Der Appetit ist vermindert, gegessen haben Sie nur wenig.</li>
+<li>Zusätzlich verspüren Sie ein ausgeprägtes Erschöpfungsgefühl, das Sie so von früheren Infekten kaum kennen.</li>
+<li>Husten, Schnupfen oder Atemnot verneinen Sie.</li>
+<li>Kein Erbrechen, keine Diarrhö, Stuhlgang unauffällig.</li>
+<li>Kein relevanter Gewichtsverlust.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Bisher haben Sie keine Medikamente eingenommen, lediglich Tee und Lutschtabletten.</li>
+<li>Keine Dauermedikation.</li>
+</ul>
+<h3>Relevante Vorgeschichte (Dengue &amp; Erschöpfung)</h3>
+<ul>
+<li>Vor 4 Jahren hatten Sie während einer Reise nach Brasilien eine Dengue-Fieber-Infektion, die stationär behandelt wurde.</li>
+<li>Nach Abklingen der akuten Erkrankung traten keine organischen Folgeschäden auf.</li>
+<li>Allerdings berichten Sie, dass Sie seitdem in Phasen hoher beruflicher Belastung immer wieder unter ausgeprägter Erschöpfung, innerer Unruhe, Schlafstörungen und reduzierter Belastbarkeit leiden.</li>
+<li>Diese Phasen wurden nie weiter abgeklärt, klangen aber bei Reduktion von Stress und Urlaub jeweils wieder ab.</li>
+<li>Sie hatten bereits den Eindruck, dass Ihr Körper seit der Dengue-Erkrankung empfindlicher auf Stress und Infekte reagiert, ohne dass Sie dies konkret belegen könnten.</li>
+<li>Aktuell empfinden Sie die Erschöpfung deutlich stärker als bei früheren Erkältungen, was Sie beunruhigt.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Keine bekannten Allergien.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Geimpft nach aktuellem Standard.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Nichtraucher/in.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol: gelegentlich 1–2 Bier am Wochenende.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Mutter leidet an Hashimoto-Thyreoiditis, Ihr Vater an Diabetes mellitus Typ 2.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben mit Ihrer Frau/Ihrem Mann und zwei Kindern (8 und 5 Jahre) zusammen.</li>
+<li>In den letzten Tagen waren mehrere Kollegen erkältet.</li>
+<li>Sie arbeiten seit 12 Jahren in derselben IT-Firma als Projektleiter/in, mit hoher Verantwortung, häufigen Überstunden und Rufbereitschaft.</li>
+<li>In der Vergangenheit hatten Sie bereits Burnout-ähnliche Phasen, allerdings ohne längere Krankschreibung.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Kann der aktuelle Infekt mit meiner früheren Dengue-Erkrankung zusammenhängen?</li>
+<li>Warum bin ich diesmal so extrem erschöpft, obwohl es „nur“ ein Infekt ist?</li>
+<li>Sollte man meine Belastbarkeit oder das Immunsystem genauer untersuchen?</li>
+<li>Bin ich arbeitsfähig oder sollte ich mich krankschreiben lassen?</li>
+</ul>
+</div></section><section class="case" data-title="knieschmerzen"><h2>Knieschmerzen</h2><div class="case-card">
+<p><strong>Name:</strong> M. Möller</p>
+<p><strong>Beruf:</strong> IT-Systemadministrator</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 35 Jahre (Geb.: 03.09.1991); 1,82 m; 83 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Gestern Abend haben Sie beim Badmintonspielen den linken Fuß unglücklich aufgesetzt und sind dabei umgeknickt und haben das Knie nach innen verdreht.</li>
+<li>Sie berichten, dass Sie dabei ein deutliches Knallen gehört haben, was Sie sehr erschreckt hat.</li>
+<li>Belastung ist nur sehr eingeschränkt möglich, an normales Gehen ist kaum zu denken.</li>
+<li>Sie haben das Bein seit dem Vorfall gekühlt und geschont, allerdings ist das Knie jetzt deutlich geschwollen.</li>
+<li>Auch in Ruhe verspüren Sie einen dumpfen Schmerz.</li>
+<li>Sie befürchten, dass möglicherweise ein Knochen gebrochen sein könnte oder etwas gerissen ist.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seitdem haben Sie starke Schmerzen im linken Kniegelenk sowie ein Gefühl von Instabilität.</li>
+<li>Sie haben in der Nacht schlecht geschlafen, vor allem wegen der Schmerzen.</li>
+<li>Fieber oder andere Beschwerden bestehen nicht.</li>
+<li>Kein Taubheitsgefühl, keine sichtbaren Hämatome bislang.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Eine Schmerztablette (Ibuprofen 400 mg) haben Sie heute früh eingenommen, das hat die Beschwerden nur geringfügig gelindert.</li>
+<li>Keine Dauermedikation.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Vorbekannt sind ein Heuschnupfen (Frühjahrspollen), ansonsten waren Sie bisher gesund.</li>
+<li>Keine weiteren bekannten Allergien.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Gegen Tetanus zuletzt vor etwa 5 Jahren geimpft, gegen COVID-19 dreifach geimpft (Biontech).</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol nur gelegentlich am Wochenende (1-2 Bier).</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern sind gesund und leben in der Nähe.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben mit Ihrer Partnerin/Partner zusammen, haben keine Kinder.</li>
+<li>Sie gehen regelmäßig 1–2x/Woche zum Badmintontraining mit Freunden und fahren gern Rad am Wochenende.</li>
+<li>Ihre Arbeit im IT-Bereich ist mitunter stressig, aber Sie mögen die Abwechslung und das eigenständige Arbeiten im Team.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Muss ich zum Röntgen oder MRT?</li>
+<li>Kann da etwas gebrochen sein?</li>
+<li>Sollte ich das Knie bandagieren oder lieber ruhig halten?</li>
+<li>Wie lange dauert es, bis ich wieder Sport machen kann?</li>
+<li>Brauche ich eine Überweisung zum Orthopäden?</li>
+<li>Wann sollte ich mich wieder vorstellen, falls es nicht besser wird?</li>
+</ul>
+</div></section><section class="case" data-title="divertikultis"><h2>Divertikultis</h2><div class="case-card">
+<p><strong>Name:</strong> P. Schneider</p>
+<p><strong>Beruf:</strong> Bürokauffrau/Bürokaufmann</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 54 Jahre (Geb.: 15.01.1972); 1,72 m; 76 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa vier Tagen leiden Sie an zunehmenden Schmerzen im linken Unterbauch.</li>
+<li>Zu Beginn war es nur ein leichtes Ziehen, inzwischen ist der Schmerz jedoch dumpf und dauerhaft.</li>
+<li>Sie haben den Eindruck, dass Ihr Bauch im betroffenen Bereich druckempfindlich und etwas verhärtet ist.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Insbesondere bei Bewegung oder beim Husten verstärken sich die Schmerzen deutlich.</li>
+<li>Seit zwei Tagen haben Sie zusätzlich leichtes Fieber bis 38,3 °C.</li>
+<li>Sie fühlen sich allgemein abgeschlagen und matt, zudem leiden Sie unter Appetitlosigkeit und leichter Übelkeit.</li>
+<li>Ihren Stuhlgang beschreiben Sie seit drei Tagen als unregelmäßig, wechselnd zwischen Verstopfung und leichtem Durchfall.</li>
+<li>Blut im Stuhl oder Erbrechen sind Ihnen nicht aufgefallen.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Bisher waren Sie weitgehend gesund, lediglich vor etwa 10 Jahren wurde bei Ihnen eine leichte Schilddrüsenunterfunktion diagnostiziert, die gut eingestellt ist.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Sie haben bisher kein Schmerzmittel eingenommen, weil Sie nicht sicher waren, ob das die Beschwerden vielleicht verschlechtern könnte.</li>
+<li>Sie nehmen regelmäßig L-Thyroxin 50 µg täglich ein, sonst keine weiteren Medikamente.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien sind Ihnen nicht bekannt.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol trinken Sie gelegentlich, vor allem am Wochenende genießen Sie gerne ein Glas Wein.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit etwa 20 Jahren nicht mehr.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern leben beide noch.</li>
+<li>Ihre Mutter hat Diabetes mellitus Typ 2, Ihr Vater wurde wegen Divertikeln bereits zweimal operiert.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und haben zwei erwachsene Kinder, die bereits ausgezogen sind.</li>
+<li>Sie leben mit Ihrem Ehepartner in einem Einfamilienhaus.</li>
+<li>Beruflich arbeiten Sie in einem mittelständischen Unternehmen, die Tätigkeit ist meistens ruhig, in letzter Zeit jedoch aufgrund personeller Veränderungen etwas stressiger geworden.</li>
+<li>Sie gehen regelmäßig spazieren, gelegentlich auch wandern und nehmen seit einiger Zeit einmal pro Woche an einem Yoga-Kurs teil.</li>
+<li>Ihre letzte Reise war vor etwa einem Jahr eine Wanderreise nach Südtirol.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Können die Beschwerden etwas mit der Ernährung zu tun haben?</li>
+<li>Muss ich eventuell operiert werden, oder geht das von alleine weg?</li>
+<li>Was könnte ich gegen die Schmerzen tun?</li>
+<li>Gibt es etwas, was ich bei der Ernährung unbedingt vermeiden sollte?</li>
+<li>Wie lange dauert es, bis ich mich wieder besser fühle?</li>
+</ul>
+</div></section><section class="case" data-title="asthma bronchiale"><h2>Asthma bronchiale</h2><div class="case-card">
+<h3>Beschwerden</h3>
+<ul>
+<li>Sie fragen wiederholt, ob diese Beschwerden „Krebs sein könnten“, da Sie sich darüber Sorgen machen.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit mehreren Wochen leiden Sie unter einem trockenen Husten mit Brustenge, der sich insbesondere bei Staubexposition bei der Arbeit, beim Staubsaugen und in geschlossenen Räumen verstärkt.</li>
+<li>In Ihrer Wohnung husten Sie deutlich stärker als außerhalb.</li>
+<li>Zusätzlich berichten Sie über nächtliche Hustenanfälle sowie gelegentliche Belastungsdyspnoe beim Treppensteigen.</li>
+<li>Aktuell haben Sie keine Beschwerden!</li>
+<li>Sie haben jedoch keinen Gewichtsverlust, keine Appetitveränderung, keine Nachtschweiß-Episoden und kein blutiges Sputum.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Atopische Dermatitis (Neurodermitis) seit der Kindheit</li>
+<li>Gerade in der Pollensaison verstärkte Beschwerden</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Tierhaarallergie</li>
+<li>Familienanamnese: Mutter leidet an allergischen Erkrankungen</li>
+<li>Diagnostiziertes Asthma bronchiale (allergisches Asthma), jedoch in den letzten Jahren kaum behandelt</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Heuschnupfen (Pollenallergie)</li>
+<li>Keine regelmäßige Medikation, gelegentliche Einnahme von Cetirizin bei Heuschnupfen</li>
+<li>Allergien: Pollen, Tierhaare (Katze, Hund), Hausstaubmilben</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Impfstatus: Tetanus aktuell; COVID-19 2× geimpft</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Nichtraucherin Alkohol: gelegentlich 1–2 Gläser Wein am Wochenende</li>
+</ul>
+<h3>Familienanamnese</h3>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben zusammen mit Ihrem Partner und zwei Meerschweinchen, die in der Wohnung gehalten werden.</li>
+<li>Die Tiere lösen regelmäßig allergische Symptome bei Ihnen aus.</li>
+<li>Sie arbeiten im Einzelhandel und sind dort oft Staub und trockener Luft ausgesetzt.</li>
+<li>Ernährung: normal, keine Auffälligkeiten.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Kann das wirklich Asthma sein?</li>
+<li>Sind Sie sicher, dass das kein Krebs ist?</li>
+<li>Kann meine Hausstauballergie der Grund für den Husten sein?</li>
+<li>Muss ich meine Meerschweinchen abgeben?</li>
+<li>Brauche ich ein Spray für den Notfall?</li>
+<li>Wird das Asthma chronisch?</li>
+<li>Welche Untersuchungen sind notwendig?</li>
+</ul>
+</div></section><section class="case" data-title="bauchschmerzen"><h2>Bauchschmerzen</h2><div class="case-card">
+<p><strong>Name:</strong> A. Berger</p>
+<p><strong>Beruf:</strong> Büroangestellte/r</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 39 Jahre (Geb.: 15.04.1986); 1,75 m; 72 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit drei Tagen leiden Sie unter diffusen Bauchschmerzen, die hauptsächlich im Oberbauch auftreten.</li>
+<li>Die Schmerzen haben langsam begonnen, sind aber in den letzten 24 Stunden stärker geworden.</li>
+<li>Sie beschreiben die Schmerzen als drückend bis ziehend, teilweise krampfartig.</li>
+<li>Zeitweise strahlen die Schmerzen bis in den Rücken aus.</li>
+<li>Sie sorgen sich jedoch sehr, da Ihr Vater letztes Jahr an Darmkrebs erkrankt ist und daher haben Sie große Angst, selbst Krebs zu haben.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Gestern Abend kam Übelkeit hinzu, bislang ohne Erbrechen.</li>
+<li>Ihr Appetit ist deutlich vermindert, weshalb Sie seit gestern kaum etwas gegessen haben.</li>
+<li>Fieber haben Sie keines gemessen, fühlen sich aber leicht abgeschlagen und matt.</li>
+<li>Der Stuhlgang war gestern leicht breiig, heute hatten Sie jedoch gar keinen Stuhlgang.</li>
+<li>Auffälligkeiten wie Blut oder Schleim haben Sie nicht bemerkt.</li>
+<li>Sie haben keinen Gewichtsverlust festgestellt.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Ansonsten sind Sie bisher gesund gewesen.</li>
+<li>Im Alter von 16 Jahren hatten Sie eine Blinddarmoperation.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien sind Ihnen nicht bekannt, und regelmäßig eingenommene Medikamente haben Sie keine.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Sie rauchen nicht und trinken gelegentlich Alkohol, etwa 1-2 Gläser Wein pro Woche.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Beide Eltern leben noch, Ihr Vater wurde letztes Jahr erfolgreich an Darmkrebs operiert, Ihre Mutter ist gesund.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben in einer festen Beziehung und haben einen 5-jährigen Sohn.</li>
+<li>Sie machen einmal pro Woche Yoga und gehen am Wochenende gerne spazieren oder Fahrradfahren.</li>
+<li>Beruflich fühlen Sie sich gelegentlich gestresst, empfinden Ihre Arbeit aber grundsätzlich als angenehm und gut organisiert.</li>
+<li>Ihre letzte Reise war ein Kurzurlaub in Italien vor etwa zwei Monaten.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Denken Sie, dass ich Krebs haben könnte?</li>
+<li>Was könnten diese Bauchschmerzen verursachen?</li>
+<li>Muss ich ins Krankenhaus oder reicht eine Untersuchung in der Praxis aus?</li>
+<li>Gibt es Möglichkeiten, Darmkrebs frühzeitig sicher auszuschließen?</li>
+<li>Können Stress oder meine Ernährung solche Symptome hervorrufen?</li>
+</ul>
+</div></section><section class="case" data-title="migräne"><h2>Migräne</h2><div class="case-card">
+<p><strong>Name:</strong> S. Keller</p>
+<p><strong>Beruf:</strong> Erzieher</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 35 Jahre (Geb.: 24.01.1991); 1,68 m; 63 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa drei Monaten leiden Sie regelmäßig unter starken Kopfschmerzattacken.</li>
+<li>Die Schmerzen treten etwa zweimal im Monat auf, dauern zwischen 4 und 24 Stunden und werden von Ihnen als pulsierend, pochend und vor allem auf einer Kopfseite (meist rechts) empfunden.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Während der Attacken sind Sie extrem licht- und geräuschempfindlich, müssen sich in einen abgedunkelten, ruhigen Raum zurückziehen und fühlen sich zunehmend durch Übelkeit geplagt.</li>
+<li>Einmal kam es sogar zu Erbrechen.</li>
+<li>Vor Beginn einer Kopfschmerzattacke bemerken Sie häufig Sehstörungen wie Flimmern oder Lichtblitze vor Ihren Augen.</li>
+<li>Diese „Sehstörungen“ halten etwa 15 bis 30 Minuten an und verschwinden danach, woraufhin die Kopfschmerzen einsetzen.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Normale Kopfschmerztabletten wie Ibuprofen helfen Ihnen nur bedingt, weshalb Sie oft versuchen, die Schmerzen einfach durch Ruhe und Dunkelheit zu lindern.</li>
+<li>Bis auf eine leichte Pollenallergie im Frühjahr sind Ihnen keine chronischen Erkrankungen bekannt.</li>
+<li>Medikamente nehmen Sie aktuell nicht regelmäßig ein.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Sie rauchen nicht und trinken gelegentlich, meist am Wochenende, ein bis zwei Gläser Bier oder Wein.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern und Ihr Bruder leben in der gleichen Stadt, zu ihnen besteht enger Kontakt.</li>
+<li>Ihre Mutter leidet seit vielen Jahren ebenfalls an Kopfschmerzen, hat aber nie eine klare Diagnose erhalten.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben allein in einer Mietwohnung und sind derzeit Single.</li>
+<li>Beruflich erleben Sie phasenweise starken Stress.</li>
+<li>In Ihrer Freizeit gehen Sie regelmäßig joggen und besuchen gelegentlich Yoga-Kurse, um Entspannung zu finden.</li>
+<li>Ihre letzte Reise war ein Städteurlaub in Lissabon vor ca. 4 Monaten.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Kann es sein, dass ich Migräne habe? Wie kann man das genau feststellen?</li>
+<li>Welche Medikamente könnten mir bei den starken Kopfschmerzen besser helfen?</li>
+<li>Gibt es Möglichkeiten, um die Kopfschmerzattacken seltener auftreten zu lassen?</li>
+<li>Soll ich bei einem Neurologen vorstellig werden?</li>
+<li>Könnte der Stress bei der Arbeit der Auslöser für meine Kopfschmerzen sein?</li>
+</ul>
+</div></section><section class="case" data-title="kolonkarzinom"><h2>Kolonkarzinom</h2><div class="case-card">
+<p><strong>Name:</strong> Claudia/Christian Berger</p>
+<p><strong>Beruf:</strong> Verwaltungsangestellte(r)</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 58 Jahre (Geb.: 15.03.1967); 1,75 m; 76 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa 4 Monaten haben Sie immer wiederkehrende Bauchschmerzen, vor allem im linken unteren Bauchbereich.</li>
+<li>Anfangs waren die Schmerzen nur gelegentlich und gut auszuhalten, doch seit zwei Wochen treten sie täglich auf und sind intensiver geworden.</li>
+<li>Seit ungefähr 6 Wochen bemerken Sie eine Veränderung Ihrer Verdauung.</li>
+<li>In den letzten drei Monaten haben Sie, ohne es bewusst angestrebt zu haben, etwa 5 kg an Gewicht verloren.</li>
+<li>Vor drei Jahren wurde eine Darmspiegelung empfohlen, diese haben Sie damals jedoch aus zeitlichen Gründen nicht durchführen lassen.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Sie leiden abwechselnd an Durchfall und Verstopfung, wobei der Stuhl häufig schleimig ist und seit etwa einer Woche gelegentlich sichtbare Blutbeimengungen aufweist.</li>
+<li>Sie fühlen sich allgemein zunehmend müde, abgeschlagen und kraftlos.</li>
+<li>Appetit haben Sie kaum noch und verspüren ein allgemeines Unwohlsein.</li>
+<li>Fieber oder Übelkeit haben Sie nicht.</li>
+<li>Erbrechen ist ebenfalls nicht aufgetreten.</li>
+<li>Ansonsten haben Sie keine auffälligen Beschwerden wie Luftnot, Brustschmerzen oder Husten.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Vorerkrankungen sind Ihnen keine bekannt.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Medikamente nehmen Sie regelmäßig keine ein.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Abends trinken Sie regelmäßig ein Glas Rotwein zum Essen, am Wochenende gelegentlich etwas mehr.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit etwa 25 Jahren durchschnittlich 10 Zigaretten pro Tag.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihr Vater starb vor mehreren Jahren an Darmkrebs, Ihre Mutter lebt noch und leidet an Diabetes Typ II und Arthrose.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und haben zwei erwachsene Kinder, die bereits ausgezogen sind.</li>
+<li>In Ihrer Freizeit gehen Sie gerne spazieren oder fahren Fahrrad, seit kurzem fühlen Sie sich allerdings nicht mehr fit genug dafür.</li>
+<li>Beruflich arbeiten Sie in der Verwaltung eines großen Unternehmens, was Sie teilweise als sehr stressig empfinden.</li>
+<li>Dennoch mögen Sie Ihre Arbeit und haben ein gutes Verhältnis zu den Kollegen.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Muss ich mir Sorgen machen wegen der Blutungen?</li>
+<li>Könnten meine Beschwerden etwas mit meiner Ernährung zu tun haben?</li>
+<li>Ist es normal, in meinem Alter plötzlich so müde und schwach zu sein?</li>
+<li>Sollte ich vielleicht doch eine Darmspiegelung machen lassen?</li>
+<li>Könnte das etwas Ernstes sein?</li>
+</ul>
+</div></section><section class="case" data-title="covid-19"><h2>COVID-19</h2><div class="case-card">
+<p><strong>Name:</strong> J. Wagner</p>
+<p><strong>Beruf:</strong> Bürokauffrau/Bürokaufmann</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 34 Jahre (Geb.: 15.03.1992); 1,75 m; 72 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Anfangs dachten Sie an eine Erkältung, doch inzwischen bemerken Sie eine deutlich verschlechterte allgemeine Verfassung.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit etwa vier Tagen leiden Sie unter zunehmendem Husten, der trocken und sehr unangenehm geworden ist.</li>
+<li>Seit gestern Abend messen Sie regelmäßig Fieber bis 38,7°C.</li>
+<li>Zusätzlich haben Sie Kopfschmerzen, ein starkes Krankheitsgefühl sowie ausgeprägte Müdigkeit und Abgeschlagenheit.</li>
+<li>Besonders auffällig ist, dass Sie Gerüche und Geschmäcker seit gestern kaum noch wahrnehmen können.</li>
+<li>Ihre Nase fühlt sich etwas verstopft an, und Sie verspüren gelegentlich einen Druck auf der Brust, besonders wenn Sie tief einatmen.</li>
+<li>Luftnot in Ruhe besteht derzeit noch nicht, jedoch haben Sie das Gefühl, schneller außer Atem zu geraten als gewöhnlich, z.B. beim Treppensteigen.</li>
+<li>Sie haben keinen Appetit, es besteht aber keine Übelkeit oder Erbrechen.</li>
+<li>Der Stuhlgang ist normal, Gewicht ist bisher konstant geblieben.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Medikamente haben Sie bisher keine eingenommen, außer gelegentlich Paracetamol gegen die Kopfschmerzen, jedoch mit begrenzter Wirkung.</li>
+<li>Sie haben keine relevanten Vorerkrankungen und nehmen dauerhaft keine Medikamente ein.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien sind Ihnen nicht bekannt.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Sie sind gegen Corona zweimal geimpft (2x Moderna), jedoch liegt Ihre letzte Impfung bereits ca. zwei Jahre zurück.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie sind Nichtraucher/in und trinken gelegentlich ein Glas Wein oder Bier zu besonderen Anlässen.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern sind beide gesund.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind ledig und wohnen allein in einer Wohnung.</li>
+<li>In Ihrer Freizeit treffen Sie sich regelmäßig mit Freunden und gehen normalerweise dreimal pro Woche joggen.</li>
+<li>Vor etwa zwei Wochen waren Sie beruflich auf einer Messe mit zahlreichen internationalen Besuchern.</li>
+<li>Auf Ihrer Arbeit als Bürokauffrau/-mann fühlen Sie sich wohl, der Umgang mit Kollegen ist gut, allerdings herrscht aufgrund aktueller Projekte ein gewisser Termindruck.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Glauben Sie, dass ich Covid-19 haben könnte?</li>
+<li>Muss ich in Quarantäne, wenn ich positiv bin?</li>
+<li>Wann darf ich wieder joggen gehen?</li>
+<li>Könnte ich bleibende Schäden behalten?</li>
+<li>Sollte ich einen Test machen lassen? Wie sicher ist das Ergebnis?</li>
+</ul>
+</div></section><section class="case" data-title="obere gi-blutung"><h2>Obere GI-Blutung</h2><div class="case-card">
+<h3>Beschwerden</h3>
+<ul>
+<li>Ein Blutdruckmessgerät zu Hause haben Sie nicht.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit gestern Abend bemerken Sie schwarzen, teerartigen Stuhl (Meläna) sowie zunehmende Schwäche und Atemnot bei Anstrengung.</li>
+<li>Heute Morgen kam es zu zwei Episoden von Erbrechen, beim zweiten Mal vermuten Sie rötlich-bräunliche Beimengungen („Kaffeesatz“).</li>
+<li>Sie fühlen sich sehr kraftlos und berichten über leichte Bauchschmerzen im Oberbauch seit zwei Wochen, jedoch ohne Ausstrahlung.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Gastroösophageale Refluxkrankheit, bisher ohne Magenschutz</li>
+<li>Gonarthrose rechts</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Sie geben an, in den letzten Wochen vermehrt Ibuprofen 600 mg wegen Knieschmerzen eingenommen zu haben (3–4 Tabletten/Tag).</li>
+<li>Bekannte koronare Herzkrankheit mit Stentimplantation vor 6 Jahren – ASS 100 mg 1-0-0</li>
+<li>Arterielle Hypertonie, behandelt mit Amlodipin 5 mg</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Allergien: Keine Allergien bekannt</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Impfstatus: Tetanus aktuell, COVID-19 vollständig (3× BioNTech)</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol: täglich 2–3 Bier, gelegentlich mehr am Wochenende.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit 30 Jahren etwa 15 Zigaretten täglich.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihr Vater verstarb mit 70 Jahren an einem Magenkarzinom, Ihre Mutter litt an chronischer Gastritis.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und leben mit Ihrer Ehefrau zusammen.</li>
+<li>Sie arbeiten in einer Bäckerei mit sehr frühem Arbeitsbeginn und berichten über schlafarme Nächte.</li>
+<li>Ernährung: unregelmäßig, häufig Kaffee auf nüchternen Magen.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Ist der schwarze Stuhl gefährlich?</li>
+<li>Kann das eine Magenblutung sein?</li>
+<li>Muss ich jetzt dringend ins Krankenhaus?</li>
+<li>Kommt das vom Ibuprofen?</li>
+</ul>
+</div></section><section class="case" data-title="bronchialkarzinom"><h2>Bronchialkarzinom</h2><div class="case-card">
+<p><strong>Name:</strong> Claudia/Christian Weber</p>
+<p><strong>Beruf:</strong> Sachbearbeiterin/Sachbearbeiter im Finanzamt</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 59 Jahre (Geb.: 14.03.1966); 1,68 m; 72 kg</p>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit etwa drei Monaten bemerken Sie einen hartnäckigen Husten, der besonders morgens auftritt und Sie zunehmend belastet.</li>
+<li>Vor etwa vier Wochen haben Sie erstmals kleine Mengen Blut im Auswurf bemerkt, was Sie beunruhigt hat.</li>
+<li>Der Hustenreiz ist inzwischen täglich vorhanden und geht oft mit einem Gefühl der Brustenge einher.</li>
+<li>Seit etwa zwei Monaten fühlen Sie sich insgesamt erschöpft und antriebslos, und Sie haben ca. vier Kilogramm Gewicht verloren, obwohl Sie nicht bewusst Ihre Ernährung umgestellt haben.</li>
+<li>Außerdem bemerken Sie zunehmend Atemnot, besonders bei Anstrengung oder Treppensteigen.</li>
+<li>Fieber hatten Sie bisher nicht.</li>
+<li>Seit kurzem schwitzen Sie nachts deutlich mehr als gewöhnlich, was Ihnen Sorgen bereitet.</li>
+<li>Schluckbeschwerden oder Schmerzen beim Schlucken bestehen nicht.</li>
+<li>Übelkeit oder Erbrechen verneinen Sie.</li>
+<li>Ihr Appetit ist vermindert, aber nicht vollständig verloren gegangen.</li>
+<li>Ihr Stuhlgang ist normal, aber Sie verspüren zunehmend eine innere Unruhe wegen der andauernden Symptome.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Als Kind hatten Sie Windpocken und wurden mit 20 Jahren an den Mandeln operiert.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Sie nehmen regelmäßig Blutdrucktabletten (Ramipril 5 mg täglich), da vor vier Jahren bei Ihnen Bluthochdruck festgestellt wurde.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Sie haben keine Allergien, von denen Sie wissen.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Gegen Corona sind Sie dreifach geimpft (3× Moderna).</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol trinken Sie gelegentlich, vor allem am Wochenende (1-2 Gläser Rotwein).</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit etwa 35 Jahren ca. 20 Zigaretten pro Tag.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern sind beide verstorben; Ihr Vater starb mit 68 Jahren an einem Herzinfarkt, Ihre Mutter litt an Diabetes Typ 2. Sie gehen gerne spazieren, früher spielten Sie regelmäßig Tennis, haben aber in letzter Zeit weniger sportliche Aktivitäten unternommen.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und haben zwei erwachsene Kinder (28 und 32 Jahre), die beide außer Haus leben.</li>
+<li>Ihre Arbeit beim Finanzamt empfinden Sie manchmal als stressig, aber Sie kommen insgesamt gut zurecht und haben nette Kollegen.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Denken Sie, dass ich eine ernste Krankheit haben könnte?</li>
+<li>Sollte ich mir Sorgen wegen des Blutes im Auswurf machen?</li>
+<li>Könnte das mit dem Rauchen zusammenhängen? Sollte ich jetzt mit dem Rauchen aufhören?</li>
+<li>Brauche ich eine Röntgenuntersuchung der Lunge?</li>
+<li>Wie lange könnte es dauern, bis ich wieder fitter bin und weniger Atemprobleme habe?</li>
+</ul>
+</div></section><section class="case" data-title="burn-out nach dengue"><h2>Burn-out nach Dengue</h2><div class="case-card">
+<h3>Beschwerden</h3>
+<ul>
+<li>Anfangs dachten Sie, es läge an einer stressigen Phase im Beruf, doch die Symptome haben sich verschlimmert.</li>
+<li>Gewicht in den letzten 6 Wochen ca. 3 kg reduziert.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Seit ca. drei Monaten fühlen Sie sich zunehmend erschöpft, energielos und überfordert.</li>
+<li>In den letzten Wochen fällt Ihnen die Konzentration schwer, Sie schlafen unruhig, wachen häufig nachts auf und fühlen sich morgens nicht erholt.</li>
+<li>Oft verspüren Sie auch Kopfdruck, Herzklopfen und innere Unruhe.</li>
+<li>Körperliche Symptome sind eher unspezifisch: gelegentlich Muskel- und Gelenkschmerzen, Kratzen im Hals, manchmal Druckgefühl im Oberbauch, Appetit vermindert.</li>
+<li>Fieber oder Infektzeichen bestehen aktuell nicht.</li>
+<li>Vor 4 Jahren hatten Sie auf einer Reise nach Brasilien eine Dengue-Fieber-Infektion, die stationär behandelt wurde.</li>
+<li>Seitdem gelegentlich noch „komisches Schwächegefühl“ bei hoher Belastung, aber keine akuten Nachwirkungen bekannt.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Ansonsten bisher gesund.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Keine regelmäßige Medikation, keine Allergien bekannt.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Geimpft nach aktuellem Standard.</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol: gelegentlich 1–2 Bier am Wochenende, in stressigen Phasen manchmal auch unter der Woche.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Mutter hat eine Schilddrüsenerkrankung (Hashimoto), Ihr Vater ist Diabetiker Typ 2.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie leben mit Ihrer Frau/Ihrem Mann und zwei Kindern (8 und 5 Jahre) zusammen.</li>
+<li>Sie arbeiten seit 12 Jahren in derselben IT-Firma, derzeit als Projektleiter/in.</li>
+<li>Die Verantwortung ist groß, häufig Überstunden und Rufbereitschaft.</li>
+<li>Freizeitaktivitäten wie Joggen oder Freunde treffen sind in letzter Zeit kaum mehr möglich, da Sie nach der Arbeit völlig ausgelaugt sind.</li>
+<li>Ihre letzte Reise war vor 6 Monaten geschäftlich nach Spanien.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Könnten meine Beschwerden etwas mit der alten Dengue-Infektion zu tun haben?</li>
+<li>Warum bin ich ständig müde, obwohl ich ausreichend schlafe?</li>
+<li>Kann das ein Burn-out sein?</li>
+<li>Was kann ich tun, um wieder leistungsfähiger zu werden?</li>
+<li>Muss ich mich krankmelden oder könnte ich auch weiterarbeiten?</li>
+<li>Gibt es spezielle Tests, die man machen sollte?</li>
+<li>Könnte das auch eine Depression sein?</li>
+</ul>
+</div></section><section class="case" data-title="ösophaguskarzinom"><h2>Ösophaguskarzinom</h2><div class="case-card">
+<p><strong>Name:</strong> Anna/Andreas Fischer</p>
+<p><strong>Beruf:</strong> Sachbearbeiterin/Sachbearbeiter bei einer Versicherung</p>
+<p><strong>Alter, Gewicht, Größe:</strong> 58 Jahre (Geb.: 12.02.1967); 1,74 m; 72 kg</p>
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa sechs Wochen haben Sie zunehmend Probleme beim Schlucken bemerkt, zunächst nur bei festen Speisen wie Brot oder Fleisch.</li>
+<li>Seit etwa zwei Wochen fällt Ihnen jedoch auch das Schlucken von Flüssigkeiten schwer.</li>
+<li>Dabei haben Sie oft das Gefühl, dass Essen in der Speiseröhre stecken bleibt und nicht richtig nach unten rutschen kann.</li>
+<li>Beim Schlucken spüren Sie zudem gelegentlich Schmerzen hinter dem Brustbein, besonders wenn Sie größere Portionen oder festere Nahrung essen.</li>
+<li>Eine regelmäßige ärztliche Kontrolle erfolgte bisher nicht.</li>
+<li>Weitere Erkrankungen sind Ihnen nicht bekannt.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Immer häufiger müssen Sie husten, weil Ihnen Essen „hochkommt“.</li>
+<li>Sie haben in den letzten vier Wochen ungefähr 4 kg ungewollt abgenommen, da Ihnen der Appetit vergangen ist und Sie Angst vor den Schmerzen beim Schlucken haben.</li>
+<li>Übelkeit oder Erbrechen haben Sie nicht, auch Fieber ist Ihnen nicht aufgefallen.</li>
+<li>Sie fühlen sich jedoch insgesamt müde und abgeschlagen.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Vor etwa 15 Jahren wurde Ihnen die Gallenblase entfernt.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Sodbrennen kennen Sie schon seit mehreren Jahren, dagegen haben Sie gelegentlich rezeptfreie Medikamente (Pantoprazol 20 mg, ca. 1–2 mal pro Woche) eingenommen.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Sie haben keine bekannten Allergien.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Gegen Corona sind Sie vierfach geimpft (4x Biontech).</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Abends trinken Sie regelmäßig 1–2 Gläser Rotwein, am Wochenende gelegentlich mehr (ca. eine halbe Flasche).</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen seit etwa 30 Jahren täglich etwa 15–20 Zigaretten.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Eltern leben nicht mehr.</li>
+<li>Ihre Mutter starb mit 73 Jahren an Brustkrebs, Ihr Vater mit 76 Jahren an einem Schlaganfall.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet und leben mit Ihrem Ehepartner in einer Eigentumswohnung.</li>
+<li>Sie haben eine erwachsene Tochter, die bereits ausgezogen ist und in einer anderen Stadt lebt.</li>
+<li>Beruflich erleben Sie aktuell keine besonderen Belastungen, fühlen sich aber durch die anhaltenden Beschwerden zunehmend eingeschränkt und sorgen sich deshalb.</li>
+<li>Früher spielten Sie regelmäßig Tennis, was aber seit etwa einem Jahr aufgrund von Knieproblemen weniger wurde.</li>
+<li>Ihre letzte Reise war ein Kurzurlaub in Österreich (vor ca. 5 Monaten).</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Könnte etwas Ernsthaftes hinter meinen Beschwerden stecken?</li>
+<li>Gibt es eine Untersuchung, mit der man genau herausfinden kann, was da los ist?</li>
+<li>Muss ich wegen der Beschwerden mit dem Rauchen aufhören?</li>
+<li>Ist Sodbrennen vielleicht der Grund für meine Beschwerden?</li>
+<li>Gibt es Medikamente, die mir kurzfristig beim Schlucken helfen könnten?</li>
+</ul>
+</div></section><section class="case" data-title="schwindel"><h2>Schwindel</h2><div class="case-card">
+<h3>Beschwerden</h3>
+<ul>
+<li>Seit etwa drei Tagen leiden Sie unter zunehmendem Schwindel, der vor allem beim schnellen Aufstehen, Gehen oder beim Drehen des Kopfes auftritt.</li>
+<li>Der Schwindel wird von Ihnen als Unsicherheits- bzw.</li>
+<li>Schwankschwindel beschrieben, nicht als Drehschwindel.</li>
+<li>Teilweise haben Sie das Gefühl, „wie benebelt“ zu sein, wodurch Ihnen im Büro die Konzentration schwerfällt.</li>
+<li>Sie berichten, dass Sie die Beschwerden sehr beunruhigen, da eine Cousine väterlicherseits vor einigen Jahren einen Hirntumor hatte.</li>
+</ul>
+<h3>Begleitende Beschwerden</h3>
+<ul>
+<li>Begleitend bestehen leichte dumpfe Kopfschmerzen im Stirnbereich, die aber nicht im Vordergrund stehen.</li>
+<li>Kein Erbrechen, keine Seh- oder Sprachstörungen, kein Hörverlust, keine Ohrgeräusche, kein Bewusstseinsverlust.</li>
+<li>Fieber verneinen Sie.</li>
+<li>Vor etwa zwei Wochen hatten Sie eine sehr arbeitsintensive Phase mit langen Arbeitstagen, wenig Schlaf und unregelmäßiger Ernährung.</li>
+</ul>
+<h3>Vorerkrankungen</h3>
+<ul>
+<li>Keine chronischen Erkrankungen.</li>
+<li>Als Kind wurden die Mandeln entfernt.</li>
+</ul>
+<h3>Medikamente</h3>
+<ul>
+<li>Gestern haben Sie eine Ibuprofen 400 mg eingenommen, die die Kopfschmerzen etwas besserte, auf den Schwindel jedoch keinen Effekt hatte.</li>
+<li>Medikation: Keine Dauermedikation.</li>
+</ul>
+<h3>Allergien</h3>
+<ul>
+<li>Keine bekannten Allergien.</li>
+</ul>
+<h3>Impfstatus</h3>
+<ul>
+<li>Impfungen: Dreifach gegen COVID-19 geimpft (zuletzt im Herbst 2023, Biontech).</li>
+</ul>
+<h3>Alkoholkonsum</h3>
+<ul>
+<li>Alkohol selten – gelegentlich ein Glas Wein am Wochenende.</li>
+</ul>
+<h3>Nikotinkonsum</h3>
+<ul>
+<li>Sie rauchen nicht.</li>
+</ul>
+<h3>Familienanamnese</h3>
+<ul>
+<li>Ihre Mutter leidet an Migräne, Ihr Vater wird wegen Bluthochdrucks behandelt.</li>
+<li>Eine Cousine väterlicherseits hatte einen Hirntumor, was Sie derzeit besonders verunsichert.</li>
+</ul>
+<h3>Sozialanamnese</h3>
+<ul>
+<li>Sie sind verheiratet, haben eine 15-jährige Tochter.</li>
+<li>Ihr Partner ist Ingenieur.</li>
+<li>Sie gehen einmal pro Woche zum Yoga, ansonsten lesen Sie gern und machen Spaziergänge.</li>
+<li>Ihre Arbeit in der Steuerkanzlei ist häufig fordernd, besonders in der Jahresabschlusszeit.</li>
+<li>Die letzte Reise war ein Wochenende in Hamburg vor etwa vier Wochen.</li>
+</ul>
+<h3>Patientenfragen</h3>
+<ul>
+<li>Könnte mein Schwindel ein Hinweis auf einen Hirntumor sein?</li>
+<li>Sollte ich ein MRT vom Kopf machen lassen?</li>
+<li>Kann man die Ursache auch durch ein Blutbild feststellen?</li>
+<li>Wie unterscheidet man harmlosen Schwindel von gefährlichen Ursachen?</li>
+<li>Ist es riskant, wenn ich jetzt wieder arbeite oder Auto fahre?</li>
+<li>Gibt es Übungen oder Maßnahmen, die den Schwindel bessern können?</li>
+</ul></div></section></article></main><script>
+const input=document.getElementById('caseSearch'), cases=[...document.querySelectorAll('.case')], none=document.querySelector('.no-results');
+input.addEventListener('input',()=>{const q=input.value.trim().toLocaleLowerCase('de');let shown=0;cases.forEach(c=>{const ok=!q||c.textContent.toLocaleLowerCase('de').includes(q);c.hidden=!ok;if(ok)shown++;});none.style.display=shown?'none':'block';});
+document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='faelle')a.classList.add('active')});
+</script></body></html>
