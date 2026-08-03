@@ -47,6 +47,7 @@
     .case-selector-row select{min-width:230px;max-width:100%;padding:6px 30px 6px 9px;border:1px solid #cbd5e1;border-radius:7px;background:#fff;color:var(--text-color);font:inherit;font-size:14px}
     .case-summary{display:none}
     .case-summary.active{display:block}
+    .case-summary-title{margin:0 0 8px;font-size:16px;font-weight:700;color:#1f2937}
     .case-summary ul{margin-top:8px}
     @media(max-width:760px){.study-toolbar{top:0}.document{padding-left:17px;padding-right:17px}.document h2{margin-left:-17px;margin-right:-17px;padding-left:17px;padding-right:17px}}
 </style></head><body class="full-mode"><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
@@ -330,8 +331,34 @@ Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(
 
 const caseSelector=document.getElementById('caseSelector');
 if(caseSelector){
-  caseSelector.addEventListener('change',()=>{
-    document.querySelectorAll('.case-summary').forEach(el=>el.classList.toggle('active',el.id===caseSelector.value));
+  const options=[...caseSelector.options];
+  const summaries=[...document.querySelectorAll('.case-summary')];
+
+  options.forEach((option,index)=>{
+    const baseLabel=option.textContent.replace(/^\d+\.\s*/,'').trim();
+    const number=String(index + 1).padStart(2,'0');
+    const numberedLabel=`${number}. ${baseLabel}`;
+    option.textContent=numberedLabel;
+
+    const summary=summaries.find(el=>el.id===option.value);
+    if(summary){
+      summary.dataset.caseLabel=numberedLabel;
+      let title=summary.querySelector('.case-summary-title');
+      if(!title){
+        title=document.createElement('div');
+        title.className='case-summary-title';
+        summary.prepend(title);
+      }
+      title.textContent=numberedLabel;
+      summary.setAttribute('aria-label',`Zwischenzusammenfassung: ${numberedLabel}`);
+    }
   });
+
+  const updateCaseSummary=()=>{
+    document.querySelectorAll('.case-summary').forEach(el=>el.classList.toggle('active',el.id===caseSelector.value));
+  };
+
+  caseSelector.addEventListener('change',updateCaseSummary);
+  updateCaseSummary();
 }
 document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='fragen')a.classList.add('active')});</script></body></html>
