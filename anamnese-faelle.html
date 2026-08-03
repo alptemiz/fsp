@@ -25,17 +25,17 @@
     @media(max-width:760px){body{font-size:16px}.site-header{position:static}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}}
 
 
-    .case-tools { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:0 0 18px; padding:12px 14px; border:1px solid var(--border-color); border-radius:10px; background:var(--surface); }
-    .case-tools label { font-size:14px; font-weight:700; color:#374151; }
-    .case-tools select { min-width:280px; max-width:100%; padding:8px 34px 8px 10px; border:1px solid var(--border-color); border-radius:8px; background:var(--surface); color:var(--text-color); font:inherit; }
+    .case-tools { display:flex; gap:10px; align-items:center; margin:0 0 18px; }
+    .case-tools input { width:100%; padding:11px 13px; border:1px solid var(--border-color); border-radius:9px; background:var(--surface); font:inherit; }
     .cases h1{display:none}.cases h2{margin:24px 0 10px;padding:14px 18px;border:1px solid var(--border-color);border-radius:12px 12px 0 0;background:var(--header-bg);color:var(--text-color);font-size:23px}.case-card{margin-bottom:28px;padding:2px 22px 22px;border:1px solid var(--border-color);border-top:0;border-radius:0 0 12px 12px;background:var(--surface)}
     .case-card h3{margin:20px 0 7px;padding-bottom:5px;border-bottom:1px solid var(--border-color);font-size:18px;color:#1c438f}.case-card p{margin:8px 0}.case-card ul{margin:7px 0 7px 22px;padding:0}.case-card li{margin:6px 0}.case-card strong{color:#29354b}
+    .no-results{display:none;padding:20px;border:1px solid var(--border-color);border-radius:12px;background:var(--surface);color:var(--muted-color)}
 </style></head><body><header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
-<a href="anamnese-fragen.html" data-page="fragen">Anamnese-Fragen</a>
+<a href="anamnese.html" data-page="anamnese">Anamnese</a>
 <a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
-</nav></header><main><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select id="caseSelect" aria-label="Anamnese-Fall auswählen"></select></div><article class="cases"><section class="case" data-title="harnsteinleiden"><h2>Harnsteinleiden</h2><div class="case-card">
+</nav></header><main><div class="case-tools"><input id="caseSearch" type="search" placeholder="Fall, Beschwerde oder Stichwort suchen …" aria-label="Fälle durchsuchen"></div><div class="no-results">Kein passender Fall gefunden.</div><article class="cases"><section class="case" data-title="harnsteinleiden"><h2>Harnsteinleiden</h2><div class="case-card">
 <p><strong>Name:</strong> Stefan/Lisa Müller</p>
 <p><strong>Beruf:</strong> Bankangestellter/Bankangestellte</p>
 <p><strong>Alter, Gewicht, Größe:</strong> 42 Jahre (Geb.: 15.05.1983); 1,78 m; 82 kg</p>
@@ -1033,39 +1033,7 @@
 <li>Ist es riskant, wenn ich jetzt wieder arbeite oder Auto fahre?</li>
 <li>Gibt es Übungen oder Maßnahmen, die den Schwindel bessern können?</li>
 </ul></div></section></article></main><script>
-const caseSelect=document.getElementById('caseSelect');
-const cases=[...document.querySelectorAll('.case')];
-
-function formatCaseNumber(index){
-  return String(index + 1).padStart(2,'0');
-}
-
-cases.forEach((section,index)=>{
-  const heading=section.querySelector('h2');
-  const baseTitle=(heading ? heading.textContent : `Fall ${index + 1}`).replace(/^\d+\.\s*/,'').trim();
-  const number=formatCaseNumber(index);
-  const value=`case-${index}`;
-  section.dataset.caseValue=value;
-  if(heading){
-    heading.textContent=`${number}. ${baseTitle}`;
-  }
-  const option=document.createElement('option');
-  option.value=value;
-  option.textContent=`${number}. ${baseTitle}`;
-  caseSelect.appendChild(option);
-});
-
-function showCase(value){
-  cases.forEach(section=>{
-    section.hidden = section.dataset.caseValue !== value;
-  });
-}
-
-if(cases.length){
-  caseSelect.value='case-0';
-  showCase('case-0');
-}
-
-caseSelect.addEventListener('change',()=>showCase(caseSelect.value));
+const input=document.getElementById('caseSearch'), cases=[...document.querySelectorAll('.case')], none=document.querySelector('.no-results');
+input.addEventListener('input',()=>{const q=input.value.trim().toLocaleLowerCase('de');let shown=0;cases.forEach(c=>{const ok=!q||c.textContent.toLocaleLowerCase('de').includes(q);c.hidden=!ok;if(ok)shown++;});none.style.display=shown?'none':'block';});
 document.querySelectorAll('.site-nav a').forEach(a=>{if(a.dataset.page==='faelle')a.classList.add('active')});
 </script></body></html>
