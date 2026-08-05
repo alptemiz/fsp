@@ -7,7 +7,7 @@
 <style>
 :root{--text-color:#1f2937;--background-color:#f7f8fa;--surface:#fff;--muted-color:#6b7280;--border-color:#d9dee7;--header-bg:#eef1f5;--left-bg:#fafafa;--button-color:#315fbd;--button-hover:#244b98;--accent-soft:#e7edfa;--alarm-bg:#fff4f2;--alarm:#a6372b}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background-color);color:var(--text-color);font-size:17px;line-height:1.55}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background-color);color:var(--text-color);font-size:17px;line-height:1.5}
 .site-header{position:sticky;top:0;z-index:40;padding:6px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border-color);backdrop-filter:blur(8px)}
 .header-inner{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
 .mode-switch{grid-column:1;justify-self:start;display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
@@ -19,40 +19,43 @@ button{font:inherit;font-size:12px;padding:4px 8px;border:0;border-radius:6px;co
 button:hover{background:var(--button-hover)}
 .mode-switch button.active{background:#173d91;box-shadow:0 0 0 2px var(--accent-soft)}
 .mode-switch button:not(.active){opacity:.78}
-main{max-width:1100px;margin:18px auto;padding:0 16px 42px}
-.intro,.module-tools,.module{margin-bottom:20px;border:1px solid var(--border-color);border-radius:14px;background:var(--surface);overflow:hidden}
-.intro{padding:18px}
-.intro h1{margin:0 0 8px;font-size:27px}
-.intro p{margin:6px 0;color:var(--muted-color)}
-.memory-chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:16px}
-.memory-item{padding:11px 8px;border:1px solid #cbd5e1;border-radius:9px;background:var(--accent-soft);text-align:center}
-.memory-item strong{display:block;color:#1e3a6d;font-size:18px}
-.memory-item span{display:block;margin-top:2px;color:#475569;font-size:13px}
-.module-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px}
+main{max-width:1180px;margin:16px auto;padding:0 16px 42px}
+.intro,.flow-block,.module-tools,.module{margin-bottom:16px;border:1px solid var(--border-color);border-radius:12px;background:var(--surface);overflow:hidden}
+.intro{padding:14px 16px}
+.intro h1{margin:0 0 4px;font-size:26px}
+.intro p{margin:3px 0;color:var(--muted-color);font-size:15px}
+.memory-chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}
+.memory-item{padding:6px 7px;border:1px solid #cbd5e1;border-radius:8px;background:var(--accent-soft);text-align:center}
+.memory-item strong{color:#1e3a6d;font-size:16px}
+.memory-item span{margin-left:4px;color:#475569;font-size:12px}
+.flow-block h2,.module h2{margin:0;padding:11px 15px;font-size:20px;background:var(--header-bg);border-bottom:1px solid var(--border-color)}
+.module-note{margin:0;padding:6px 15px;color:var(--muted-color);font-size:13px;border-bottom:1px solid var(--border-color)}
+.module-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 13px}
 .module-tools label{font-size:14px;font-weight:700;color:#374151}
-.module-tools select{min-width:320px;max-width:100%;padding:8px 34px 8px 10px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface);color:var(--text-color);font:inherit}
+.module-tools select{min-width:320px;max-width:100%;padding:7px 32px 7px 9px;border:1px solid var(--border-color);border-radius:8px;background:var(--surface);color:var(--text-color);font:inherit}
 .module{display:none}
 .module.active{display:block}
-.module h2{margin:0;padding:14px 18px;font-size:22px;background:var(--header-bg);border-bottom:1px solid var(--border-color)}
-.module-note{margin:0;padding:9px 18px;color:var(--muted-color);font-size:14px;border-bottom:1px solid var(--border-color)}
 table{width:100%;border-collapse:collapse}
-td{vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--border-color)}
+td{vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--border-color)}
 tr:last-child td{border-bottom:0}
-.left-cell{width:34%;font-weight:600;background:var(--left-bg)}
-.right-cell{width:66%}
-.alarm .left-cell{color:var(--alarm);background:var(--alarm-bg)}
-.alarm .left-cell::before{content:"Warnzeichen · "}
-.initial-mode .masked .hidden-part{color:var(--surface)}
-.initial-mode .masked .word:hover .hidden-part{color:var(--text-color)}
+.step-cell{width:15%;font-weight:700;color:#1e3a6d;background:#f1f5fb}
+.left-cell{width:27%;font-weight:600;background:var(--left-bg)}
+.right-cell{width:58%}
+.flow-block .left-cell{width:27%}
+.flow-block .right-cell{width:73%}
+.alarm .step-cell,.alarm .left-cell{color:var(--alarm);background:var(--alarm-bg)}
+.initial-mode .masked .hidden-part{display:none}
+.initial-mode .masked .word:hover .hidden-part{display:inline}
 .blank-mode .right-cell.masked,.blank-mode .right-cell.masked *{color:transparent!important}
-.blank-mode .masked .word:hover .hidden-part{color:transparent!important}
+.blank-mode .masked .hidden-part{display:none!important}
 .word{display:inline-block;white-space:pre}
 .first-letter,.punctuation{color:var(--text-color)}
-@media(max-width:880px){.site-header{position:static}.header-inner{grid-template-columns:1fr;gap:5px}.mode-switch{grid-column:1;justify-self:start}.site-nav{grid-column:1;justify-self:center}.site-nav a{font-size:13px;padding:5px 7px}.memory-chain{grid-template-columns:repeat(2,minmax(0,1fr))}main{margin-top:12px;padding:0 10px 30px}}
-@media(max-width:650px){body{font-size:16px}.memory-chain{grid-template-columns:1fr}.module table,.module tbody,.module tr,.module td{display:block;width:100%}.left-cell,.right-cell{width:auto}.left-cell{border-bottom:0;padding-bottom:6px}.right-cell{padding-top:6px}.module-tools select{min-width:0;width:100%}}
+.blank-mode .first-letter,.blank-mode .punctuation{color:transparent!important}
+@media(max-width:900px){.site-header{position:static}.header-inner{grid-template-columns:1fr;gap:5px}.mode-switch{grid-column:1;justify-self:start}.site-nav{grid-column:1;justify-self:center}.site-nav a{font-size:13px;padding:5px 7px}.memory-chain{grid-template-columns:repeat(2,minmax(0,1fr))}main{margin-top:12px;padding:0 10px 30px}}
+@media(max-width:680px){body{font-size:16px}.memory-chain{grid-template-columns:1fr}.memory-item{text-align:left}.module table,.module tbody,.module tr,.module td,.flow-block table,.flow-block tbody,.flow-block tr,.flow-block td{display:block;width:100%}.step-cell,.left-cell,.right-cell{width:auto}.step-cell{padding-bottom:4px;border-bottom:0}.left-cell{padding-top:5px;padding-bottom:5px;border-bottom:0}.right-cell{padding-top:5px}.module-tools select{min-width:0;width:100%}}
 </style>
 </head>
-<body class="initial-mode">
+<body class="full-mode">
 <header class="site-header"><div class="header-inner">
 <div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div>
 <nav class="site-nav" aria-label="Hauptnavigation">
@@ -66,14 +69,24 @@ tr:last-child td{border-bottom:0}
 <main>
 <section class="intro">
 <h1>Beschwerdebezogene Anamnese</h1>
-<p>Beginnen Sie mit den gemeinsamen Kernfragen. Wählen Sie danach das passende Beschwerde-Modul und kehren Sie anschließend zur allgemeinen Anamnese zurück.</p>
+<p>Gemeinsamer Einstieg, passendes Beschwerde-Modul, Warnzeichen und gemeinsamer Anschluss.</p>
 <div class="memory-chain" aria-label="Merkschema">
-<div class="memory-item"><strong>Wo?</strong><span>Lokalisation und Ausstrahlung</span></div>
-<div class="memory-item"><strong>Wie?</strong><span>Charakter und Intensität</span></div>
-<div class="memory-item"><strong>Wann?</strong><span>Beginn, Verlauf und Dauer</span></div>
-<div class="memory-item"><strong>Wodurch?</strong><span>Auslöser, Verstärkung und Linderung</span></div>
-<div class="memory-item"><strong>Was dazu?</strong><span>Begleitsymptome und Warnzeichen</span></div>
+<div class="memory-item"><strong>Wo?</strong><span>Lokalisation</span></div>
+<div class="memory-item"><strong>Wie?</strong><span>Charakter</span></div>
+<div class="memory-item"><strong>Wann?</strong><span>Zeitlicher Verlauf</span></div>
+<div class="memory-item"><strong>Wodurch?</strong><span>Einflussfaktoren</span></div>
+<div class="memory-item"><strong>Was dazu?</strong><span>Begleitsymptome</span></div>
 </div>
+</section>
+
+<section class="flow-block">
+<h2>Gemeinsamer Einstieg</h2>
+<table><tbody>
+<tr><td class="left-cell">Anlass</td><td class="right-cell masked"><template>Was führt Sie heute zu mir?</template></td></tr>
+<tr><td class="left-cell">Freie Schilderung</td><td class="right-cell masked"><template>Können Sie mir Ihre Beschwerden genauer beschreiben?</template></td></tr>
+<tr><td class="left-cell">Beginn und Verlauf</td><td class="right-cell masked"><template>Seit wann bestehen die Beschwerden? Haben sie plötzlich oder allmählich begonnen, und wie haben sie sich seitdem entwickelt?</template></td></tr>
+<tr><td class="left-cell">Bisherige Maßnahmen</td><td class="right-cell masked"><template>Haben Sie etwas gegen die Beschwerden eingenommen, oder waren Sie deswegen bereits beim Arzt?</template></td></tr>
+</tbody></table>
 </section>
 
 <div class="module-tools">
@@ -91,99 +104,101 @@ tr:last-child td{border-bottom:0}
 
 <section class="module" id="module-1">
 <h2>01. Fieber, Infektzeichen und Erschöpfung</h2>
-<p class="module-note">Passend zu: COVID-19, Fatigue und Halsschmerzen, Burn-out nach Dengue</p>
+<p class="module-note">COVID-19, Fatigue und Halsschmerzen, Burn-out nach Dengue</p>
 <table><tbody>
-<tr><td class="left-cell">Fieber und Verlauf</td><td class="right-cell masked"><template>Haben Sie Fieber gemessen? Wie hoch war die Temperatur, und wie hat sie sich im Verlauf entwickelt?</template></td></tr>
-<tr><td class="left-cell">Infektzeichen</td><td class="right-cell masked"><template>Haben Sie Schüttelfrost, Nachtschweiß, Kopf- oder Gliederschmerzen bemerkt?</template></td></tr>
-<tr><td class="left-cell">Beschwerdeschwerpunkt</td><td class="right-cell masked"><template>Welche Beschwerden stehen für Sie im Vordergrund?</template></td></tr>
-<tr><td class="left-cell">Kontakt und Reise</td><td class="right-cell masked"><template>Hatten Sie Kontakt zu erkrankten Personen, oder waren Sie in letzter Zeit im Ausland?</template></td></tr>
-<tr><td class="left-cell">Belastbarkeit</td><td class="right-cell masked"><template>Wie stark schränken die Beschwerden Sie im Alltag ein? Wird die Erschöpfung durch Schlaf oder Ruhe besser?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Atemnot und Bewusstsein</td><td class="right-cell masked"><template>Haben Sie Atemnot, starke Benommenheit oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Flüssigkeit und Gewichtsverlust</td><td class="right-cell masked"><template>Können Sie ausreichend trinken? Haben Sie ungewollt Gewicht verloren?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Beschwerdeschwerpunkt</td><td class="right-cell masked"><template>Welche Beschwerden stehen für Sie im Vordergrund? Betreffen sie vor allem den Hals, die Atemwege oder den ganzen Körper?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Fieber und Erschöpfung</td><td class="right-cell masked"><template>Haben Sie Fieber gemessen? Wie hoch war die Temperatur, und wie stark fühlen Sie sich erschöpft?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Zeitlicher Verlauf</td><td class="right-cell masked"><template>Wie haben sich das Fieber und die Erschöpfung im Verlauf entwickelt?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Kontakt, Reise und Erholung</td><td class="right-cell masked"><template>Hatten Sie Kontakt zu erkrankten Personen, oder waren Sie im Ausland? Wird die Erschöpfung durch Schlaf oder Ruhe besser?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Infektzeichen</td><td class="right-cell masked"><template>Haben Sie Schüttelfrost, Nachtschweiß, Kopf- oder Gliederschmerzen, Appetitminderung oder Schlafstörungen bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Atemnot, Bewusstsein, Flüssigkeit</td><td class="right-cell masked"><template>Haben Sie Atemnot, starke Benommenheit oder eine Bewusstseinsstörung bemerkt? Können Sie ausreichend trinken, und haben Sie ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-2">
 <h2>02. Schluck- und Halsbeschwerden</h2>
-<p class="module-note">Passend zu: Fatigue und Halsschmerzen, Ösophaguskarzinom</p>
+<p class="module-note">Fatigue und Halsschmerzen, Ösophaguskarzinom</p>
 <table><tbody>
-<tr><td class="left-cell">Art der Beschwerden</td><td class="right-cell masked"><template>Haben Sie Schmerzen beim Schlucken, oder bleibt die Nahrung beim Schlucken stecken?</template></td></tr>
-<tr><td class="left-cell">Feste Speisen oder Flüssigkeiten</td><td class="right-cell masked"><template>Treten die Beschwerden bei festen Speisen, bei Flüssigkeiten oder bei beidem auf?</template></td></tr>
-<tr><td class="left-cell">Verlauf</td><td class="right-cell masked"><template>Haben die Schluckbeschwerden im Verlauf zugenommen?</template></td></tr>
-<tr><td class="left-cell">Begleitende Beschwerden</td><td class="right-cell masked"><template>Haben Sie Heiserkeit, Husten beim Essen, saures Aufstoßen oder das Hochkommen von Nahrung bemerkt?</template></td></tr>
-<tr><td class="left-cell">Risikofaktoren</td><td class="right-cell masked"><template>Rauchen Sie, trinken Sie regelmäßig Alkohol, oder leiden Sie häufig unter Sodbrennen?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Atemweg und Speichel</td><td class="right-cell masked"><template>Haben Sie Atemnot, oder können Sie Ihren Speichel nicht mehr richtig schlucken?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Blut und Gewichtsverlust</td><td class="right-cell masked"><template>Haben Sie Blut bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation</td><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden? Bleibt die Nahrung eher im Hals oder hinter dem Brustbein stecken?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Schmerz oder Schluckstörung</td><td class="right-cell masked"><template>Haben Sie Schmerzen beim Schlucken, oder können Sie die Nahrung nicht richtig schlucken? Betrifft das feste Speisen, Flüssigkeiten oder beides?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Verlauf</td><td class="right-cell masked"><template>Seit wann bestehen die Beschwerden, und haben sie im Verlauf zugenommen?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Nahrung und Reflux</td><td class="right-cell masked"><template>Treten die Beschwerden bei bestimmten Speisen auf? Leiden Sie unter Sodbrennen oder saurem Aufstoßen?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Begleitsymptome</td><td class="right-cell masked"><template>Haben Sie Heiserkeit, Husten beim Essen, Ohrenschmerzen oder das Hochkommen von Nahrung bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Atemweg, Blut, Gewichtsverlust</td><td class="right-cell masked"><template>Haben Sie Atemnot, können Sie Ihren Speichel nicht mehr schlucken, haben Sie Blut bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-3">
 <h2>03. Brustbeschwerden, Husten und Atemnot</h2>
-<p class="module-note">Passend zu: Brustenge (KHK), Asthma bronchiale, Bronchialkarzinom</p>
+<p class="module-note">Brustenge (KHK), Asthma bronchiale, Bronchialkarzinom</p>
 <table><tbody>
-<tr><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden? Strahlen sie in den Arm, den Rücken, die Schulter oder den Kiefer aus?</template></td></tr>
-<tr><td class="left-cell">Charakter und Dauer</td><td class="right-cell masked"><template>Fühlen sich die Beschwerden wie Druck, Enge, Brennen oder Stechen an? Wie lange dauert eine Episode?</template></td></tr>
-<tr><td class="left-cell">Belastung und Atmung</td><td class="right-cell masked"><template>Treten die Beschwerden bei Belastung oder auch in Ruhe auf? Verändern sie sich beim Atmen?</template></td></tr>
-<tr><td class="left-cell">Husten und Auswurf</td><td class="right-cell masked"><template>Haben Sie Husten? Ist der Husten trocken, oder haben Sie Auswurf?</template></td></tr>
-<tr><td class="left-cell">Begleitende Beschwerden</td><td class="right-cell masked"><template>Haben Sie Atemnot, Herzklopfen, Übelkeit oder kalten Schweiß bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Akute Kreislaufzeichen</td><td class="right-cell masked"><template>Bestehen die Beschwerden länger als zwanzig Minuten, oder sind Sie bewusstlos geworden?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Blut und Gewichtsverlust</td><td class="right-cell masked"><template>Haben Sie Blut im Auswurf bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden? Strahlen sie in den Arm, den Rücken, die Schulter oder den Kiefer aus?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Fühlen sich die Beschwerden wie Druck, Enge, Brennen oder Stechen an? Wie stark sind sie?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Dauer und Verlauf</td><td class="right-cell masked"><template>Wie lange dauert eine Episode, wie häufig tritt sie auf, und haben die Beschwerden zugenommen?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Belastung, Ruhe und Atmung</td><td class="right-cell masked"><template>Treten die Beschwerden bei Belastung oder auch in Ruhe auf? Verändern sie sich beim Atmen, oder gibt es einen anderen Auslöser?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Atmung und Kreislauf</td><td class="right-cell masked"><template>Haben Sie Atemnot, Husten, Auswurf, Herzklopfen, Übelkeit oder kalten Schweiß bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Ruhebeschwerden, Synkope, Blut</td><td class="right-cell masked"><template>Bestehen die Beschwerden länger als zwanzig Minuten oder in Ruhe? Sind Sie bewusstlos geworden, haben Sie Blut im Auswurf bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-4">
 <h2>04. Bauch- und Verdauungsbeschwerden</h2>
-<p class="module-note">Passend zu: Divertikulitis, Bauchschmerzen, Kolonkarzinom, obere GI-Blutung</p>
+<p class="module-note">Divertikulitis, Bauchschmerzen, Kolonkarzinom, obere GI-Blutung</p>
 <table><tbody>
-<tr><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Strahlen die Schmerzen in eine andere Körperregion aus?</template></td></tr>
-<tr><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Sind die Schmerzen eher krampfartig, stechend oder dumpf? Wie stark sind sie auf einer Skala von null bis zehn?</template></td></tr>
-<tr><td class="left-cell">Nahrung und Stuhlgang</td><td class="right-cell masked"><template>Hängen die Beschwerden mit dem Essen oder dem Stuhlgang zusammen?</template></td></tr>
-<tr><td class="left-cell">Verdauung</td><td class="right-cell masked"><template>Haben Sie Übelkeit, Erbrechen, Durchfall, Verstopfung oder Blähungen?</template></td></tr>
-<tr><td class="left-cell">Stuhlveränderung</td><td class="right-cell masked"><template>Hat sich die Häufigkeit, Form oder Farbe Ihres Stuhlgangs verändert?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Blutung</td><td class="right-cell masked"><template>Haben Sie Blut erbrochen, schwarzen Stuhl oder frisches Blut im Stuhl bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Fieber und Gewichtsverlust</td><td class="right-cell masked"><template>Haben Sie Fieber oder ungewollt Gewicht verloren?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Strahlen die Schmerzen in eine andere Körperregion aus?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Sind die Schmerzen eher krampfartig, stechend oder dumpf? Wie stark sind sie auf einer Skala von null bis zehn?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Dauer und Verlauf</td><td class="right-cell masked"><template>Sind die Schmerzen dauerhaft oder treten sie anfallsweise auf? Wie haben sie sich im Verlauf verändert?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Nahrung, Bewegung und Stuhlgang</td><td class="right-cell masked"><template>Hängen die Beschwerden mit dem Essen, der Bewegung oder dem Stuhlgang zusammen?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Verdauung</td><td class="right-cell masked"><template>Haben Sie Übelkeit, Erbrechen, Durchfall, Verstopfung, Blähungen oder eine Veränderung des Stuhlgangs bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Blutung, Fieber, Gewichtsverlust</td><td class="right-cell masked"><template>Haben Sie Blut erbrochen, schwarzen Stuhl oder frisches Blut im Stuhl bemerkt? Haben Sie Fieber, einen harten Bauch oder ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-5">
 <h2>05. Flankenbeschwerden und Wasserlassen</h2>
-<p class="module-note">Passend zu: Harnsteinleiden</p>
+<p class="module-note">Harnsteinleiden</p>
 <table><tbody>
-<tr><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Ziehen die Schmerzen in die Leiste oder in den Genitalbereich?</template></td></tr>
-<tr><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Kommen die Schmerzen in Wellen, oder sind sie dauerhaft vorhanden? Wie stark sind sie?</template></td></tr>
-<tr><td class="left-cell">Wasserlassen</td><td class="right-cell masked"><template>Brennt es beim Wasserlassen, oder müssen Sie häufiger als sonst zur Toilette?</template></td></tr>
-<tr><td class="left-cell">Harnstrahl und Harnmenge</td><td class="right-cell masked"><template>Hat sich Ihr Harnstrahl verändert? Können Sie normal viel Wasser lassen?</template></td></tr>
-<tr><td class="left-cell">Vorgeschichte und Trinkmenge</td><td class="right-cell masked"><template>Hatten Sie früher Harnsteine oder Harnwegsinfekte? Wie viel trinken Sie täglich?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Infektion</td><td class="right-cell masked"><template>Haben Sie Fieber, Schüttelfrost, Übelkeit oder Erbrechen?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Blut und Harnverhalt</td><td class="right-cell masked"><template>Haben Sie Blut im Urin bemerkt, oder können Sie gar kein Wasser mehr lassen?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Ziehen die Schmerzen in die Leiste oder in den Genitalbereich?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Kommen die Schmerzen in Wellen, oder sind sie dauerhaft vorhanden? Wie stark sind sie?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Beginn und Verlauf</td><td class="right-cell masked"><template>Wann haben die Beschwerden begonnen, und wie haben sie sich seitdem entwickelt?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Bewegung, Trinken und Lage</td><td class="right-cell masked"><template>Verändern sich die Beschwerden bei Bewegung, nach dem Trinken oder in einer bestimmten Körperhaltung?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Wasserlassen und Übelkeit</td><td class="right-cell masked"><template>Brennt es beim Wasserlassen, müssen Sie häufiger zur Toilette, hat sich der Harnstrahl verändert, oder ist Ihnen übel?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Infektion, Blut, Harnverhalt</td><td class="right-cell masked"><template>Haben Sie Fieber, Schüttelfrost, Erbrechen oder Blut im Urin bemerkt? Können Sie normal Wasser lassen?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-6">
 <h2>06. Gelenk-, Rückenbeschwerden und Trauma</h2>
-<p class="module-note">Passend zu: Schulterschmerzen, Knieschmerzen, lumbaler Bandscheibenvorfall</p>
+<p class="module-note">Schulterschmerzen, Knieschmerzen, lumbaler Bandscheibenvorfall</p>
 <table><tbody>
-<tr><td class="left-cell">Unfallmechanismus</td><td class="right-cell masked"><template>Gab es einen Unfall? Können Sie mir genau beschreiben, wie er passiert ist?</template></td></tr>
-<tr><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Strahlen die Schmerzen in den Arm oder in das Bein aus?</template></td></tr>
-<tr><td class="left-cell">Bewegung und Belastung</td><td class="right-cell masked"><template>Welche Bewegungen sind eingeschränkt? Können Sie die betroffene Körperregion belasten?</template></td></tr>
-<tr><td class="left-cell">Schwellung und Instabilität</td><td class="right-cell masked"><template>Ist die Stelle geschwollen, oder fühlt sich das Gelenk instabil an? Haben Sie ein Knacken gehört?</template></td></tr>
-<tr><td class="left-cell">Neurologische Beschwerden</td><td class="right-cell masked"><template>Haben Sie Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Durchblutung und Lähmung</td><td class="right-cell masked"><template>Ist die betroffene Extremität kalt oder blass geworden? Besteht eine Lähmung?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Cauda-equina-Zeichen</td><td class="right-cell masked"><template>Haben Sie Probleme, Wasser oder Stuhl zu halten, oder ein Taubheitsgefühl im Genital- oder Gesäßbereich?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen? Strahlen die Schmerzen in den Arm oder in das Bein aus?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Charakter und Intensität</td><td class="right-cell masked"><template>Wie würden Sie die Schmerzen beschreiben, und wie stark sind sie auf einer Skala von null bis zehn?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Unfall und Verlauf</td><td class="right-cell masked"><template>Gab es einen Unfall? Können Sie beschreiben, wie er passiert ist und wie sich die Beschwerden seitdem entwickelt haben?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Bewegung und Belastung</td><td class="right-cell masked"><template>Welche Bewegungen verstärken die Schmerzen? Können Sie die betroffene Körperregion normal bewegen und belasten?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Schwellung und Neurologie</td><td class="right-cell masked"><template>Ist die Stelle geschwollen oder instabil? Haben Sie ein Knacken, Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Durchblutung, Lähmung, Ausscheidung</td><td class="right-cell masked"><template>Ist die Extremität kalt oder blass, oder besteht eine Lähmung? Haben Sie Probleme, Wasser oder Stuhl zu halten, oder ein Taubheitsgefühl im Genital- oder Gesäßbereich?</template></td></tr>
 </tbody></table>
 </section>
 
 <section class="module" id="module-7">
 <h2>07. Kopfschmerzen, Schwindel und neurologische Beschwerden</h2>
-<p class="module-note">Passend zu: Migräne, Schwindel</p>
+<p class="module-note">Migräne, Schwindel</p>
 <table><tbody>
-<tr><td class="left-cell">Art der Beschwerden</td><td class="right-cell masked"><template>Dreht sich alles um Sie herum, fühlen Sie sich unsicher, oder stehen die Kopfschmerzen im Vordergrund?</template></td></tr>
-<tr><td class="left-cell">Beginn und Dauer</td><td class="right-cell masked"><template>Haben die Beschwerden plötzlich oder allmählich begonnen? Wie lange dauert eine Attacke?</template></td></tr>
-<tr><td class="left-cell">Auslöser</td><td class="right-cell masked"><template>Treten die Beschwerden beim Aufstehen, bei Bewegung oder beim Drehen des Kopfes auf?</template></td></tr>
-<tr><td class="left-cell">Migränezeichen</td><td class="right-cell masked"><template>Ist Ihnen übel? Stören Sie Licht oder Geräusche?</template></td></tr>
-<tr><td class="left-cell">Ohrsymptome</td><td class="right-cell masked"><template>Haben Sie Ohrgeräusche oder eine Hörminderung bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Plötzlicher stärkster Kopfschmerz</td><td class="right-cell masked"><template>Handelt es sich um den stärksten Kopfschmerz, den Sie jemals hatten?</template></td></tr>
-<tr class="alarm"><td class="left-cell">Neurologische Ausfälle</td><td class="right-cell masked"><template>Haben Sie Doppelbilder, Sprachstörungen, Taubheitsgefühle, Lähmungen oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
+<tr><td class="step-cell">Wo?</td><td class="left-cell">Lokalisation und Seite</td><td class="right-cell masked"><template>Wo genau haben Sie Kopfschmerzen? Sind sie einseitig oder beidseitig?</template></td></tr>
+<tr><td class="step-cell">Wie?</td><td class="left-cell">Art der Beschwerden</td><td class="right-cell masked"><template>Sind die Kopfschmerzen pochend, drückend oder stechend? Dreht sich alles, oder fühlen Sie sich eher unsicher?</template></td></tr>
+<tr><td class="step-cell">Wann?</td><td class="left-cell">Beginn und Attackendauer</td><td class="right-cell masked"><template>Haben die Beschwerden plötzlich oder allmählich begonnen? Wie lange dauert eine Attacke?</template></td></tr>
+<tr><td class="step-cell">Wodurch?</td><td class="left-cell">Lage, Bewegung und Reize</td><td class="right-cell masked"><template>Treten die Beschwerden beim Aufstehen, bei Kopfbewegungen oder körperlicher Belastung auf? Werden sie durch Licht oder Geräusche verstärkt?</template></td></tr>
+<tr><td class="step-cell">Was dazu?</td><td class="left-cell">Übelkeit, Sehen und Hören</td><td class="right-cell masked"><template>Ist Ihnen übel, mussten Sie erbrechen, oder haben Sie Sehstörungen, Ohrgeräusche oder eine Hörminderung bemerkt?</template></td></tr>
+<tr class="alarm"><td class="step-cell">Warnzeichen</td><td class="left-cell">Stärkster Schmerz und Ausfälle</td><td class="right-cell masked"><template>Handelt es sich um den stärksten Kopfschmerz, den Sie jemals hatten? Haben Sie Doppelbilder, Sprachstörungen, Taubheitsgefühle, Lähmungen oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
+</tbody></table>
+</section>
+
+<section class="flow-block">
+<h2>Gemeinsamer Anschluss</h2>
+<table><tbody>
+<tr><td class="left-cell">Frühere Episoden</td><td class="right-cell masked"><template>Hatten Sie solche Beschwerden früher schon einmal?</template></td></tr>
+<tr><td class="left-cell">Offene Ergänzung</td><td class="right-cell masked"><template>Haben Sie noch weitere Beschwerden oder etwas anderes Wichtiges bemerkt?</template></td></tr>
+<tr><td class="left-cell">Übergang</td><td class="right-cell masked"><template>Dann würde ich kurz zusammenfassen, was ich bisher verstanden habe.</template></td></tr>
 </tbody></table>
 </section>
 </main>
@@ -196,7 +211,7 @@ const modes=["full-mode","initial-mode","blank-mode"]
 const buttons={"full-mode":document.getElementById("btnFull"),"initial-mode":document.getElementById("btnInitial"),"blank-mode":document.getElementById("btnBlank")}
 function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(btn=>btn.classList.remove("active"));buttons[mode].classList.add("active")}
 Object.entries(buttons).forEach(([mode,button])=>button.addEventListener("click",()=>setMode(mode)))
-setMode("initial-mode")
+setMode("full-mode")
 const moduleSelect=document.getElementById("moduleSelect")
 function updateModule(){document.querySelectorAll(".module").forEach(module=>module.classList.toggle("active",module.id===moduleSelect.value))}
 moduleSelect.addEventListener("change",updateModule)
