@@ -44,8 +44,10 @@ tr:last-child td{border-bottom:0}
 .flow-block .left-cell{width:27%}
 .flow-block .right-cell{width:73%}
 .alarm .step-cell,.alarm .left-cell{color:var(--alarm);background:var(--alarm-bg)}
-.initial-mode .masked .hidden-part{display:none}
-.initial-mode .masked .word:hover .hidden-part{display:inline}
+.helper-row .left-cell{padding-left:26px;color:#475569;font-size:14px}
+.helper-row .left-cell::before{content:"↳ ";color:#315fbd}
+.initial-mode .masked .hidden-part{color:var(--surface)}
+.initial-mode .masked .word:hover .hidden-part{color:var(--text-color)}
 .blank-mode .right-cell.masked,.blank-mode .right-cell.masked *{color:transparent!important}
 .blank-mode .masked .hidden-part{display:none!important}
 .word{display:inline-block;white-space:pre}
@@ -83,6 +85,8 @@ tr:last-child td{border-bottom:0}
 <h2>Gemeinsamer Einstieg</h2>
 <table><tbody>
 <tr><td class="left-cell">Anlass</td><td class="right-cell masked"><template>Was führt Sie heute zu mir?</template></td></tr>
+<tr class="helper-row"><td class="left-cell">Wenn der Patient bereits viel erzählt hat</td><td class="right-cell masked"><template>Sie haben bereits einige wichtige Punkte genannt.</template></td></tr>
+<tr class="helper-row"><td class="left-cell">Wenn eine Angabe unklar geblieben ist</td><td class="right-cell masked"><template>Entschuldigen Sie, ich möchte nur sicherstellen, dass ich Sie richtig verstanden habe: Seit wann bestehen die Beschwerden genau?</template></td></tr>
 <tr><td class="left-cell">Freie Schilderung</td><td class="right-cell masked"><template>Können Sie mir Ihre Beschwerden genauer beschreiben?</template></td></tr>
 <tr><td class="left-cell">Beginn und Verlauf</td><td class="right-cell masked"><template>Seit wann bestehen die Beschwerden? Haben sie plötzlich oder allmählich begonnen, und wie haben sie sich seitdem entwickelt?</template></td></tr>
 <tr><td class="left-cell">Bisherige Maßnahmen</td><td class="right-cell masked"><template>Haben Sie etwas gegen die Beschwerden eingenommen, oder waren Sie deswegen bereits beim Arzt?</template></td></tr>
