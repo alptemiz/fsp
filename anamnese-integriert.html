@@ -86,6 +86,12 @@
     .domain-comparison tbody tr:first-child .left-cell{border-top:0}
     .domain-comparison .right-cell{width:100%;padding:7px 9px;font-size:15px}
     @media(max-width:1900px){body.integrated-page main{max-width:100%}.domain-comparison{grid-template-columns:repeat(7,300px)}}
+
+    .domain-comparison .group-title{min-height:40px;background:var(--left-bg)}
+    .domain-comparison .group-title .left-cell{min-height:40px;display:flex;align-items:center;border-top:1px solid var(--border-color)}
+    .domain-comparison tbody .group-title:first-child .left-cell{border-top:0}
+    .domain-comparison .question-row .right-cell{min-height:72px;display:flex;align-items:flex-start}
+    .domain-comparison .alarm-question .right-cell{background:#fffafa}
 </style></head><body class="full-mode integrated-page"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
@@ -121,156 +127,168 @@
 <h3 class="module-heading">01. Fieber, Infektzeichen und Erschöpfung</h3>
 <p class="module-note">COVID-19, Fatigue und Halsschmerzen, Burn-out nach Dengue</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Beschwerdeschwerpunkt</td><td class="right-cell masked"><template>Welche Beschwerden stehen für Sie im Vordergrund?</template></td></tr>
-<tr><td class="right-cell masked"><template>Betreffen sie vor allem den Hals, die Atemwege oder den ganzen Körper?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Fieber und Erschöpfung</td><td class="right-cell masked"><template>Haben Sie Fieber gemessen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie hoch war die Temperatur?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie stark fühlen Sie sich erschöpft?</template></td></tr>
-<tr><td class="left-cell">Zeitlicher Verlauf</td><td class="right-cell masked"><template>Wie haben sich das Fieber und die Erschöpfung im Verlauf entwickelt?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Kontakt, Reise und Erholung</td><td class="right-cell masked"><template>Hatten Sie Kontakt zu erkrankten Personen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Waren Sie in letzter Zeit im Ausland?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wird die Erschöpfung durch Schlaf oder Ruhe besser?</template></td></tr>
-<tr><td class="left-cell" rowspan="4">Infektzeichen</td><td class="right-cell masked"><template>Haben Sie Schüttelfrost oder Nachtschweiß bemerkt?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie Kopf- oder Gliederschmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Ist Ihr Appetit vermindert?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie Schlafstörungen?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="3">Warnzeichen</td><td class="right-cell masked"><template>Haben Sie Atemnot, starke Benommenheit oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Können Sie ausreichend trinken?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie ungewollt Gewicht verloren?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Welche Beschwerden stehen für Sie im Vordergrund?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Betreffen die Beschwerden vor allem den Hals, die Atemwege oder den ganzen Körper?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Fieber gemessen, und wie hoch war die Temperatur?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder phasenweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange halten das Fieber und die Erschöpfung jeweils an?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Hatten Sie Kontakt zu erkrankten Personen, waren Sie im Ausland, oder werden die Beschwerden durch Schlaf und Ruhe besser?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Schüttelfrost, Nachtschweiß, Kopf- oder Gliederschmerzen bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Appetitminderung oder Schlafstörungen?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Atemnot, starke Benommenheit oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Können Sie ausreichend trinken, und haben Sie ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
-
 <section class="module" id="module-2">
-<h3 class="module-heading">02. Schluck- und Halsbeschwerden</h3>
-<p class="module-note">Fatigue und Halsschmerzen, Ösophaguskarzinom</p>
-<table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation</td><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
-<tr><td class="right-cell masked"><template>Bleibt die Nahrung eher im Hals oder hinter dem Brustbein stecken?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Art der Beschwerden</td><td class="right-cell masked"><template>Haben Sie Schmerzen beim Schlucken?</template></td></tr>
-<tr><td class="right-cell masked"><template>Können Sie die Nahrung nicht richtig schlucken?</template></td></tr>
-<tr><td class="right-cell masked"><template>Betrifft das feste Speisen, Flüssigkeiten oder beides?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Verlauf</td><td class="right-cell masked"><template>Seit wann bestehen die Beschwerden?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben die Beschwerden im Verlauf zugenommen?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Nahrung und Reflux</td><td class="right-cell masked"><template>Treten die Beschwerden bei bestimmten Speisen auf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Leiden Sie unter Sodbrennen oder saurem Aufstoßen?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Begleitsymptome</td><td class="right-cell masked"><template>Haben Sie Heiserkeit oder Ohrenschmerzen bemerkt?</template></td></tr>
-<tr><td class="right-cell masked"><template>Müssen Sie beim Essen husten?</template></td></tr>
-<tr><td class="right-cell masked"><template>Kommt Nahrung wieder hoch?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Haben Sie Atemnot?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Können Sie Ihren Speichel noch normal schlucken?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Blut bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie ungewollt Gewicht verloren?</template></td></tr>
-</tbody></table>
-</section>
-
-<section class="module" id="module-3">
-<h3 class="module-heading">03. Brustbeschwerden, Husten und Atemnot</h3>
+<h3 class="module-heading">02. Brustbeschwerden, Husten und Atemnot</h3>
 <p class="module-note">Brustenge (KHK), Asthma bronchiale, Bronchialkarzinom</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
-<tr><td class="right-cell masked"><template>Strahlen sie in den Arm, den Rücken, die Schulter oder den Kiefer aus?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Charakter und Intensität</td><td class="right-cell masked"><template>Fühlen sich die Beschwerden wie Druck, Enge, Brennen oder Stechen an?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie stark sind die Beschwerden?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Dauer und Verlauf</td><td class="right-cell masked"><template>Wie lange dauert eine Episode?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie häufig treten die Beschwerden auf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben die Beschwerden im Verlauf zugenommen?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Einflussfaktoren</td><td class="right-cell masked"><template>Treten die Beschwerden bei Belastung oder auch in Ruhe auf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Verändern sie sich beim Atmen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Ist Ihnen ein anderer Auslöser aufgefallen?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Atmung und Kreislauf</td><td class="right-cell masked"><template>Haben Sie Atemnot, Herzklopfen, Übelkeit oder kalten Schweiß bemerkt?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie Husten oder Auswurf?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Bestehen die Beschwerden länger als zwanzig Minuten oder auch in Ruhe?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Sind Sie bewusstlos geworden?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Blut im Auswurf bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie ungewollt Gewicht verloren?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Strahlen die Beschwerden in den Arm, den Rücken, die Schulter oder den Kiefer aus?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Fühlen sie sich eher wie Druck, Enge, Brennen oder Stechen an, und wie stark sind sie?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder anfallsweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange dauert eine Episode, und wie häufig tritt sie auf?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel Belastung, Ruhe oder Atmung?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Atemnot, Husten oder Auswurf bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Herzklopfen, Übelkeit oder kalten Schweiß bemerkt?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Bestehen die Beschwerden länger als zwanzig Minuten oder auch in Ruhe?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Sind Sie bewusstlos geworden, haben Sie Blut im Auswurf bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
 </tbody></table>
 </section>
-
+<section class="module" id="module-3">
+<h3 class="module-heading">03. Schluckbeschwerden</h3>
+<p class="module-note">Ösophaguskarzinom</p>
+<table><tbody>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Bleibt die Nahrung eher im Hals oder hinter dem Brustbein stecken?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Schmerzen beim Schlucken, und betreffen die Beschwerden feste Speisen, Flüssigkeiten oder beides?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden bei jedem Schlucken oder nur gelegentlich auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange bestehen die Beschwerden, und haben sie im Verlauf zugenommen?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel bestimmte Speisen oder Getränke?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Heiserkeit, Husten beim Essen oder Ohrenschmerzen bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Sodbrennen, saures Aufstoßen oder das Hochkommen von Nahrung bemerkt?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Atemnot, oder können Sie Ihren Speichel nicht mehr normal schlucken?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Blut bemerkt oder ungewollt Gewicht verloren?</template></td></tr>
+</tbody></table>
+</section>
 <section class="module" id="module-4">
 <h3 class="module-heading">04. Bauch- und Verdauungsbeschwerden</h3>
 <p class="module-note">Divertikulitis, Bauchschmerzen, Kolonkarzinom, obere GI-Blutung</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Strahlen die Schmerzen in eine andere Körperregion aus?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Charakter und Intensität</td><td class="right-cell masked"><template>Sind die Schmerzen eher krampfartig, stechend oder dumpf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie stark sind sie auf einer Skala von null bis zehn?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Dauer und Verlauf</td><td class="right-cell masked"><template>Sind die Schmerzen dauerhaft oder treten sie anfallsweise auf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie haben sie sich im Verlauf verändert?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Einflussfaktoren</td><td class="right-cell masked"><template>Hängen die Beschwerden mit dem Essen zusammen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Verändern sie sich bei Bewegung oder beim Stuhlgang?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Verdauung</td><td class="right-cell masked"><template>Haben Sie Übelkeit, Erbrechen, Durchfall, Verstopfung oder Blähungen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Hat sich Ihr Stuhlgang verändert?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Haben Sie Blut erbrochen?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie schwarzen Stuhl oder frisches Blut im Stuhl bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Fieber oder einen harten Bauch?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie ungewollt Gewicht verloren?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Strahlen die Beschwerden in eine andere Körperregion aus?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Sind sie eher krampfartig, stechend oder dumpf, und wie stark sind sie?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder anfallsweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange dauert eine Episode, und wie häufig tritt sie auf?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel Essen, Bewegung oder Stuhlgang?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Übelkeit, Erbrechen, Durchfall, Verstopfung oder Blähungen bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Hat sich die Häufigkeit, Form oder Farbe Ihres Stuhlgangs verändert?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Blut erbrochen, schwarzen Stuhl oder frisches Blut im Stuhl bemerkt?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Fieber, einen harten Bauch oder ungewollten Gewichtsverlust bemerkt?</template></td></tr>
 </tbody></table>
 </section>
-
 <section class="module" id="module-5">
 <h3 class="module-heading">05. Flankenbeschwerden und Wasserlassen</h3>
 <p class="module-note">Harnsteinleiden</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Ziehen die Schmerzen in die Leiste oder in den Genitalbereich?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Charakter und Intensität</td><td class="right-cell masked"><template>Kommen die Schmerzen in Wellen oder sind sie dauerhaft vorhanden?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie stark sind die Schmerzen?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Beginn und Verlauf</td><td class="right-cell masked"><template>Wann haben die Beschwerden begonnen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie haben sie sich seitdem entwickelt?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Einflussfaktoren</td><td class="right-cell masked"><template>Verändern sich die Beschwerden bei Bewegung?</template></td></tr>
-<tr><td class="right-cell masked"><template>Treten sie nach dem Trinken oder in einer bestimmten Körperhaltung auf?</template></td></tr>
-<tr><td class="left-cell" rowspan="4">Wasserlassen und Übelkeit</td><td class="right-cell masked"><template>Brennt es beim Wasserlassen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Müssen Sie häufiger als sonst zur Toilette?</template></td></tr>
-<tr><td class="right-cell masked"><template>Hat sich der Harnstrahl verändert?</template></td></tr>
-<tr><td class="right-cell masked"><template>Ist Ihnen übel?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Haben Sie Fieber oder Schüttelfrost?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Mussten Sie erbrechen?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Blut im Urin bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Können Sie normal Wasser lassen?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Strahlen die Beschwerden in die Leiste oder in den Genitalbereich aus?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Sind sie eher kolikartig oder dauerhaft, und wie stark sind sie?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder anfallsweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange dauert eine Episode, und wie häufig tritt sie auf?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel Bewegung, Trinken oder eine bestimmte Körperhaltung?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Brennen beim Wasserlassen oder häufigeren Harndrang bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Hat sich der Harnstrahl verändert, oder ist Ihnen übel?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Fieber, Schüttelfrost oder Erbrechen bemerkt?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Blut im Urin bemerkt, oder können Sie nicht mehr normal Wasser lassen?</template></td></tr>
 </tbody></table>
 </section>
-
 <section class="module" id="module-6">
 <h3 class="module-heading">06. Gelenk-, Rückenbeschwerden und Trauma</h3>
 <p class="module-note">Schulterschmerzen, Knieschmerzen, lumbaler Bandscheibenvorfall</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation und Ausstrahlung</td><td class="right-cell masked"><template>Wo genau haben Sie Schmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Strahlen die Schmerzen in den Arm oder in das Bein aus?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Charakter und Intensität</td><td class="right-cell masked"><template>Wie würden Sie die Schmerzen beschreiben?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie stark sind sie auf einer Skala von null bis zehn?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Unfall und Verlauf</td><td class="right-cell masked"><template>Gab es einen Unfall?</template></td></tr>
-<tr><td class="right-cell masked"><template>Können Sie mir beschreiben, wie er passiert ist?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie haben sich die Beschwerden seitdem entwickelt?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Bewegung und Belastung</td><td class="right-cell masked"><template>Welche Bewegungen verstärken die Schmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Können Sie die betroffene Körperregion normal bewegen und belasten?</template></td></tr>
-<tr><td class="left-cell" rowspan="3">Begleitende Beschwerden</td><td class="right-cell masked"><template>Ist die Stelle geschwollen oder instabil?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie ein Knacken gehört?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Ist die betroffene Extremität kalt oder blass?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Besteht eine Lähmung?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Probleme, Wasser oder Stuhl zu halten?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie ein Taubheitsgefühl im Genital- oder Gesäßbereich?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Strahlen die Beschwerden in den Arm oder in das Bein aus?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Sind sie eher dumpf, stechend oder ziehend, und wie stark sind sie?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder anfallsweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten sie nur bei Bewegung oder auch in Ruhe auf?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen, oder gab es einen Unfall?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel Bewegung, Belastung oder Ruhe?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Schwellung, Instabilität oder ein Knacken bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Ist die betroffene Extremität kalt oder blass, oder besteht eine Lähmung?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Probleme, Wasser oder Stuhl zu halten, oder ein Taubheitsgefühl im Genital- oder Gesäßbereich?</template></td></tr>
 </tbody></table>
 </section>
-
 <section class="module" id="module-7">
 <h3 class="module-heading">07. Kopfschmerzen, Schwindel und neurologische Beschwerden</h3>
 <p class="module-note">Migräne, Schwindel</p>
 <table><tbody>
-<tr><td class="left-cell" rowspan="2">Lokalisation und Seite</td><td class="right-cell masked"><template>Wo genau haben Sie Kopfschmerzen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Sind die Kopfschmerzen einseitig oder beidseitig?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Art der Beschwerden</td><td class="right-cell masked"><template>Sind die Kopfschmerzen pochend, drückend oder stechend?</template></td></tr>
-<tr><td class="right-cell masked"><template>Dreht sich alles oder fühlen Sie sich eher unsicher?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Beginn und Attackendauer</td><td class="right-cell masked"><template>Haben die Beschwerden plötzlich oder allmählich begonnen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Wie lange dauert eine Attacke?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Auslöser und Verstärkung</td><td class="right-cell masked"><template>Treten die Beschwerden beim Aufstehen, bei Kopfbewegungen oder körperlicher Belastung auf?</template></td></tr>
-<tr><td class="right-cell masked"><template>Werden sie durch Licht oder Geräusche verstärkt?</template></td></tr>
-<tr><td class="left-cell" rowspan="2">Begleitsymptome</td><td class="right-cell masked"><template>Ist Ihnen übel oder mussten Sie erbrechen?</template></td></tr>
-<tr><td class="right-cell masked"><template>Haben Sie Sehstörungen, Ohrgeräusche oder eine Hörminderung bemerkt?</template></td></tr>
-<tr class="alarm"><td class="left-cell" rowspan="4">Warnzeichen</td><td class="right-cell masked"><template>Handelt es sich um den stärksten Kopfschmerz, den Sie jemals hatten?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Doppelbilder oder Sprachstörungen bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Haben Sie Taubheitsgefühle oder Lähmungen bemerkt?</template></td></tr>
-<tr class="alarm"><td class="right-cell masked"><template>Hatten Sie eine Bewusstseinsstörung?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Lokalisation und Schwerpunkt</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wo genau spüren Sie die Beschwerden?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Sind die Kopfschmerzen einseitig oder beidseitig, oder steht der Schwindel im Vordergrund?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Art und Ausprägung</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie würden Sie die Beschwerden beschreiben?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Sind die Kopfschmerzen eher pochend, drückend oder stechend, oder handelt es sich um Dreh- oder Schwankschwindel?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Zeitliches Muster</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Treten die Beschwerden dauerhaft oder anfallsweise auf?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Wie lange dauert eine Episode, und wie häufig tritt sie auf?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Auslöser und Einflussfaktoren</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Ist Ihnen ein Auslöser für die Beschwerden aufgefallen?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Was verstärkt oder lindert die Beschwerden, zum Beispiel Aufstehen, Kopfbewegung, Belastung, Licht oder Geräusche?</template></td></tr>
+<tr class="group-title"><td class="left-cell">Begleitende Beschwerden</td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie außerdem Übelkeit, Erbrechen oder Sehstörungen bemerkt?</template></td></tr>
+<tr class="question-row"><td class="right-cell masked"><template>Haben Sie Ohrgeräusche oder eine Hörminderung bemerkt?</template></td></tr>
+<tr class="group-title alarm"><td class="left-cell">Warnzeichen</td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Handelt es sich um den stärksten Kopfschmerz, den Sie jemals hatten?</template></td></tr>
+<tr class="question-row alarm-question"><td class="right-cell masked"><template>Haben Sie Doppelbilder, Sprachstörungen, Taubheitsgefühle, Lähmungen oder eine Bewusstseinsstörung bemerkt?</template></td></tr>
 </tbody></table>
 </section>
 </div>
