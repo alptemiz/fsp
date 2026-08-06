@@ -71,7 +71,22 @@
     .initial-mode .complaint-integration .masked .word:hover .hidden-part{color:var(--text-color)}
     .blank-mode .complaint-integration .right-cell.masked,.blank-mode .complaint-integration .right-cell.masked *{color:transparent!important}
     @media(max-width:760px){.complaint-integration .module table,.complaint-integration .module tbody,.complaint-integration .module tr,.complaint-integration .module td,.complaint-integration .flow-block table,.complaint-integration .flow-block tbody,.complaint-integration .flow-block tr,.complaint-integration .flow-block td{display:block;width:100%}.complaint-integration .left-cell,.complaint-integration .right-cell{width:auto}.complaint-integration .left-cell{padding-top:5px;padding-bottom:5px;border-bottom:0}.complaint-integration .right-cell{padding-top:5px}.complaint-integration .module-tools select{min-width:0;width:100%}}
-</style></head><body class="full-mode"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
+
+    body.integrated-page main{max-width:2400px}
+    .document .complaint-integration .comparison-title{margin:18px 0 9px;padding:0;color:#1c438f;font-size:19px}
+    .domain-comparison{display:grid;grid-template-columns:repeat(7,minmax(260px,1fr));gap:10px;align-items:start;overflow-x:auto;padding:1px 1px 10px;margin-bottom:15px}
+    .complaint-integration .domain-comparison .module{display:block!important;margin:0;border-radius:10px}
+    .domain-comparison .module-heading{min-height:76px;display:flex;align-items:center}
+    .domain-comparison .module-note{min-height:58px}
+    .domain-comparison table,.domain-comparison tbody,.domain-comparison tr,.domain-comparison td{display:block;width:100%}
+    .domain-comparison tr{border-bottom:1px solid var(--border-color)}
+    .domain-comparison tr:last-child{border-bottom:0}
+    .domain-comparison td{border-bottom:0}
+    .domain-comparison .left-cell{width:100%;padding:7px 9px;font-size:14px;border-top:1px solid var(--border-color)}
+    .domain-comparison tbody tr:first-child .left-cell{border-top:0}
+    .domain-comparison .right-cell{width:100%;padding:7px 9px;font-size:15px}
+    @media(max-width:1900px){body.integrated-page main{max-width:100%}.domain-comparison{grid-template-columns:repeat(7,300px)}}
+</style></head><body class="full-mode integrated-page"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
 <a href="anamnese-integriert.html" data-page="anamnese">Anamnese</a>
@@ -100,19 +115,8 @@
 </tbody></table>
 </section>
 
-<div class="module-tools">
-<label for="moduleSelect">Beschwerde-Modul auswählen:</label>
-<select id="moduleSelect">
-<option value="module-1">01. Fieber, Infektzeichen und Erschöpfung</option>
-<option value="module-2">02. Schluck- und Halsbeschwerden</option>
-<option value="module-3">03. Brustbeschwerden, Husten und Atemnot</option>
-<option value="module-4">04. Bauch- und Verdauungsbeschwerden</option>
-<option value="module-5">05. Flankenbeschwerden und Wasserlassen</option>
-<option value="module-6">06. Gelenk-, Rückenbeschwerden und Trauma</option>
-<option value="module-7">07. Kopfschmerzen, Schwindel und neurologische Beschwerden</option>
-</select>
-</div>
-
+<h3 class="comparison-title">Beschwerdebezogene Fragen im Vergleich</h3>
+<div class="domain-comparison">
 <section class="module" id="module-1">
 <h3 class="module-heading">01. Fieber, Infektzeichen und Erschöpfung</h3>
 <p class="module-note">COVID-19, Fatigue und Halsschmerzen, Burn-out nach Dengue</p>
@@ -269,6 +273,7 @@
 <tr class="alarm"><td class="right-cell masked"><template>Hatten Sie eine Bewusstseinsstörung?</template></td></tr>
 </tbody></table>
 </section>
+</div>
 
 <section class="flow-block">
 <h3 class="module-heading">Gemeinsamer Anschluss</h3>
@@ -513,15 +518,6 @@ const modes=['full-mode','initial-mode','blank-mode']; const buttons={'full-mode
 function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');}
 Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode('full-mode');
 
-
-const moduleSelector=document.getElementById('moduleSelect');
-if(moduleSelector){
-  const updateModule=()=>{
-    document.querySelectorAll('.complaint-integration .module').forEach(el=>el.classList.toggle('active',el.id===moduleSelector.value));
-  };
-  moduleSelector.addEventListener('change',updateModule);
-  updateModule();
-}
 
 const caseSelector=document.getElementById('caseSelector');
 if(caseSelector){
