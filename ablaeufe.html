@@ -43,12 +43,48 @@
     .word { display:inline-block; white-space:pre; }
     .first-letter,.punctuation { color:var(--text-color); }
     @media(max-width:760px){ .procedure table,.procedure tbody,.procedure tr,.procedure td{display:block;width:100%}.left-cell,.right-cell{width:auto}.left-cell{border-bottom:0;padding-bottom:6px}.right-cell{padding-top:6px} }
-</style></head><body class="initial-mode"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
+
+/* Dark theme */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --text-color:#e5e7eb;
+  --background-color:#0f1115;
+  --surface:#171a21;
+  --muted-color:#9ca3af;
+  --border-color:#303642;
+  --header-bg:#20242d;
+  --left-bg:#1c2028;
+  --button-color:#4f76c7;
+  --button-hover:#6388d6;
+  --accent-soft:#26375d;
+}
+html[data-theme="dark"] body{background:var(--background-color);color:var(--text-color)}
+html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}
+html[data-theme="dark"] .site-nav a{color:#cbd5e1}
+html[data-theme="dark"] .site-nav a:hover{background:#242a34}
+html[data-theme="dark"] .site-nav a.active{background:#29344a;border-color:#46546d;color:#dbeafe}
+html[data-theme="dark"] .mode-switch button.active{background:#3d63b1;box-shadow:0 0 0 2px var(--accent-soft)}
+html[data-theme="dark"] select{color-scheme:dark}
+
+/* Theme toggle */
+.site-header{position:relative}
+.theme-toggle{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;padding:0;border:0;border-radius:8px;
+  background:transparent;color:inherit;display:flex;align-items:center;justify-content:center;
+  font:inherit;font-size:19px;line-height:1;cursor:pointer;box-shadow:none;opacity:.82;
+}
+.theme-toggle:hover{background:rgba(127,127,127,.12);opacity:1}
+.theme-toggle .theme-sun,.theme-toggle .theme-moon{display:none}
+html[data-theme="dark"] .theme-toggle .theme-sun{display:inline}
+html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
+@media(max-width:760px){.theme-toggle{right:8px;top:8px;transform:none;width:30px;height:30px}}
+</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head><body class="initial-mode"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
 <a href="anamnese.html" data-page="anamnese">Anamnese</a>
 <a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
-</nav></div></header><main>
+</nav></div><button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark theme" title="Dark theme"><span class="theme-sun" aria-hidden="true">☀</span><span class="theme-moon" aria-hidden="true">☾</span></button></header><main>
 
         <section class="procedure">
           <h2>Computertomographie (CT) des Thorax mit Kontrastmittel</h2>
@@ -1582,4 +1618,4 @@
   // default
   setMode("full-mode");</script>
 <script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='ablaeufe'));</script>
-</body></html>
+<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script></body></html>

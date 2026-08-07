@@ -31,12 +31,52 @@
     .case-tools select { min-width:280px; max-width:100%; padding:8px 34px 8px 10px; border:1px solid var(--border-color); border-radius:8px; background:var(--surface); color:var(--text-color); font:inherit; }
     .cases h1{display:none}.cases h2{margin:24px 0 10px;padding:14px 18px;border:1px solid var(--border-color);border-radius:12px 12px 0 0;background:var(--header-bg);color:var(--text-color);font-size:23px}.case-card{margin-bottom:28px;padding:2px 22px 22px;border:1px solid var(--border-color);border-top:0;border-radius:0 0 12px 12px;background:var(--surface)}
     .case-card h3{margin:20px 0 7px;padding-bottom:5px;border-bottom:1px solid var(--border-color);font-size:18px;color:#1c438f}.case-card p{margin:8px 0}.case-card ul{margin:7px 0 7px 22px;padding:0}.case-card li{margin:6px 0}.case-card strong{color:#29354b}
-</style></head><body><header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav">
+
+/* Dark theme */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --text-color:#e5e7eb;
+  --background-color:#0f1115;
+  --surface:#171a21;
+  --muted-color:#9ca3af;
+  --border-color:#303642;
+  --header-bg:#20242d;
+  --left-bg:#1c2028;
+  --button-color:#4f76c7;
+  --button-hover:#6388d6;
+  --accent-soft:#26375d;
+}
+html[data-theme="dark"] body{background:var(--background-color);color:var(--text-color)}
+html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}
+html[data-theme="dark"] .site-nav a{color:#cbd5e1}
+html[data-theme="dark"] .site-nav a:hover{background:#242a34}
+html[data-theme="dark"] .site-nav a.active{background:#29344a;border-color:#46546d;color:#dbeafe}
+html[data-theme="dark"] .mode-switch button.active{background:#3d63b1;box-shadow:0 0 0 2px var(--accent-soft)}
+html[data-theme="dark"] select{color-scheme:dark}
+
+html[data-theme="dark"] .case-tools label{color:#d1d5db}
+html[data-theme="dark"] .case-card h3{color:#8db4ff}
+html[data-theme="dark"] .case-card strong{color:#d8dee9}
+
+/* Theme toggle */
+.site-header{position:relative}
+.theme-toggle{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;padding:0;border:0;border-radius:8px;
+  background:transparent;color:inherit;display:flex;align-items:center;justify-content:center;
+  font:inherit;font-size:19px;line-height:1;cursor:pointer;box-shadow:none;opacity:.82;
+}
+.theme-toggle:hover{background:rgba(127,127,127,.12);opacity:1}
+.theme-toggle .theme-sun,.theme-toggle .theme-moon{display:none}
+html[data-theme="dark"] .theme-toggle .theme-sun{display:inline}
+html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
+@media(max-width:760px){.theme-toggle{right:8px;top:8px;transform:none;width:30px;height:30px}}
+</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head><body><header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav">
 <a data-page="home" href="index.html">Start</a>
 <a data-page="ablaeufe" href="ablaeufe.html">Abläufe</a>
 <a data-page="anamnese" href="anamnese.html">Anamnese</a>
 <a data-page="faelle" href="anamnese-faelle.html">Anamnese-Fälle</a>
-</nav></header><main><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select aria-label="Anamnese-Fall auswählen" id="caseSelect"></select></div><article class="cases"><section class="case" data-code="1A" data-title="schulterschmerzen"><h2>1A. Schulterschmerzen</h2><div class="case-card">
+</nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark theme" title="Dark theme"><span class="theme-sun" aria-hidden="true">☀</span><span class="theme-moon" aria-hidden="true">☾</span></button></header><main><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select aria-label="Anamnese-Fall auswählen" id="caseSelect"></select></div><article class="cases"><section class="case" data-code="1A" data-title="schulterschmerzen"><h2>1A. Schulterschmerzen</h2><div class="case-card">
 <p><strong>Name:</strong> A. Schneider</p>
 <p><strong>Beruf:</strong> Student/Studentin der Betriebswirtschaftslehre</p>
 <p><strong>Alter, Gewicht, Größe:</strong> 24 Jahre (Geb.: 12.03.2002); 1,72 m; 66 kg</p>
@@ -1069,4 +1109,4 @@ if(cases.length){
 caseSelect.addEventListener('change',()=>showCase(caseSelect.value));
 </script>
 <script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='faelle'));</script>
-</body></html>
+<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script></body></html>
