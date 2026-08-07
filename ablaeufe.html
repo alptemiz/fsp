@@ -79,6 +79,46 @@ html[data-theme="dark"] select{color-scheme:dark}
 html[data-theme="dark"] .theme-toggle .theme-sun{display:inline}
 html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
 @media(max-width:760px){.theme-toggle{right:8px;top:8px;transform:none;width:30px;height:30px}}
+
+
+/* Floating controls: controls are moved outside the header so they remain viewport-fixed */
+.mode-switch.floating-control{
+  position:fixed !important;
+  left:12px !important;
+  top:10px !important;
+  right:auto !important;
+  bottom:auto !important;
+  z-index:10000 !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:4px !important;
+  flex-wrap:nowrap !important;
+  padding:4px !important;
+  border:1px solid var(--border-color, #d9dee7) !important;
+  border-radius:9px !important;
+  background:var(--surface, #fff) !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12) !important;
+}
+.theme-toggle.floating-control{
+  position:fixed !important;
+  right:12px !important;
+  top:10px !important;
+  left:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  z-index:10000 !important;
+  background:var(--surface, #fff) !important;
+  border:1px solid var(--border-color, #d9dee7) !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12) !important;
+}
+html[data-theme="dark"] .floating-control{
+  background:var(--surface, #171a21) !important;
+}
+@media(max-width:760px){
+  .mode-switch.floating-control{left:8px !important;top:8px !important;}
+  .theme-toggle.floating-control{right:8px !important;top:8px !important;}
+}
+
 </style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head><body class="initial-mode"><header class="site-header"><div class="header-inner"><div class="mode-switch" aria-label="Lernmodus"><button id="btnFull">Vollmodus</button><button id="btnInitial">Initialen</button><button id="btnBlank">Blank</button></div><nav class="site-nav" aria-label="Hauptnavigation">
 <a href="index.html" data-page="home">Start</a>
 <a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
@@ -1618,4 +1658,24 @@ html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
   // default
   setMode("full-mode");</script>
 <script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='ablaeufe'));</script>
-<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script></body></html>
+<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script>
+<script>
+(function(){
+  function detachFloatingControls(){
+    var mode=document.querySelector('.mode-switch');
+    var theme=document.getElementById('themeToggle');
+    [mode,theme].forEach(function(el){
+      if(!el) return;
+      el.classList.add('floating-control');
+      if(el.parentElement!==document.body) document.body.appendChild(el);
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',detachFloatingControls);
+  }else{
+    detachFloatingControls();
+  }
+})();
+</script>
+
+</body></html>
