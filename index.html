@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FSP Trainer</title>
 <style>
 :root{--text:#1f2937;--muted:#6b7280;--bg:#f7f8fa;--surface:#fff;--border:#d9dee7;--hover:#f0f3f7}
@@ -88,22 +89,16 @@ html[data-theme="dark"] .floating-control{
 </style>
 <script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head>
 <body>
-<header class="site-header"><nav class="site-nav" aria-label="Hauptnavigation">
-<a href="index.html" data-page="home">Start</a>
-<a href="ablaeufe.html" data-page="ablaeufe">Abläufe</a>
-<a href="anamnese.html" data-page="anamnese">Anamnese</a>
-<a href="anamnese-faelle.html" data-page="faelle">Anamnese-Fälle</a>
-</nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark theme" title="Dark theme"><span class="theme-sun" aria-hidden="true">☀</span><span class="theme-moon" aria-hidden="true">☾</span></button></header>
+<header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a data-page="anamnese" href="anamnese.html">Anamnese</a><a data-page="anamnese-faelle" href="anamnese-faelle.html">Anamnese Fälle</a><a data-page="aufklaerung" href="aufklaerung.html">Aufklärung</a><a data-page="aufklaerung-ablauf" href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a data-page="aufklaerungen-faelle" href="aufklaerungen-faelle.html">Aufklärung Fälle</a><a data-page="fallvorstellung" href="fallvorstellung.html">Fallvorstellung</a><a data-page="fallvorstellung-faelle" href="fallvorstellung-faelle.html">Fallvorstellung Fälle</a><a data-page="arztbriefe-faelle" href="arztbriefe-faelle.html">Arztbrief Fälle</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun">☀</span><span aria-hidden="true" class="theme-moon">☾</span></button></header>
 <main>
 <h1>FSP Trainer</h1>
 <p class="lead">Wählen Sie den Bereich, den Sie bearbeiten möchten.</p>
-<section class="grid" aria-label="Lernbereiche">
+<section aria-label="Lernbereiche" class="grid">
 <a class="card" href="ablaeufe.html"><h2>Abläufe</h2><p>Untersuchungen und Eingriffe in patientengerechter Sprache üben.</p><span class="link">Öffnen</span></a>
 <a class="card" href="anamnese.html"><h2>Anamnese</h2><p>Die vollständige Gesprächsstruktur mit integrierten beschwerdebezogenen Fragen üben.</p><span class="link">Öffnen</span></a>
 <a class="card" href="anamnese-faelle.html"><h2>Anamnese-Fälle</h2><p>Patienteninformationen, Beschwerden und Rückfragen fallweise durcharbeiten.</p><span class="link">Öffnen</span></a>
 </section>
 </main>
-
 <script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='home'));</script>
 <script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script>
 <script>
@@ -124,6 +119,5 @@ html[data-theme="dark"] .floating-control{
   }
 })();
 </script>
-
 </body>
 </html>
