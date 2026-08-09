@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FSP Trainer</title>
+<style>
+:root{--text:#1f2937;--muted:#6b7280;--bg:#f7f8fa;--surface:#fff;--border:#d9dee7;--hover:#f0f3f7}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.site-header{display:flex;justify-content:center;padding:7px 12px;background:#fff;border-bottom:1px solid var(--border)}
+.site-nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600}
+.site-nav a:hover{background:var(--hover)}
+.site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
+main{max-width:920px;margin:0 auto;padding:72px 18px 50px}
+h1{margin:0 0 10px;text-align:center;font-size:34px;line-height:1.2}
+.lead{margin:0 auto 34px;max-width:650px;text-align:center;color:var(--muted);font-size:17px;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{display:block;padding:24px 21px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:inherit;text-decoration:none;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease}
+.card:hover{transform:translateY(-2px);border-color:#b8c2d1;box-shadow:0 7px 18px rgba(15,23,42,.07)}
+.card h2{margin:0 0 9px;font-size:21px}
+.card p{margin:0;color:var(--muted);line-height:1.5;font-size:15px}
+.card .link{display:inline-block;margin-top:17px;font-size:14px;font-weight:700;color:#315f8f}
+@media(max-width:760px){main{padding-top:42px}.grid{grid-template-columns:1fr}h1{font-size:29px}.card{padding:20px}}
+
+/* Dark theme */
+html[data-theme="dark"]{color-scheme:dark;--text:#e5e7eb;--muted:#9ca3af;--bg:#0f1115;--surface:#171a21;--border:#303642;--hover:#242a34}
+html[data-theme="dark"] .site-header{background:#12151b}
+html[data-theme="dark"] .site-nav a{color:#cbd5e1}
+html[data-theme="dark"] .site-nav a.active{background:#29344a;border-color:#46546d;color:#dbeafe}
+html[data-theme="dark"] .card:hover{border-color:#4b5563;box-shadow:0 7px 18px rgba(0,0,0,.24)}
+html[data-theme="dark"] .card .link{color:#8db4ff}
+
+/* Theme toggle */
+.site-header{position:relative}
+.theme-toggle{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;padding:0;border:0;border-radius:8px;
+  background:transparent;color:var(--text);display:flex;align-items:center;justify-content:center;
+  font:inherit;font-size:19px;line-height:1;cursor:pointer;box-shadow:none;opacity:.82;
+}
+.theme-toggle:hover{background:rgba(127,127,127,.12);opacity:1}
+.theme-toggle .theme-sun,.theme-toggle .theme-moon{display:none}
+html[data-theme="dark"] .theme-toggle .theme-sun{display:inline}
+html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
+@media(max-width:760px){.theme-toggle{right:8px;top:8px;transform:none;width:30px;height:30px}}
+
+
+/* Floating controls: controls are moved outside the header so they remain viewport-fixed */
+.mode-switch.floating-control{
+  position:fixed !important;
+  left:12px !important;
+  top:10px !important;
+  right:auto !important;
+  bottom:auto !important;
+  z-index:10000 !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:4px !important;
+  flex-wrap:nowrap !important;
+  padding:4px !important;
+  border:1px solid var(--border-color, #d9dee7) !important;
+  border-radius:9px !important;
+  background:var(--surface, #fff) !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12) !important;
+}
+.theme-toggle.floating-control{
+  position:fixed !important;
+  right:12px !important;
+  top:10px !important;
+  left:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  z-index:10000 !important;
+  background:var(--surface, #fff) !important;
+  border:1px solid var(--border-color, #d9dee7) !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12) !important;
+}
+html[data-theme="dark"] .floating-control{
+  background:var(--surface, #171a21) !important;
+}
+@media(max-width:760px){
+  .mode-switch.floating-control{left:8px !important;top:8px !important;}
+  .theme-toggle.floating-control{right:8px !important;top:8px !important;}
+}
+
+</style>
+<script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head>
+<body>
+<header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="aufklaerung-faelle.html">Aufklärung Fälle</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="fallvorstellung-faelle.html">Fallvorstellung Fälle</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun">☀</span><span aria-hidden="true" class="theme-moon">☾</span></button></header>
+<main>
+<h1>FSP Trainer</h1>
+<p class="lead">Wählen Sie den Bereich, den Sie bearbeiten möchten.</p>
+<section aria-label="Lernbereiche" class="grid">
+<a class="card" href="aufklaerung-ablauf.html"><h2>Abläufe</h2><p>Untersuchungen und Eingriffe in patientengerechter Sprache üben.</p><span class="link">Öffnen</span></a>
+<a class="card" href="anamnese.html"><h2>Anamnese</h2><p>Die vollständige Gesprächsstruktur mit integrierten beschwerdebezogenen Fragen üben.</p><span class="link">Öffnen</span></a>
+<a class="card" href="anamnese-faelle.html"><h2>Anamnese-Fälle</h2><p>Patienteninformationen, Beschwerden und Rückfragen fallweise durcharbeiten.</p><span class="link">Öffnen</span></a>
+</section>
+</main>
+<script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='home'));</script>
+<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script>
+<script>
+(function(){
+  function detachFloatingControls(){
+    var mode=document.querySelector('.mode-switch');
+    var theme=document.getElementById('themeToggle');
+    [mode,theme].forEach(function(el){
+      if(!el) return;
+      el.classList.add('floating-control');
+      if(el.parentElement!==document.body) document.body.appendChild(el);
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',detachFloatingControls);
+  }else{
+    detachFloatingControls();
+  }
+})();
+</script>
+</body>
+</html>
