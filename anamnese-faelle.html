@@ -112,7 +112,27 @@ html[data-theme="dark"] .floating-control{
   .theme-toggle.floating-control{right:8px !important;top:8px !important;}
 }
 
-</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head><body data-page="anamnese-faelle"><header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a class="active" href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="aufklaerung-faelle.html">Aufklärung Fälle</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="fallvorstellung-faelle.html">Fallvorstellung Fälle</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun">☀</span><span aria-hidden="true" class="theme-moon">☾</span></button></header><main><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select aria-label="Anamnese-Fall auswählen" id="caseSelect"></select></div><article class="cases"><section class="case" data-code="1A" data-title="schulterschmerzen"><h2>1A. Schulterschmerzen</h2><div class="case-card">
+
+.simulation-copy-tools{
+  display:flex;
+  justify-content:flex-start;
+  margin:0 0 10px;
+}
+.simulation-copy-tools button{
+  padding:7px 11px;
+  border:1px solid var(--border-color);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--text-color);
+  font:inherit;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+.simulation-copy-tools button:hover{
+  background:var(--header-bg);
+}
+</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script></head><body data-page="anamnese-faelle"><header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a class="active" href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="aufklaerung-faelle.html">Aufklärung Fälle</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="fallvorstellung-faelle.html">Fallvorstellung Fälle</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun">☀</span><span aria-hidden="true" class="theme-moon">☾</span></button></header><main><div class="simulation-copy-tools" id="simulationCopyTools"><button id="copySimulationCaseBtn" type="button">Prompt + ausgewählten Fall kopieren</button></div><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select aria-label="Anamnese-Fall auswählen" id="caseSelect"></select></div><article class="cases"><section class="case" data-code="1A" data-title="schulterschmerzen"><h2>1A. Schulterschmerzen</h2><div class="case-card">
 <p><strong>Name:</strong> A. Schneider</p>
 <p><strong>Beruf:</strong> Student/Studentin der Betriebswirtschaftslehre</p>
 <p><strong>Alter, Gewicht, Größe:</strong> 24 Jahre (Geb.: 12.03.2002); 1,72 m; 66 kg</p>
@@ -220,4 +240,108 @@ caseSelect.addEventListener('change',()=>showCase(caseSelect.value));
   }
 })();
 </script>
-</body></html>
+<script>
+// ANAMNESE_SIMULATION_COPY_HANDLER
+(function() {
+  const simulationPrompt = 'Ich gebe Ihnen gleich einen medizinischen Fall für ein Anamnesegespräch vor. Übernehmen Sie anschließend die Rolle der Patientin bzw. des Patienten entsprechend diesem Fall.\nAntworten Sie ausschließlich aus Patientensicht. Geben Sie nur Informationen preis, nach denen ich frage oder die sich im Gespräch auf natürliche Weise ergeben.\nVerwenden Sie alltagssprachliche Formulierungen und vermeiden Sie medizinische Fachbegriffe, soweit eine Patientin bzw. ein Patient diese nicht selbst üblicherweise verwenden würde.\nAntworten Sie realistisch und nicht unnötig ausführlich. Nennen Sie nicht von sich aus mehrere Fallinformationen auf einmal, wenn nur nach einem einzelnen Punkt gefragt wurde.\nWenn im Fall Patientenfragen angegeben sind, können Sie diese an passenden Stellen im Gespräch stellen. Stellen Sie jedoch nicht mehrere Fragen auf einmal und fragen Sie nichts, was bereits verständlich besprochen wurde.\nBleiben Sie während des gesamten Gesprächs konsequent in der Patientenrolle. Bewerten oder korrigieren Sie meine Gesprächsführung nicht während der Simulation.\nBeginnen Sie das Gespräch nicht selbst, sondern warten Sie auf meine erste Frage.';
+
+  function cleanText(text) {
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  function caseToMarkdown(section) {
+    const lines = [];
+
+    const title = section.querySelector(':scope > h2');
+    if (title) lines.push('# ' + cleanText(title.textContent), '');
+
+    const card = section.querySelector(':scope > .case-card');
+    if (!card) return lines.join('\n').trim();
+
+    Array.from(card.children).forEach(el => {
+      if (el.tagName === 'P') {
+        const strong = el.querySelector(':scope > strong');
+        if (strong) {
+          const label = cleanText(strong.textContent).replace(/:$/, '');
+          const full = cleanText(el.textContent);
+          const value = full.slice(cleanText(strong.textContent).length).trim();
+          lines.push('- **' + label + ':** ' + value);
+        } else {
+          const text = cleanText(el.textContent);
+          if (text) lines.push(text);
+        }
+      }
+
+      if (el.tagName === 'H3') {
+        lines.push('', '## ' + cleanText(el.textContent), '');
+      }
+
+      if (el.tagName === 'UL') {
+        Array.from(el.children).forEach(li => {
+          if (li.tagName !== 'LI') return;
+          const text = cleanText(li.textContent);
+          if (text) lines.push('- ' + text);
+        });
+      }
+
+      if (el.tagName === 'TABLE') {
+        const rows = Array.from(el.querySelectorAll('tr'));
+        rows.forEach((tr, index) => {
+          const cells = Array.from(tr.children).map(cell => cleanText(cell.textContent));
+          if (!cells.length) return;
+          lines.push('| ' + cells.join(' | ') + ' |');
+          if (index === 0) lines.push('| ' + cells.map(() => '---').join(' | ') + ' |');
+        });
+      }
+    });
+
+    return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function getActiveCase() {
+    const cases = Array.from(document.querySelectorAll('.cases .case'));
+
+    return cases.find(el => el.classList.contains('active')) ||
+           cases.find(el => getComputedStyle(el).display !== 'none') ||
+           cases[0] ||
+           null;
+  }
+
+  async function copySimulationCase() {
+    const activeCase = getActiveCase();
+    if (!activeCase) return;
+
+    const caseMarkdown = caseToMarkdown(activeCase);
+    const fullText = simulationPrompt + '\n\n***\n\n' + caseMarkdown;
+    const btn = document.getElementById('copySimulationCaseBtn');
+
+    try {
+      await navigator.clipboard.writeText(fullText);
+    } catch (err) {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      textarea.style.top = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+
+    if (btn) {
+      const previous = btn.textContent;
+      btn.textContent = 'Kopiert';
+      window.setTimeout(() => {
+        btn.textContent = previous;
+      }, 1200);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('copySimulationCaseBtn');
+    if (btn) btn.addEventListener('click', copySimulationCase);
+  });
+})();
+</script></body></html>
