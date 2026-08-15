@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <title>Fallvorstellung-Fälle | FSP Trainer</title>
-<style>:root{--text:#1f2937;--bg:#f7f8fa;--surface:#fff;--muted:#6b7280;--border:#d9dee7;--header:#eef1f5;--accent:#315fbd;--soft:#f3f6fb}
+<style>:root{--text:#1f2937;--bg:#f7f8fa;--surface:#fff;--muted:#6b7280;--border:#d9dee7;--header:#eef1f5;--accent:#315fbd;--soft:#f3f6fb;--patient-female:#d00000;--patient-male:#005fcc}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55}
 .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
@@ -49,6 +49,13 @@ html:not([data-theme="dark"]) .theme-toggle .moon{display:inline}
 .blank-mode .learn-item,.blank-mode .learn-item *{color:transparent!important}
 .word{display:inline-block;white-space:pre}
 .first-letter,.punctuation{color:var(--text)}
+.patient-female .first-letter,.patient-female .hidden-part,.patient-female .punctuation{color:var(--patient-female)}
+.patient-male .first-letter,.patient-male .hidden-part,.patient-male .punctuation{color:var(--patient-male)}
+.word.patient-female,.word.patient-male{font-weight:700}
+.word.age-number{font-weight:400}
+.initial-mode .learn-item .word.patient-female .hidden-part,.initial-mode .learn-item .word.patient-male .hidden-part{color:var(--surface)}
+.initial-mode .learn-item .word.patient-female:hover .hidden-part{color:var(--patient-female)}
+.initial-mode .learn-item .word.patient-male:hover .hidden-part{color:var(--patient-male)}
 
 /* Floating learning-mode control, passend zur Aufklärungsseite */
 .mode-switch.floating-control{position:fixed!important;left:12px!important;top:10px!important;right:auto!important;bottom:auto!important;z-index:10000!important;display:flex!important;align-items:center!important;gap:4px!important;flex-wrap:nowrap!important;margin:0!important;padding:4px!important;border:1px solid var(--border)!important;border-radius:9px!important;background:var(--surface)!important;box-shadow:0 2px 10px rgba(0,0,0,.12)!important}
@@ -70,7 +77,7 @@ body.all-comparison-mode .comparison-select-control.floating-control{display:fle
 .simulation-copy-tools button{padding:7px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .simulation-copy-tools button:hover{background:var(--header)}
 
-html[data-theme="dark"]{color-scheme:dark;--text:#e5e7eb;--bg:#0f1115;--surface:#171a21;--muted:#9ca3af;--border:#303642;--header:#20242d;--accent:#4f76c7;--soft:#151920}
+html[data-theme="dark"]{color-scheme:dark;--text:#e5e7eb;--bg:#0f1115;--surface:#171a21;--muted:#9ca3af;--border:#303642;--header:#20242d;--accent:#4f76c7;--soft:#151920;--patient-female:#ff5c5c;--patient-male:#4da3ff}
 html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}
 html[data-theme="dark"] .site-nav a{color:#cbd5e1}
 html[data-theme="dark"] .site-nav a:hover{background:#242a34}
@@ -6688,7 +6695,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 </div>
 <div class="case-col case-col-right">
 <ul>
-<li class="learn-item"><strong>Es handelt sich um</strong> Herrn Karl Peters, einen vierundzwanzig-jährigen Patienten mit einer frontalen Riss-Quetsch-Wunde nach einem Sturz.</li>
+<li class="learn-item"><strong>Es handelt sich um</strong> Herrn Karl Peters, einen vierundzwanzig-jährigen Patienten mit einer Kopfplatzwunde nach einem Sturz.</li>
 </ul>
 </div>
 </div>
@@ -6720,7 +6727,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <ul>
 <li class="learn-item"><strong>Zunächst berichtete der Patient</strong>, bei etwa zehn Kilometer pro Stunde mit dem Skateboard gestürzt zu sein, nachdem er aufgrund von Schwindel beziehungsweise Standunsicherheit die Kontrolle über das Board verloren habe.</li>
 <li class="learn-item">Er sei mit der rechten Kopfseite gegen ein Hindernis geprallt.</li>
-<li class="learn-item"><strong>Dabei habe er</strong> eine blutende frontale Riss-Quetsch-Wunde erlitten; bei Vorstellung hätten zudem Cephalgien bestanden.</li>
+<li class="learn-item"><strong>Dabei habe er</strong> eine blutende rechtsfrontale Platzwunde erlitten; bei Vorstellung hätten zudem Cephalgien bestanden.</li>
 </ul>
 </div>
 </div>
@@ -6827,7 +6834,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <div class="case-col case-col-right">
 <ul>
 <li class="learn-item"><strong>Bei der körperlichen Untersuchung zeigten sich</strong> kardial, pulmonal und abdominal sowie an den Extremitäten <strong>keine Auffälligkeiten.</strong></li>
-<li class="learn-item"><strong>Rechts frontal zeigten sich</strong> eine Riss-Quetsch-Wunde, ein lokaler Druckschmerz und ein Hämatom.</li>
+<li class="learn-item"><strong>Rechts frontal zeigten sich</strong> eine Platzwunde, ein lokaler Druckschmerz und ein Hämatom.</li>
 </ul>
 </div>
 </div>
@@ -6940,7 +6947,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 </div>
 <div class="case-col case-col-right">
 <ul>
-<li class="learn-item"><strong>Es handelt sich um</strong> Herrn Karl Peters, einen achtundsechzig-jährigen Patienten mit einer frontalen Riss-Quetsch-Wunde nach einem Sturz.</li>
+<li class="learn-item"><strong>Es handelt sich um</strong> Herrn Karl Peters, einen achtundsechzig-jährigen Patienten mit einer Kopfplatzwunde nach einem Sturz.</li>
 </ul>
 </div>
 </div>
@@ -6972,7 +6979,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <ul>
 <li class="learn-item"><strong>Zunächst berichtete der Patient</strong>, nachts auf dem Weg zur Toilette in seiner Wohnung gestürzt zu sein, vermutlich nachdem er aufgrund von Schwindel beziehungsweise Standunsicherheit gestolpert sei.</li>
 <li class="learn-item">Er sei mit der rechten Kopfseite gegen den Türrahmen geprallt.</li>
-<li class="learn-item"><strong>Dabei habe er</strong> eine blutende frontale Riss-Quetsch-Wunde erlitten; bei Vorstellung hätten zudem Cephalgien bestanden.</li>
+<li class="learn-item"><strong>Dabei habe er</strong> eine blutende rechtsfrontale Platzwunde erlitten; bei Vorstellung hätten zudem Cephalgien bestanden.</li>
 </ul>
 </div>
 </div>
@@ -7093,7 +7100,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <div class="case-col case-col-right">
 <ul>
 <li class="learn-item"><strong>Bei der körperlichen Untersuchung zeigten sich</strong> kardial, pulmonal und abdominal sowie an den Extremitäten <strong>keine Auffälligkeiten.</strong></li>
-<li class="learn-item"><strong>Rechts frontal zeigten sich</strong> eine Riss-Quetsch-Wunde, ein lokaler Druckschmerz und ein Hämatom.</li>
+<li class="learn-item"><strong>Rechts frontal zeigten sich</strong> eine Platzwunde, ein lokaler Druckschmerz und ein Hämatom.</li>
 </ul>
 </div>
 </div>
@@ -8921,7 +8928,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 </div>
 <div class="case-col case-col-right">
 <ul>
-<li class="learn-item"><strong>Bei der körperlichen Untersuchung zeigten sich</strong> eine frontale Riss-Quetsch-Wunde, ein periorbitales Hämatom rechts, ein Bewegungsschmerz der Halswirbelsäule, ein linksseitiger thorakaler Druckschmerz mit abgeschwächtem Atemgeräusch, eine abdominale Abwehrspannung, eine Fehlstellung des rechten Beins sowie ein somnolenter und desorientierter Eindruck.</li>
+<li class="learn-item"><strong>Bei der körperlichen Untersuchung zeigten sich</strong> eine frontale Platzwunde, ein periorbitales Hämatom rechts, ein Bewegungsschmerz der Halswirbelsäule, ein linksseitiger thorakaler Druckschmerz mit abgeschwächtem Atemgeräusch, eine abdominale Abwehrspannung, eine Fehlstellung des rechten Beins sowie ein somnolenter und desorientierter Eindruck.</li>
 <li class="learn-item">Paresen <strong>bestanden nicht.</strong></li>
 <li class="learn-item">Die Pupillen waren beidseits isokor und prompt lichtreagibel.</li>
 </ul>
@@ -9046,6 +9053,16 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
       .join(' / ');
   }
 
+  function patientGender(section){
+    const diagnosisRow=Array.from(section.querySelectorAll(':scope > .case-card > .case-row'))
+      .find(row=>rowKey(row)==='(Verdachts-)Diagnose/Leitsymptom / Name, Alter');
+    const text=diagnosisRow?.querySelector('.case-col-right')?.textContent||'';
+    return /\bPatientin\b/.test(text)?'female':'male';
+  }
+  cases.forEach(section=>{
+    section.dataset.patientGender=patientGender(section);
+  });
+
   function formatPatientIntro(section){
     const diagnosisRow=Array.from(section.querySelectorAll(':scope > .case-card > .case-row'))
       .find(row=>rowKey(row)==='(Verdachts-)Diagnose/Leitsymptom / Name, Alter');
@@ -9160,6 +9177,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
     cases.forEach(section=>{
       const entry=document.createElement('div');
       entry.className='comparison-case-entry';
+      entry.dataset.patientGender=section.dataset.patientGender;
       const caseHeading=document.createElement('div');
       caseHeading.className='comparison-case-heading';
       caseHeading.textContent=section.querySelector(':scope > h2').textContent;
@@ -9202,8 +9220,95 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
   if(cases.length){sel.value='all';show('all');}
   if(sel) sel.addEventListener('change',()=>show(sel.value));
 
+  function genderMarkedParts(text,gender,patientIdentity){
+    const parts=text.split(/(\s+)/);
+    const words=[];
+    parts.forEach((part,partIndex)=>{
+      if(/^\s+$/.test(part)) return;
+      const token=part
+        .replace(/^[^A-Za-zÄÖÜäöüß-]+/,'')
+        .replace(/[^A-Za-zÄÖÜäöüß-]+$/,'');
+      if(token) words.push({partIndex,token,lower:token.toLocaleLowerCase('de-DE')});
+    });
+
+    const marked=new Set();
+    const femaleWords=new Set([
+      'sie','ihr','ihre','ihren','ihrem','ihrer','ihres',
+      'patientin','patientinnen','rentnerin','nichtraucherin','studentin',
+      'raucherin','büroangestellte','verkäuferin','yogalehrerin','angestellte',
+      'teilzeitbeschäftigte'
+    ]);
+    const maleWords=new Set([
+      'er','ihn','ihm','seine','seinen','seinem','seiner','seines',
+      'patient','patienten','rentner','nichtraucher','angestellter',
+      'landschaftsgärtner','büroangestellter','kfz-mechatroniker','kraftfahrer',
+      'selbstständiger','malermeister','kaufmännischer','informatiker','bauarbeiter'
+    ]);
+    const singleWords=gender==='female'?femaleWords:maleWords;
+    words.forEach(word=>{
+      if(singleWords.has(word.lower)) marked.add(word.partIndex);
+    });
+
+    const patientNouns=gender==='female'?new Set(['patientin','patientinnen']):new Set(['patient','patienten']);
+    const contextWords=gender==='female'
+      ?new Set(['die','der','eine','einer','neue','neuen','neuer','weibliche','weiblichen'])
+      :new Set(['der','dem','den','ein','einen','einem','neue','neuen','neuer','neuem','männliche','männlichen']);
+    words.forEach((word,index)=>{
+      if(!patientNouns.has(word.lower)) return;
+      marked.add(word.partIndex);
+      for(let offset=1;offset<=3&&index-offset>=0;offset+=1){
+        const previous=words[index-offset];
+        if(/jährig(?:e|en|er|em|es)?$/.test(previous.lower)){
+          continue;
+        }
+        if(contextWords.has(previous.lower)){
+          marked.add(previous.partIndex);
+        }else{
+          break;
+        }
+      }
+    });
+
+    if(patientIdentity){
+      const titles=gender==='female'?new Set(['frau']):new Set(['herr','herrn']);
+      words.forEach(word=>{
+        if(titles.has(word.lower)) marked.add(word.partIndex);
+      });
+    }
+    return {parts,marked};
+  }
+
+  function appendRenderedWord(target,text,className='',normalWeight=false){
+    const word=document.createElement('span');
+    word.className='word';
+    if(className) word.classList.add(className);
+    if(normalWeight) word.classList.add('age-number');
+    let showInitial=true;
+    for(const char of text){
+      const isAlphaNumeric=/[A-Za-zÄÖÜäöüß0-9]/.test(char);
+      const piece=document.createElement('span');
+      if(!isAlphaNumeric){
+        piece.className='punctuation';
+        piece.textContent=char;
+        showInitial=true;
+      }else if(showInitial){
+        piece.className='first-letter';
+        piece.textContent=char;
+        showInitial=false;
+      }else{
+        piece.className='hidden-part';
+        piece.textContent=char;
+      }
+      word.appendChild(piece);
+    }
+    target.appendChild(word);
+  }
+
   function renderLearnItem(li){
     if(li.querySelector(':scope > .rendered')) return;
+    const genderContainer=li.closest('.case,.comparison-case-entry');
+    const gender=genderContainer?.dataset.patientGender||'';
+    const patientIdentity=rowKey(li.closest('.case-row'))==='(Verdachts-)Diagnose/Leitsymptom / Name, Alter';
     const segments=Array.from(li.childNodes).map(node=>({
       text:node.textContent,
       bold:node.nodeType===Node.ELEMENT_NODE&&node.tagName==='STRONG',
@@ -9223,33 +9328,19 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
         target.className='template-strong';
         span.appendChild(target);
       }
-      const parts=segment.text.split(/(\s+)/);
-      parts.forEach(part=>{
+      const {parts,marked}=genderMarkedParts(segment.text,gender,patientIdentity);
+      parts.forEach((part,partIndex)=>{
         if(/^\s+$/.test(part)){
           target.appendChild(document.createTextNode(part));
           return;
         }
-        const word=document.createElement('span');
-        word.className='word';
-        let showInitial=true;
-        for(const char of part){
-          const isAlphaNumeric=/[A-Za-zÄÖÜäöüß0-9]/.test(char);
-          const piece=document.createElement('span');
-          if(!isAlphaNumeric){
-            piece.className='punctuation';
-            piece.textContent=char;
-            showInitial=true;
-          }else if(showInitial){
-            piece.className='first-letter';
-            piece.textContent=char;
-            showInitial=false;
-          }else{
-            piece.className='hidden-part';
-            piece.textContent=char;
-          }
-          word.appendChild(piece);
+        const ageMatch=part.match(/^(.+?)(-?jährig(?:e|en|er|em|es)?)([^A-Za-zÄÖÜäöüß-]*)$/i);
+        if(ageMatch&&gender){
+          appendRenderedWord(target,ageMatch[1],'',true);
+          appendRenderedWord(target,ageMatch[2]+ageMatch[3],'patient-'+gender);
+          return;
         }
-        target.appendChild(word);
+        appendRenderedWord(target,part,marked.has(partIndex)?'patient-'+gender:'');
       });
     });
     li.appendChild(span);
