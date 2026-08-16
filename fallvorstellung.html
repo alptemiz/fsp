@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Fallvorstellung-Fälle | FSP Trainer</title>
 <style>:root{--text:#1f2937;--bg:#f7f8fa;--surface:#fff;--muted:#6b7280;--border:#d9dee7;--header:#eef1f5;--accent:#315fbd;--soft:#f3f6fb;--patient-female:#d00000;--patient-male:#005fcc}
 *{box-sizing:border-box}
@@ -100,7 +101,6 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
   .case-col{padding:11px 14px}
 }</style>
 <script>try{if(localStorage.getItem('fsp-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
-
 <style id="diagnosis-grammar-note-style">
 .diagnosis-grammar-note{max-width:1180px;margin:0 auto 14px;padding:12px 14px;border:1px solid rgba(127,127,127,.28);border-radius:10px;font-size:.86rem;line-height:1.3;background:rgba(127,127,127,.06)}
 .diagnosis-grammar-note .grammar-caption{font-weight:700;font-size:.95rem;margin-bottom:8px}
@@ -8287,7 +8287,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 </div>
 <div class="case-col case-col-right">
 <ul>
-<li class="learn-item"><strong>Es handelt sich um</strong> Frau Maria Fischer, eine achtundsiebzig-jährige Patientin mit dislozierter rechtsseitiger Oberschenkelhalsfraktur nach Sturz.</li>
+<li class="learn-item"><strong>Es handelt sich um</strong> Frau Maria Fischer, eine achtundsiebzig-jährige Patientin mit dislozierter rechtsseitiger Femurhalsfraktur nach Sturz.</li>
 </ul>
 </div>
 </div>
@@ -8490,7 +8490,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <div class="case-col case-col-right">
 <ul>
 <li class="learn-item"><strong>Im bisherigen stationären Verlauf zeigte sich Folgendes:</strong></li>
-<li class="learn-item">Die Patientin wurde nach Sicherung der dislozierten Oberschenkelhalsfraktur zur operativen Versorgung aufgenommen.</li>
+<li class="learn-item">Die Patientin wurde nach Sicherung der dislozierten Femurhalsfraktur zur operativen Versorgung aufgenommen.</li>
 <li class="learn-item">Aktuell ist sie hämodynamisch stabil und schmerzadaptiert gelagert.</li>
 </ul>
 </div>
@@ -8509,7 +8509,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <div class="case-col case-col-right">
 <ul>
 <li class="learn-item"><strong>Als weiteres Vorgehen ist Folgendes vorgesehen:</strong></li>
-<li class="learn-item"><strong>Zunächst</strong> ist die operative Versorgung der dislozierten Oberschenkelhalsfraktur <strong>vorgesehen.</strong></li>
+<li class="learn-item"><strong>Zunächst</strong> ist die operative Versorgung der dislozierten Femurhalsfraktur <strong>vorgesehen.</strong></li>
 <li class="learn-item">Je nach intraoperativem Befund <strong>kommt</strong> eine Endoprothese <strong>infrage.</strong></li>
 <li class="learn-item">Präoperativ sind eine internistische Mitbeurteilung und eine Thromboseprophylaxe <strong>vorgesehen.</strong></li>
 <li class="learn-item">Postoperativ sind Mobilisation und geriatrische Frührehabilitation <strong>vorgesehen.</strong></li>
@@ -9242,6 +9242,24 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
               </tbody>
             </table>
           </div>
+        </div>`;
+      comparisonSection.appendChild(note);
+    }
+    if(groupIndex===2){
+      const note=document.createElement('div');
+      note.className='diagnosis-grammar-note';
+      note.innerHTML=`
+        <div class="grammar-caption">Kurzhilfe zum Hergang bei der Aufnahme</div>
+        <div class="grammar-box">
+          <table>
+            <thead><tr><th style="width:22%">Form</th><th>Standardform</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Aktiv</strong><br>Selbstvorstellung</td><td style="text-align:left"><strong>Der Patient stellte sich</strong> ... <strong>in unserer Notaufnahme vor.</strong></td></tr>
+              <tr><td><strong>Aktiv</strong><br>Ambulanz</td><td style="text-align:left"><strong>Der Patient stellte sich</strong> ... <strong>in unserer</strong> Ambulanz <strong>vor.</strong></td></tr>
+              <tr><td><strong>Passiv</strong><br>Rettungsdienst</td><td style="text-align:left"><strong>Der Patient wurde</strong> durch den Rettungsdienst <strong>in unserer Notaufnahme vorgestellt.</strong></td></tr>
+              <tr><td><strong>Passiv</strong><br>elektive Aufnahme</td><td style="text-align:left"><strong>Der Patient wurde</strong> elektiv stationär <strong>aufgenommen.</strong></td></tr>
+            </tbody>
+          </table>
         </div>`;
       comparisonSection.appendChild(note);
     }
