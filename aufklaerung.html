@@ -186,7 +186,78 @@ html[data-theme="dark"] .comparison-case-heading{color:#8db4ff}
  function show(v){cases.forEach(x=>x.classList.toggle('active',x.id===v));allView.classList.toggle('active',v==='all');document.body.classList.toggle('all-comparison-mode',v==='all')}
  comparisonSelect.value='g0';showComparison('g0');comparisonSelect.addEventListener('change',()=>showComparison(comparisonSelect.value));
  sel.addEventListener('change',()=>show(sel.value));sel.value='all';show('all');
- function renderItem(li){const t=li.querySelector('template');if(!t||li.querySelector('.rendered'))return;const text=t.content.textContent;const span=document.createElement('span');span.className='rendered';const parts=text.split(/(\s+)/);parts.forEach(part=>{if(/^\s+$/.test(part)){span.appendChild(document.createTextNode(part));return;}const m=part.match(/^([^A-Za-zÄÖÜäöüß0-9]*)([A-Za-zÄÖÜäöüß0-9])(.*)$/);if(!m){const p=document.createElement('span');p.className='punctuation';p.textContent=part;span.appendChild(p);return;}if(m[1]){const p=document.createElement('span');p.className='punctuation';p.textContent=m[1];span.appendChild(p)}const w=document.createElement('span');w.className='word';const f=document.createElement('span');f.className='first-letter';f.textContent=m[2];const h=document.createElement('span');h.className='hidden-part';h.textContent=m[3];w.append(f,h);span.appendChild(w)});const nested=Array.from(li.children).find(el=>el.tagName==='UL');if(nested){li.insertBefore(span,nested)}else{li.appendChild(span)}}
+ const repeatedWholeLines=new Set([
+  'Wenn etwas unklar ist, können Sie mich jederzeit unterbrechen.',
+  'Ist das für Sie in Ordnung?',
+  'Das wäre alles zum Ablauf.',
+  'Als Nächstes möchte ich noch auf einige weitere wichtige Punkte eingehen.',
+  'Das berücksichtigen wir bei der Planung und Durchführung.',
+  'Ich weiß, dass diese Risiken beunruhigend klingen können.',
+  'Das bedeutet jedoch nicht, dass sie bei Ihnen auftreten werden.',
+  'Wir sind gut vorbereitet, um im Bedarfsfall schnell zu reagieren.',
+  'Das wäre soweit alles. Haben Sie noch Fragen?',
+  'Dann gebe ich Ihnen jetzt den Aufklärungsbogen zum Durchlesen. Wenn alles verständlich ist, unterschreiben Sie bitte hier.',
+  'Das hängt vom Verlauf ab. Wenn alles unauffällig ist, können Sie normalerweise nach wenigen Tagen nach Hause.',
+  'In der ersten Zeit sollten Sie sich körperlich schonen. Danach können Sie die Belastung schrittweise wieder steigern.',
+  'Ja. Wenn Sie nach der Operation Schmerzen haben, bekommen Sie entsprechende Schmerzmittel.',
+  'Wenn die Wunde unauffällig ist, ist Duschen normalerweise nach ein bis zwei Tagen möglich.',
+  'Das kann ich verstehen. Wir führen diesen Eingriff regelmäßig durch und überwachen Sie während und nach der Operation eng.'
+ ]);
+ function collectBoldRanges(text){
+  const ranges=[];
+  const add=(start,end)=>{if(start>=0&&end>start)ranges.push([start,end])};
+  const start=phrase=>{if(text.startsWith(phrase))add(0,phrase.length)};
+  const end=phrase=>{if(text.endsWith(phrase))add(text.length-phrase.length,text.length)};
+  const part=phrase=>{const index=text.indexOf(phrase);if(index>=0)add(index,index+phrase.length)};
+  if(repeatedWholeLines.has(text))add(0,text.length);
+  start('Guten Tag. Mein Name ist Temiz. Ich bin');
+  if(/^Ich möchte heute mit Ihnen über .+ sprechen\.$/.test(text)){start('Ich möchte heute mit Ihnen über');end('sprechen.')}
+  if(/^Ich erkläre Ihnen, warum .+ notwendig ist, wie .+ abläuft, welche Risiken bestehen und was Sie danach beachten müssen\.$/.test(text)){
+   start('Ich erkläre Ihnen, warum');
+   part('notwendig ist, wie');
+   end('abläuft, welche Risiken bestehen und was Sie danach beachten müssen.');
+  }
+  if(text.startsWith('Wie Sie bereits wissen,'))start('Wie Sie bereits wissen,');
+  if(text.startsWith('Deshalb empfehlen wir Ihnen'))start('Deshalb empfehlen wir Ihnen');
+  if(text.startsWith('Der Eingriff dauert ungefähr'))start('Der Eingriff dauert ungefähr');
+  if(/^Nun möchte ich den Ablauf .+ erklären\.$/.test(text)){start('Nun möchte ich den Ablauf');end('erklären.')}
+  const connector=text.match(/^(Zunächst|Danach|Anschließend|Zum Schluss|Bei Bedarf|Falls nötig|Außerdem)\b/);
+  if(connector)add(0,connector[0].length);
+  if(/^Wie bei .+ gibt es allgemeine Risiken\.$/.test(text)){start('Wie bei');end('gibt es allgemeine Risiken.')}
+  if(/^Es kann zu .+ kommen\.$/.test(text)){start('Es kann zu');end('kommen.')}
+  if(/ können verletzt werden\.$/.test(text))end('können verletzt werden.');
+  if(/ können auftreten\.$/.test(text))end('können auftreten.');
+  if(text.startsWith('Darüber hinaus gibt es spezielle Risiken bei'))start('Darüber hinaus gibt es spezielle Risiken bei');
+  if(text.startsWith('Das betrifft etwa')){start('Das betrifft etwa');if(text.endsWith('Patienten.'))end('Patienten.')}
+  if(/^Vor .+ sollten Sie Folgendes beachten:$/.test(text))add(0,text.length);
+  if(/^Nach .+ ist Folgendes wichtig:$/.test(text))add(0,text.length);
+  if(/^Sind Sie mit .+ einverstanden\?$/.test(text)){start('Sind Sie mit');end('einverstanden?')}
+  ranges.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+  return ranges.reduce((merged,current)=>{const last=merged[merged.length-1];if(last&&current[0]<=last[1])last[1]=Math.max(last[1],current[1]);else merged.push(current.slice());return merged},[]);
+ }
+ function appendInitialAwareText(target,text){
+  text.split(/(\s+)/).forEach(part=>{
+   if(/^\s+$/.test(part)){target.appendChild(document.createTextNode(part));return}
+   const m=part.match(/^([^A-Za-zÄÖÜäöüß0-9]*)([A-Za-zÄÖÜäöüß0-9])(.*)$/);
+   if(!m){const punctuation=document.createElement('span');punctuation.className='punctuation';punctuation.textContent=part;target.appendChild(punctuation);return}
+   if(m[1]){const punctuation=document.createElement('span');punctuation.className='punctuation';punctuation.textContent=m[1];target.appendChild(punctuation)}
+   const word=document.createElement('span');word.className='word';
+   const first=document.createElement('span');first.className='first-letter';first.textContent=m[2];
+   const hidden=document.createElement('span');hidden.className='hidden-part';hidden.textContent=m[3];
+   word.append(first,hidden);target.appendChild(word);
+  });
+ }
+ function renderItem(li){
+  const template=li.querySelector('template');if(!template||li.querySelector('.rendered'))return;
+  const text=template.content.textContent;const rendered=document.createElement('span');rendered.className='rendered';
+  const ranges=collectBoldRanges(text);let cursor=0;
+  ranges.forEach(([rangeStart,rangeEnd])=>{
+   if(cursor<rangeStart)appendInitialAwareText(rendered,text.slice(cursor,rangeStart));
+   const strong=document.createElement('strong');strong.className='repeated-pattern';appendInitialAwareText(strong,text.slice(rangeStart,rangeEnd));rendered.appendChild(strong);cursor=rangeEnd;
+  });
+  if(cursor<text.length)appendInitialAwareText(rendered,text.slice(cursor));
+  const nested=Array.from(li.children).find(el=>el.tagName==='UL');if(nested)li.insertBefore(rendered,nested);else li.appendChild(rendered);
+ }
  document.querySelectorAll('.learn-item').forEach(renderItem);
  const modes={full:'',initial:'initial-mode',blank:'blank-mode'};
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{document.body.classList.remove('initial-mode','blank-mode');if(modes[b.dataset.mode])document.body.classList.add(modes[b.dataset.mode]);document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));}));
