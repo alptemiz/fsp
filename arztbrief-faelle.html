@@ -1,41 +1,386 @@
 <!DOCTYPE html>
-
-<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Arztbriefe-Fälle | FSP Trainer</title><style>
-:root{--text:#1f2937;--bg:#f7f8fa;--surface:#fff;--muted:#6b7280;--border:#d9dee7;--header:#eef1f5;--accent:#315fbd;--accent2:#244b98}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55}
-.site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
-.site-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
-.site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}
-.site-nav a:hover{background:#eef1f5}.site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
-main{max-width:1200px;margin:18px auto;padding:0 16px 42px}
-.case-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 18px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
-.case-tools label{font-size:14px;font-weight:700}.case-tools select{min-width:300px;max-width:100%;padding:8px 34px 8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font:inherit}
-.cases h2{margin:24px 0 10px;padding:14px 18px;border:1px solid var(--border);border-radius:12px 12px 0 0;background:var(--header);font-size:23px}
-.case-card{margin-bottom:28px;padding:2px 22px 22px;border:1px solid var(--border);border-top:0;border-radius:0 0 12px 12px;background:var(--surface)}
-.case-card h3{margin:20px 0 7px;padding-bottom:5px;border-bottom:1px solid var(--border);font-size:18px;color:#1c438f}
-.case-card h4{margin:14px 0 5px;font-size:16px}
-.case-card p{margin:8px 0}.case-card ul{margin:7px 0 7px 22px;padding:0}.case-card li{margin:6px 0}
-.case-card table{width:100%;border-collapse:collapse;margin:8px 0}.case-card td,.case-card th{border:1px solid var(--border);padding:7px 9px;text-align:left;vertical-align:top}
-.theme-toggle{position:fixed;right:12px;top:10px;z-index:10000;width:34px;height:34px;padding:0;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:inherit;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:19px}
-.theme-toggle .sun,.theme-toggle .moon{display:none}html[data-theme="dark"] .theme-toggle .sun{display:inline}html:not([data-theme="dark"]) .theme-toggle .moon{display:inline}
-html[data-theme="dark"]{color-scheme:dark;--text:#e5e7eb;--bg:#0f1115;--surface:#171a21;--muted:#9ca3af;--border:#303642;--header:#20242d;--accent:#4f76c7;--accent2:#6388d6}
-html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}html[data-theme="dark"] .site-nav a{color:#cbd5e1}html[data-theme="dark"] .site-nav a:hover{background:#242a34}html[data-theme="dark"] .site-nav a.active{background:#29344a;border-color:#46546d;color:#dbeafe}html[data-theme="dark"] .case-card h3{color:#8db4ff}
-@media(max-width:760px){body{font-size:16px}.site-nav a{font-size:13px;padding:5px 7px}main{margin-top:12px;padding:0 10px 30px}.theme-toggle{right:8px;top:8px}}
-
-.case-card h3{margin-top:22px}.case-card ul{margin-top:8px}.case-card li{margin:7px 0;}
-</style><script>try{if(localStorage.getItem('fsp-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script></head>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<title>Arztbriefe-Fälle | FSP Trainer</title>
+<style>
+:root{--text:#1f2937;--bg:#f7f8fa;--surface:#fff;--muted:#6b7280;--border:#d9dee7;--header:#eef1f5;--accent:#315fbd;--soft:#f3f6fb;--patient-female:#d00000;--patient-male:#005fcc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55}
+.site-header{position:sticky;top:0;z-index:40;display:flex;justify-content:center;padding:7px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.site-nav{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}.site-nav a:hover{background:#eef1f5}.site-nav a.active{background:#e8edf7;border-color:#cbd5e1;color:#1e3a6d}
+main{max-width:1180px;margin:18px auto;padding:0 16px 42px}.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}.tools label{font-size:14px;font-weight:700}.tools select{min-width:330px;max-width:100%;padding:8px 34px 8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font:inherit}
+.case{display:none;margin-bottom:20px}.case.active{display:block}.case>h2{margin:0 0 12px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--header);font-size:22px}.case-card{overflow:hidden;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+.brief-section{padding:13px 18px;border-bottom:1px solid var(--border)}.brief-section:last-child{border-bottom:0}.brief-section h3{margin:0 0 7px;color:#1c438f;font-size:17px}.brief-section ul{margin:6px 0 0 21px;padding:0}.brief-section li{margin:6px 0}
+.comparison-view{display:none}.comparison-view.active{display:block}.comparison-section{display:none;margin-bottom:30px}.comparison-section.active{display:block}.comparison-case-entry{border-bottom:3px solid var(--bg)}.comparison-case-entry:last-child{border-bottom:0}.comparison-case-heading{padding:8px 16px;border-bottom:1px solid var(--border);background:var(--soft);font-size:16px;font-weight:700;color:#1c438f}.comparison-case-entry .brief-section{border-bottom:0}.comparison-case-entry .brief-section h3{display:none}
+.theme-toggle{position:fixed;right:12px;top:10px;z-index:10000;width:34px;height:34px;padding:0;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:inherit;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:19px}.theme-toggle .sun,.theme-toggle .moon{display:none}html[data-theme="dark"] .theme-toggle .sun{display:inline}html:not([data-theme="dark"]) .theme-toggle .moon{display:inline}
+.learn-item .rendered{display:inline}.word{display:inline-block;white-space:pre}.first-letter,.punctuation{color:var(--text)}.patient-female .first-letter,.patient-female .hidden-part,.patient-female .punctuation{color:var(--patient-female)}.patient-male .first-letter,.patient-male .hidden-part,.patient-male .punctuation{color:var(--patient-male)}.word.patient-female,.word.patient-male{font-weight:700}.word.age-number{font-weight:400}
+.initial-mode .learn-item .hidden-part{color:var(--surface)}.initial-mode .learn-item .word:hover .hidden-part{color:var(--text)}.initial-mode .learn-item .word.patient-female .hidden-part,.initial-mode .learn-item .word.patient-male .hidden-part{color:var(--surface)}.initial-mode .learn-item .word.patient-female:hover .hidden-part{color:var(--patient-female)}.initial-mode .learn-item .word.patient-male:hover .hidden-part{color:var(--patient-male)}.blank-mode .learn-item,.blank-mode .learn-item *{color:transparent!important}
+.mode-switch.floating-control{position:fixed!important;left:12px!important;top:10px!important;z-index:10000!important;display:flex!important;gap:4px!important;margin:0!important;padding:4px!important;border:1px solid var(--border)!important;border-radius:9px!important;background:var(--surface)!important;box-shadow:0 2px 10px rgba(0,0,0,.12)!important}.mode-switch.floating-control button{font:inherit;font-size:12px;line-height:1.2;padding:4px 8px;border:0;border-radius:6px;color:#fff;background:var(--accent);cursor:pointer;opacity:.78}.mode-switch.floating-control button:hover{opacity:1}.mode-switch.floating-control button.active{background:#173d91;box-shadow:0 0 0 2px rgba(49,95,189,.14);opacity:1}
+.case-select-control.floating-control,.comparison-select-control.floating-control{position:fixed!important;left:12px!important;z-index:9999!important;align-items:center!important;gap:7px!important;width:min(430px,calc(100vw - 24px))!important;margin:0!important;padding:5px 7px!important;border:1px solid var(--border)!important;border-radius:9px!important;background:var(--surface)!important;box-shadow:0 2px 10px rgba(0,0,0,.12)!important}.case-select-control.floating-control{top:48px!important;display:flex!important}.comparison-select-control.floating-control{top:90px!important;display:none!important;z-index:9998!important}body.all-comparison-mode .comparison-select-control.floating-control{display:flex!important}.case-select-control.floating-control label,.comparison-select-control.floating-control label{flex:0 0 auto;font-size:12px;font-weight:700}.case-select-control.floating-control select,.comparison-select-control.floating-control select{min-width:0!important;width:auto!important;flex:1 1 auto;padding:5px 28px 5px 8px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font:inherit;font-size:12px}
+html[data-theme="dark"]{color-scheme:dark;--text:#e5e7eb;--bg:#0f1115;--surface:#171a21;--muted:#9ca3af;--border:#303642;--header:#20242d;--accent:#4f76c7;--soft:#151920;--patient-female:#ff5c5c;--patient-male:#4da3ff}html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}html[data-theme="dark"] .site-nav a{color:#cbd5e1}html[data-theme="dark"] .site-nav a:hover{background:#242a34}html[data-theme="dark"] .site-nav a.active{background:#29344a;border-color:#46546d;color:#dbeafe}html[data-theme="dark"] .brief-section h3,html[data-theme="dark"] .comparison-case-heading{color:#8db4ff}
+@media(max-width:760px){body{font-size:16px}.site-nav a{font-size:13px;padding:5px 7px}main{padding:0 10px 30px}.theme-toggle{right:8px;top:8px}.mode-switch.floating-control{left:8px!important;top:8px!important}.case-select-control.floating-control{left:8px!important;top:46px!important;width:calc(100vw - 16px)!important}.comparison-select-control.floating-control{left:8px!important;top:88px!important;width:calc(100vw - 16px)!important}.brief-section{padding:11px 14px}}
+</style>
+<script>try{if(localStorage.getItem('fsp-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+</head>
 <body data-page="arztbriefe-faelle">
 <header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a class="active" href="arztbrief-faelle.html">Arztbrief Fälle</a></nav></header>
 <button aria-label="Theme" class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">☾</span></button>
-<main><div class="case-tools"><label for="caseSelect">Fall auswählen:</label><select id="caseSelect"></select></div><article class="cases"><section class="case"><h2>1. Covid-19</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Herrn Mayer, 188 cm groß bei einem Gewicht von 91 kg, der sich aufgrund seit gestern Abend bestehender, plötzlich aufgetretener Fatigue und produktiver Tussis vorstellte.</li><li>Zunächst beschrieb Herr Mayer eine Progredienz der Symptomatik seit dem Vorabend, begleitet von einem allgemeinen Krankheitsgefühl, das er als erkältungsähnlich charakterisierte.</li><li>Fieber, Gliederschmerzen oder Hyperhidrose wurden verneint.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Darüber hinaus habe Herr Mayer zur weiteren Abklärung zunächst einen COVID-Schnelltest zu Hause durchgeführt, der positiv gewesen sei.</li><li>Allerdings sei ein anschließend durchgeführter Test in einem offiziellen Testzentrum negativ ausgefallen.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der weiteren Anamnese ergab sich ein Eisenmangel sowie eine bekannte Erdnussallergie und saisonale allergische Rhinitis (Heuschnupfen).</li><li>Bezüglich der Medikation nehme er derzeit täglich Eisen ein, Ibuprofen bei Bedarf sowie Vitaminpräparate.</li><li>Weitere relevante Vorerkrankungen wurden verneint.</li></ul><h3>Noxen</h3><ul><li>Ferner gibt Herr Mayer an, Nichtraucher zu sein.</li><li>Hinsichtlich der Noxen trinke er gelegentlich ein Glas Bier oder Whisky.</li><li>Drogenkonsum wurde verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei der Patient Bankkaufmann bei der Sparkasse, verheiratet und habe drei gesunde Kinder.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestehe ein Myokardinfarkt beim Vater im Alter von 52 Jahren.</li></ul><h3>Reiseanamnese</h3><ul><li>Reiseanamnestisch wurden Reisen in den letzten Monaten verneint; jedoch berichtete er über eine Reise nach Italien im letzten Jahr.</li></ul></div></section><section class="case"><h2>2. Migräne</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Frau Mayer, eine 37-jährige Patientin, 167 cm groß bei einem Gewicht von 71 kg, die sich aufgrund seit heute bestehender, rezidivierender, temporaler, pulsierender Cephalgie im Temporalbereich rechts vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Zunächst beschrieb Frau Mayer eine Progredienz der Symptomatik seit dem Morgen, begleitet von Photophobie, Phonophobie, Übelkeit, Insomnie und Hemianopsie.</li><li>Eine teilweise Besserung der Beschwerden sei durch die Vermeidung greller Lichter und lauter Geräusche erzielt worden.</li><li>Hingegen wurde eine Verschlechterung der Beschwerden nach dem Verzehr von Schokolade und Rotwein berichtet.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der weiteren Anamnese ergab sich ein bekannter Diabetes mellitus Typ I sowie eine Sectio caesarea.</li><li>Allergien seien keine bekannt.</li><li>Bezüglich der Medikation nehme sie derzeit Metformin 1000 mg sowie Aspirin 100 mg ein.</li></ul><h3>Noxen</h3><ul><li>Ferner gibt Frau Mayer an, Nichtraucherin zu sein.</li><li>Hinsichtlich der Noxen trinke sie regelmäßig ein Glas Bier pro Tag.</li><li>Drogenkonsum wurde verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei die Patientin verheiratet und habe zwei gesunde Kinder.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestehe eine Cephalgie bei der Mutter, die bisher nicht diagnostisch abgeklärt worden sei.</li></ul></div></section><section class="case"><h2>3. Depression/Fatigue</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Frau Reichert, eine 43-jährige Patientin, 171 cm groß bei einem Gewicht von 69 kg, die sich aufgrund seit einigen Monaten bestehender, plötzlich aufgetretener und zunehmender Fatigue vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Im Verlauf beschrieb Frau Reichert eine Progredienz der Symptomatik über mehrere Monate, verbunden mit Libidoverlust, was zu Problemen mit ihrem Ehemann geführt habe.</li><li>Darüber hinaus klagte sie über depressive Verstimmung, Insomnie sowie Inappetenz.</li><li>Zusätzlich wurde ein Gewichtsverlust von ca. 5 kg im Verlauf der letzten Monate berichtet.</li><li>Nach ihren Angaben habe sich die letzte endokrinologische Kontrolle unauffällig gezeigt.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>Aus der Vorgeschichte ergaben sich eine allergische Rhinitis sowie ein Zustand nach Sectio caesarea.</li><li>In Bezug auf die Medikation nehme sie derzeit ein Schlafmittel sowie Acetylsalicylsäure gegen Cephalgie bei Bedarf ein.</li></ul><h3>Noxen</h3><ul><li>Im Hinblick auf Noxen sei sie Nichtraucherin; Alkohol- und Drogenkonsum wurden verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei Frau Reichert Architektin, alleinerziehend und habe eine Tochter.</li><li>Sie berichtete außerdem über stark erhöhten beruflichen Stress.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestehen keine relevanten Erkrankungen.</li></ul></div></section><section class="case"><h2>4. Thoraxschmerzen</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Herrn Müller, 47 Jahre alt, 180 cm groß bei einem Gewicht von 80 kg, der sich aufgrund seit heute Morgen bestehender, progredienter, brennender retrosternaler Thoraxschmerzen mit Ausstrahlung in den Hals vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Anamnestisch habe Herr Müller ähnliche Beschwerden bereits früher verspürt; jedoch seien die Schmerzen seit heute Morgen deutlich stärker geworden.</li><li>Zusätzlich seien Sodbrennen und Reflux aufgetreten.</li><li>Nausea und Emesis wurden verneint.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der Vorgeschichte bestünden eine arterielle Hypertonie, ein Diabetes mellitus Typ 2, eine Eisenmangelanämie sowie eine Hyperlipidämie.</li><li>Operiert worden sei Herr Müller bislang nicht.</li><li>Allergien würden nicht vorliegen.</li><li>Bezüglich der Medikation nehme er derzeit Metformin 1-0-1, Metoprolol sowie ein Eisenpräparat 2-0-0 ein.</li></ul><h3>Noxen</h3><ul><li>Hinsichtlich der Noxen sei er Nichtraucher, konsumiere keine Drogen und trinke nur gelegentlich ein Glas Bier oder Wein.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei er verheiratet und habe zwei gesunde Kinder.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch ergaben sich keine Auffälligkeiten.</li></ul><h3>Reiseanamnese</h3><ul><li>Reiseanamnestisch wurden Aufenthalte in den letzten sechs Monaten verneint; allerdings habe er vor einem Jahr eine Reise nach Dubai unternommen.</li></ul></div></section><section class="case"><h2>5. Kolonkarzinom</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Herrn Mayer, einen 49-jährigen Patienten, 170 cm groß bei einem Gewicht von 81 kg, der sich aufgrund seit gestern Abend bestehender, kolikartiger, progredienter Abdominalschmerzen im Bereich des linken unteren Quadranten vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Seit dem Vorabend beschrieb Herr Mayer eine Progredienz der Symptomatik, einhergehend mit Inappetenz, Teerstuhl (Meläna?) sowie einem Gewichtsverlust von ca. 3 kg innerhalb von zwei Monaten.</li><li>Teilweise sei eine Regredienz der Beschwerden durch Defäkation möglich gewesen.</li><li>Darüber hinaus wurde vom Patienten über eine Exazerbation der Beschwerden bei Druck und Pressen berichtet.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der Vorgeschichte bestünden eine arterielle Hypertonie sowie ein Vorhofflimmern.</li><li>Zudem sei vor zehn Jahren eine Kreuzbandoperation durchgeführt worden.</li><li>Allergien seien keine bekannt.</li><li>Bezüglich der Medikation nehme er derzeit Bisoprolol 5 mg (1-0-0) sowie Apixaban (Eliquis) 5 mg (0-0-1) ein.</li></ul><h3>Noxen</h3><ul><li>Hinsichtlich der Noxen gibt Herr Mayer an, Nichtraucher zu sein, trinke aber gelegentlich ein Glas Wein.</li><li>Drogenkonsum wurde verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei Herr Mayer geschieden und habe drei Kinder.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestehe ein Kolonkarzinom beim Vater (Erstdiagnose mit 65 Jahren).</li></ul></div></section><section class="case"><h2>6. Bauchschmerzen</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Frau Schneider,eine 38-jährige Patientin, 165 cm groß bei einem Gewicht von 62 kg, die sich aufgrund seit gestern bestehender, plötzlich aufgetretener, intensiver Abdominalschmerzen im Bereich des rechten unteren Quadranten vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Seit dem Vorabend sei es bei Frau Schneider zu einer Progredienz der Symptomatik gekommen, verbunden mit Fieber bis 38,7 °C.</li><li>Die Schmerzintensität wurde mit 9/10 NRS angegeben.</li><li>Lediglich kurzfristig sei eine teilweise Regredienz der Beschwerden durch Ruhe und Schonung möglich gewesen.</li><li>Zudem wurde eine Exazerbation der Beschwerden bei Bewegung berichtet, wobei außerdem eine Druckdolenz des Abdomens bestand.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der Vorgeschichte ergaben sich zwei Sectio caesarea.</li><li>Weitere relevante Vorerkrankungen oder chronische Beschwerden wurden verneint.</li><li>Allergien seien keine bekannt.</li><li>Eine regelmäßige Medikation bestehe nicht.</li></ul><h3>Noxen</h3><ul><li>Bezüglich der Noxen sei die Patientin Nichtraucherin.</li><li>Alkohol- und Drogenkonsum wurden ebenfalls verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei Frau Schneider von Beruf Lehrerin, verheiratet und habe zwei Kinder.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestünden keine Hinweise auf relevante Erkrankungen.</li></ul><h3>Reiseanamnese</h3><ul><li>Reiseanamnestisch habe ein Aufenthalt in Polen vor sechs Monaten stattgefunden.</li></ul></div></section><section class="case"><h2>7. Schwindel</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Frau Bayer, eine 54-jährige Patientin, 164 cm groß bei einem Gewicht von 73 kg, die sich aufgrund seit gestern früh rezidivierend auftretender Episoden von Vertigo vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Die Symptomatik habe sich plötzlich beim Aufsetzen aus dem Liegen bzw. nach einer schnellen Kopfbewegung gezeigt.</li><li>Die erste Episode habe etwa eine Minute angedauert und sei von Nystagmus begleitet gewesen.</li><li>Eine weitere Attacke sei am Abend während sportlicher Aktivität aufgetreten, wobei der Patientin gleichzeitig übel geworden sei.</li><li>Teilweise sei eine Regredienz der Beschwerden durch Ruhe möglich gewesen.</li><li>Darüber hinaus wurde vom Patienten über eine Exazerbation der Beschwerden bei schneller Kopfbewegung berichtet.</li><li>Die vegetative Anamnese war bis auf Nausea unauffällig.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der Vorgeschichte erwähnte die Patientin eine Depression vor drei Jahren sowie eine Knieoperation nach einem Skiunfall im Vorjahr.</li><li>Emesis, Parästhesien und Synkopen wurden verneint.</li><li>Bezüglich der Medikation nehme die Patientin derzeit keine Dauermedikation ein, gelegentlich jedoch Ibuprofen bei Bedarf.</li></ul><h3>Noxen</h3><ul><li>Hinsichtlich der Noxen sei sie Nichtraucherin, trinke jedoch gelegentlich Alkohol am Wochenende.</li><li>Drogenkonsum wurde verneint.</li><li>Zudem trage sie bei bekannter Bienenstichallergie einen Adrenalin-Notfallpen mit sich.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei Frau Bayer ledig und wohne in einer Wohngemeinschaft.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestehe eine Atherosklerose bei der Mutter.</li></ul></div></section><section class="case"><h2>8. Parkinson</h2><div class="case-card"><h3>Vorstellung und Leitsymptom</h3><ul><li>Wir berichten nachfolgend über Herrn Mayer, 185 cm groß bei einem Gewicht von 92 kg, der sich aufgrund eines seit einigen Monaten bestehenden, progredienten Tremors in den Händen bei uns vorstellte.</li></ul><h3>Aktuelle Anamnese und Beschwerden</h3><ul><li>Seit mehreren Monaten habe Herr Mayer eine Progredienz der Symptomatik bemerkt, einhergehend mit einem ausgeprägten Tremor der rechten Hand, der sich insbesondere in Ruhe sowie unter Stress verstärke.</li><li>Darüber hinaus klagte er über Rigor sowie generalisierte Bradykinese, die vor allem morgens auftrete.</li><li>Bis auf eine Obstipation war die vegetative Anamnese unauffällig.</li></ul><h3>Vorgeschichte, Allergien und Medikation</h3><ul><li>In der Vorgeschichte bestünden eine arterielle Hypertonie sowie eine benigne Prostatahyperplasie.</li><li>Operative Eingriffe seien bisher nicht erfolgt.</li><li>Bezüglich der Medikation nehme er derzeit Marcumar 3 mg sowie Lisinopril 20 mg ein.</li><li>Allergien seien keine bekannt.</li></ul><h3>Noxen</h3><ul><li>Hinsichtlich der Noxen sei er Nichtraucher.</li><li>Alkohol- und Drogenkonsum wurden ebenfalls verneint.</li></ul><h3>Sozialanamnese</h3><ul><li>Sozialanamnestisch sei Herr Mayer verheiratet, habe zwei Kinder und arbeite als Busfahrer.</li><li>Der Tremor führe dabei zu beruflichen Einschränkungen.</li></ul><h3>Familienanamnese</h3><ul><li>Familienanamnestisch bestünden ein Apoplex beim Vater sowie ein Mammakarzinom bei der Mutter.</li></ul></div></section></article></main>
+<main>
+<div class="tools"><div class="case-select-control"><label for="caseSelect">Fall auswählen:</label><select id="caseSelect"></select></div><div class="mode-switch"><button class="active" data-mode="full" type="button">Vollmodus</button><button data-mode="initial" type="button">Initialen</button><button data-mode="blank" type="button">Blank</button></div></div>
+<article class="cases" id="cases"></article>
+</main>
 <script>
-const sel=document.getElementById('caseSelect'), cases=[...document.querySelectorAll('.case')];
-cases.forEach((s,i)=>{const o=document.createElement('option');o.value='c'+i;o.textContent=s.querySelector('h2').textContent;sel.appendChild(o);s.dataset.v='c'+i;});
-function show(v){cases.forEach(s=>s.hidden=s.dataset.v!==v)}
-if(cases.length){sel.value='c0';show('c0')} sel.addEventListener('change',()=>show(sel.value));
-(function(){let b=document.getElementById('themeToggle');function sync(){let d=document.documentElement.getAttribute('data-theme')==='dark';b.title=d?'Normal theme':'Dark theme'};b.onclick=()=>{let d=document.documentElement.getAttribute('data-theme')==='dark';if(d)document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('fsp-theme',d?'light':'dark');sync()};sync()})();
-document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page===document.body.dataset.page));
+const sectionDefinitions=[
+  {key:'vorstellung',label:'Vorstellung und Leitsymptom'},
+  {key:'beschwerden',label:'Aktuelle Anamnese und Beschwerden'},
+  {key:'vorerkrankungen',label:'Vorerkrankungen und operative Anamnese'},
+  {key:'allergien',label:'Allergien'},
+  {key:'medikation',label:'Medikation'},
+  {key:'noxen',label:'Noxen'},
+  {key:'sozial',label:'Sozialanamnese'},
+  {key:'familie',label:'Familienanamnese'},
+  {key:'reise',label:'Reiseanamnese'}
+];
+const casesData=[
+{title:'1A. COVID-19',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Mayer, einen 59-jährigen Patienten, 188 cm groß bei einem Körpergewicht von 91 kg, <strong>der sich wegen</strong> seit gestern Abend <strong>bestehender</strong> Fatigue und produktiver Tussis <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> gestern Abend <strong>bestehende</strong> Fatigue und produktive Tussis.','<strong>Zudem gab er an, dass die Beschwerden</strong> plötzlich <strong>aufgetreten seien.</strong>','<strong>Darüber hinaus gab er an, dass</strong> ein allgemeines Krankheitsgefühl bestehe, das er als erkältungsähnlich wahrnehme.','<strong>Außerdem gab er an, dass</strong> ein zu Hause durchgeführter COVID-19-Schnelltest positiv, ein anschließender Test in einem offiziellen Testzentrum jedoch negativ ausgefallen sei.','Fieber, Myalgien und Hyperhidrose <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> ein Eisenmangel <strong>bekannt.</strong>','<strong>Weitere relevante Vorerkrankungen seien nicht bekannt.</strong>'],
+allergien:['<strong>Es bestünden</strong> eine Erdnussallergie sowie eine saisonale allergische Rhinitis.'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> täglich ein Eisenpräparat sowie Vitaminpräparate und Ibuprofen bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','<strong>Er trinke</strong> gelegentlich ein Glas Bier oder Whisky.','Drogenkonsum <strong>wurde verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Bankkaufmann bei der Sparkasse, verheiratet und <strong>habe</strong> drei gesunde Kinder.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater im Alter von 52 Jahren einen Myokardinfarkt erlitten.'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt, im Vorjahr jedoch ein Aufenthalt in Italien <strong>erfolgt.</strong>']
+}},
+{title:'2A. Migräne',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Mayer, eine 37-jährige Patientin, 167 cm groß bei einem Körpergewicht von 71 kg, <strong>die sich wegen</strong> seit heute <strong>bestehender</strong> rezidivierender rechtsseitiger temporaler pulsierender Cephalgie <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> dem Morgen <strong>bestehende</strong> rechtsseitige temporale pulsierende Cephalgie.','<strong>Ferner klagte sie über</strong> Photophobie, Phonophobie, Nausea, Insomnie sowie Hemianopsie.','<strong>Zudem gab sie an, dass sich die Beschwerden</strong> durch die Vermeidung greller Lichter und lauter Geräusche teilweise <strong>bessern würden.</strong>','<strong>Darüber hinaus gab sie an, dass sich die Beschwerden</strong> nach dem Verzehr von Schokolade und Rotwein <strong>verstärken würden.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> ein Diabetes mellitus Typ 1 <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Sectio caesarea.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> Metformin 1000 mg sowie Acetylsalicylsäure 100 mg <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','<strong>Sie trinke</strong> regelmäßig ein Glas Bier täglich.','Drogenkonsum <strong>wurde verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> verheiratet und <strong>habe</strong> zwei gesunde Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine bislang nicht diagnostisch abgeklärte Cephalgie bei der Mutter.'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'3A. Depression und Fatigue',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Reichert, eine 43-jährige Patientin, 171 cm groß bei einem Körpergewicht von 69 kg, <strong>die sich wegen</strong> seit einigen Monaten <strong>bestehender</strong> zunehmender Fatigue <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> einigen Monaten <strong>bestehende</strong> und zunehmende Fatigue.','<strong>Zudem gab sie an, dass die Beschwerden</strong> damals plötzlich <strong>aufgetreten seien.</strong>','<strong>Ferner klagte sie über</strong> Libidoverlust mit hierdurch bedingten Problemen in der Partnerschaft, depressive Verstimmung, Insomnie sowie Inappetenz.','<strong>Darüber hinaus gab sie an, dass</strong> sie innerhalb der letzten Monate etwa 5 kg an Gewicht verloren habe.','<strong>Außerdem gab sie an, dass</strong> die letzte endokrinologische Kontrolle unauffällig ausgefallen sei.'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine allergische Rhinitis <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Sectio caesarea.'],
+allergien:['<strong>Zu Allergien lägen keine Angaben vor.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> ein Schlafmittel sowie Acetylsalicylsäure bei Cephalgie bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkohol- und Drogenkonsum <strong>wurden verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Architektin, alleinerziehend und <strong>habe</strong> eine Tochter.','Zudem bestehe eine ausgeprägte berufliche Stressbelastung.'],
+familie:['<strong>Die Familienanamnese sei unauffällig.</strong>'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'4A. Thoraxschmerzen (retrosternal)',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Müller, einen 47-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 80 kg, <strong>der sich wegen</strong> seit heute Morgen <strong>bestehender</strong> progredienter brennender retrosternaler Thoraxschmerzen mit Ausstrahlung in den Hals <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> heute Morgen <strong>bestehende</strong> progrediente brennende retrosternale Thoraxschmerzen.','<strong>Zudem gab er an, dass die Schmerzen</strong> in den Hals <strong>ausstrahlen würden.</strong>','<strong>Darüber hinaus gab er an, dass</strong> er früher bereits ähnliche Beschwerden gehabt habe, die aktuellen Schmerzen jedoch deutlich stärker seien.','<strong>Ferner klagte er über</strong> Pyrosis und Regurgitation.','Nausea und Emesis <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie, ein Diabetes mellitus Typ 2, eine Eisenmangelanämie sowie eine Hyperlipidämie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Metformin nach dem Schema 1-0-1, Metoprolol sowie ein Eisenpräparat nach dem Schema 2-0-0 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','<strong>Er trinke</strong> nur gelegentlich ein Glas Bier oder Wein.','Drogenkonsum <strong>wurde verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> verheiratet und <strong>habe</strong> zwei gesunde Kinder.'],
+familie:['<strong>Die Familienanamnese sei unauffällig.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten sechs Monaten kein Auslandsaufenthalt, vor einem Jahr jedoch ein Aufenthalt in Dubai <strong>erfolgt.</strong>']
+}},
+{title:'5A. Kolonkarzinom',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Mayer, einen 49-jährigen Patienten, 170 cm groß bei einem Körpergewicht von 81 kg, <strong>der sich wegen</strong> seit gestern Abend <strong>bestehender</strong> kolikartiger progredienter Schmerzen im linken Unterbauch <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> gestern Abend <strong>bestehende</strong> kolikartige progrediente Schmerzen im linken Unterbauch.','<strong>Zudem gab er an, dass sich die Beschwerden</strong> durch Defäkation teilweise <strong>bessern würden.</strong>','<strong>Darüber hinaus gab er an, dass sich die Beschwerden</strong> bei Druck und Pressen <strong>verstärken würden.</strong>','<strong>Ferner klagte er über</strong> Inappetenz, Teerstuhl beziehungsweise eine mögliche Meläna sowie einen Gewichtsverlust von etwa 3 kg innerhalb von zwei Monaten.'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie sowie ein Vorhofflimmern <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Kreuzbandoperation vor zehn Jahren.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Bisoprolol 5 mg nach dem Schema 1-0-0 sowie Apixaban 5 mg nach dem Schema 0-0-1 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','<strong>Er trinke</strong> gelegentlich ein Glas Wein.','Drogenkonsum <strong>wurde verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> geschieden und <strong>habe</strong> drei Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> ein im Alter von 65 Jahren diagnostiziertes Kolonkarzinom beim Vater.'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'6A. Bauchschmerzen (rechter Unterbauch)',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Schneider, eine 38-jährige Patientin, 165 cm groß bei einem Körpergewicht von 62 kg, <strong>die sich wegen</strong> seit gestern <strong>bestehender</strong> plötzlich aufgetretener intensiver Schmerzen im rechten Unterbauch <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> gestern <strong>bestehende</strong> intensive Schmerzen im rechten Unterbauch.','<strong>Zudem gab sie an, dass die Beschwerden</strong> plötzlich <strong>aufgetreten seien.</strong>','<strong>Ferner klagte sie über</strong> Fieber bis 38,7 °C.','<strong>Darüber hinaus gab sie an, dass</strong> die Schmerzintensität 9 von 10 auf der numerischen Ratingskala betrage.','<strong>Außerdem gab sie an, dass sich die Beschwerden</strong> durch Ruhe und Schonung nur kurzfristig bessern, bei Bewegung jedoch <strong>verstärken würden.</strong>','Zusätzlich habe eine abdominelle Druckdolenz bestanden.'],
+vorerkrankungen:['<strong>Relevante Vorerkrankungen seien nicht bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach zweimaliger Sectio caesarea.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> keine Dauermedikation <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkohol- und Drogenkonsum <strong>wurden verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Lehrerin, verheiratet und <strong>habe</strong> zwei Kinder.'],
+familie:['<strong>Die Familienanamnese sei unauffällig.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> vor sechs Monaten ein Aufenthalt in Polen <strong>erfolgt.</strong>']
+}},
+{title:'7A. Schwindel',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Bayer, eine 54-jährige Patientin, 164 cm groß bei einem Körpergewicht von 73 kg, <strong>die sich wegen</strong> seit gestern Morgen rezidivierend auftretenden Drehschwindels <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> gestern Morgen rezidivierend auftretenden Drehschwindel.','<strong>Zudem gab sie an, dass die Beschwerden</strong> insbesondere beim Aufsetzen aus dem Liegen und bei schnellen Kopfbewegungen aufträten.','<strong>Darüber hinaus gab sie an, dass</strong> die erste Episode etwa eine Minute gedauert habe und von Nystagmus begleitet gewesen sei.','<strong>Außerdem gab sie an, dass</strong> am Abend während sportlicher Aktivität eine weitere von Nausea begleitete Attacke aufgetreten sei.','<strong>Ferner gab sie an, dass sich die Beschwerden</strong> durch Ruhe teilweise bessern und bei schnellen Kopfbewegungen <strong>verstärken würden.</strong>','Emesis, Parästhesien und Synkopen <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine vor drei Jahren diagnostizierte Depression <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Knieoperation infolge eines Skiunfalls im Vorjahr.'],
+allergien:['<strong>Es bestehe eine Bienenstichallergie.</strong>','Sie führe daher einen Adrenalin-Autoinjektor mit sich.'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> Ibuprofen bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','<strong>Sie trinke</strong> am Wochenende gelegentlich Alkohol.','Drogenkonsum <strong>wurde verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> ledig und lebe in einer Wohngemeinschaft.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine Atherosklerose bei der Mutter.'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'8A. Parkinson-Syndrom',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Mayer, einen 59-jährigen Patienten, 185 cm groß bei einem Körpergewicht von 92 kg, <strong>der sich wegen</strong> eines seit einigen Monaten <strong>bestehenden</strong> progredienten Tremors beider Hände <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über einen seit</strong> einigen Monaten <strong>bestehenden</strong> zunehmenden Tremor beider Hände.','<strong>Zudem gab er an, dass</strong> der Tremor rechts stärker ausgeprägt sei und insbesondere in Ruhe sowie unter Stress auftrete.','<strong>Darüber hinaus gab er an, dass die Beschwerden</strong> seine Tätigkeit als Busfahrer beeinträchtigen würden.','<strong>Ferner klagte er über</strong> morgendlichen Rigor, generalisierte Bradykinese sowie Obstipation.'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie sowie eine benigne Prostatahyperplasie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Marcumar 3 mg sowie Lisinopril 20 mg <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','Alkohol- und Drogenkonsum <strong>wurden verneint.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Busfahrer, verheiratet und <strong>habe</strong> zwei Kinder.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater einen Apoplex erlitten.','Bei der Mutter sei ein Mammakarzinom bekannt.'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'1B. COVID-19',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Mayer, einen 55-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 70 kg, <strong>der sich wegen</strong> seit gestern <strong>bestehender</strong> Fatigue und Tussis <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> gestern <strong>bestehende</strong> Fatigue und Tussis.','<strong>Zudem gab er an, dass die Beschwerden</strong> erkältungsähnlich gewesen seien.','<strong>Darüber hinaus gab er an, dass</strong> ein SARS-CoV-2-Schnelltest positiv, der anschließende Test im Testzentrum jedoch negativ ausgefallen sei.','<strong>Außerdem gab er an, dass</strong> er dreimal gegen COVID-19 geimpft sei.','Pyrexie, Hyperhidrose und Myalgien <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine Eisenmangelanämie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Es bestehe eine Erdnussallergie.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> ein Eisenpräparat nach dem Schema 1-0-0, Ibuprofen 400 mg bei Bedarf sowie Vitaminpräparate <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Bankkaufmann, verheiratet und <strong>habe</strong> drei Kinder.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater einen Myokardinfarkt erlitten.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'2B. Migräne (linksseitige Cephalgie)',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Schmidt, eine 20-jährige Patientin, 172 cm groß bei einem Körpergewicht von 67 kg, <strong>die sich wegen</strong> seit heute Vormittag <strong>bestehender</strong> starker linksseitiger klopfender Cephalgie <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> heute Vormittag <strong>bestehende</strong> starke linksseitige klopfende Cephalgie.','<strong>Zudem gab sie an, dass</strong> sie bereits seit mehreren Jahren unter ähnlichen Kopfschmerzen leide.','<strong>Darüber hinaus gab sie an, dass die Schmerzen</strong> heute ausgeprägter seien als zuvor.','<strong>Ferner klagte sie über</strong> Photophobie sowie Nausea.','Sehstörungen und Emesis <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine Eisenmangelanämie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Es bestehe eine Nussallergie.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> ein Eisenpräparat nach dem Schema 1-0-0 sowie Ibuprofen 400 mg bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Lehrerin, ledig und lebe mit ihrer Tochter.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine Cephalgie beim Vater.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'2C. Migräne (rechtsseitige Cephalgie)',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Mayer, eine 27-jährige Patientin, 160 cm groß bei einem Körpergewicht von 60 kg, <strong>die sich wegen</strong> seit heute <strong>bestehender</strong> rezidivierender rechtsseitiger Cephalgie <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> heute <strong>bestehende</strong> rezidivierende rechtsseitige Cephalgie.','<strong>Ferner klagte sie über</strong> Photophobie, Phonophobie, Hemianopsie, Insomnie sowie Nausea.'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> ein Diabetes mellitus Typ 2 <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Sectio caesarea.'],
+allergien:['<strong>Zu Allergien lägen keine Angaben vor.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> Metformin 1000 mg nach dem Schema 1-0-0 sowie Acetylsalicylsäure 500 mg bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Architektin, verheiratet und <strong>habe</strong> keine Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine bislang unbehandelte Cephalgie bei der Mutter.','Der Vater <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'3B. Fatigue',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Reichert, eine 55-jährige Patientin, 171 cm groß bei einem Körpergewicht von 69 kg, <strong>die sich wegen</strong> seit mehreren Monaten <strong>bestehender</strong> zunehmender Fatigue <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> mehreren Monaten <strong>bestehende</strong> zunehmende Fatigue.','<strong>Zudem gab sie an, dass die Beschwerden</strong> in den letzten Wochen weiter zugenommen hätten.','<strong>Ferner klagte sie über</strong> Libidoverlust, Dysthymie, Insomnie, Anorexie sowie einen Gewichtsverlust von 5 kg.','Weitere Begleitsymptome <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine allergische Rhinitis <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Sectio caesarea.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> Acetylsalicylsäure 500 mg bei Bedarf sowie ein Schlafmittel <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Architektin, verheiratet und <strong>habe</strong> eine Tochter.'],
+familie:['<strong>Die Familienanamnese sei unauffällig.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'4B. Thoraxschmerzen (retrosternal)',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Müller, einen 55-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 70 kg, <strong>der sich wegen</strong> seit heute Morgen <strong>bestehender</strong> zunehmender retrosternaler brennender Thoraxschmerzen <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> heute Morgen <strong>bestehende</strong> zunehmende retrosternale brennende Thoraxschmerzen.','<strong>Zudem gab er an, dass die Schmerzen</strong> in den Hals <strong>ausstrahlen würden.</strong>','<strong>Darüber hinaus gab er an, dass</strong> er früher bereits ähnliche Schmerzen gehabt habe, die aktuellen Beschwerden jedoch ausgeprägter seien als zuvor.','<strong>Ferner klagte er über</strong> Pyrosis und Regurgitation.','Nausea und Emesis <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie, ein Diabetes mellitus Typ 2, eine Hyperlipidämie sowie eine Eisenmangelanämie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Metformin 1000 mg nach dem Schema 1-0-1, Metoprolol 50 mg nach dem Schema 1-0-0 sowie ein Eisenpräparat nach dem Schema 1-0-1 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> verheiratet und <strong>habe</strong> zwei Kinder.'],
+familie:['<strong>Die Familienanamnese sei unauffällig.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt, vor einem Jahr jedoch ein Aufenthalt in Dubai <strong>erfolgt.</strong>']
+}},
+{title:'4C. Thoraxschmerzen nach Sturz beim Gassigehen',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Müller, eine 76-jährige Patientin, 187 cm groß bei einem Körpergewicht von 87 kg, <strong>die sich nach</strong> einem Sturz bei einem Spaziergang mit ihrem Hund <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie, dass</strong> sie auf die rechte Körperseite gefallen sei und unmittelbar danach Thoraxschmerzen verspürt habe.','<strong>Zudem gab sie an, dass sich die Schmerzen</strong> bei der Inspiration sowie im weiteren Verlauf <strong>verstärkt hätten.</strong>','<strong>Darüber hinaus gab sie an, dass</strong> sie dreimal Ibuprofen eingenommen habe, jedoch ohne Besserung der Beschwerden.','Dyspnoe <strong>wurde jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine Migräne <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Tonsillektomie.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> Ibuprofen 600 mg bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','<strong>Sie trinke</strong> etwa drei Gläser Bier pro Woche.','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Friseurin, verheiratet und <strong>habe</strong> drei Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> ein Lungenkarzinom beim Vater.'],
+reise:['<strong>Reiseanamnestisch lägen keine Angaben vor.</strong>']
+}},
+{title:'4D. Thoraxschmerzen nach Leitersturz',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Schmidt, eine 56-jährige Patientin, 160 cm groß bei einem Körpergewicht von 70 kg, <strong>die sich nach</strong> einem Leitersturz <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie, dass</strong> sie von einer Leiter gefallen und auf den Füßen gelandet sei.','<strong>Zudem gab sie an, dass</strong> die Leiter gegen ihre linke Flanke gestoßen sei und sie anschließend Schmerzen bei der Inspiration verspürt habe.','Weitere Begleitsymptome <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie sowie ein Asthma bronchiale <strong>bekannt.</strong>','<strong>Zur operativen Anamnese lägen keine Angaben vor.</strong>'],
+allergien:['<strong>Zu Allergien lägen keine Angaben vor.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation lägen</strong> keine Angaben <strong>vor.</strong>'],
+noxen:['<strong>Zur Noxenanamnese lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Dozentin an einer Universität, ledig und kinderlos.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine Osteoporose bei der Mutter.','Der Vater <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> vor drei Wochen ein Aufenthalt in Ungarn <strong>erfolgt.</strong>']
+}},
+{title:'5B. Kolonkarzinom mit linksseitigen Bauchschmerzen',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Müller, einen 45-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 70 kg, <strong>der sich wegen</strong> seit gestern Abend <strong>bestehender</strong> zunehmender kolikartiger linksseitiger Hypogastralgien <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> gestern Abend <strong>bestehende</strong> zunehmende kolikartige linksseitige Hypogastralgien.','<strong>Zudem gab er an, dass sich die Schmerzen</strong> bei Druck verstärken und nach der Defäkation <strong>bessern würden.</strong>','<strong>Ferner klagte er über</strong> Inappetenz, einen Gewichtsverlust von etwa 4 kg innerhalb der letzten zwei Monate, Diarrhö und Obstipation im Wechsel sowie Hämatochezie.','<strong>Darüber hinaus gab er an, dass</strong> Pyrexie bis 38,5 °C bestehe.','Nausea und Emesis <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie sowie ein Vorhofflimmern <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Kreuzbandplastik vor einigen Jahren.'],
+allergien:['<strong>Es bestehe eine Hausstaubmilbenallergie.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Bisoprolol 5 mg nach dem Schema 1-0-0 sowie Eliquis 5 mg nach dem Schema 0-0-1 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Finanzbuchhalter, geschieden und <strong>habe</strong> zwei Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> ein Kolonkarzinom beim Vater.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'6B. Bauchschmerzen (linker Unterbauch)',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Schmidt, eine 35-jährige Patientin, 170 cm groß bei einem Körpergewicht von 60 kg, <strong>die sich wegen</strong> seit vorgestern <strong>bestehender</strong> linksseitiger Hypogastralgie <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> vorgestern <strong>bestehende</strong> linksseitige Hypogastralgie.','<strong>Zudem gab sie an, dass</strong> ähnliche Schmerzen bereits seit zwei Monaten bestünden, aktuell jedoch stärker seien als zuvor.','<strong>Ferner klagte sie über</strong> Pyrexie bis 38,5 °C, Hämatochezie, Diarrhö und Obstipation im Wechsel sowie einen Gewichtsverlust von etwa 4 kg innerhalb der letzten vier Monate.','Inappetenz <strong>wurde jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> ein Diabetes mellitus Typ 2 <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Kreuzbandplastik.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> eine Insulinkombinationstherapie mit lang- und kurzwirksamem Insulin <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','<strong>Sie trinke</strong> täglich ein Glas Wein.','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Projektmanagerin, verheiratet und <strong>habe</strong> ein Kind.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater einen Myokardinfarkt erlitten.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> ein Auslandsaufenthalt in den USA <strong>erfolgt.</strong>']
+}},
+{title:'6C. Bauchschmerzen (periumbilikal)',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Müller, einen 44-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 65 kg, <strong>der sich wegen</strong> seit vier Tagen <strong>bestehender</strong> brennender drückender periumbilikaler Schmerzen <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> vier Tagen <strong>bestehende</strong> brennende drückende periumbilikale Schmerzen.','<strong>Zudem gab er an, dass sich die Beschwerden</strong> postprandial <strong>verstärken würden.</strong>','<strong>Darüber hinaus gab er an, dass</strong> er keine Schmerzmedikation eingenommen und erfolglos versucht habe, die Beschwerden mit einer Wärmflasche zu lindern.','<strong>Ferner klagte er über</strong> Nausea sowie Ruktus.','Pyrexie, Obstipation und Diarrhö <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine Angststörung <strong>bekannt.</strong>','<strong>Zur operativen Anamnese sei</strong> ein Zustand nach Umbilikalhernie vor zwei Jahren angegeben worden.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Escitalopram 15 mg nach dem Schema 1-0-0 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen rauche er</strong> seit 25 Jahren täglich zwei Packungen Zigaretten.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Theologieprofessor an einer Universität, lebe allein und <strong>habe</strong> eine Tochter.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine rheumatoide Arthritis bei der Mutter.','Der Vater <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> vor drei Wochen ein Aufenthalt in Italien <strong>erfolgt.</strong>']
+}},
+{title:'7B. Vertigo (BPLS / Morbus Menière)',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Mayer, eine 45-jährige Patientin, 165 cm groß bei einem Körpergewicht von 52 kg, <strong>die sich wegen</strong> seit dem Vorabend <strong>bestehender</strong> erstmalig aufgetretener Vertigo <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> dem Vorabend <strong>bestehende</strong> erstmalig aufgetretene Vertigo.','<strong>Zudem gab sie an, dass die Beschwerden</strong> etwa eine Minute gedauert hätten.','<strong>Darüber hinaus gab sie an, dass die Beschwerden</strong> beim schnellen Aufstehen ausgeprägter seien.','<strong>Ferner klagte sie über</strong> Nystagmus, Tinnitus, Nausea sowie Parästhesien.','Cephalgie, Emesis und Synkope <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine Eisenmangelanämie <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Sectio caesarea.'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme sie</strong> ein Eisenpräparat <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei sie</strong> Nichtraucherin.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> verheiratet.','Zu Beruf und Kindern lägen keine Angaben vor.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> ein Mammakarzinom bei der Mutter.','Der Vater <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'8B. Parkinson-Syndrom mit Tremor',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Mayer, einen 45-jährigen Patienten, 178 cm groß bei einem Körpergewicht von 70 kg, <strong>der sich wegen</strong> seit mehreren Monaten <strong>bestehender</strong> zunehmender Tremoren beider Hände <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> mehreren Monaten <strong>bestehende</strong> zunehmende Tremoren beider Hände.','<strong>Zudem gab er an, dass</strong> der Tremor rechts stärker ausgeprägt sei und insbesondere in Ruhe sowie in stressigen Situationen auftrete.','<strong>Darüber hinaus gab er an, dass die Beschwerden</strong> seine Tätigkeit als Busfahrer beeinträchtigen würden.','<strong>Ferner klagte er über</strong> morgendlichen Rigor, generalisierte Bradykinese sowie Obstipation.','Weitere Begleitsymptome <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> eine arterielle Hypertonie sowie eine benigne Prostatahyperplasie <strong>bekannt.</strong>','<strong>Operative Eingriffe seien bislang nicht erfolgt.</strong>'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Marcumar 3 mg nach dem Schema 1-0-0 sowie Lisinopril 20 mg nach dem Schema 1-0-0 <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> Nichtraucher.','Alkoholkonsum <strong>wurde verneint.</strong>','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Busfahrer, verheiratet und <strong>habe</strong> zwei Kinder.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater einen Apoplex erlitten.','Bei der Mutter sei ein Mammakarzinom bekannt.'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'9A. Ösophaguskarzinom mit Dysphagie',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Müller, einen 53-jährigen Patienten, 180 cm groß bei einem Körpergewicht von 70 kg, <strong>der sich wegen</strong> seit drei bis vier Wochen <strong>bestehender</strong> zunehmender Dysphagie <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> drei bis vier Wochen <strong>bestehende</strong> zunehmende Dysphagie.','<strong>Ferner klagte er über</strong> ein Globusgefühl im Hals sowie Odynophagie.','<strong>Zudem gab er an, dass die Beschwerden</strong> ausgeprägter seien als zuvor.','<strong>Darüber hinaus klagte er über</strong> unproduktive Tussis, Dysphonie, Obstipation, Inappetenz, Hämatochezie sowie Insomnie.','Weitere Begleitsymptome <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> ein seit neun Jahren bestehender Diabetes mellitus Typ 2, eine seit neun Monaten bestehende Arrhythmie sowie eine Schulterbursitis <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Versorgung einer Humerusfraktur infolge eines Verkehrsunfalls.'],
+allergien:['<strong>Es bestehe eine Allergie gegen</strong> Voltaren mit Exanthem.'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Metformin 1000 mg nach dem Schema 1-0-1, Metoprolol 50 mg nach dem Schema 1-0-1, Marcumar 3 mg nach dem Schema 1-0-0 sowie ein Schlafmittel bei Bedarf <strong>ein.</strong>','Zudem trage er eine Salbe auf die Schulter auf.'],
+noxen:['<strong>Hinsichtlich der Noxen rauche er</strong> seit 30 Jahren täglich 15 bis 20 Zigaretten.','<strong>Er trinke</strong> täglich ein Glas Wein.','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Pförtner, verwitwet und lebe mit seinem Sohn.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> ein Mammakarzinom bei der Mutter.','Der Vater <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'10A. Produktiver Husten',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Schmidt, einen 34-jährigen Patienten, 174 cm groß bei einem Körpergewicht von 69 kg, <strong>der sich wegen</strong> seit drei Tagen <strong>bestehender</strong> produktiver Tussis mit gelblichem Sputum <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> drei Tagen <strong>bestehende</strong> stark ausgeprägte produktive Tussis mit gelblichem Sputum.','<strong>Ferner klagte er über</strong> Cephalgie sowie Schüttelfrost.'],
+vorerkrankungen:['<strong>An Vorerkrankungen seien</strong> ein Diabetes mellitus Typ 2 sowie eine Migräne <strong>bekannt.</strong>','<strong>Zur operativen Anamnese lägen keine Angaben vor.</strong>'],
+allergien:['<strong>Es bestehe eine Hausstauballergie.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> regelmäßig Analgetika sowie eine Insulinkombinationstherapie mit lang- und kurzwirksamem Insulin <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen rauche er</strong> seit 20 Jahren etwa eine halbe Packung Zigaretten täglich.','<strong>Er trinke</strong> gelegentlich Alkohol.','<strong>Zum Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Rechtsanwalt, verheiratet und <strong>habe</strong> drei Kinder.'],
+familie:['<strong>Familienanamnestisch bestehe</strong> eine COPD beim Vater.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}},
+{title:'10B. Produktiver Husten mit Pyrexie',gender:'male',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Herrn Meyer, einen 56-jährigen Patienten, 179 cm groß bei einem Körpergewicht von 65 kg, <strong>der sich wegen</strong> seit zehn Tagen <strong>bestehender</strong> produktiver Tussis mit gelblichem Sputum <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete er über seit</strong> zehn Tagen <strong>bestehende</strong> produktive Tussis mit gelblichem Sputum.','<strong>Ferner klagte er über</strong> Pyrexie, Dyspnoe sowie Hyperpnoe.'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> ein Asthma bronchiale <strong>bekannt.</strong>','<strong>Zur operativen Anamnese lägen keine Angaben vor.</strong>'],
+allergien:['<strong>Allergien seien nicht bekannt.</strong>'],
+medikation:['<strong>In Bezug auf die Medikation nehme er</strong> Salbutamol bei Bedarf <strong>ein.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen sei er</strong> seit 15 Jahren Nichtraucher.','<strong>Zu Alkohol- und Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei er</strong> Sozialarbeiter, verwitwet und <strong>habe</strong> eine Tochter.'],
+familie:['<strong>Familienanamnestisch habe</strong> der Vater einen Apoplex erlitten.','Die Mutter <strong>sei gesund.</strong>'],
+reise:['<strong>Reiseanamnestisch sei</strong> ein Auslandsaufenthalt in der Schweiz <strong>erfolgt.</strong>']
+}},
+{title:'11A. Beinschmerzen',gender:'female',sections:{
+vorstellung:['<strong>Wir berichten nachfolgend über</strong> Frau Mayer, eine 40-jährige Patientin, 160 cm groß bei einem Körpergewicht von 70 kg, <strong>die sich auf Überweisung ihres Hausarztes wegen</strong> seit gestern Abend <strong>bestehender</strong> zunehmender drückender rechtsseitiger Unterschenkelschmerzen <strong>vorstellte.</strong>'],
+beschwerden:['<strong>Zunächst berichtete sie über seit</strong> gestern Abend <strong>bestehende</strong> zunehmende drückende rechtsseitige Unterschenkelschmerzen.','<strong>Zudem gab sie an, dass sich die Beschwerden</strong> vor allem nachts <strong>verstärken würden</strong> und bei der Arbeit aufträten.','<strong>Darüber hinaus gab sie an, dass sich die Beschwerden</strong> durch Hochlagerung <strong>bessern würden.</strong>','<strong>Ferner klagte sie über</strong> ein Ödem sowie eine Überwärmung im betroffenen Bereich.','Eine Verletzung und eine längere Reise <strong>wurden jedoch verneint.</strong>'],
+vorerkrankungen:['<strong>An Vorerkrankungen sei</strong> eine allergische Rhinitis <strong>bekannt.</strong>','<strong>Operativ bestehe</strong> ein Zustand nach Appendektomie vor zehn Jahren.'],
+allergien:['<strong>Es bestehe eine Allergie gegen</strong> Gräserpollen.'],
+medikation:['<strong>In Bezug auf die Medikation lägen</strong> keine Angaben <strong>vor.</strong>'],
+noxen:['<strong>Hinsichtlich der Noxen rauche sie</strong> seit dem 16. Lebensjahr etwa eine halbe Packung Zigaretten täglich.','<strong>Zu Alkohol- und Drogenkonsum lägen keine Angaben vor.</strong>'],
+sozial:['<strong>Sozialanamnestisch sei sie</strong> Kassiererin, ledig und <strong>habe</strong> keine Kinder.'],
+familie:['<strong>Familienanamnestisch bestünden</strong> ein Diabetes mellitus Typ 2 bei der Mutter sowie eine arterielle Hypertonie beim Vater.'],
+reise:['<strong>Reiseanamnestisch sei</strong> in den letzten Monaten kein Auslandsaufenthalt <strong>erfolgt.</strong>']
+}}
+];
+
+casesData.sort((a,b)=>{
+  const code=value=>{const match=value.match(/^(\d+)([A-Z])\./);return match?[Number(match[1]),match[2]]:[Number.MAX_SAFE_INTEGER,value]};
+  const first=code(a.title),second=code(b.title);
+  return first[0]-second[0]||first[1].localeCompare(second[1],'de');
+});
+
+function renderCases(){
+  const root=document.getElementById('cases');
+  casesData.forEach((data,index)=>{
+    const section=document.createElement('section');section.className='case';section.dataset.patientGender=data.gender;section.dataset.v='c'+index;
+    const title=document.createElement('h2');title.textContent=data.title;section.appendChild(title);
+    const card=document.createElement('div');card.className='case-card';
+    sectionDefinitions.forEach(def=>{
+      const block=document.createElement('section');block.className='brief-section';block.dataset.section=def.key;
+      const heading=document.createElement('h3');heading.textContent=def.label;
+      const list=document.createElement('ul');
+      (data.sections[def.key]||['<strong>Zu diesem Abschnitt lägen keine Angaben vor.</strong>']).forEach(sentence=>{const li=document.createElement('li');li.className='learn-item';li.innerHTML=sentence;list.appendChild(li)});
+      block.append(heading,list);card.appendChild(block);
+    });
+    section.appendChild(card);root.appendChild(section);
+  });
+}
+renderCases();
+
+const caseSelect=document.getElementById('caseSelect'),cases=Array.from(document.querySelectorAll('.cases>.case'));
+const allOption=document.createElement('option');allOption.value='all';allOption.textContent='Alle Fälle';caseSelect.appendChild(allOption);
+cases.forEach((section,index)=>{const option=document.createElement('option');option.value='c'+index;option.textContent=section.querySelector('h2').textContent;caseSelect.appendChild(option)});
+const comparisonControl=document.createElement('div');comparisonControl.className='comparison-select-control floating-control';
+const comparisonLabel=document.createElement('label');comparisonLabel.htmlFor='comparisonSectionSelect';comparisonLabel.textContent='Abschnitt auswählen:';
+const comparisonSelect=document.createElement('select');comparisonSelect.id='comparisonSectionSelect';
+sectionDefinitions.forEach((def,index)=>{const option=document.createElement('option');option.value='g'+index;option.textContent=(index+1)+'. '+def.label;comparisonSelect.appendChild(option)});
+comparisonControl.append(comparisonLabel,comparisonSelect);document.body.appendChild(comparisonControl);
+
+const allView=document.createElement('article');allView.className='comparison-view';allView.id='allCasesComparison';
+sectionDefinitions.forEach((def,index)=>{
+  const group=document.createElement('section');group.className='comparison-section';group.dataset.group='g'+index;
+  const card=document.createElement('div');card.className='case-card';
+  cases.forEach(source=>{
+    const entry=document.createElement('div');entry.className='comparison-case-entry';entry.dataset.patientGender=source.dataset.patientGender;
+    const heading=document.createElement('div');heading.className='comparison-case-heading';heading.textContent=source.querySelector('h2').textContent;entry.appendChild(heading);
+    entry.appendChild(source.querySelector('.brief-section[data-section="'+def.key+'"]').cloneNode(true));card.appendChild(entry);
+  });
+  group.appendChild(card);allView.appendChild(group);
+});
+document.querySelector('.cases').after(allView);
+function showComparison(value){allView.querySelectorAll('.comparison-section').forEach(section=>section.classList.toggle('active',section.dataset.group===value))}
+comparisonSelect.value='g0';showComparison('g0');comparisonSelect.addEventListener('change',()=>showComparison(comparisonSelect.value));
+function showCase(value){cases.forEach(section=>section.classList.toggle('active',section.dataset.v===value));allView.classList.toggle('active',value==='all');document.body.classList.toggle('all-comparison-mode',value==='all')}
+caseSelect.value='all';showCase('all');caseSelect.addEventListener('change',()=>showCase(caseSelect.value));
+
+function genderMarkedParts(text,gender,patientIdentity){
+  const parts=text.split(/(\s+)/),words=[];parts.forEach((part,partIndex)=>{if(/^\s+$/.test(part))return;const token=part.replace(/^[^A-Za-zÄÖÜäöüß-]+/,'').replace(/[^A-Za-zÄÖÜäöüß-]+$/,'');if(token)words.push({partIndex,lower:token.toLocaleLowerCase('de-DE')})});
+  const marked=new Set(),female=new Set(['sie','ihr','ihre','ihren','ihrem','ihrer','ihres','patientin','patientinnen','nichtraucherin','architektin','lehrerin','friseurin','dozentin','projektmanagerin','kassiererin']),male=new Set(['er','ihn','ihm','seine','seinen','seinem','seiner','seines','patient','patienten','nichtraucher','bankkaufmann','busfahrer','pförtner','rechtsanwalt','sozialarbeiter','finanzbuchhalter','theologieprofessor']),single=gender==='female'?female:male;
+  words.forEach(word=>{if(single.has(word.lower))marked.add(word.partIndex)});
+  const patientNouns=gender==='female'?new Set(['patientin','patientinnen']):new Set(['patient','patienten']),context=gender==='female'?new Set(['die','der','eine','einer']):new Set(['der','dem','den','ein','einen','einem']);
+  words.forEach((word,index)=>{if(!patientNouns.has(word.lower))return;marked.add(word.partIndex);for(let offset=1;offset<=3&&index-offset>=0;offset++){const previous=words[index-offset];if(/jährig(?:e|en|er|em|es)?$/.test(previous.lower))continue;if(context.has(previous.lower))marked.add(previous.partIndex);else break}});
+  if(patientIdentity){const titles=gender==='female'?new Set(['frau']):new Set(['herr','herrn']);words.forEach((word,index)=>{if(titles.has(word.lower))marked.add(word.partIndex);const next=words[index+1];if(next&&next.lower==='sich'&&((gender==='female'&&word.lower==='die')||(gender==='male'&&word.lower==='der')))marked.add(word.partIndex)})}
+  return{parts,marked};
+}
+function appendRenderedWord(target,text,className='',normalWeight=false){
+  const word=document.createElement('span');word.className='word';if(className)word.classList.add(className);if(normalWeight)word.classList.add('age-number');let first=true;
+  for(const char of text){const alpha=/[A-Za-zÄÖÜäöüß0-9]/.test(char),piece=document.createElement('span');if(!alpha){piece.className='punctuation';piece.textContent=char;first=true}else if(first){piece.className='first-letter';piece.textContent=char;first=false}else{piece.className='hidden-part';piece.textContent=char}word.appendChild(piece)}target.appendChild(word);
+}
+function renderLearnItem(li){
+  if(li.querySelector(':scope>.rendered'))return;const container=li.closest('.case,.comparison-case-entry'),gender=container?.dataset.patientGender||'',identity=li.closest('.brief-section')?.dataset.section==='vorstellung';
+  const segments=Array.from(li.childNodes).map(node=>({text:node.textContent,bold:node.nodeType===Node.ELEMENT_NODE&&node.tagName==='STRONG'}));li.textContent='';const rendered=document.createElement('span');rendered.className='rendered';
+  segments.forEach(segment=>{const target=segment.bold?document.createElement('strong'):rendered;if(segment.bold){target.className='template-strong';rendered.appendChild(target)}const result=genderMarkedParts(segment.text,gender,identity);result.parts.forEach((part,index)=>{if(/^\s+$/.test(part)){target.appendChild(document.createTextNode(part));return}const age=part.match(/^(.+?)(-?jährig(?:e|en|er|em|es)?)([^A-Za-zÄÖÜäöüß-]*)$/i);if(identity&&age&&gender){appendRenderedWord(target,age[1],'',true);appendRenderedWord(target,age[2]+age[3],'patient-'+gender);return}appendRenderedWord(target,part,result.marked.has(index)?'patient-'+gender:'')})});li.appendChild(rendered);
+}
+document.querySelectorAll('.learn-item').forEach(renderLearnItem);
+const modes={full:'',initial:'initial-mode',blank:'blank-mode'};document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{document.body.classList.remove('initial-mode','blank-mode');if(modes[button.dataset.mode])document.body.classList.add(modes[button.dataset.mode]);document.querySelectorAll('[data-mode]').forEach(item=>item.classList.toggle('active',item===button))}));
+const modeSwitch=document.querySelector('.mode-switch');modeSwitch.classList.add('floating-control');document.body.appendChild(modeSwitch);const caseControl=document.querySelector('.case-select-control');caseControl.classList.add('floating-control');document.body.appendChild(caseControl);const tools=document.querySelector('.tools');if(tools&&!tools.children.length)tools.remove();
+const themeButton=document.getElementById('themeToggle');function syncTheme(){themeButton.title=document.documentElement.getAttribute('data-theme')==='dark'?'Normal theme':'Dark theme'}themeButton.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';if(dark)document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme',dark?'light':'dark')}catch(e){}syncTheme()});syncTheme();
 </script>
-</body></html>
+</body>
+</html>
