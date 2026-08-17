@@ -9263,6 +9263,30 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
         </div>`;
       comparisonSection.appendChild(note);
     }
+    if(groupIndex===3){
+      const note=document.createElement('div');
+      note.className='diagnosis-grammar-note';
+      note.innerHTML=`
+        <div class="grammar-caption">Kurzhilfe zur Hauptsymptomatik und Anamnese</div>
+        <div class="grammar-box">
+          <table>
+            <thead><tr><th>Satzmuster</th><th style="width:28%">Hinweis</th></tr></thead>
+            <tbody>
+              <tr><td style="text-align:left"><strong>Zunächst berichtete er/sie über</strong> …</td><td><code>über + Akk.</code></td></tr>
+              <tr><td style="text-align:left"><strong>seit</strong> zwei Tagen <strong>bestehende/zunehmende</strong> Beschwerden</td><td><code>seit + Dat.</code></td></tr>
+              <tr><td style="text-align:left">plötzlich/akut <strong>aufgetretene</strong> Beschwerden</td><td>Beginn</td></tr>
+              <tr><td style="text-align:left"><strong>Zudem/Darüber hinaus gab er/sie an, dass</strong> …</td><td>Konjunktiv I</td></tr>
+              <tr><td style="text-align:left"><strong>Ferner klagte er/sie über</strong> …</td><td><code>über + Akk.</code></td></tr>
+              <tr><td style="text-align:left">… bei Vorstellung <strong>weiterhin bestünden.</strong></td><td>weiterhin vorhanden</td></tr>
+              <tr><td style="text-align:left">er/sie aktuell <strong>schmerzfrei sei.</strong></td><td>aktuell nicht vorhanden</td></tr>
+              <tr><td style="text-align:left">Eine Synkope <strong>wurde verneint.</strong></td><td>Singular</td></tr>
+              <tr><td style="text-align:left">Fieber und Gewichtsabnahme <strong>wurden verneint.</strong></td><td>Plural</td></tr>
+              <tr><td style="text-align:left"><strong>Dabei habe er/sie</strong> … erlitten.</td><td>Unfallfolge</td></tr>
+            </tbody>
+          </table>
+        </div>`;
+      comparisonSection.appendChild(note);
+    }
     cases.forEach(section=>{
       const entry=document.createElement('div');
       entry.className='comparison-case-entry';
