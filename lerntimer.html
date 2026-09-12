@@ -8,18 +8,18 @@
 :root{
   --bg:#f5f7fa;--surface:#fff;--surface2:#f8fafc;--text:#172033;--muted:#667085;
   --border:#d8dee8;--blue:#2459a9;--blue2:#eaf1fc;--green:#2f6f44;--greenbg:#eaf6ee;
-  --amber:#8a5a00;--amberbg:#fff4d6;--red:#a63831;--redbg:#fff0ef;--shadow:0 3px 16px rgba(20,35,60,.08);--table-head:#eef2f7;--nav-hover:#eef1f5;--nav-active:#e8edf7;--nav-active-text:#1e3a6d
+  --amber:#8a5a00;--amberbg:#fff4d6;--red:#a63831;--redbg:#fff0ef;--shadow:0 3px 16px rgba(20,35,60,.08)
 }
 *{box-sizing:border-box}
-html,body{width:100%;height:100%;margin:0}body{background:var(--surface);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.45;overflow:hidden;display:flex;flex-direction:column}
+html,body{width:100%;height:100%;margin:0}body{background:var(--surface);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.45;overflow:hidden}
 button,input{font:inherit}
 button{border:0;border-radius:8px;padding:8px 12px;cursor:pointer;background:var(--blue);color:#fff;font-weight:700}
 button.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
 button.success{background:var(--green)}
 button.danger{background:var(--red)}
 button:disabled{opacity:.42;cursor:not-allowed}
-.page{width:100%;flex:1;min-height:0;margin:0;padding:0}
-.card{width:100%;height:100%;background:var(--surface);border:0;border-radius:0;box-shadow:none;overflow:hidden;margin:0}
+.page{width:100%;height:100vh;margin:0;padding:0}
+.card{width:100%;height:100vh;background:var(--surface);border:0;border-radius:0;box-shadow:none;overflow:hidden;margin:0}
 .header{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap}
 .header-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
@@ -28,37 +28,15 @@ button:disabled{opacity:.42;cursor:not-allowed}
 .header-stat{display:flex;align-items:baseline;gap:7px;padding:5px 9px;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
 .header-stat .stat-label{font-size:11px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;color:var(--muted)}
 .header-stat .stat-value{font-size:18px;font-weight:800;font-variant-numeric:tabular-nums}
-.table-wrap{overflow:auto;height:calc(100% - 58px);max-height:none}.schedule{width:100%;border-collapse:collapse;min-width:930px;table-layout:auto}.schedule th{position:sticky;top:0;z-index:3;background:var(--table-head);border-bottom:1px solid var(--border);padding:8px;text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.schedule td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:middle;text-align:center}.schedule tr.active-row{background:var(--blue2)}.schedule tr.done-row{background:var(--greenbg)}
-.num{color:var(--muted);font-variant-numeric:tabular-nums;width:34px}.drag-handle{cursor:grab;user-select:none;text-align:center;font-weight:700}.drag-handle:active{cursor:grabbing}.schedule tr.drag-source{opacity:.45}.schedule tr.drop-before{box-shadow:inset 0 3px 0 var(--blue)}.schedule tr.drop-after{box-shadow:inset 0 -3px 0 var(--blue)}.cell-input{border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text);padding:5px 6px}.cell-input:hover,.cell-input:focus{border-color:var(--border);background:var(--surface);outline:none}.task-input{min-width:300px;width:100%;font-weight:700;text-align:center}.duration-input{width:74px;text-align:center}.timer-cell{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:400;text-align:center;min-width:82px}.timer-cell.over{color:var(--red)}.timer-cell.paused{color:var(--amber)}.time-input{width:76px;font-variant-numeric:tabular-nums;text-align:center}.derived-time{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.table-wrap{overflow:auto;height:calc(100vh - 58px);max-height:none}.schedule{width:100%;border-collapse:collapse;min-width:930px;table-layout:auto}.schedule th{position:sticky;top:0;z-index:3;background:#eef2f7;border-bottom:1px solid var(--border);padding:8px;text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.schedule td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:middle;text-align:center}.schedule tr.active-row{background:var(--blue2)}.schedule tr.done-row{background:var(--greenbg)}
+.num{color:var(--muted);font-variant-numeric:tabular-nums;width:34px}.drag-handle{cursor:grab;user-select:none;text-align:center;font-weight:700}.drag-handle:active{cursor:grabbing}.schedule tr.drag-source{opacity:.45}.schedule tr.drop-before{box-shadow:inset 0 3px 0 var(--blue)}.schedule tr.drop-after{box-shadow:inset 0 -3px 0 var(--blue)}.cell-input{border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text);padding:5px 6px}.cell-input:hover,.cell-input:focus{border-color:var(--border);background:var(--surface);outline:none}.task-input{min-width:300px;width:100%;font-weight:700;text-align:left}.duration-input{width:74px;text-align:center}.timer-cell{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:400;text-align:center;min-width:82px}.timer-cell.over{color:var(--red)}.timer-cell.paused{color:var(--amber)}.time-input{width:76px;font-variant-numeric:tabular-nums;text-align:center}.derived-time{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
 .done-check{width:18px;height:18px;accent-color:var(--green);cursor:pointer}
 .row-actions{display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}.row-actions button{padding:6px 9px;font-size:12px}.row-actions .icon-btn{width:34px;height:31px;padding:0;font-size:17px;display:inline-flex;align-items:center;justify-content:center}.note{padding:10px 15px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);background:var(--surface2)}
 .toast{position:fixed;right:18px;top:18px;z-index:30;display:none;max-width:360px;padding:12px 14px;background:#172033;color:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.2)}.toast.show{display:block}.toast strong{display:block;margin-bottom:2px}.toast span{font-size:13px;color:#e5e7eb}
-@media(max-width:900px){.page{padding:0}.header{align-items:flex-start}.header-left{width:100%}.table-wrap{height:calc(100% - 92px)}}
-
-/* FSP navigation integration */
-.site-header{position:relative;flex:0 0 auto;padding:6px 12px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);z-index:50}
-.site-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap}
-.site-nav a{color:#374151;text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:7px;font-size:14px;font-weight:600;line-height:1.2}
-.site-nav a:hover{background:var(--nav-hover)}
-.site-nav a.active{background:var(--nav-active);border-color:#cbd5e1;color:var(--nav-active-text)}
-.theme-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:32px;height:32px;padding:0;border:0;border-radius:8px;background:transparent;color:inherit;display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1;cursor:pointer;box-shadow:none;opacity:.82}
-.theme-toggle:hover{background:rgba(127,127,127,.12);opacity:1}
-.theme-toggle .theme-sun,.theme-toggle .theme-moon{display:none}
-html[data-theme="dark"] .theme-toggle .theme-sun{display:inline}
-html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline}
-html[data-theme="dark"]{color-scheme:dark;--bg:#0f1115;--surface:#171a21;--surface2:#20242d;--text:#e5e7eb;--muted:#9ca3af;--border:#303642;--blue:#4f76c7;--blue2:#25324a;--green:#4f8d63;--greenbg:#1c2b22;--amber:#d4a84d;--amberbg:#332a18;--red:#d97068;--redbg:#341f1e;--table-head:#20242d;--nav-hover:#242a34;--nav-active:#29344a;--nav-active-text:#dbeafe}
-html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)}
-html[data-theme="dark"] .site-nav a{color:#cbd5e1}
-html[data-theme="dark"] .site-nav a.active{border-color:#46546d}
-html[data-theme="dark"] .toast{background:#e5e7eb;color:#111827}
-html[data-theme="dark"] .toast span{color:#374151}
-@media(max-width:760px){.site-header{padding-right:48px}.site-nav a{font-size:13px;padding:5px 7px}.theme-toggle{right:8px}}
-
+@media(max-width:900px){.page{padding:0}.header{align-items:flex-start}.header-left{width:100%}.table-wrap{height:calc(100vh - 92px)}}
 </style>
-<script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
-<header class="site-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a class="active" href="lerntimer.html">Lerntimer</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun">☀</span><span aria-hidden="true" class="theme-moon">☾</span></button></header>
 <div class="page">
 <section class="card">
   <div class="header">
@@ -72,7 +50,7 @@ html[data-theme="dark"] .toast span{color:#374151}
 
   <div class="table-wrap">
     <table class="schedule">
-      <thead><tr><th>#</th><th>Aufgabe</th><th>Start</th><th>Erledigt</th><th>Ende</th><th>Geplant (min)</th><th>Vergangen</th><th>Rest</th><th>Aktion</th></tr></thead>
+      <thead><tr><th>#</th><th>Aufgabe</th><th>Start</th><th>Ende</th><th>Erledigt</th><th>Geplant (min)</th><th>Vergangen</th><th>Rest</th><th>Aktion</th></tr></thead>
       <tbody id="scheduleBody"></tbody>
     </table>
   </div>
@@ -192,8 +170,8 @@ function renderTable(){
       <td class="num drag-handle" data-id="${r.id}" draggable="${(!done&&!active)?'true':'false'}" title="Zum Verschieben ziehen" aria-label="Aufgabe ${i+1} verschieben">${i+1}</td>
       <td><input class="cell-input task-input name-edit" data-id="${r.id}" value="${esc(r.name)}"></td>
       <td><input class="cell-input time-input start-edit" data-id="${r.id}" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="${esc(r.start)}"></td>
-      <td><input class="done-check" data-id="${r.id}" type="checkbox" ${done?'checked':''} aria-label="Erledigt"></td>
       <td><input class="cell-input time-input end-edit" data-id="${r.id}" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="${minToHm(planEnd(r))}"></td>
+      <td><input class="done-check" data-id="${r.id}" type="checkbox" ${done?'checked':''} aria-label="Erledigt"></td>
       <td><input class="cell-input duration-input minutes-edit" data-id="${r.id}" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="3" value="${Number(r.minutes)||1}" aria-label="Geplante Dauer in Minuten"></td>
       <td class="timer-cell elapsed-cell" data-elapsed-id="${r.id}">00:00</td>
       <td class="timer-cell rest-cell" data-rest-id="${r.id}">${fmtSec(Number(r.minutes||0)*60)}</td>
@@ -465,6 +443,5 @@ function tick(){
 render();setInterval(tick,1000);
 })();
 </script>
-<script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script>
 </body>
 </html>
