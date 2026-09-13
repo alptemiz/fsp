@@ -236,17 +236,37 @@ html[data-theme="dark"] .floating-control{
 .patient-qa-case{display:none}
 .patient-qa-case.active{display:block}
 .patient-qa-case h3{margin-top:14px}
+
+
+/* Sentence audio controls */
+.audio-button{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:25px;height:25px;margin-left:7px;padding:0;
+  border:1px solid var(--border-color);border-radius:6px;
+  background:transparent;color:var(--muted-color);
+  font-size:14px;line-height:1;vertical-align:middle;
+  cursor:pointer;box-shadow:none;opacity:.72;
+}
+.audio-button:hover{background:var(--accent-soft);color:var(--text-color);opacity:1}
+.audio-button.is-speaking{background:var(--accent-soft);color:var(--button-color);opacity:1}
+.audio-button:focus-visible{outline:2px solid var(--button-color);outline-offset:2px}
+.blank-mode .audio-button,.blank-mode .audio-button *{color:var(--muted-color)!important}
+.blank-mode .audio-button:hover,.blank-mode .audio-button.is-speaking{color:var(--text-color)!important}
+html[data-theme="dark"] .audio-button{border-color:var(--border-color);background:transparent;color:var(--muted-color)}
+html[data-theme="dark"] .audio-button:hover,html[data-theme="dark"] .audio-button.is-speaking{background:var(--accent-soft);color:var(--text-color)}
+@media(max-width:760px){.audio-button{width:28px;height:28px;margin-left:6px}}
+
 </style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script><link rel="stylesheet" href="fsp-common.css"/>
 <script src="fsp-common.js"></script>
 </head><body class="full-mode integrated-page" data-page="anamnese"><header class="site-header"><div class="header-inner"><div aria-label="Lernmodus" class="mode-switch"><button class="active" data-mode="full" id="btnFull" type="button">Vollmodus</button><button data-mode="initial" id="btnInitial" type="button">Initialen</button><button data-mode="blank" id="btnBlank" type="button">Blank</button></div><nav aria-label="Hauptnavigation" class="site-nav"><a class="active" href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a href="lerntimer.html">Lerntimer</a></nav></div><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀</span><span aria-hidden="true" class="moon theme-moon">☾</span></button></header><main><article class="document"><h1>Anamnese</h1>
 <h2>1. Begrüßung und Personalien</h2>
 <ul>
-<li class="learn-item masked"><template>Guten Tag. Mein Name ist Temiz und ich bin Allgemeinarzt.</template></li>
-<li class="learn-item masked"><template>Bevor wir zu Ihren aktuellen Beschwerden kommen, möchte ich zunächst einige Angaben zu Ihrer Person erfragen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/720f438cecff.mp3">Guten Tag. Mein Name ist Temiz und ich bin Allgemeinarzt.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c465d7444c20.mp3">Bevor wir zu Ihren aktuellen Beschwerden kommen, möchte ich zunächst einige Angaben zu Ihrer Person erfragen.</template></li>
 <ul>
-<li class="learn-item masked"><template>Wie lautet Ihr vollständiger Name?</template></li>
-<li class="learn-item masked"><template>Wie alt sind Sie beziehungsweise wann sind Sie geboren?</template></li>
-<li class="learn-item masked"><template>Wie groß und wie schwer sind Sie?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/688933ad69b4.mp3">Wie lautet Ihr vollständiger Name?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4132a97cfadc.mp3">Wie alt sind Sie beziehungsweise wann sind Sie geboren?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/52a99186bdbf.mp3">Wie groß und wie schwer sind Sie?</template></li>
 </ul>
 </ul>
 <h2>2. Aktuelle Beschwerden</h2>
@@ -254,22 +274,22 @@ html[data-theme="dark"] .floating-control{
 <section class="flow-block">
 <h3 class="module-heading">Gemeinsamer Einstieg</h3>
 <ul class="flow-list">
-<li class="learn-item masked"><template>Was führt Sie heute zu mir?</template></li>
-<li class="learn-item masked"><template>Ich würde jetzt noch einmal einige Punkte genauer durchgehen, damit uns keine wichtigen Details entgehen.</template></li>
-<ul><li class="learn-item masked"><template>Falls sich etwas wiederholt, wundern Sie sich bitte nicht.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/04d812330fe2.mp3">Was führt Sie heute zu mir?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9d4c3e264fff.mp3">Ich würde jetzt noch einmal einige Punkte genauer durchgehen, damit uns keine wichtigen Details entgehen.</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f0228860adb3.mp3">Falls sich etwas wiederholt, wundern Sie sich bitte nicht.</template></li></ul>
 <h4 class="module-heading">Beschwerden</h4>
 
-<li class="learn-item masked"><template>Seit wann bestehen die Beschwerden?</template></li>
-<li class="learn-item masked"><template>Haben die Beschwerden plötzlich oder allmählich begonnen?</template></li>
-<li class="learn-item masked"><template>Sind die Beschwerden seitdem besser, schlimmer oder gleich geblieben?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4e861a9b6a74.mp3">Seit wann bestehen die Beschwerden?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5b282212a303.mp3">Haben die Beschwerden plötzlich oder allmählich begonnen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8a3d6e52e531.mp3">Sind die Beschwerden seitdem besser, schlimmer oder gleich geblieben?</template></li>
     <h4 class="module-heading">Schmerzanamnese</h4>
 
-<li class="learn-item masked"><template>Wo genau spüren Sie die Schmerzen?</template></li>
-<li class="learn-item masked"><template>Strahlen die Schmerzen irgendwohin aus?</template></li>
-<li class="learn-item masked"><template>Sind die Schmerzen eher dumpf, stechend, brennend oder krampfartig?</template></li>
-<li class="learn-item masked"><template>Wie stark sind die Schmerzen auf einer Skala von 0 bis 10?</template></li>
-<li class="learn-item masked"><template>Sind die Schmerzen dauerhaft oder treten sie anfallsweise auf?</template></li>
-<li class="learn-item masked"><template>Was verstärkt oder lindert die Schmerzen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b061da502828.mp3">Wo genau spüren Sie die Schmerzen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/40b26bfd5596.mp3">Strahlen die Schmerzen irgendwohin aus?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5863322b9eef.mp3">Sind die Schmerzen eher dumpf, stechend, brennend oder krampfartig?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/08a432122e6c.mp3">Wie stark sind die Schmerzen auf einer Skala von 0 bis 10?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/36ad97a098a3.mp3">Sind die Schmerzen dauerhaft oder treten sie anfallsweise auf?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ac75f1e6ee61.mp3">Was verstärkt oder lindert die Schmerzen?</template></li>
 </ul>
 </section>
 <h3 class="comparison-title">Beschwerdebezogene Fragen im Vergleich</h3>
@@ -279,26 +299,26 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">Schulterschmerzen, Knieschmerzen, lumbaler Bandscheibenvorfall</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Auslöser</span><ul>
-<li class="learn-item masked"><template>Gab es einen Unfall, einen Sturz oder eine ungewohnte Belastung?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/127f184c396c.mp3">Gab es einen Unfall, einen Sturz oder eine ungewohnte Belastung?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">der Arm</span><ul>
-<li class="learn-item masked"><template>Können Sie den betroffenen Arm noch bewegen und belasten?</template></li>
-<li class="learn-item masked"><template>Ist der betroffene Arm kalt oder blass?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/596614291f97.mp3">Können Sie den betroffenen Arm noch bewegen und belasten?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6c88ef3f94e9.mp3">Ist der betroffene Arm kalt oder blass?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">das Bein</span><ul>
-<li class="learn-item masked"><template>Können Sie das betroffene Bein noch bewegen und belasten?</template></li>
-<li class="learn-item masked"><template>Ist das betroffene Bein kalt oder blass?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/108fa66724d8.mp3">Können Sie das betroffene Bein noch bewegen und belasten?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/355b4aaac62f.mp3">Ist das betroffene Bein kalt oder blass?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Lokale Symptome</span><ul>
-<li class="learn-item masked"><template>Ist die Stelle geschwollen, gerötet oder überwärmt?</template></li>
-<li class="learn-item masked"><template>Ist die Stelle sichtbar verformt?</template></li>
-<li class="learn-item masked"><template>Haben Sie Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8844d74c5f30.mp3">Ist die Stelle geschwollen, gerötet oder überwärmt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/473699dbc1d5.mp3">Ist die Stelle sichtbar verformt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3a82b945900e.mp3">Haben Sie Kribbeln, Taubheitsgefühle oder einen Kraftverlust bemerkt?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Rückenschmerzen</span><ul>
-<li class="learn-item masked"><template>Haben Sie Probleme, Wasser oder Stuhl zu halten?</template></li>
-<li class="learn-item masked"><template>Haben Sie Taubheitsgefühle im Genital- oder Gesäßbereich?</template></li>
-<li class="learn-item masked"><template>Welche Zehen sind von den Beschwerden betroffen?</template></li>
-<li class="learn-item masked"><template>Verstärken Husten, Niesen oder Pressen die Schmerzen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d950c93237e9.mp3">Haben Sie Probleme, Wasser oder Stuhl zu halten?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/06651faaea95.mp3">Haben Sie Taubheitsgefühle im Genital- oder Gesäßbereich?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/94564984583f.mp3">Welche Zehen sind von den Beschwerden betroffen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/190a349fe2a0.mp3">Verstärken Husten, Niesen oder Pressen die Schmerzen?</template></li>
 </ul></li>
 </ul>
 </section><section class="module" id="module-2">
@@ -306,20 +326,20 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">Brustenge (KHK), Asthma bronchiale, Bronchialkarzinom</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Brustschmerzen</span><ul>
-<li class="learn-item masked"><template>Wann treten die Beschwerden typischerweise auf, eher bei Belastung oder auch in Ruhe?</template></li>
-<li class="learn-item masked"><template>Gibt es bestimmte Auslöser, zum Beispiel Kälte, Stress oder Essen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1539e8aff77f.mp3">Wann treten die Beschwerden typischerweise auf, eher bei Belastung oder auch in Ruhe?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/cbfc56c9f715.mp3">Gibt es bestimmte Auslöser, zum Beispiel Kälte, Stress oder Essen?</template></li>
 
-<li class="learn-item masked"><template>Haben Sie Herzrasen oder Herzstolpern bemerkt?</template></li>
-<li class="learn-item masked"><template>Haben Sie dabei Atemnot, Übelkeit oder kalten Schweiß bemerkt?</template></li>
-<li class="learn-item masked"><template>Hatten Sie Schwindel oder sind Sie ohnmächtig geworden?</template></li>
-<li class="learn-item masked"><template>Haben Sie Schwellungen an den Beinen bemerkt?</template></li>
-<li class="learn-item masked"><template>Wie lange halten die Brustschmerzen an?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a1eaaaafa4d1.mp3">Haben Sie Herzrasen oder Herzstolpern bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f9a9832a3d33.mp3">Haben Sie dabei Atemnot, Übelkeit oder kalten Schweiß bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/21fe82d19b30.mp3">Hatten Sie Schwindel oder sind Sie ohnmächtig geworden?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6a4f67189e1a.mp3">Haben Sie Schwellungen an den Beinen bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2e302bcc75a6.mp3">Wie lange halten die Brustschmerzen an?</template></li>
     
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Husten und Atemnot</span><ul>
-<li class="learn-item masked"><template>Ist der Husten trocken oder kommt Schleim mit hoch?</template></li>
-<li class="learn-item masked"><template>War Blut im Schleim dabei?</template></li>
-<li class="learn-item masked"><template>Können Sie flach liegen, oder wachen Sie nachts wegen Luftnot auf?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c63af80ef2e4.mp3">Ist der Husten trocken oder kommt Schleim mit hoch?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ca51f686d03d.mp3">War Blut im Schleim dabei?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5fa7009b2c59.mp3">Können Sie flach liegen, oder wachen Sie nachts wegen Luftnot auf?</template></li>
 </ul></li>
 </ul>
 </section><section class="module" id="module-3">
@@ -327,21 +347,21 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">Divertikulitis, Bauchschmerzen, Kolonkarzinom, obere GI-Blutung, Harnsteinleiden</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Magen-Darm</span><ul>
-<li class="learn-item masked"><template>Besteht ein Zusammenhang mit dem Essen oder dem Stuhlgang?</template></li>
-<li class="learn-item masked"><template>Haben Sie Durchfall oder Verstopfung?</template></li>
-<li class="learn-item masked"><template>Haben Sie Blut erbrochen, schwarzen Stuhl oder frisches Blut im Stuhl bemerkt?</template></li>
-<li class="learn-item masked"><template>Ist Ihr Bauch ungewöhnlich hart oder druckempfindlich?</template></li>
-<li class="learn-item masked"><template>Haben Sie ungewollt Gewicht verloren?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/0ad90ec579bd.mp3">Besteht ein Zusammenhang mit dem Essen oder dem Stuhlgang?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/84c6e7f315c1.mp3">Haben Sie Durchfall oder Verstopfung?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/7bfa4aae168b.mp3">Haben Sie Blut erbrochen, schwarzen Stuhl oder frisches Blut im Stuhl bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b34593b74afe.mp3">Ist Ihr Bauch ungewöhnlich hart oder druckempfindlich?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1320bf10f287.mp3">Haben Sie ungewollt Gewicht verloren?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Wasserlassen</span><ul>
-<li class="learn-item masked"><template>Haben Sie Brennen beim Wasserlassen?</template></li>
-<li class="learn-item masked"><template>Müssen Sie häufiger oder dringender Wasser lassen?</template></li>
-<li class="learn-item masked"><template>Hat sich der Harnstrahl verändert?</template></li>
-<li class="learn-item masked"><template>Haben Sie Blut im Urin bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d8b98cf2b0a4.mp3">Haben Sie Brennen beim Wasserlassen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ddffbad4293b.mp3">Müssen Sie häufiger oder dringender Wasser lassen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/81b36e979248.mp3">Hat sich der Harnstrahl verändert?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a80e7df80e4e.mp3">Haben Sie Blut im Urin bemerkt?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Begleitende Beschwerden</span><ul>
-<li class="learn-item masked"><template>Ist Ihnen übel, oder mussten Sie erbrechen?</template></li>
-<li class="learn-item masked"><template>Haben Sie Fieber oder Schüttelfrost?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9b5f680df895.mp3">Ist Ihnen übel, oder mussten Sie erbrechen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/e7398e514f5f.mp3">Haben Sie Fieber oder Schüttelfrost?</template></li>
 </ul></li>
 </ul>
 </section><section class="module" id="module-4">
@@ -349,14 +369,14 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">Ösophaguskarzinom</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Art und Verlauf</span><ul>
-<li class="learn-item masked"><template>Bleibt die Nahrung eher im Hals oder hinter dem Brustbein stecken?</template></li>
-<li class="learn-item masked"><template>Ist das Schlucken erschwert oder schmerzhaft?</template></li>
-<li class="learn-item masked"><template>Treten die Beschwerden nur bei festen Speisen oder auch bei Flüssigkeiten auf?</template></li>
-<li class="learn-item masked"><template>Haben die Beschwerden im Verlauf zugenommen?</template></li>
-<li class="learn-item masked"><template>Verschlucken Sie sich beim Essen oder Trinken?</template></li>
-<li class="learn-item masked"><template>Haben Sie Sodbrennen, saures Aufstoßen oder das Hochkommen von Nahrung bemerkt?</template></li>
-<li class="learn-item masked"><template>Können Sie Ihren Speichel normal schlucken?</template></li>
-<li class="learn-item masked"><template>Haben Sie Blut erbrochen oder ungewollt Gewicht verloren?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/e75958d6302e.mp3">Bleibt die Nahrung eher im Hals oder hinter dem Brustbein stecken?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/0f0c1374abbe.mp3">Ist das Schlucken erschwert oder schmerzhaft?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ba542fb1cc86.mp3">Treten die Beschwerden nur bei festen Speisen oder auch bei Flüssigkeiten auf?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c488df7f959e.mp3">Haben die Beschwerden im Verlauf zugenommen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4316eedcf70a.mp3">Verschlucken Sie sich beim Essen oder Trinken?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f680313602a4.mp3">Haben Sie Sodbrennen, saures Aufstoßen oder das Hochkommen von Nahrung bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/714b539728d4.mp3">Können Sie Ihren Speichel normal schlucken?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/76f5a5e22ccd.mp3">Haben Sie Blut erbrochen oder ungewollt Gewicht verloren?</template></li>
 </ul></li>
 </ul>
 </section><section class="module" id="module-5">
@@ -364,17 +384,17 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">Migräne, Schwindel</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Bei Kopfschmerzen</span><ul>
-<li class="learn-item masked"><template>Sind die Kopfschmerzen einseitig oder beidseitig?</template></li>
-<li class="learn-item masked"><template>Sind Sie licht- oder geräuschempfindlich?</template></li>
-<li class="learn-item masked"><template>Haben Sie Seh-, Gefühls- oder Sprachstörungen bemerkt?</template></li>
-<li class="learn-item masked"><template>Hat ein sehr starker Kopfschmerz plötzlich innerhalb von Sekunden eingesetzt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4b8f25a87b7c.mp3">Sind die Kopfschmerzen einseitig oder beidseitig?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b7105c3e6f42.mp3">Sind Sie licht- oder geräuschempfindlich?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5fed0bc5ee76.mp3">Haben Sie Seh-, Gefühls- oder Sprachstörungen bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c0cfdb1c1101.mp3">Hat ein sehr starker Kopfschmerz plötzlich innerhalb von Sekunden eingesetzt?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Bei Schwindel</span><ul>
-<li class="learn-item masked"><template>Handelt es sich eher um Dreh- oder Schwankschwindel?</template></li>
-<li class="learn-item masked"><template>Wird der Schwindel durch Aufstehen oder Kopfbewegungen ausgelöst?</template></li>
-<li class="learn-item masked"><template>Haben Sie Ohrgeräusche oder eine Hörminderung bemerkt?</template></li>
-<li class="learn-item masked"><template>Haben Sie Doppelbilder, Lähmungen oder eine Bewusstseinsstörung bemerkt?</template></li>
-<li class="learn-item masked"><template>Können Sie sicher stehen und gehen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9f3117cc5dbe.mp3">Handelt es sich eher um Dreh- oder Schwankschwindel?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6f6995b11504.mp3">Wird der Schwindel durch Aufstehen oder Kopfbewegungen ausgelöst?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f5c0fbd5798a.mp3">Haben Sie Ohrgeräusche oder eine Hörminderung bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/628899b1c423.mp3">Haben Sie Doppelbilder, Lähmungen oder eine Bewusstseinsstörung bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c802b3ef32b7.mp3">Können Sie sicher stehen und gehen?</template></li>
 </ul></li>
 </ul>
 </section><section class="module" id="module-6">
@@ -382,34 +402,34 @@ html[data-theme="dark"] .floating-control{
 <p class="module-note">COVID-19, Fatigue und Halsschmerzen, Burn-out nach Dengue</p>
 <ul class="domain-list">
 <li class="domain-group"><span class="domain-group-title">Bei Infektzeichen</span><ul>
-<li class="learn-item masked"><template>Haben Sie Fieber gemessen, und wie hoch war die Temperatur?</template></li>
-<li class="learn-item masked"><template>Haben Sie Husten, Halsschmerzen oder Schnupfen?</template></li>
-<li class="learn-item masked"><template>Hatten Sie Kontakt zu erkrankten Personen?</template></li>
-<li class="learn-item masked"><template>Haben Sie Atemnot oder starke Benommenheit bemerkt?</template></li>
-<li class="learn-item masked"><template>Können Sie ausreichend trinken?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/676e89ad044e.mp3">Haben Sie Fieber gemessen, und wie hoch war die Temperatur?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/96369f019afa.mp3">Haben Sie Husten, Halsschmerzen oder Schnupfen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ba215a2a401b.mp3">Hatten Sie Kontakt zu erkrankten Personen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2f5ecce31cea.mp3">Haben Sie Atemnot oder starke Benommenheit bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c9cf14da651f.mp3">Können Sie ausreichend trinken?</template></li>
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Bei Erschöpfung</span><ul>
-<li class="learn-item masked"><template>Wie stark beeinträchtigt Sie die Erschöpfung im Alltag?</template></li>
-<li class="learn-item masked"><template>Wie schlafen Sie, und fühlen Sie sich nach dem Schlaf erholt?</template></li>
-<li class="learn-item masked"><template>Fühlen Sie sich häufig niedergeschlagen?</template></li>
-<li class="learn-item masked"><template>Machen Ihnen Dinge weniger Freude als früher?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b8005e8a5e2b.mp3">Wie stark beeinträchtigt Sie die Erschöpfung im Alltag?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/95bc4f11a674.mp3">Wie schlafen Sie, und fühlen Sie sich nach dem Schlaf erholt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a98b241adf76.mp3">Fühlen Sie sich häufig niedergeschlagen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d21a492df840.mp3">Machen Ihnen Dinge weniger Freude als früher?</template></li>
 </ul></li>
 </ul>
 </section></div>
 <section class="flow-block">
 <h3 class="module-heading">Gemeinsamer Anschluss</h3>
 <ul class="flow-list">
-<li class="learn-item masked"><template>Haben Sie etwas gegen die Beschwerden eingenommen oder unternommen?</template></li>
-<li class="learn-item masked"><template>Waren Sie deswegen bereits beim Arzt?</template></li>
-<li class="learn-item masked"><template>Hatten Sie solche Beschwerden früher schon einmal?</template></li>
-<li class="learn-item masked"><template>Haben Sie noch weitere Beschwerden oder etwas anderes Wichtiges bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a04d62c4649f.mp3">Haben Sie etwas gegen die Beschwerden eingenommen oder unternommen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d5c3598e1fb9.mp3">Waren Sie deswegen bereits beim Arzt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/434cb6d03ac2.mp3">Hatten Sie solche Beschwerden früher schon einmal?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/604b3c6ab1aa.mp3">Haben Sie noch weitere Beschwerden oder etwas anderes Wichtiges bemerkt?</template></li>
 </ul>
 </section>
 </div>
 <h2>3. Zwischenzusammenfassung</h2>
 <ul>
-<li class="learn-item masked"><template>Vielen Dank für die Informationen.</template></li>
-<li class="learn-item masked"><template>Bevor ich weitere Fragen stelle, möchte ich kurz zusammenfassen, was ich bisher verstanden habe.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3bc4c2a2c169.mp3">Vielen Dank für die Informationen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b426cbe17e85.mp3">Bevor ich weitere Fragen stelle, möchte ich kurz zusammenfassen, was ich bisher verstanden habe.</template></li>
 </ul>
 <div class="case-variable-box">
 <div class="case-selector-row">
@@ -419,411 +439,411 @@ html[data-theme="dark"] .floating-control{
 </div>
 <div class="case-summaries">
 <div aria-label="Zwischenzusammenfassung: 1A. Schulterschmerzen" class="case-summary active" id="case-1" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über starke Schmerzen in der rechten Schulter.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit einem Sturz beim Handballtraining.</template></li>
-<li class="learn-item masked"><template>Die Schulter ist leicht geschwollen und deutlich in der Bewegung eingeschränkt.</template></li>
-<li class="learn-item masked"><template>Taubheitsgefühl oder Kribbeln im Arm bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1f9b4a19dc82.mp3">Sie berichten über starke Schmerzen in der rechten Schulter.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/06627c1252c0.mp3">Die Beschwerden bestehen seit einem Sturz beim Handballtraining.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4b2cc0b9be93.mp3">Die Schulter ist leicht geschwollen und deutlich in der Bewegung eingeschränkt.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1bd4e2a68ad9.mp3">Taubheitsgefühl oder Kribbeln im Arm bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 1B. Lumbaler Bandscheibenvorfall" class="case-summary" id="case-3" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über zunehmende Schmerzen im unteren Rücken.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit dem Heben eines schweren Gegenstands vor zwei Wochen.</template></li>
-<li class="learn-item masked"><template>Die Schmerzen strahlen bis in den rechten Fuß aus und werden beim Sitzen und Bücken stärker.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie Kribbeln und ein Schwächegefühl im rechten Bein. Eine Stuhl- oder Harninkontinenz besteht nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/04dce26836b2.mp3">Sie berichten über zunehmende Schmerzen im unteren Rücken.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/add8a2b467e4.mp3">Die Beschwerden bestehen seit dem Heben eines schweren Gegenstands vor zwei Wochen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1b9b063391d2.mp3">Die Schmerzen strahlen bis in den rechten Fuß aus und werden beim Sitzen und Bücken stärker.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/660bb2f6cfd2.mp3">Zusätzlich haben Sie Kribbeln und ein Schwächegefühl im rechten Bein. Eine Stuhl- oder Harninkontinenz besteht nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 1C. Knieschmerzen" class="case-summary" id="case-5" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über starke Schmerzen im linken Knie.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit einer Verdrehung beim Badminton.</template></li>
-<li class="learn-item masked"><template>Das Knie ist deutlich geschwollen, instabil und kaum belastbar.</template></li>
-<li class="learn-item masked"><template>Taubheitsgefühl, Fieber oder sichtbare Blutergüsse bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/198a1f85722c.mp3">Sie berichten über starke Schmerzen im linken Knie.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6d67ef82deee.mp3">Die Beschwerden bestehen seit einer Verdrehung beim Badminton.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/94e95af5a14c.mp3">Das Knie ist deutlich geschwollen, instabil und kaum belastbar.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/622dcce9c427.mp3">Taubheitsgefühl, Fieber oder sichtbare Blutergüsse bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 2A. Brustenge (KHK)" class="case-summary" id="case-2" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über Druck und Enge hinter dem Brustbein.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden treten seit drei Monaten wiederholt bei körperlicher Belastung auf.</template></li>
-<li class="learn-item masked"><template>In Ruhe verschwinden sie nach wenigen Minuten.</template></li>
-<li class="learn-item masked"><template>Begleitend haben Sie Belastungsatemnot, jedoch keine Beschwerden in Ruhe.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/71ddb8fe0fa4.mp3">Sie berichten über Druck und Enge hinter dem Brustbein.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b2db43ff1e67.mp3">Die Beschwerden treten seit drei Monaten wiederholt bei körperlicher Belastung auf.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/66880aba08e7.mp3">In Ruhe verschwinden sie nach wenigen Minuten.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2e78b6353d1d.mp3">Begleitend haben Sie Belastungsatemnot, jedoch keine Beschwerden in Ruhe.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 2B. Asthma bronchiale" class="case-summary" id="case-7" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über trockenen Husten und Brustenge seit mehreren Wochen.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden verstärken sich bei Staubkontakt und in geschlossenen Räumen.</template></li>
-<li class="learn-item masked"><template>Zusätzlich treten nächtliche Hustenanfälle und gelegentliche Belastungsatemnot auf.</template></li>
-<li class="learn-item masked"><template>Gewichtsverlust, Nachtschweiß oder blutiger Auswurf bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ab93d3adbb7c.mp3">Sie berichten über trockenen Husten und Brustenge seit mehreren Wochen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2054c3384734.mp3">Die Beschwerden verstärken sich bei Staubkontakt und in geschlossenen Räumen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5ecaa0a6b94e.mp3">Zusätzlich treten nächtliche Hustenanfälle und gelegentliche Belastungsatemnot auf.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/932cb797e3e0.mp3">Gewichtsverlust, Nachtschweiß oder blutiger Auswurf bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 2C. Bronchialkarzinom" class="case-summary" id="case-13" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über Husten und Brustenge seit drei Monaten.</template></li>
-<li class="learn-item masked"><template>Seit vier Wochen haben Sie außerdem Blut im Auswurf.</template></li>
-<li class="learn-item masked"><template>Zusätzlich bestehen Atemnot bei Belastung, Nachtschweiß und verminderter Appetit.</template></li>
-<li class="learn-item masked"><template>Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9adf23e1f8ae.mp3">Sie berichten über Husten und Brustenge seit drei Monaten.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/82c212c47520.mp3">Seit vier Wochen haben Sie außerdem Blut im Auswurf.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/22241082458b.mp3">Zusätzlich bestehen Atemnot bei Belastung, Nachtschweiß und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/01b86ccb7091.mp3">Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 3A. Divertikulitis" class="case-summary" id="case-6" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über Schmerzen im linken Unterbauch.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Tagen, nehmen zu und sind dauerhaft vorhanden.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen leichtes Fieber, Übelkeit, Appetitlosigkeit und wechselnder Stuhlgang.</template></li>
-<li class="learn-item masked"><template>Blut im Stuhl oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3c4a862ddfda.mp3">Sie berichten über Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8d2e617e727e.mp3">Die Beschwerden bestehen seit vier Tagen, nehmen zu und sind dauerhaft vorhanden.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/494a0c2cba87.mp3">Begleitend bestehen leichtes Fieber, Übelkeit, Appetitlosigkeit und wechselnder Stuhlgang.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b4a60731e953.mp3">Blut im Stuhl oder Erbrechen bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 3B. Bauchschmerzen" class="case-summary" id="case-8" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über diffuse Bauchschmerzen, vor allem im Oberbauch.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit drei Tagen, nehmen zu und strahlen teilweise in den Rücken aus.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen Übelkeit, Appetitlosigkeit und ein veränderter Stuhlgang.</template></li>
-<li class="learn-item masked"><template>Fieber, Erbrechen, Blut im Stuhl oder Gewichtsverlust bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4bfccf53fdac.mp3">Sie berichten über diffuse Bauchschmerzen, vor allem im Oberbauch.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/591c7a5564fa.mp3">Die Beschwerden bestehen seit drei Tagen, nehmen zu und strahlen teilweise in den Rücken aus.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/dcbf6285b1aa.mp3">Begleitend bestehen Übelkeit, Appetitlosigkeit und ein veränderter Stuhlgang.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/538287263edb.mp3">Fieber, Erbrechen, Blut im Stuhl oder Gewichtsverlust bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 3C. Kolonkarzinom" class="case-summary" id="case-10" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über wiederkehrende Schmerzen im linken Unterbauch.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Monaten und haben zuletzt zugenommen.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie wechselnden Stuhlgang mit Schleim und Blut, Appetitlosigkeit und Müdigkeit.</template></li>
-<li class="learn-item masked"><template>Außerdem haben Sie etwa fünf Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/15b931b456c4.mp3">Sie berichten über wiederkehrende Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4a6cb3b08e8a.mp3">Die Beschwerden bestehen seit vier Monaten und haben zuletzt zugenommen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/bf00d84e4b81.mp3">Zusätzlich haben Sie wechselnden Stuhlgang mit Schleim und Blut, Appetitlosigkeit und Müdigkeit.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/18ae12f0c20a.mp3">Außerdem haben Sie etwa fünf Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 3D. Obere GI-Blutung" class="case-summary" id="case-12" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über schwarzen, teerartigen Stuhl seit gestern.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie zunehmende Schwäche und Atemnot bei Belastung.</template></li>
-<li class="learn-item masked"><template>Heute haben Sie zweimal erbrochen. Zuletzt waren vermutlich kaffeesatzartige Beimengungen vorhanden.</template></li>
-<li class="learn-item masked"><template>Seit zwei Wochen bestehen außerdem leichte Oberbauchschmerzen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fa737fa8b2c0.mp3">Sie berichten über schwarzen, teerartigen Stuhl seit gestern.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2ad8ef431e2d.mp3">Zusätzlich haben Sie zunehmende Schwäche und Atemnot bei Belastung.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/873de1cb0bff.mp3">Heute haben Sie zweimal erbrochen. Zuletzt waren vermutlich kaffeesatzartige Beimengungen vorhanden.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/0acf38572b31.mp3">Seit zwei Wochen bestehen außerdem leichte Oberbauchschmerzen.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 4A. Harnsteinleiden" class="case-summary" id="case-0" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über leichte, ziehende Schmerzen in der rechten Flanke.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit fünf Tagen.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie häufigeren Harndrang, Brennen beim Wasserlassen und einen schwachen Harnstrahl.</template></li>
-<li class="learn-item masked"><template>Fieber, Übelkeit, Erbrechen oder Blut im Urin bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2c707542967f.mp3">Sie berichten über leichte, ziehende Schmerzen in der rechten Flanke.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c0fd73c09885.mp3">Die Beschwerden bestehen seit fünf Tagen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a43be8692d78.mp3">Zusätzlich haben Sie häufigeren Harndrang, Brennen beim Wasserlassen und einen schwachen Harnstrahl.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5419d84c546e.mp3">Fieber, Übelkeit, Erbrechen oder Blut im Urin bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 5A. Ösophaguskarzinom" class="case-summary" id="case-15" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über zunehmende Schluckbeschwerden seit sechs Wochen.</template></li>
-<li class="learn-item masked"><template>Zunächst waren nur feste Speisen betroffen, inzwischen auch Flüssigkeiten.</template></li>
-<li class="learn-item masked"><template>Zusätzlich bestehen Schmerzen hinter dem Brustbein, Hochkommen von Nahrung und Husten beim Essen.</template></li>
-<li class="learn-item masked"><template>Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b6ec7b697521.mp3">Sie berichten über zunehmende Schluckbeschwerden seit sechs Wochen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/723205ee69ce.mp3">Zunächst waren nur feste Speisen betroffen, inzwischen auch Flüssigkeiten.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a27552d97c18.mp3">Zusätzlich bestehen Schmerzen hinter dem Brustbein, Hochkommen von Nahrung und Husten beim Essen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/01b86ccb7091.mp3">Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 6A. Migräne" class="case-summary" id="case-9" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über einseitige, pochende Kopfschmerzattacken.</template></li>
-<li class="learn-item masked"><template>Die Attacken treten seit drei Monaten etwa zweimal im Monat auf und dauern vier bis 24 Stunden.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen Übelkeit sowie Licht- und Geräuschempfindlichkeit.</template></li>
-<li class="learn-item masked"><template>Vor den Kopfschmerzen treten für 15 bis 30 Minuten Sehstörungen auf.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fa1129111be1.mp3">Sie berichten über einseitige, pochende Kopfschmerzattacken.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/790839bd5f82.mp3">Die Attacken treten seit drei Monaten etwa zweimal im Monat auf und dauern vier bis 24 Stunden.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/08e52ecd4b2a.mp3">Begleitend bestehen Übelkeit sowie Licht- und Geräuschempfindlichkeit.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d48a5312d93a.mp3">Vor den Kopfschmerzen treten für 15 bis 30 Minuten Sehstörungen auf.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 6B. Schwindel" class="case-summary" id="case-16" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über zunehmenden Schwankschwindel seit drei Tagen.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden treten besonders beim Aufstehen, Gehen und Drehen des Kopfes auf.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen Benommenheit, Konzentrationsprobleme und leichte dumpfe Kopfschmerzen.</template></li>
-<li class="learn-item masked"><template>Seh-, Sprach- oder Hörstörungen, Erbrechen, Bewusstseinsverlust oder Fieber bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1528daad806f.mp3">Sie berichten über zunehmenden Schwankschwindel seit drei Tagen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8508dff6fadd.mp3">Die Beschwerden treten besonders beim Aufstehen, Gehen und Drehen des Kopfes auf.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d0064d79d26e.mp3">Begleitend bestehen Benommenheit, Konzentrationsprobleme und leichte dumpfe Kopfschmerzen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1f100f288b72.mp3">Seh-, Sprach- oder Hörstörungen, Erbrechen, Bewusstseinsverlust oder Fieber bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 7A. Fatigue und Halsschmerzen" class="case-summary" id="case-4" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über starke Erschöpfung seit fünf bis sechs Tagen.</template></li>
-<li class="learn-item masked"><template>Seit drei Tagen haben Sie zusätzlich Halsschmerzen.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen Fieber, Kopf- und Gliederschmerzen, Nachtschweiß und verminderter Appetit.</template></li>
-<li class="learn-item masked"><template>Husten, Schnupfen, Atemnot, Erbrechen oder Durchfall bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/61ee961d3deb.mp3">Sie berichten über starke Erschöpfung seit fünf bis sechs Tagen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/17942ed6c7e2.mp3">Seit drei Tagen haben Sie zusätzlich Halsschmerzen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/cd154c13f0c9.mp3">Begleitend bestehen Fieber, Kopf- und Gliederschmerzen, Nachtschweiß und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fd9606bf3019.mp3">Husten, Schnupfen, Atemnot, Erbrechen oder Durchfall bestehen nicht.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 7B. COVID-19" class="case-summary" id="case-11" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über trockenen Husten, Fieber und ein starkes Krankheitsgefühl.</template></li>
-<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Tagen und nehmen zu.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie Kopfschmerzen, Müdigkeit sowie einen deutlich verminderten Geruchs- und Geschmackssinn.</template></li>
-<li class="learn-item masked"><template>In Ruhe besteht keine Atemnot. Bei Belastung geraten Sie jedoch schneller außer Atem.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1f1f48955daf.mp3">Sie berichten über trockenen Husten, Fieber und ein starkes Krankheitsgefühl.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/acdd69ef965b.mp3">Die Beschwerden bestehen seit vier Tagen und nehmen zu.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2cdfeaad311d.mp3">Zusätzlich haben Sie Kopfschmerzen, Müdigkeit sowie einen deutlich verminderten Geruchs- und Geschmackssinn.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/163ab5999281.mp3">In Ruhe besteht keine Atemnot. Bei Belastung geraten Sie jedoch schneller außer Atem.</template></li>
 </ul></div><div aria-label="Zwischenzusammenfassung: 7C. Burn-out nach Dengue" class="case-summary" id="case-14" role="region"><ul>
-<li class="learn-item masked"><template>Sie berichten über zunehmende Erschöpfung seit drei Monaten.</template></li>
-<li class="learn-item masked"><template>Zusätzlich haben Sie Konzentrationsprobleme, Schlafstörungen und innere Unruhe.</template></li>
-<li class="learn-item masked"><template>Begleitend bestehen Herzklopfen, Kopfdruck, unspezifische Schmerzen und verminderter Appetit.</template></li>
-<li class="learn-item masked"><template>Sie haben etwa drei Kilogramm abgenommen. Fieber oder andere akute Infektzeichen bestehen nicht.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5b10b1e049e5.mp3">Sie berichten über zunehmende Erschöpfung seit drei Monaten.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/45946ec341bd.mp3">Zusätzlich haben Sie Konzentrationsprobleme, Schlafstörungen und innere Unruhe.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ba41b98681d0.mp3">Begleitend bestehen Herzklopfen, Kopfdruck, unspezifische Schmerzen und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/bcc56a0a9d16.mp3">Sie haben etwa drei Kilogramm abgenommen. Fieber oder andere akute Infektzeichen bestehen nicht.</template></li>
 </ul></div></div>
 </div>
 <ul>
-<li class="learn-item masked"><template>Habe ich das so richtig verstanden, oder möchten Sie noch etwas ergänzen oder korrigieren?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/648851b18935.mp3">Habe ich das so richtig verstanden, oder möchten Sie noch etwas ergänzen oder korrigieren?</template></li>
 </ul>
 <h2>4. Vegetative Anamnese</h2>
 <ul>
-<li class="learn-item masked"><template>Abgesehen von den bereits genannten Beschwerden: Haben Sie Fieber, Schüttelfrost oder Nachtschweiß bemerkt?</template></li>
-<li class="learn-item masked"><template>Hat sich Ihr Appetit verändert oder haben Sie ungewollt ab- oder zugenommen?</template></li>
-<li class="learn-item masked"><template>Gibt es Auffälligkeiten beim Stuhlgang oder Wasserlassen?</template></li>
-<li class="learn-item masked"><template>Haben Sie Schwierigkeiten ein- oder durchzuschlafen, oder fühlen Sie sich morgens nicht erholt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d484686f4ad9.mp3">Abgesehen von den bereits genannten Beschwerden: Haben Sie Fieber, Schüttelfrost oder Nachtschweiß bemerkt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/be4f4f0add5b.mp3">Hat sich Ihr Appetit verändert oder haben Sie ungewollt ab- oder zugenommen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f1680309922f.mp3">Gibt es Auffälligkeiten beim Stuhlgang oder Wasserlassen?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/146b18080bab.mp3">Haben Sie Schwierigkeiten ein- oder durchzuschlafen, oder fühlen Sie sich morgens nicht erholt?</template></li>
 </ul>
 <h2>5. Vorerkrankungen, Voroperationen, Medikamente und Allergien</h2>
 <ul>
-<li class="learn-item masked"><template>Dann würde ich Ihnen jetzt gerne einige Fragen zu Ihrer medizinischen Vorgeschichte stellen.</template></li>
-<li class="learn-item masked"><template>Sind bei Ihnen chronische oder andere wichtige Erkrankungen bekannt?</template></li>
-<ul><li class="learn-item masked"><template>Seit wann besteht die Erkrankung, und wie wird sie behandelt?</template></li></ul>
-<li class="learn-item masked"><template>Wurden Sie schon einmal operiert?</template></li>
-<ul><li class="learn-item masked"><template>Wann war die Operation, und gab es Komplikationen?</template></li></ul>
-<li class="learn-item masked"><template>Welche Medikamente nehmen Sie regelmäßig oder bei Bedarf ein?</template></li>
-<ul><li class="learn-item masked"><template>Kennen Sie die Dosierung?</template></li></ul>
-<li class="learn-item masked"><template>Sind bei Ihnen Allergien oder Unverträglichkeiten bekannt?</template></li>
-<ul><li class="learn-item masked"><template>Wie äußert sich die Reaktion?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5364afcc8763.mp3">Dann würde ich Ihnen jetzt gerne einige Fragen zu Ihrer medizinischen Vorgeschichte stellen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/167beddf9534.mp3">Sind bei Ihnen chronische oder andere wichtige Erkrankungen bekannt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/6cd490c24c71.mp3">Seit wann besteht die Erkrankung, und wie wird sie behandelt?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5f01b99e3958.mp3">Wurden Sie schon einmal operiert?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0dca288b0d8c.mp3">Wann war die Operation, und gab es Komplikationen?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3f1a29974cdd.mp3">Welche Medikamente nehmen Sie regelmäßig oder bei Bedarf ein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/adca5bbb2776.mp3">Kennen Sie die Dosierung?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3c25d6d17026.mp3">Sind bei Ihnen Allergien oder Unverträglichkeiten bekannt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/bd8bdbe48e2c.mp3">Wie äußert sich die Reaktion?</template></li></ul>
 </ul>
 <h2>6. Noxen</h2>
 <ul>
-<li class="learn-item masked"><template>Rauchen Sie Frau Müller?</template></li>
-<ul><li class="learn-item masked"><template>Wie viel und seit wann?</template></li></ul>
-<li class="learn-item masked"><template>Trinken Sie Alkohol?</template></li>
-<ul><li class="learn-item masked"><template>Wie häufig und wie viel?</template></li></ul>
-<li class="learn-item masked"><template>Nehmen Sie andere Substanzen oder Drogen zu sich?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/7d77b399bb16.mp3">Rauchen Sie Frau Müller?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/e7ac72aa10fb.mp3">Wie viel und seit wann?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/71e318eb521b.mp3">Trinken Sie Alkohol?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/76ea142d53b2.mp3">Wie häufig und wie viel?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/bc3fd2238581.mp3">Nehmen Sie andere Substanzen oder Drogen zu sich?</template></li>
 </ul>
 <h2>7. Familienanamnese</h2>
 <ul>
-<li class="learn-item masked"><template>Sind in Ihrer Familie bestimmte Erkrankungen bekannt?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/75d308e258f9.mp3">Sind in Ihrer Familie bestimmte Erkrankungen bekannt?</template></li>
 </ul>
 <h2>8. Sozialanamnese</h2>
 <ul>
-<li class="learn-item masked"><template>Abschließend würde ich gerne kurz auf Ihre soziale Situation eingehen.</template></li>
-<li class="learn-item masked"><template>Was machen Sie beruflich?</template></li>
-<li class="learn-item masked"><template>Sind Sie verheiratet oder leben Sie in einer Partnerschaft?</template></li>
-<li class="learn-item masked"><template>Haben Sie Kinder?</template></li>
-<li class="learn-item masked"><template>Gibt es jemanden, der Sie bei Bedarf unterstützen kann?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fb963dd9ae8f.mp3">Abschließend würde ich gerne kurz auf Ihre soziale Situation eingehen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/22ef43cbf4cd.mp3">Was machen Sie beruflich?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fbf7f3e95ea5.mp3">Sind Sie verheiratet oder leben Sie in einer Partnerschaft?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/49dafc2136a3.mp3">Haben Sie Kinder?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5d4f8f025fab.mp3">Gibt es jemanden, der Sie bei Bedarf unterstützen kann?</template></li>
 </ul>
 <h2>9. Gynäkologische Anamnese</h2>
 <ul>
-<li class="learn-item masked"><template>Bei Frauen im gebärfähigen Alter würde ich noch kurz fragen:</template></li>
-<ul><li class="learn-item masked"><template>Besteht aktuell die Möglichkeit einer Schwangerschaft?</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ba9717e1edc0.mp3">Bei Frauen im gebärfähigen Alter würde ich noch kurz fragen:</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/84dd744bda33.mp3">Besteht aktuell die Möglichkeit einer Schwangerschaft?</template></li></ul>
 </ul>
 <h2>10. Impfstatus, falls relevant</h2>
 <ul>
-<li class="learn-item masked"><template>Sind Ihre Impfungen vollständig und aktuell?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/21713743577c.mp3">Sind Ihre Impfungen vollständig und aktuell?</template></li>
 </ul>
 <h2>11. Reiseanamnese, falls relevant</h2>
 <ul>
-<li class="learn-item masked"><template>Waren Sie in der letzten Zeit im Ausland?</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d3cd1680996f.mp3">Waren Sie in der letzten Zeit im Ausland?</template></li>
 </ul>
 <h2>12. Weiteres Vorgehen und Abschluss</h2>
 
 <ul>
-  <li class="learn-item masked"><template>Damit sind wir mit den Fragen durch.</template></li>
-  <li class="learn-item masked"><template>Ich erkläre Ihnen jetzt kurz, wie es weitergeht.</template></li>
-  <li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben.</template></li>
-  <li class="learn-item masked"><template>Um herauszufinden, was genau bei Ihnen vorliegt, werde ich Sie nun körperlich untersuchen.</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/61c8cc2366ad.mp3">Damit sind wir mit den Fragen durch.</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/1a7f2bb7ad10.mp3">Ich erkläre Ihnen jetzt kurz, wie es weitergeht.</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/fec67cce18c0.mp3">Ihre Beschwerden können verschiedene Ursachen haben.</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/9a590cf13ce2.mp3">Um herauszufinden, was genau bei Ihnen vorliegt, werde ich Sie nun körperlich untersuchen.</template></li>
 
-  <li class="learn-item masked"><template>Außerdem werden wir ... und ...</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/05a4a36f08f0.mp3">Außerdem werden wir ... und ...</template></li>
   <ul>
-    <li class="learn-item masked"><template>Blut abnehmen</template></li>
-    <li class="learn-item masked"><template>eine Urinprobe untersuchen</template></li>
-    <li class="learn-item masked"><template>eine Stuhlprobe untersuchen</template></li>
-    <li class="learn-item masked"><template>ein EKG schreiben</template></li>
-    <li class="learn-item masked"><template>eine Ultraschalluntersuchung durchführen</template></li>
-    <li class="learn-item masked"><template>eine neurologische Untersuchung durchführen</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/6498daebbe19.mp3">Blut abnehmen</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/5b3efa0f4ad6.mp3">eine Urinprobe untersuchen</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/8e4cb03b0bc2.mp3">eine Stuhlprobe untersuchen</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/c2c78750e0d1.mp3">ein EKG schreiben</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/9050435a1eaa.mp3">eine Ultraschalluntersuchung durchführen</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/d2fa36256f31.mp3">eine neurologische Untersuchung durchführen</template></li>
   </ul>
 
-  <li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind, zum Beispiel ... oder ...</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/05017b244e82.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind, zum Beispiel ... oder ...</template></li>
   <ul>
-    <li class="learn-item masked"><template>ein Röntgenbild</template></li>
-    <li class="learn-item masked"><template>eine MRT-Untersuchung</template></li>
-    <li class="learn-item masked"><template>eine Ultraschalluntersuchung</template></li>
-    <li class="learn-item masked"><template>eine CT-Untersuchung</template></li>
-    <li class="learn-item masked"><template>eine eine Magenspiegelung</template></li>
-    <li class="learn-item masked"><template>eine Darmspiegelung</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/a1e0fe7d45eb.mp3">ein Röntgenbild</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/54ad338bb225.mp3">eine MRT-Untersuchung</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/63e93b2a94bf.mp3">eine Ultraschalluntersuchung</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/244e70516b0b.mp3">eine CT-Untersuchung</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/0e8b961f621e.mp3">eine eine Magenspiegelung</template></li>
+    <li class="learn-item masked"><template data-audio="audio/anamnese/46dd59e90426.mp3">eine Darmspiegelung</template></li>
   </ul>
 
-  <li class="learn-item masked"><template>Anschließend besprechen wir gemeinsam die Ergebnisse und das weitere Vorgehen.</template></li>
-  <li class="learn-item masked"><template>Haben Sie dazu noch Fragen?</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/0ca9693212ff.mp3">Anschließend besprechen wir gemeinsam die Ergebnisse und das weitere Vorgehen.</template></li>
+  <li class="learn-item masked"><template data-audio="audio/anamnese/540ec33f96cd.mp3">Haben Sie dazu noch Fragen?</template></li>
 </ul>
 
     
 <h2>13. Patientenfragen und Antworten nach Fall</h2>
 <div class="patient-qa-cases"><div class="case-selector-row patient-qa-selector-row"><label for="patientQaSelector">Fall auswählen:</label><select aria-label="Patientenfragen-Fall auswählen" id="patientQaSelector"><option selected="" value="patient-qa-case-0">1A. Schulterschmerzen</option><option value="patient-qa-case-1">1B. Lumbaler Bandscheibenvorfall</option><option value="patient-qa-case-2">1C. Knieschmerzen</option><option value="patient-qa-case-3">2A. Brustenge (KHK)</option><option value="patient-qa-case-4">2B. Asthma bronchiale</option><option value="patient-qa-case-5">2C. Bronchialkarzinom</option><option value="patient-qa-case-6">3A. Divertikulitis</option><option value="patient-qa-case-7">3B. Bauchschmerzen</option><option value="patient-qa-case-8">3C. Kolonkarzinom</option><option value="patient-qa-case-9">3D. Obere GI-Blutung</option><option value="patient-qa-case-10">4A. Harnsteinleiden</option><option value="patient-qa-case-11">5A. Ösophaguskarzinom</option><option value="patient-qa-case-12">6A. Migräne</option><option value="patient-qa-case-13">6B. Schwindel</option><option value="patient-qa-case-14">7A. Fatigue und Halsschmerzen</option><option value="patient-qa-case-15">7B. COVID-19</option><option value="patient-qa-case-16">7C. Burn-out nach Dengue</option></select></div><div class="patient-qa-panels"><section aria-label="Patientenfragen: 1A. Schulterschmerzen" class="patient-qa-case active" id="patient-qa-case-0" role="region"><h3>1A. Schulterschmerzen</h3><ul>
-<li class="learn-item masked"><template>Ist meine Schulter ausgekugelt?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einer Ausrenkung der Schulter passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
-<li class="learn-item masked"><template>Muss man das sofort röntgen?</template></li>
-<ul><li class="learn-item masked"><template>Bei Ihren Beschwerden ist eine Röntgenuntersuchung sinnvoll.</template></li><li class="learn-item masked"><template>Damit können wir prüfen, ob ein Knochenbruch oder eine Ausrenkung vorliegt.</template></li></ul>
-<li class="learn-item masked"><template>Besteht die Gefahr, dass etwas gebrochen ist?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einem Knochenbruch passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
-<li class="learn-item masked"><template>Soll ich den Arm lieber ruhigstellen oder bewegen?</template></li>
-<ul><li class="learn-item masked"><template>Bis wir wissen, was genau verletzt ist, sollten Sie den Arm zunächst schonen und starke Bewegungen vermeiden.</template></li><li class="learn-item masked"><template>Danach können wir besser einschätzen, wie viel Bewegung sinnvoll ist.</template></li></ul>
-<li class="learn-item masked"><template>Wie lange dauert es ungefähr, bis ich wieder Handball spielen kann?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich mit einer Operation rechnen?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Soll ich für die nächsten Tage krankgeschrieben werden?</template></li>
-<ul><li class="learn-item masked"><template>Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template>Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a3e643841cc0.mp3">Ist meine Schulter ausgekugelt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/4c94693b9975.mp3">Ja, Ihre Beschwerden könnten zu einer Ausrenkung der Schulter passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/608c4e91b487.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/105296ebb336.mp3">Muss man das sofort röntgen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/c7aa2bd6f323.mp3">Bei Ihren Beschwerden ist eine Röntgenuntersuchung sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/c5730f400966.mp3">Damit können wir prüfen, ob ein Knochenbruch oder eine Ausrenkung vorliegt.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3eaea6923770.mp3">Besteht die Gefahr, dass etwas gebrochen ist?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9b7e22dd6a10.mp3">Ja, Ihre Beschwerden könnten zu einem Knochenbruch passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/608c4e91b487.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/742bd0d8177e.mp3">Soll ich den Arm lieber ruhigstellen oder bewegen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/3bc0932052f3.mp3">Bis wir wissen, was genau verletzt ist, sollten Sie den Arm zunächst schonen und starke Bewegungen vermeiden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/ac3b1e1f581f.mp3">Danach können wir besser einschätzen, wie viel Bewegung sinnvoll ist.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d020b105e6e5.mp3">Wie lange dauert es ungefähr, bis ich wieder Handball spielen kann?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6d6b8eb350e4.mp3">Muss ich mit einer Operation rechnen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7be1b981c450.mp3">Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b394cea15ecc.mp3">Soll ich für die nächsten Tage krankgeschrieben werden?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/75db28ab05ae.mp3">Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/fcade5677e5f.mp3">Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 1B. Lumbaler Bandscheibenvorfall" class="patient-qa-case" id="patient-qa-case-1" role="region"><h3>1B. Lumbaler Bandscheibenvorfall</h3><ul>
-<li class="learn-item masked"><template>Könnte das ein Bandscheibenvorfall sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einem Bandscheibenvorfall passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und gegebenenfalls einer Bildgebung.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich ins Krankenhaus oder reicht eine Behandlung beim Hausarzt?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich mich lieber schonen oder bewegen?</template></li>
-<ul><li class="learn-item masked"><template>Eine vollständige Bettruhe ist normalerweise nicht sinnvoll.</template></li><li class="learn-item masked"><template>Sie sollten in Bewegung bleiben, soweit es die Schmerzen zulassen.</template></li></ul>
-<li class="learn-item masked"><template>Wie gefährlich ist es, wenn mein Bein manchmal kribbelt?</template></li>
-<ul><li class="learn-item masked"><template>Das Kribbeln kann darauf hinweisen, dass ein Nerv gereizt wird.</template></li><li class="learn-item masked"><template>Deshalb würde ich die Kraft, das Gefühl und die Reflexe in Ihrem Bein untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Muss man das operieren oder geht es auch ohne OP?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Welche Untersuchungen sind notwendig, um die Ursache festzustellen?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Sie körperlich und neurologisch untersuchen.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
-<li class="learn-item masked"><template>Kann ich weiterhin Auto fahren und zur Arbeit gehen?</template></li>
-<ul><li class="learn-item masked"><template>Solange Sie Ihr Bein nicht sicher kontrollieren können, sollten Sie zunächst nicht Auto fahren.</template></li><li class="learn-item masked"><template>Ob Sie arbeiten können, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fa97ddf94878.mp3">Könnte das ein Bandscheibenvorfall sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f8024d0d9bda.mp3">Ja, Ihre Beschwerden könnten zu einem Bandscheibenvorfall passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/0ae01490d10d.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und gegebenenfalls einer Bildgebung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c180cfbbf1c2.mp3">Muss ich ins Krankenhaus oder reicht eine Behandlung beim Hausarzt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/23b0bc8f622e.mp3">Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/25b5d9e2f156.mp3">Sollte ich mich lieber schonen oder bewegen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/4f4e410d3404.mp3">Eine vollständige Bettruhe ist normalerweise nicht sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/b85c8280f56b.mp3">Sie sollten in Bewegung bleiben, soweit es die Schmerzen zulassen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/7db3ae82500b.mp3">Wie gefährlich ist es, wenn mein Bein manchmal kribbelt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/c8f15b2e0080.mp3">Das Kribbeln kann darauf hinweisen, dass ein Nerv gereizt wird.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/b10abefbd625.mp3">Deshalb würde ich die Kraft, das Gefühl und die Reflexe in Ihrem Bein untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/aa8dec9262e8.mp3">Muss man das operieren oder geht es auch ohne OP?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7be1b981c450.mp3">Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/72bfc047a6ea.mp3">Welche Untersuchungen sind notwendig, um die Ursache festzustellen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/33e5dc7b033d.mp3">Zunächst würde ich Sie körperlich und neurologisch untersuchen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5e442355244c.mp3">Kann ich weiterhin Auto fahren und zur Arbeit gehen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9fc51b0ed701.mp3">Solange Sie Ihr Bein nicht sicher kontrollieren können, sollten Sie zunächst nicht Auto fahren.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/1b0dbeef9269.mp3">Ob Sie arbeiten können, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 1C. Knieschmerzen" class="patient-qa-case" id="patient-qa-case-2" role="region"><h3>1C. Knieschmerzen</h3><ul>
-<li class="learn-item masked"><template>Muss ich zum Röntgen oder MRT?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Ihr Knie untersuchen.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob ein Röntgenbild oder ein MRT notwendig ist.</template></li></ul>
-<li class="learn-item masked"><template>Kann da etwas gebrochen sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einem Knochenbruch passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich das Knie bandagieren oder lieber ruhig halten?</template></li>
-<ul><li class="learn-item masked"><template>Im Moment sollten Sie das Knie zunächst schonen und nicht stark belasten.</template></li><li class="learn-item masked"><template>Ob eine Bandage oder Schiene sinnvoll ist, entscheiden wir erst nach der Untersuchung.</template></li></ul>
-<li class="learn-item masked"><template>Wie lange dauert es, bis ich wieder Sport machen kann?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Brauche ich eine Überweisung zum Orthopäden?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Wann sollte ich mich wieder vorstellen, falls es nicht besser wird?</template></li>
-<ul><li class="learn-item masked"><template>Wir vereinbaren abhängig vom Befund eine Kontrolle.</template></li><li class="learn-item masked"><template>Wenn sich die Beschwerden verschlechtern oder neue Beschwerden auftreten, sollten Sie sich früher wieder vorstellen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4af9d95d866f.mp3">Muss ich zum Röntgen oder MRT?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/418f7e0024f9.mp3">Zunächst würde ich Ihr Knie untersuchen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/587bcc23a620.mp3">Danach entscheiden wir, ob ein Röntgenbild oder ein MRT notwendig ist.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8a8153da5408.mp3">Kann da etwas gebrochen sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9b7e22dd6a10.mp3">Ja, Ihre Beschwerden könnten zu einem Knochenbruch passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/608c4e91b487.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und einem Röntgenbild.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/555f8fc2c3c3.mp3">Sollte ich das Knie bandagieren oder lieber ruhig halten?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/280051b279b1.mp3">Im Moment sollten Sie das Knie zunächst schonen und nicht stark belasten.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/3e0839994c55.mp3">Ob eine Bandage oder Schiene sinnvoll ist, entscheiden wir erst nach der Untersuchung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8f6f4322c87d.mp3">Wie lange dauert es, bis ich wieder Sport machen kann?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/0c1913e8d8a9.mp3">Brauche ich eine Überweisung zum Orthopäden?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7924a5216824.mp3">Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/afb9b37f185b.mp3">Wann sollte ich mich wieder vorstellen, falls es nicht besser wird?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0f55aec944d8.mp3">Wir vereinbaren abhängig vom Befund eine Kontrolle.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/0fe1c1995dd5.mp3">Wenn sich die Beschwerden verschlechtern oder neue Beschwerden auftreten, sollten Sie sich früher wieder vorstellen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 2A. Brustenge (KHK)" class="patient-qa-case" id="patient-qa-case-3" role="region"><h3>2A. Brustenge (KHK)</h3><ul>
-<li class="learn-item masked"><template>Glauben Sie, dass das etwas mit meinem Herzen zu tun hat? Mein Vater hatte schließlich auch Herzprobleme.</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten von einer Herzerkrankung kommen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und weiteren Abklärungen</template></li></ul>
-<li class="learn-item masked"><template>Muss ich jetzt operiert werden oder reicht da eine Tablette?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Welche Behandlung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Darf ich mich denn überhaupt noch belasten oder ist Sport jetzt gefährlich für mich?</template></li>
-<ul><li class="learn-item masked"><template>Bis wir die Ursache der Beschwerden geklärt haben, sollten Sie starke körperliche Belastungen vermeiden.</template></li><li class="learn-item masked"><template>Danach können wir besser einschätzen, welche Belastung sinnvoll ist.</template></li></ul>
-<li class="learn-item masked"><template>Könnte das auch vom Rücken kommen? Ich sitze viel am Schreibtisch.</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Wegen Ihrer Beschwerden bei Belastung müssen wir aber zunächst eine Herzerkrankung als Ursache ausschließen.</template></li></ul>
-<li class="learn-item masked"><template>Welche Untersuchungen kommen jetzt auf mich zu?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Sie körperlich untersuchen und ein EKG schreiben.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/263aaee2813a.mp3">Glauben Sie, dass das etwas mit meinem Herzen zu tun hat? Mein Vater hatte schließlich auch Herzprobleme.</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9d42b2b4c5f1.mp3">Ja, Ihre Beschwerden könnten von einer Herzerkrankung kommen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/d099dfd1db0d.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und weiteren Abklärungen</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/e72af8680731.mp3">Muss ich jetzt operiert werden oder reicht da eine Tablette?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/02f8c68ae3f4.mp3">Welche Behandlung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/494a75ea1d9a.mp3">Darf ich mich denn überhaupt noch belasten oder ist Sport jetzt gefährlich für mich?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b444d60b2ac6.mp3">Bis wir die Ursache der Beschwerden geklärt haben, sollten Sie starke körperliche Belastungen vermeiden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/5c7da407988f.mp3">Danach können wir besser einschätzen, welche Belastung sinnvoll ist.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4c7d73b85d5a.mp3">Könnte das auch vom Rücken kommen? Ich sitze viel am Schreibtisch.</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/c4a2fd27e150.mp3">Wegen Ihrer Beschwerden bei Belastung müssen wir aber zunächst eine Herzerkrankung als Ursache ausschließen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8efc636d5ea4.mp3">Welche Untersuchungen kommen jetzt auf mich zu?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/6f4ea6329262.mp3">Zunächst würde ich Sie körperlich untersuchen und ein EKG schreiben.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 2B. Asthma bronchiale" class="patient-qa-case" id="patient-qa-case-4" role="region"><h3>2B. Asthma bronchiale</h3><ul>
-<li class="learn-item masked"><template>Kann das wirklich Asthma sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu Asthma passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und einer Lungenfunktionsprüfung.</template></li></ul>
-<li class="learn-item masked"><template>Sind Sie sicher, dass das kein Krebs ist?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Kann meine Hausstauballergie der Grund für den Husten sein?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich meine Meerschweinchen abgeben?</template></li>
-<ul><li class="learn-item masked"><template>Das würde ich im Moment noch nicht entscheiden.</template></li><li class="learn-item masked"><template>Zunächst sollten wir prüfen, ob Ihre Beschwerden überhaupt mit den Tieren zusammenhängen.</template></li></ul>
-<li class="learn-item masked"><template>Brauche ich ein Spray für den Notfall?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
-<li class="learn-item masked"><template>Wird das Asthma chronisch?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Welche Untersuchungen sind notwendig?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Ihre Lunge untersuchen und eine Lungenfunktionsprüfung durchführen.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/82bc94832807.mp3">Kann das wirklich Asthma sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/7954827bceb2.mp3">Ja, Ihre Beschwerden könnten zu Asthma passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/4022f43a037a.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und einer Lungenfunktionsprüfung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6248495402a9.mp3">Sind Sie sicher, dass das kein Krebs ist?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fc06f09da8db.mp3">Kann meine Hausstauballergie der Grund für den Husten sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/73b481a26365.mp3">Muss ich meine Meerschweinchen abgeben?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/267b1ab08b1d.mp3">Das würde ich im Moment noch nicht entscheiden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/134390feb09a.mp3">Zunächst sollten wir prüfen, ob Ihre Beschwerden überhaupt mit den Tieren zusammenhängen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/6d48f4ab8aee.mp3">Brauche ich ein Spray für den Notfall?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/1ba38ec17bc2.mp3">Wird das Asthma chronisch?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/13bcf7ea2f4d.mp3">Welche Untersuchungen sind notwendig?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/a68161f8fe9a.mp3">Zunächst würde ich Ihre Lunge untersuchen und eine Lungenfunktionsprüfung durchführen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 2C. Bronchialkarzinom" class="patient-qa-case" id="patient-qa-case-5" role="region"><h3>2C. Bronchialkarzinom</h3><ul>
-<li class="learn-item masked"><template>Denken Sie, dass ich eine ernste Krankheit haben könnte?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich mir Sorgen wegen des Blutes im Auswurf machen?</template></li>
-<ul><li class="learn-item masked"><template>Blut im Auswurf sollte genauer abgeklärt werden.</template></li><li class="learn-item masked"><template>Es kann verschiedene Ursachen haben, deshalb sind weitere Untersuchungen notwendig.</template></li></ul>
-<li class="learn-item masked"><template>Könnte das mit dem Rauchen zusammenhängen? Sollte ich jetzt mit dem Rauchen aufhören?</template></li>
-<ul><li class="learn-item masked"><template>Unabhängig von der endgültigen Diagnose wäre es sinnvoll, mit dem Rauchen aufzuhören.</template></li><li class="learn-item masked"><template>Rauchen erhöht das Risiko für verschiedene Erkrankungen.</template></li></ul>
-<li class="learn-item masked"><template>Brauche ich eine Röntgenuntersuchung der Lunge?</template></li>
-<ul><li class="learn-item masked"><template>Ja, bei Ihren Beschwerden ist eine Bildgebung der Lunge sinnvoll.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
-<li class="learn-item masked"><template>Wie lange könnte es dauern, bis ich wieder fitter bin und weniger Atemprobleme habe?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fce57c3eb679.mp3">Denken Sie, dass ich eine ernste Krankheit haben könnte?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/af665168e4f5.mp3">Sollte ich mir Sorgen wegen des Blutes im Auswurf machen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/83aa59e8de43.mp3">Blut im Auswurf sollte genauer abgeklärt werden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/442913ac2a41.mp3">Es kann verschiedene Ursachen haben, deshalb sind weitere Untersuchungen notwendig.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/7239660bd7aa.mp3">Könnte das mit dem Rauchen zusammenhängen? Sollte ich jetzt mit dem Rauchen aufhören?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/5719fe811574.mp3">Unabhängig von der endgültigen Diagnose wäre es sinnvoll, mit dem Rauchen aufzuhören.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/d34b8395da93.mp3">Rauchen erhöht das Risiko für verschiedene Erkrankungen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/3b36e26e397a.mp3">Brauche ich eine Röntgenuntersuchung der Lunge?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/fb951c962bf5.mp3">Ja, bei Ihren Beschwerden ist eine Bildgebung der Lunge sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/aa99f0b7dff4.mp3">Wie lange könnte es dauern, bis ich wieder fitter bin und weniger Atemprobleme habe?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 3A. Divertikulitis" class="patient-qa-case" id="patient-qa-case-6" role="region"><h3>3A. Divertikulitis</h3><ul>
-<li class="learn-item masked"><template>Können die Beschwerden etwas mit der Ernährung zu tun haben?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich eventuell operiert werden, oder geht das von allein weg?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Was könnte ich gegen die Schmerzen tun?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es etwas, was ich bei der Ernährung unbedingt vermeiden sollte?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Nach der Untersuchung kann ich Ihnen genauer sagen, was Sie essen und trinken sollten.</template></li></ul>
-<li class="learn-item masked"><template>Wie lange dauert es, bis ich mich wieder besser fühle?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/266b315cab47.mp3">Können die Beschwerden etwas mit der Ernährung zu tun haben?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/82c247496271.mp3">Muss ich eventuell operiert werden, oder geht das von allein weg?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7be1b981c450.mp3">Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c02356a464cc.mp3">Was könnte ich gegen die Schmerzen tun?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5c472de83654.mp3">Gibt es etwas, was ich bei der Ernährung unbedingt vermeiden sollte?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/e8d0de28cc49.mp3">Nach der Untersuchung kann ich Ihnen genauer sagen, was Sie essen und trinken sollten.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a7cc7189ab48.mp3">Wie lange dauert es, bis ich mich wieder besser fühle?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 3B. Bauchschmerzen" class="patient-qa-case" id="patient-qa-case-7" role="region"><h3>3B. Bauchschmerzen</h3><ul>
-<li class="learn-item masked"><template>Denken Sie, dass ich Krebs haben könnte?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Was könnten diese Bauchschmerzen verursachen?</template></li>
-<ul><li class="learn-item masked"><template>Dafür kommen verschiedene Ursachen infrage.</template></li><li class="learn-item masked"><template>Die genaue Ursache können wir erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich ins Krankenhaus oder reicht eine Untersuchung in der Praxis aus?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es Möglichkeiten, Darmkrebs frühzeitig sicher auszuschließen?</template></li>
-<ul><li class="learn-item masked"><template>Das lässt sich mit einer einzelnen Untersuchung nicht sicher ausschließen.</template></li><li class="learn-item masked"><template>Je nach Befund können weitere Untersuchungen, zum Beispiel eine Darmspiegelung, notwendig sein.</template></li></ul>
-<li class="learn-item masked"><template>Können Stress oder meine Ernährung solche Symptome hervorrufen?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d3dcec88b91a.mp3">Denken Sie, dass ich Krebs haben könnte?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/843e8fdb645d.mp3">Was könnten diese Bauchschmerzen verursachen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/19f5e7aba938.mp3">Dafür kommen verschiedene Ursachen infrage.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/256dc583d3c6.mp3">Die genaue Ursache können wir erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9cb3467614ee.mp3">Muss ich ins Krankenhaus oder reicht eine Untersuchung in der Praxis aus?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/23b0bc8f622e.mp3">Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d58c603c6bc1.mp3">Gibt es Möglichkeiten, Darmkrebs frühzeitig sicher auszuschließen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/45e2f551499c.mp3">Das lässt sich mit einer einzelnen Untersuchung nicht sicher ausschließen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7f50a9608e88.mp3">Je nach Befund können weitere Untersuchungen, zum Beispiel eine Darmspiegelung, notwendig sein.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4689bf909956.mp3">Können Stress oder meine Ernährung solche Symptome hervorrufen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 3C. Kolonkarzinom" class="patient-qa-case" id="patient-qa-case-8" role="region"><h3>3C. Kolonkarzinom</h3><ul>
-<li class="learn-item masked"><template>Muss ich mir Sorgen machen wegen der Blutungen?</template></li>
-<ul><li class="learn-item masked"><template>Blut im Stuhl sollte genauer abgeklärt werden.</template></li><li class="learn-item masked"><template>Es kann verschiedene Ursachen haben, deshalb sind weitere Untersuchungen notwendig.</template></li></ul>
-<li class="learn-item masked"><template>Könnten meine Beschwerden etwas mit meiner Ernährung zu tun haben?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Ist es normal, in meinem Alter plötzlich so müde und schwach zu sein?</template></li>
-<ul><li class="learn-item masked"><template>Eine neu aufgetretene ausgeprägte Müdigkeit sollte abgeklärt werden.</template></li><li class="learn-item masked"><template>Mit einer Blutuntersuchung können wir zum Beispiel prüfen, ob eine Blutarmut vorliegt.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich vielleicht doch eine Darmspiegelung machen lassen?</template></li>
-<ul><li class="learn-item masked"><template>Ja, bei Ihren Beschwerden ist eine Darmspiegelung sinnvoll.</template></li><li class="learn-item masked"><template>Damit können wir den Darm direkt beurteilen und bei Bedarf Gewebeproben entnehmen.</template></li></ul>
-<li class="learn-item masked"><template>Könnte das etwas Ernstes sein?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/c1222eafd21a.mp3">Muss ich mir Sorgen machen wegen der Blutungen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/34106aba073f.mp3">Blut im Stuhl sollte genauer abgeklärt werden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/442913ac2a41.mp3">Es kann verschiedene Ursachen haben, deshalb sind weitere Untersuchungen notwendig.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a0b4d60e5469.mp3">Könnten meine Beschwerden etwas mit meiner Ernährung zu tun haben?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/46ed4d5aade2.mp3">Ist es normal, in meinem Alter plötzlich so müde und schwach zu sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/ad2de78f480e.mp3">Eine neu aufgetretene ausgeprägte Müdigkeit sollte abgeklärt werden.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/843c5f8d83ca.mp3">Mit einer Blutuntersuchung können wir zum Beispiel prüfen, ob eine Blutarmut vorliegt.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/835b7a24601f.mp3">Sollte ich vielleicht doch eine Darmspiegelung machen lassen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9a8e609a8ace.mp3">Ja, bei Ihren Beschwerden ist eine Darmspiegelung sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a89617cdc6a5.mp3">Damit können wir den Darm direkt beurteilen und bei Bedarf Gewebeproben entnehmen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4a77f3327484.mp3">Könnte das etwas Ernstes sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 3D. Obere GI-Blutung" class="patient-qa-case" id="patient-qa-case-9" role="region"><h3>3D. Obere GI-Blutung</h3><ul>
-<li class="learn-item masked"><template>Ist der schwarze Stuhl gefährlich?</template></li>
-<ul><li class="learn-item masked"><template>Schwarzer, teerartiger Stuhl kann auf eine Blutung im oberen Verdauungstrakt hinweisen.</template></li><li class="learn-item masked"><template>Zusammen mit Ihren anderen Beschwerden müssen wir das dringend abklären.</template></li></ul>
-<li class="learn-item masked"><template>Kann das eine Magenblutung sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einer Blutung im oberen Verdauungstrakt passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach weiteren Untersuchungen, insbesondere einer Magenspiegelung.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich jetzt dringend ins Krankenhaus?</template></li>
-<ul><li class="learn-item masked"><template>Ja.</template></li><li class="learn-item masked"><template>Wegen Ihrer Beschwerden sollten Sie jetzt im Krankenhaus weiter untersucht und behandelt werden.</template></li></ul>
-<li class="learn-item masked"><template>Kommt das vom Ibuprofen?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ibuprofen kann die Magenschleimhaut schädigen und Blutungen begünstigen, die genaue Ursache müssen wir aber noch abklären.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/df7d2270b666.mp3">Ist der schwarze Stuhl gefährlich?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/fd69b62c9523.mp3">Schwarzer, teerartiger Stuhl kann auf eine Blutung im oberen Verdauungstrakt hinweisen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/2a9be7879ea5.mp3">Zusammen mit Ihren anderen Beschwerden müssen wir das dringend abklären.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/32560504f94c.mp3">Kann das eine Magenblutung sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/614d20f60bc9.mp3">Ja, Ihre Beschwerden könnten zu einer Blutung im oberen Verdauungstrakt passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/e6c9c28fa268.mp3">Sicher sagen können wir das aber erst nach weiteren Untersuchungen, insbesondere einer Magenspiegelung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/97d918345786.mp3">Muss ich jetzt dringend ins Krankenhaus?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b0d4847c49c3.mp3">Ja.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/1156218935f6.mp3">Wegen Ihrer Beschwerden sollten Sie jetzt im Krankenhaus weiter untersucht und behandelt werden.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/5a0af23f59f2.mp3">Kommt das vom Ibuprofen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6d3c435d377b.mp3">Ibuprofen kann die Magenschleimhaut schädigen und Blutungen begünstigen, die genaue Ursache müssen wir aber noch abklären.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 4A. Harnsteinleiden" class="patient-qa-case" id="patient-qa-case-10" role="region"><h3>4A. Harnsteinleiden</h3><ul>
-<li class="learn-item masked"><template>Kann das von den Nieren kommen?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten von den Nieren oder den Harnwegen kommen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich mir Sorgen machen, dass sich das verschlimmert?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Wie sich die Beschwerden entwickeln, hängt von der genauen Ursache und vom Befund ab.</template></li></ul>
-<li class="learn-item masked"><template>Soll ich jetzt viel trinken oder eher vorsichtig sein?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Nach der Untersuchung kann ich Ihnen genauer sagen, wie viel Sie trinken sollten.</template></li></ul>
-<li class="learn-item masked"><template>Brauche ich eine spezielle Untersuchung, z. B. Ultraschall?</template></li>
-<ul><li class="learn-item masked"><template>Ja, ein Ultraschall der Nieren und Harnwege ist eine sinnvolle erste Untersuchung.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
-<li class="learn-item masked"><template>Ist das etwas Gefährliches oder geht das von allein weg?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/93c6eb310c48.mp3">Kann das von den Nieren kommen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f67a24f70c49.mp3">Ja, Ihre Beschwerden könnten von den Nieren oder den Harnwegen kommen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a0325d40c922.mp3">Sicher sagen können wir das aber erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/acf858029ec6.mp3">Muss ich mir Sorgen machen, dass sich das verschlimmert?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/9c9f83b91a6e.mp3">Wie sich die Beschwerden entwickeln, hängt von der genauen Ursache und vom Befund ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/55e30dfa822b.mp3">Soll ich jetzt viel trinken oder eher vorsichtig sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/844a4c00af76.mp3">Nach der Untersuchung kann ich Ihnen genauer sagen, wie viel Sie trinken sollten.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8aff1478bbcf.mp3">Brauche ich eine spezielle Untersuchung, z. B. Ultraschall?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/ba44110639da.mp3">Ja, ein Ultraschall der Nieren und Harnwege ist eine sinnvolle erste Untersuchung.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/28f0a762e9ba.mp3">Ist das etwas Gefährliches oder geht das von allein weg?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 5A. Ösophaguskarzinom" class="patient-qa-case" id="patient-qa-case-11" role="region"><h3>5A. Ösophaguskarzinom</h3><ul>
-<li class="learn-item masked"><template>Könnte etwas Ernsthaftes hinter meinen Beschwerden stecken?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es eine Untersuchung, mit der man genau herausfinden kann, was da los ist?</template></li>
-<ul><li class="learn-item masked"><template>Ja, hier wäre vor allem eine Spiegelung von Speiseröhre und Magen wichtig.</template></li><li class="learn-item masked"><template>Dabei können wir die Schleimhaut direkt ansehen und bei Bedarf Gewebeproben entnehmen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich wegen der Beschwerden mit dem Rauchen aufhören?</template></li>
-<ul><li class="learn-item masked"><template>Unabhängig von der endgültigen Diagnose wäre es sinnvoll, mit dem Rauchen aufzuhören.</template></li><li class="learn-item masked"><template>Rauchen erhöht das Risiko für verschiedene Erkrankungen.</template></li></ul>
-<li class="learn-item masked"><template>Ist Sodbrennen vielleicht der Grund für meine Beschwerden?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es Medikamente, die mir kurzfristig beim Schlucken helfen könnten?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fb990d01fde4.mp3">Könnte etwas Ernsthaftes hinter meinen Beschwerden stecken?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a65fb31eb346.mp3">Gibt es eine Untersuchung, mit der man genau herausfinden kann, was da los ist?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/2374faa70434.mp3">Ja, hier wäre vor allem eine Spiegelung von Speiseröhre und Magen wichtig.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/241f2deac20e.mp3">Dabei können wir die Schleimhaut direkt ansehen und bei Bedarf Gewebeproben entnehmen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4d96e76d22e5.mp3">Muss ich wegen der Beschwerden mit dem Rauchen aufhören?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/5719fe811574.mp3">Unabhängig von der endgültigen Diagnose wäre es sinnvoll, mit dem Rauchen aufzuhören.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/d34b8395da93.mp3">Rauchen erhöht das Risiko für verschiedene Erkrankungen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2c5b091b4025.mp3">Ist Sodbrennen vielleicht der Grund für meine Beschwerden?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/bde89be8b0e4.mp3">Gibt es Medikamente, die mir kurzfristig beim Schlucken helfen könnten?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 6A. Migräne" class="patient-qa-case" id="patient-qa-case-12" role="region"><h3>6A. Migräne</h3><ul>
-<li class="learn-item masked"><template>Kann es sein, dass ich Migräne habe? Wie kann man das genau feststellen?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einer Migräne passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der neurologischen Untersuchung.</template></li></ul>
-<li class="learn-item masked"><template>Welche Medikamente könnten mir bei den starken Kopfschmerzen besser helfen?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es Möglichkeiten, um die Kopfschmerzattacken seltener auftreten zu lassen?</template></li>
-<ul><li class="learn-item masked"><template>Ja, dafür gibt es verschiedene Möglichkeiten.</template></li><li class="learn-item masked"><template>Welche davon sinnvoll sind, hängt von der genauen Diagnose und vom Verlauf ab.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich zu einem Neurologen gehen?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Könnte der Stress bei der Arbeit der Auslöser für meine Kopfschmerzen sein?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/38a9a5fada90.mp3">Kann es sein, dass ich Migräne habe? Wie kann man das genau feststellen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/01033a5d7253.mp3">Ja, Ihre Beschwerden könnten zu einer Migräne passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/05945eeb80ab.mp3">Sicher sagen können wir das aber erst nach der neurologischen Untersuchung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/16a6b59c0774.mp3">Welche Medikamente könnten mir bei den starken Kopfschmerzen besser helfen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/46587f8ae2a8.mp3">Gibt es Möglichkeiten, um die Kopfschmerzattacken seltener auftreten zu lassen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/57cd2f133098.mp3">Ja, dafür gibt es verschiedene Möglichkeiten.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/02f825dfba45.mp3">Welche davon sinnvoll sind, hängt von der genauen Diagnose und vom Verlauf ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/a707e6f27e38.mp3">Sollte ich zu einem Neurologen gehen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7924a5216824.mp3">Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/105be26f3fdf.mp3">Könnte der Stress bei der Arbeit der Auslöser für meine Kopfschmerzen sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 6B. Schwindel" class="patient-qa-case" id="patient-qa-case-13" role="region"><h3>6B. Schwindel</h3><ul>
-<li class="learn-item masked"><template>Könnte mein Schwindel ein Hinweis auf einen Hirntumor sein?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich ein MRT vom Kopf machen lassen?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Bildgebung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Kann man die Ursache auch durch ein Blutbild feststellen?</template></li>
-<ul><li class="learn-item masked"><template>Mit einer Blutuntersuchung können wir manche Ursachen erkennen, aber nicht jede Ursache von Schwindel.</template></li><li class="learn-item masked"><template>Deshalb ist zusätzlich eine körperliche und neurologische Untersuchung wichtig.</template></li></ul>
-<li class="learn-item masked"><template>Wie unterscheidet man harmlosen Schwindel von gefährlichen Ursachen?</template></li>
-<ul><li class="learn-item masked"><template>Dafür sind die genaue Art des Schwindels und mögliche Begleitbeschwerden wichtig.</template></li><li class="learn-item masked"><template>Zusätzlich würde ich Sie körperlich und neurologisch untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Ist es riskant, wenn ich jetzt wieder arbeite oder Auto fahre?</template></li>
-<ul><li class="learn-item masked"><template>Solange der Schwindel deutlich vorhanden ist, sollten Sie zunächst nicht Auto fahren.</template></li><li class="learn-item masked"><template>Ob Sie arbeiten können, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es Übungen oder Maßnahmen, die den Schwindel bessern können?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ed4021288993.mp3">Könnte mein Schwindel ein Hinweis auf einen Hirntumor sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/63b33a6e91f4.mp3">Sollte ich ein MRT vom Kopf machen lassen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/1b0e2e469c62.mp3">Ob eine Bildgebung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f45daab9943c.mp3">Kann man die Ursache auch durch ein Blutbild feststellen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/58235183be2f.mp3">Mit einer Blutuntersuchung können wir manche Ursachen erkennen, aber nicht jede Ursache von Schwindel.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f265c3b3667d.mp3">Deshalb ist zusätzlich eine körperliche und neurologische Untersuchung wichtig.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d4dd64e13c87.mp3">Wie unterscheidet man harmlosen Schwindel von gefährlichen Ursachen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/4ed02d979a35.mp3">Dafür sind die genaue Art des Schwindels und mögliche Begleitbeschwerden wichtig.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/84006a702379.mp3">Zusätzlich würde ich Sie körperlich und neurologisch untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/e76d1997f217.mp3">Ist es riskant, wenn ich jetzt wieder arbeite oder Auto fahre?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/13d6507f4999.mp3">Solange der Schwindel deutlich vorhanden ist, sollten Sie zunächst nicht Auto fahren.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/1b0dbeef9269.mp3">Ob Sie arbeiten können, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ed494e3dcf56.mp3">Gibt es Übungen oder Maßnahmen, die den Schwindel bessern können?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 7A. Fatigue und Halsschmerzen" class="patient-qa-case" id="patient-qa-case-14" role="region"><h3>7A. Fatigue und Halsschmerzen</h3><ul>
-<li class="learn-item masked"><template>Kann der aktuelle Infekt mit meiner früheren Dengue-Erkrankung zusammenhängen?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Warum bin ich diesmal so extrem erschöpft, obwohl es nur ein Infekt ist?</template></li>
-<ul><li class="learn-item masked"><template>Erschöpfung kann bei einem Infekt unterschiedlich stark ausgeprägt sein.</template></li><li class="learn-item masked"><template>Da sie bei Ihnen besonders stark ist, sollten wir sie genauer abklären.</template></li></ul>
-<li class="learn-item masked"><template>Sollte man meine Belastbarkeit oder das Immunsystem genauer untersuchen?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt vom Verlauf und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn die Beschwerden länger anhalten, können weitere Untersuchungen sinnvoll sein.</template></li></ul>
-<li class="learn-item masked"><template>Bin ich arbeitsfähig oder sollte ich mich krankschreiben lassen?</template></li>
-<ul><li class="learn-item masked"><template>Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template>Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8f26f369bca2.mp3">Kann der aktuelle Infekt mit meiner früheren Dengue-Erkrankung zusammenhängen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9d18b8fc399d.mp3">Warum bin ich diesmal so extrem erschöpft, obwohl es nur ein Infekt ist?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/7f546070e4a4.mp3">Erschöpfung kann bei einem Infekt unterschiedlich stark ausgeprägt sein.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/2fa4ccb6178d.mp3">Da sie bei Ihnen besonders stark ist, sollten wir sie genauer abklären.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9b77344f6b1c.mp3">Sollte man meine Belastbarkeit oder das Immunsystem genauer untersuchen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/c5db33626118.mp3">Das hängt vom Verlauf und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/26008570a89f.mp3">Wenn die Beschwerden länger anhalten, können weitere Untersuchungen sinnvoll sein.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8a0c84d3ae68.mp3">Bin ich arbeitsfähig oder sollte ich mich krankschreiben lassen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/75db28ab05ae.mp3">Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/fcade5677e5f.mp3">Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 7B. COVID-19" class="patient-qa-case" id="patient-qa-case-15" role="region"><h3>7B. COVID-19</h3><ul>
-<li class="learn-item masked"><template>Glauben Sie, dass ich Covid-19 haben könnte?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu COVID-19 passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach der weiteren Abklärung und gegebenenfalls einem Test.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich in Quarantäne, wenn ich positiv bin?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von den aktuell geltenden Regelungen und gegebenenfalls von Ihrem Arbeitsplatz ab.</template></li><li class="learn-item masked"><template>Danach richtet sich, welche Maßnahmen notwendig sind.</template></li></ul>
-<li class="learn-item masked"><template>Wann darf ich wieder joggen gehen?</template></li>
-<ul><li class="learn-item masked"><template>Solange Sie Fieber haben oder sich deutlich krank fühlen, sollten Sie auf Sport verzichten.</template></li><li class="learn-item masked"><template>Wann Sie wieder Sport machen können, hängt vom Verlauf und vom Befund ab.</template></li></ul>
-<li class="learn-item masked"><template>Könnte ich bleibende Schäden behalten?</template></li>
-<ul><li class="learn-item masked"><template>Das lässt sich im Moment noch nicht sicher vorhersagen.</template></li><li class="learn-item masked"><template>Wie es bei Ihnen verläuft, können wir im weiteren Verlauf besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Sollte ich einen Test machen lassen? Wie sicher ist das Ergebnis?</template></li>
-<ul><li class="learn-item masked"><template>Bei Ihren Beschwerden kann ein Test sinnvoll sein.</template></li><li class="learn-item masked"><template>Wie zuverlässig das Ergebnis ist, hängt von der Testmethode und vom Zeitpunkt der Testung ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/546df65e4efb.mp3">Glauben Sie, dass ich Covid-19 haben könnte?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0fb165e44cfd.mp3">Ja, Ihre Beschwerden könnten zu COVID-19 passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f0732b310a28.mp3">Sicher sagen können wir das aber erst nach der weiteren Abklärung und gegebenenfalls einem Test.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/868b5e7e87c8.mp3">Muss ich in Quarantäne, wenn ich positiv bin?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/44d4a5cda60e.mp3">Das hängt von den aktuell geltenden Regelungen und gegebenenfalls von Ihrem Arbeitsplatz ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/1832272a04f4.mp3">Danach richtet sich, welche Maßnahmen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/ab972c9e739c.mp3">Wann darf ich wieder joggen gehen?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/4b4f8aa8f852.mp3">Solange Sie Fieber haben oder sich deutlich krank fühlen, sollten Sie auf Sport verzichten.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/72883a8c1335.mp3">Wann Sie wieder Sport machen können, hängt vom Verlauf und vom Befund ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/e53e71f068a5.mp3">Könnte ich bleibende Schäden behalten?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f53941bd2ad8.mp3">Das lässt sich im Moment noch nicht sicher vorhersagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/90894f4278db.mp3">Wie es bei Ihnen verläuft, können wir im weiteren Verlauf besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d9855deca2a2.mp3">Sollte ich einen Test machen lassen? Wie sicher ist das Ergebnis?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/4457592ce465.mp3">Bei Ihren Beschwerden kann ein Test sinnvoll sein.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6040bae20b72.mp3">Wie zuverlässig das Ergebnis ist, hängt von der Testmethode und vom Zeitpunkt der Testung ab.</template></li></ul>
 </ul></section><section aria-label="Patientenfragen: 7C. Burn-out nach Dengue" class="patient-qa-case" id="patient-qa-case-16" role="region"><h3>7C. Burn-out nach Dengue</h3><ul>
-<li class="learn-item masked"><template>Könnten meine Beschwerden etwas mit der alten Dengue-Infektion zu tun haben?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich.</template></li><li class="learn-item masked"><template>Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Warum bin ich ständig müde, obwohl ich ausreichend schlafe?</template></li>
-<ul><li class="learn-item masked"><template>Dafür kommen verschiedene Ursachen infrage.</template></li><li class="learn-item masked"><template>Die genaue Ursache können wir erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Kann das ein Burn-out sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten zu einer stressbedingten Erschöpfung passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach einer genaueren Abklärung.</template></li></ul>
-<li class="learn-item masked"><template>Was kann ich tun, um wieder leistungsfähiger zu werden?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
-<li class="learn-item masked"><template>Muss ich mich krankmelden oder könnte ich auch weiterarbeiten?</template></li>
-<ul><li class="learn-item masked"><template>Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template>Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
-<li class="learn-item masked"><template>Gibt es spezielle Tests, die man machen sollte?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Sie körperlich untersuchen.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
-<li class="learn-item masked"><template>Könnte das auch eine Depression sein?</template></li>
-<ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten auch zu einer Depression passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach einer genaueren Abklärung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8713c669c46b.mp3">Könnten meine Beschwerden etwas mit der alten Dengue-Infektion zu tun haben?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/0abe7bbbc158.mp3">Das ist möglich.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a97b56c57464.mp3">Ob ein Zusammenhang besteht, können wir erst nach der weiteren Abklärung besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4d9653b1fbf5.mp3">Warum bin ich ständig müde, obwohl ich ausreichend schlafe?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/19f5e7aba938.mp3">Dafür kommen verschiedene Ursachen infrage.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/256dc583d3c6.mp3">Die genaue Ursache können wir erst nach der Untersuchung und gegebenenfalls weiteren Untersuchungen besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/f7b1a03c12dd.mp3">Kann das ein Burn-out sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/8d30ff9c8482.mp3">Ja, Ihre Beschwerden könnten zu einer stressbedingten Erschöpfung passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/cf3717cd17ef.mp3">Sicher sagen können wir das aber erst nach einer genaueren Abklärung.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/7e9a8f3f7690.mp3">Was kann ich tun, um wieder leistungsfähiger zu werden?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/2df89b9a9dd2.mp3">Muss ich mich krankmelden oder könnte ich auch weiterarbeiten?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/75db28ab05ae.mp3">Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/fcade5677e5f.mp3">Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/32bcfbe68c07.mp3">Gibt es spezielle Tests, die man machen sollte?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/036c3a83970a.mp3">Zunächst würde ich Sie körperlich untersuchen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/4795780a5dc1.mp3">Könnte das auch eine Depression sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/2de26f1fc18d.mp3">Ja, Ihre Beschwerden könnten auch zu einer Depression passen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/cf3717cd17ef.mp3">Sicher sagen können wir das aber erst nach einer genaueren Abklärung.</template></li></ul>
 </ul></section></div></div>
 
 
 
 <h2>14. Häufige Patientenfragen und mögliche Antworten</h2>
 <ul>
-<li class="learn-item masked"><template>Wann darf ich wieder Sport treiben?</template></li>
-<ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Kann es Krebs sein?</template></li>
-<ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
-<li class="learn-item masked"><template>Bin ich ansteckend?</template></li>
-<ul><li class="learn-item masked"><template>Das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template>Nach den weiteren Untersuchungen können wir das besser einschätzen.</template></li></ul>
-<li class="learn-item masked"><template>Welche Untersuchungen werden durchgeführt?</template></li>
-<ul><li class="learn-item masked"><template>Zunächst würde ich Sie körperlich untersuchen.</template></li><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/d9a77b03c0b8.mp3">Wann darf ich wieder Sport treiben?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/9b3ec0ad8afb.mp3">Kann es Krebs sein?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/a72bc37374bc.mp3">Ihre Beschwerden können verschiedene Ursachen haben, deshalb sollten wir sie genauer untersuchen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/8ce25de055d6.mp3">Bin ich ansteckend?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/02f4be9b33ed.mp3">Das können wir im Moment noch nicht sicher sagen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/509e5eec743f.mp3">Nach den weiteren Untersuchungen können wir das besser einschätzen.</template></li></ul>
+<li class="learn-item masked"><template data-audio="audio/anamnese/b6cb4c264aad.mp3">Welche Untersuchungen werden durchgeführt?</template></li>
+<ul><li class="learn-item masked"><template data-audio="audio/anamnese/036c3a83970a.mp3">Zunächst würde ich Sie körperlich untersuchen.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul>
 </ul>
 <h3>Allgemeine Antwortbausteine zum Lernen</h3>
-<ol><li><strong>Unsicherheit / Möglichkeit</strong><ul><li class="learn-item masked"><template>Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li>
-<li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben.</template></li></ul></li>
-<li><strong>Erster Schritt</strong><ul><li class="learn-item masked"><template>Zunächst würde ich Sie körperlich untersuchen.</template></li></ul></li>
-<li><strong>Weitere Diagnostik</strong><ul><li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul></li>
-<li><strong>Behandlung</strong><ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul></li>
-<li><strong>Prognose</strong><ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul></li>
-<li><strong>Operation</strong><ul><li class="learn-item masked"><template>Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul></li>
-<li><strong>Krankschreibung</strong><ul><li class="learn-item masked"><template>Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template>Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul></li>
-<li><strong>Krankenhaus / ambulante Behandlung</strong><ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul></li>
-<li><strong>Überweisung</strong><ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul></li>
-<li><strong>Warnzeichen / Wiedervorstellung</strong><ul><li class="learn-item masked"><template>Wenn sich die Beschwerden verschlechtern oder neue Beschwerden auftreten, sollten Sie sich früher wieder vorstellen.</template></li></ul></li></ol>
+<ol><li><strong>Unsicherheit / Möglichkeit</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/b554323e7a94.mp3">Das ist möglich, aber das können wir im Moment noch nicht sicher sagen.</template></li>
+<li class="learn-item masked"><template data-audio="audio/anamnese/fec67cce18c0.mp3">Ihre Beschwerden können verschiedene Ursachen haben.</template></li></ul></li>
+<li><strong>Erster Schritt</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/036c3a83970a.mp3">Zunächst würde ich Sie körperlich untersuchen.</template></li></ul></li>
+<li><strong>Weitere Diagnostik</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/f8b41862eab6.mp3">Danach entscheiden wir, ob weitere Untersuchungen notwendig sind.</template></li></ul></li>
+<li><strong>Behandlung</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/41923c958603.mp3">Wenn wir die Diagnose haben, können wir die passende Behandlung festlegen.</template></li></ul></li>
+<li><strong>Prognose</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/6b9d6408b673.mp3">Wenn wir die Diagnose haben, können wir das besser einschätzen.</template></li></ul></li>
+<li><strong>Operation</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/f7feee06fde9.mp3">Das hängt von der genauen Diagnose und vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7be1b981c450.mp3">Ob eine Operation notwendig ist, können wir erst nach der Untersuchung und Bildgebung besser einschätzen.</template></li></ul></li>
+<li><strong>Krankschreibung</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/75db28ab05ae.mp3">Bei Ihren aktuellen Beschwerden ist eine Krankschreibung zunächst sinnvoll.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/fcade5677e5f.mp3">Wie lange, hängt vom Befund und Ihrer Tätigkeit ab.</template></li></ul></li>
+<li><strong>Krankenhaus / ambulante Behandlung</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/23b0bc8f622e.mp3">Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul></li>
+<li><strong>Überweisung</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/9f701beb9fc4.mp3">Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template data-audio="audio/anamnese/7924a5216824.mp3">Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul></li>
+<li><strong>Warnzeichen / Wiedervorstellung</strong><ul><li class="learn-item masked"><template data-audio="audio/anamnese/0fe1c1995dd5.mp3">Wenn sich die Beschwerden verschlechtern oder neue Beschwerden auftreten, sollten Sie sich früher wieder vorstellen.</template></li></ul></li></ol>
 
 
     
@@ -831,8 +851,76 @@ html[data-theme="dark"] .floating-control{
 function escapeHtml(text){return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
 function decodeHtml(text){const t=document.createElement("textarea");t.innerHTML=text;return t.value;}
 function maskText(text){const tokens=text.match(/[\p{L}\p{N}]+|[^\p{L}\p{N}]/gu)||[];return tokens.map(token=>{if(/^[\p{L}\p{N}]+$/u.test(token)){return '<span class="word"><span class="first-letter">'+escapeHtml(token.charAt(0))+'</span><span class="hidden-part">'+escapeHtml(token.slice(1))+'</span></span>';}return '<span class="punctuation">'+escapeHtml(token)+'</span>';}).join('');}
-document.querySelectorAll('.learn-item.masked').forEach(el=>{const t=el.querySelector('template');if(t)el.innerHTML=maskText(decodeHtml(t.innerHTML).trim());});
-document.querySelectorAll('.right-cell.masked').forEach(el=>{const t=el.querySelector('template');if(t)el.innerHTML=maskText(decodeHtml(t.innerHTML).trim());});
+const sentencePlayer=new Audio();
+let activeAudioButton=null;
+
+function resetAudioButton(){
+  if(activeAudioButton){
+    activeAudioButton.classList.remove('is-speaking');
+    activeAudioButton.setAttribute('aria-pressed','false');
+    activeAudioButton.title='Satz anhören';
+  }
+  activeAudioButton=null;
+}
+
+function stopSentenceAudio(){
+  sentencePlayer.pause();
+  try{sentencePlayer.currentTime=0;}catch(e){}
+  resetAudioButton();
+}
+
+function playSentenceAudio(src,button){
+  if(activeAudioButton===button && !sentencePlayer.paused){
+    stopSentenceAudio();
+    return;
+  }
+  stopSentenceAudio();
+  sentencePlayer.src=src;
+  sentencePlayer.currentTime=0;
+  activeAudioButton=button;
+  button.classList.add('is-speaking');
+  button.setAttribute('aria-pressed','true');
+  button.title='Wiedergabe stoppen';
+  const p=sentencePlayer.play();
+  if(p && typeof p.catch==='function'){
+    p.catch(()=>{
+      button.title='Audiodatei konnte nicht geladen werden';
+      resetAudioButton();
+    });
+  }
+}
+
+sentencePlayer.addEventListener('ended',resetAudioButton);
+sentencePlayer.addEventListener('error',resetAudioButton);
+
+function makeAudioButton(src){
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='audio-button';
+  button.setAttribute('aria-label','Satz anhören');
+  button.setAttribute('aria-pressed','false');
+  button.title='Satz anhören';
+  button.textContent='🔊';
+  button.addEventListener('click',event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    playSentenceAudio(src,button);
+  });
+  return button;
+}
+
+function renderMaskedItem(el){
+  const t=el.querySelector('template');
+  if(!t) return;
+  const itemText=decodeHtml(t.innerHTML).trim();
+  const audioSrc=t.dataset.audio;
+  el.innerHTML=maskText(itemText);
+  if(audioSrc) el.appendChild(makeAudioButton(audioSrc));
+}
+
+document.querySelectorAll('.learn-item.masked').forEach(renderMaskedItem);
+document.querySelectorAll('.right-cell.masked').forEach(renderMaskedItem);
+window.addEventListener('beforeunload',stopSentenceAudio);
 const modes=['full-mode','initial-mode','blank-mode']; const buttons={'full-mode':document.getElementById('btnFull'),'initial-mode':document.getElementById('btnInitial'),'blank-mode':document.getElementById('btnBlank')};
 function setMode(mode){document.body.classList.remove(...modes);document.body.classList.add(mode);Object.values(buttons).forEach(b=>b.classList.remove('active'));buttons[mode].classList.add('active');}
 Object.entries(buttons).forEach(([m,b])=>b.addEventListener('click',()=>setMode(m)));setMode('full-mode');
