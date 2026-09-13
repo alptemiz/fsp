@@ -1,0 +1,264 @@
+/* Shared FSP interface: navigation, learning mode, theme and page controls */
+:root{
+  --fsp-text:var(--text-color,var(--text,#1f2937));
+  --fsp-bg:var(--background-color,var(--bg,#f7f8fa));
+  --fsp-surface:var(--surface,#fff);
+  --fsp-border:var(--border-color,var(--border,#d9dee7));
+  --fsp-accent:var(--button-color,var(--accent,var(--blue,#315fbd)));
+  --fsp-accent-dark:#173d91;
+}
+
+.site-header{
+  position:sticky!important;
+  top:0!important;
+  z-index:9000!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:45px!important;
+  padding:6px 116px!important;
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid var(--fsp-border)!important;
+  backdrop-filter:blur(8px);
+}
+.site-header .header-inner{display:contents!important}
+.site-nav{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  flex-wrap:wrap!important;
+  margin:0 auto!important;
+}
+.site-nav a{
+  color:#374151!important;
+  text-decoration:none!important;
+  padding:5px 9px!important;
+  border:1px solid transparent!important;
+  border-radius:7px!important;
+  font-size:14px!important;
+  font-weight:600!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+}
+.site-nav a:hover{background:#eef1f5!important}
+.site-nav a.active{background:#e8edf7!important;border-color:#cbd5e1!important;color:#1e3a6d!important}
+
+.mode-switch.floating-control{
+  position:fixed!important;
+  left:12px!important;
+  top:9px!important;
+  right:auto!important;
+  bottom:auto!important;
+  z-index:10000!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:4px!important;
+  flex-wrap:nowrap!important;
+  margin:0!important;
+  padding:4px!important;
+  border:1px solid var(--fsp-border)!important;
+  border-radius:9px!important;
+  background:var(--fsp-surface)!important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12)!important;
+}
+.mode-switch.floating-control button{
+  height:26px!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:4px 8px!important;
+  border:0!important;
+  border-radius:6px!important;
+  background:var(--fsp-accent)!important;
+  color:#fff!important;
+  font:inherit!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  cursor:pointer!important;
+  opacity:.76!important;
+  box-shadow:none!important;
+}
+.mode-switch.floating-control button:hover{opacity:1!important}
+.mode-switch.floating-control button.active{
+  background:var(--fsp-accent-dark)!important;
+  box-shadow:0 0 0 2px rgba(49,95,189,.14)!important;
+  opacity:1!important;
+}
+
+.theme-toggle.floating-control,
+.theme-toggle{
+  position:fixed!important;
+  right:12px!important;
+  top:9px!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  z-index:10000!important;
+  width:34px!important;
+  height:34px!important;
+  margin:0!important;
+  padding:0!important;
+  border:1px solid var(--fsp-border)!important;
+  border-radius:9px!important;
+  background:var(--fsp-surface)!important;
+  color:var(--fsp-text)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font:inherit!important;
+  font-size:19px!important;
+  line-height:1!important;
+  cursor:pointer!important;
+  box-shadow:0 2px 10px rgba(0,0,0,.12)!important;
+  opacity:1!important;
+}
+.theme-toggle:hover{background:color-mix(in srgb,var(--fsp-surface) 86%,#7f7f7f 14%)!important}
+.theme-toggle .theme-sun,.theme-toggle .theme-moon,.theme-toggle .sun,.theme-toggle .moon{display:none!important}
+html[data-theme="dark"] .theme-toggle .theme-sun,
+html[data-theme="dark"] .theme-toggle .sun{display:inline!important}
+html:not([data-theme="dark"]) .theme-toggle .theme-moon,
+html:not([data-theme="dark"]) .theme-toggle .moon{display:inline!important}
+
+/* One common top toolbar for global case/section selectors and prompt copy action. */
+.fsp-content-toolbar{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+  flex-wrap:wrap!important;
+  width:100%!important;
+  margin:0 0 14px!important;
+  padding:8px!important;
+  border:1px solid var(--fsp-border)!important;
+  border-radius:10px!important;
+  background:var(--fsp-surface)!important;
+}
+.fsp-content-toolbar .case-tools,
+.fsp-content-toolbar .case-select-control,
+.fsp-content-toolbar .comparison-select-control,
+.fsp-content-toolbar .fsp-select-control,
+.fsp-content-toolbar .simulation-copy-tools{
+  position:static!important;
+  inset:auto!important;
+  z-index:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.fsp-content-toolbar .comparison-select-control{display:none!important}
+body.all-comparison-mode .fsp-content-toolbar .comparison-select-control{display:flex!important}
+.fsp-content-toolbar label,
+.case-selector-row label,
+.complaint-integration .module-tools label{
+  flex:0 0 auto!important;
+  margin:0!important;
+  color:var(--fsp-text)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+}
+.fsp-content-toolbar select,
+.case-selector-row select,
+.complaint-integration .module-tools select{
+  box-sizing:border-box!important;
+  height:34px!important;
+  min-width:280px!important;
+  width:320px!important;
+  max-width:min(420px,70vw)!important;
+  margin:0!important;
+  padding:5px 30px 5px 9px!important;
+  border:1px solid var(--fsp-border)!important;
+  border-radius:7px!important;
+  background:var(--fsp-surface)!important;
+  color:var(--fsp-text)!important;
+  font:inherit!important;
+  font-size:13px!important;
+  line-height:1.2!important;
+}
+.fsp-content-toolbar .comparison-select-control select{width:260px!important;min-width:230px!important}
+.fsp-content-toolbar #copySimulationCaseBtn{
+  height:34px!important;
+  margin:0!important;
+  padding:6px 11px!important;
+  border:0!important;
+  border-radius:7px!important;
+  background:var(--fsp-accent)!important;
+  color:#fff!important;
+  font:inherit!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+  cursor:pointer!important;
+}
+.fsp-content-toolbar #copySimulationCaseBtn:hover{filter:brightness(.92)}
+
+/* Local selectors in Anamnese keep their semantic position but use the same sizing. */
+.case-selector-row,
+.complaint-integration .module-tools{
+  justify-content:flex-start!important;
+  align-items:center!important;
+  gap:7px!important;
+}
+
+/* Generic masking for pages that previously had no learning-mode markup. */
+.fsp-mask-target .word{display:inline-block;white-space:pre}
+.fsp-mask-target .first-letter,.fsp-mask-target .punctuation{color:inherit}
+.initial-mode .fsp-mask-target .hidden-part{color:var(--fsp-surface)!important}
+.initial-mode .fsp-mask-target .word:hover .hidden-part{color:inherit!important}
+.blank-mode .fsp-mask-target,.blank-mode .fsp-mask-target *{color:transparent!important}
+
+html[data-theme="dark"]{
+  --fsp-text:var(--text-color,var(--text,#e5e7eb));
+  --fsp-bg:var(--background-color,var(--bg,#0f1115));
+  --fsp-surface:var(--surface,#171a21);
+  --fsp-border:var(--border-color,var(--border,#303642));
+  --fsp-accent:var(--button-color,var(--accent,var(--blue,#4f76c7)));
+  --fsp-accent-dark:#3d63b1;
+}
+html[data-theme="dark"] .site-header{background:rgba(18,21,27,.96)!important}
+html[data-theme="dark"] .site-nav a{color:#cbd5e1!important}
+html[data-theme="dark"] .site-nav a:hover{background:#242a34!important}
+html[data-theme="dark"] .site-nav a.active{background:#29344a!important;border-color:#46546d!important;color:#dbeafe!important}
+html[data-theme="dark"] select{color-scheme:dark}
+
+/* Lerntimer uses the same navigation/theme but intentionally has no learning-mode switch. */
+html[data-theme="dark"] body.fsp-timer-page{
+  --bg:#0f1115;--surface:#171a21;--surface2:#20242d;--text:#e5e7eb;--muted:#9ca3af;
+  --border:#303642;--blue:#4f76c7;--blue2:#1c2942;--green:#5f9b73;--greenbg:#17261d;
+  --amber:#d3a84d;--amberbg:#2a2418;--red:#df7770;--redbg:#2b1d1d;
+}
+html[data-theme="dark"] body.fsp-timer-page .schedule th{background:#202630}
+body.fsp-timer-page .page{height:calc(100vh - 45px)!important}
+body.fsp-timer-page .card{height:100%!important}
+body.fsp-timer-page .table-wrap{height:calc(100% - 58px)!important}
+
+@media(max-width:900px){
+  .site-header{padding-left:8px!important;padding-right:48px!important;position:static!important}
+  .site-nav{gap:3px!important}
+  .site-nav a{font-size:12px!important;padding:5px 6px!important}
+  .mode-switch.floating-control{left:8px!important;top:8px!important}
+  .theme-toggle.floating-control,.theme-toggle{right:8px!important;top:8px!important}
+  .fsp-content-toolbar{align-items:stretch!important}
+  .fsp-content-toolbar .case-tools,
+  .fsp-content-toolbar .case-select-control,
+  .fsp-content-toolbar .comparison-select-control,
+  .fsp-content-toolbar .fsp-select-control,
+  .fsp-content-toolbar .simulation-copy-tools{width:100%!important}
+  .fsp-content-toolbar label{width:98px!important}
+  .fsp-content-toolbar select{width:calc(100% - 105px)!important;min-width:0!important;max-width:none!important;flex:1 1 auto!important}
+  .fsp-content-toolbar #copySimulationCaseBtn{width:100%!important;white-space:normal!important}
+  .case-selector-row select,.complaint-integration .module-tools select{min-width:0!important;width:100%!important;max-width:100%!important}
+  body.fsp-timer-page .page{height:calc(100vh - 78px)!important}
+}

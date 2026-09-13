@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lerntimer</title>
 <style>
 :root{
@@ -36,271 +35,32 @@ button:disabled{opacity:.42;cursor:not-allowed}
 .toast{position:fixed;right:18px;top:18px;z-index:30;display:none;max-width:360px;padding:12px 14px;background:#172033;color:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.2)}.toast.show{display:block}.toast strong{display:block;margin-bottom:2px}.toast span{font-size:13px;color:#e5e7eb}
 @media(max-width:900px){.page{padding:0}.header{align-items:flex-start}.header-left{width:100%}.table-wrap{height:calc(100vh - 92px)}}
 </style>
-<style>
-/* ===== FSP unified navigation and control bar ===== */
-.site-header.fsp-unified-header{
-  position:sticky !important;
-  top:0 !important;
-  z-index:12000 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  min-height:43px !important;
-  padding:6px 52px 6px 10px !important;
-  border-bottom:1px solid var(--border, var(--border-color, #d9dee7)) !important;
-  background:color-mix(in srgb, var(--surface, #fff) 96%, transparent) !important;
-  backdrop-filter:blur(8px);
-}
-.site-header.fsp-unified-header .site-nav{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  flex-wrap:wrap !important;
-  gap:5px !important;
-  margin:0 !important;
-}
-.site-header.fsp-unified-header .site-nav a{
-  display:inline-flex !important;
-  align-items:center !important;
-  min-height:29px !important;
-  padding:5px 9px !important;
-  border:1px solid transparent !important;
-  border-radius:7px !important;
-  color:var(--text, var(--text-color, #374151)) !important;
-  text-decoration:none !important;
-  font-size:14px !important;
-  font-weight:600 !important;
-  line-height:1.2 !important;
-  white-space:nowrap !important;
-}
-.site-header.fsp-unified-header .site-nav a:hover{
-  background:var(--hover, var(--soft, #eef1f5)) !important;
-}
-.site-header.fsp-unified-header .site-nav a.active{
-  background:var(--accent-soft, #e8edf7) !important;
-  border-color:var(--border, var(--border-color, #cbd5e1)) !important;
-  color:var(--accent, var(--button-color, #1e3a6d)) !important;
-}
-html[data-theme="dark"] .site-header.fsp-unified-header .site-nav a.active{
-  background:#29344a !important;
-  border-color:#46546d !important;
-  color:#dbeafe !important;
-}
-.site-header.fsp-unified-header .theme-toggle{
-  position:absolute !important;
-  right:10px !important;
-  top:6px !important;
-  left:auto !important;
-  bottom:auto !important;
-  transform:none !important;
-  z-index:1 !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:32px !important;
-  height:32px !important;
-  min-width:32px !important;
-  padding:0 !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #d9dee7)) !important;
-  border-radius:8px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  box-shadow:none !important;
-  font:inherit !important;
-  font-size:18px !important;
-  cursor:pointer !important;
-}
-.theme-toggle .theme-sun,.theme-toggle .theme-moon,.theme-toggle .sun,.theme-toggle .moon{display:none !important}
-html[data-theme="dark"] .theme-toggle .theme-sun{display:inline !important}
-html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline !important}
-
-.fsp-standard-controls{
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-start;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:0 0 14px !important;
-  padding:9px 10px !important;
-  border:1px solid var(--border, var(--border-color, #d9dee7));
-  border-radius:9px;
-  background:var(--surface, #fff);
-}
-.fsp-control-slot:empty{display:none !important}
-.fsp-control-slot{display:flex;align-items:flex-end;gap:8px;min-width:0}
-.fsp-select-control,
-.case-select-control,
-.comparison-select-control,
-.case-tools,
-.case-selector-row.fsp-top-case-control{
-  display:flex !important;
-  align-items:center !important;
-  gap:7px !important;
-  flex-wrap:nowrap !important;
-  width:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  position:static !important;
-  inset:auto !important;
-  transform:none !important;
-}
-.fsp-standard-controls label{
-  margin:0 !important;
-  color:var(--text, var(--text-color, #374151)) !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  white-space:nowrap !important;
-}
-.fsp-standard-controls select,
-.fsp-standard-controls input[type="search"]{
-  box-sizing:border-box !important;
-  width:250px !important;
-  min-width:250px !important;
-  max-width:250px !important;
-  height:34px !important;
-  padding:5px 30px 5px 9px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  line-height:1.2 !important;
-}
-.fsp-standard-controls .mode-switch{
-  display:flex !important;
-  align-items:center !important;
-  gap:4px !important;
-  flex-wrap:nowrap !important;
-  margin:0 !important;
-  padding:0 !important;
-  position:static !important;
-  inset:auto !important;
-  transform:none !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-.fsp-standard-controls .mode-switch button{
-  box-sizing:border-box !important;
-  min-width:73px !important;
-  height:34px !important;
-  padding:5px 9px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  line-height:1.2 !important;
-  box-shadow:none !important;
-  cursor:pointer !important;
-}
-.fsp-standard-controls .mode-switch button.active{
-  background:var(--accent, var(--button-color, #315fbd)) !important;
-  border-color:var(--accent, var(--button-color, #315fbd)) !important;
-  color:#fff !important;
-}
-.fsp-standard-controls .simulation-copy-tools{
-  display:flex !important;
-  align-items:center !important;
-  margin:0 !important;
-  padding:0 !important;
-}
-.fsp-standard-controls .simulation-copy-tools button,
-.fsp-standard-controls #copySimulationCaseBtn{
-  box-sizing:border-box !important;
-  height:34px !important;
-  padding:5px 10px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  line-height:1.2 !important;
-  white-space:nowrap !important;
-  box-shadow:none !important;
-}
-.fsp-standard-controls .simulation-copy-tools button:hover,
-.fsp-standard-controls #copySimulationCaseBtn:hover{
-  background:var(--hover, var(--soft, #eef1f5)) !important;
-}
-.fsp-standard-controls .floating-control{position:static !important;inset:auto !important;transform:none !important}
-
-/* Generic learning modes for pages that did not originally have them. */
-.fsp-mask-word{display:inline;white-space:normal}
-.initial-mode .fsp-generic-learn .fsp-mask-rest{color:transparent !important}
-.initial-mode .fsp-generic-learn .fsp-mask-word:hover .fsp-mask-rest{color:inherit !important}
-.blank-mode .fsp-generic-learn,
-.blank-mode .fsp-generic-learn *{color:transparent !important;text-shadow:none !important}
-
-/* Keep embedded/local selectors visually compatible. */
-.case-selector-row:not(.fsp-top-case-control) select,
-.patient-qa-selector-row select,
-.module-tools select,
-.controls select,
-.controls input[type="search"]{
-  box-sizing:border-box;
-  min-height:34px;
-  border-radius:7px;
-}
-
-@media(max-width:760px){
-  .site-header.fsp-unified-header{position:static !important;padding-right:44px !important}
-  .site-header.fsp-unified-header .site-nav a{font-size:13px !important;padding:5px 7px !important}
-  .fsp-standard-controls{align-items:stretch}
-  .fsp-control-slot{width:100%;align-items:stretch}
-  .fsp-select-control,.case-select-control,.comparison-select-control,.case-tools,.case-selector-row.fsp-top-case-control{width:100% !important;flex-wrap:wrap !important}
-  .fsp-standard-controls select{width:100% !important;min-width:0 !important;max-width:none !important}
-  .fsp-standard-controls .mode-switch{width:100% !important}
-  .fsp-standard-controls .mode-switch button{flex:1 1 0;min-width:0 !important}
-}
-</style><style>
-/* Unified navigation + dark mode for Lerntimer */
-html[data-theme="dark"]{
-  color-scheme:dark;
-  --bg:#0f1115;--surface:#171a21;--surface2:#12161d;--text:#e5e7eb;--muted:#9ca3af;
-  --border:#303642;--blue:#4f76c7;--blue2:#1b2940;--green:#5ca673;--greenbg:#16251c;
-  --amber:#d5a74e;--amberbg:#2d2412;--red:#df7771;--redbg:#301a1a;
-}
-html[data-theme="dark"] .schedule th{background:#202630}
-html[data-theme="dark"] .toast{background:#e5e7eb;color:#111827}
-html[data-theme="dark"] .toast span{color:#374151}
-body.fsp-timer-page{height:100vh;display:flex;flex-direction:column;overflow:hidden}
-body.fsp-timer-page .page{flex:1 1 auto;min-height:0;height:auto !important}
-body.fsp-timer-page .card{height:100% !important;display:flex;flex-direction:column}
-body.fsp-timer-page .table-wrap{flex:1 1 auto;min-height:0;height:auto !important;max-height:none !important}
-</style></head>
-<body class="fsp-timer-page" data-page="lerntimer"><header class="site-header fsp-unified-header"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a class="active" href="lerntimer.html">Lerntimer</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun sun">☀</span><span aria-hidden="true" class="theme-moon moon">☾</span></button></header>
+<link rel="stylesheet" href="fsp-common.css"/>
+<script src="fsp-common.js"></script>
+</head>
+<body data-page="lerntimer" class="fsp-timer-page"><header class="site-header"><div class="header-inner"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a class="active" href="lerntimer.html">Lerntimer</a></nav></div><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀</span><span aria-hidden="true" class="moon theme-moon">☾</span></button></header>
 <div class="page">
 <section class="card">
-<div class="header">
-<div class="header-left">
-<div class="current-time" title="Aktuelle Uhrzeit"><span class="current-time-label">Jetzt</span><span class="current-time-value" id="currentTime">--:--</span></div>
-<div class="header-stat"><span class="stat-label">Gesamte Lernzeit</span><span class="stat-value" id="plannedStudy">0:00</span></div>
-<div class="header-stat"><span class="stat-label">Erledigte Lernzeit</span><span class="stat-value" id="doneStudy">0:00</span></div>
-<div class="header-stat"><span class="stat-label">Prozess</span><span class="stat-value" id="progressPct">0 %</span></div>
-</div>
-</div>
-<div class="table-wrap">
-<table class="schedule">
-<thead><tr><th>#</th><th>Aufgabe</th><th>Start</th><th>Ende</th><th>Erledigt</th><th>Geplant (min)</th><th>Vergangen</th><th>Rest</th><th>Aktion</th></tr></thead>
-<tbody id="scheduleBody"></tbody>
-</table>
-</div>
+  <div class="header">
+    <div class="header-left">
+      <div class="current-time" title="Aktuelle Uhrzeit"><span class="current-time-label">Jetzt</span><span class="current-time-value" id="currentTime">--:--</span></div>
+      <div class="header-stat"><span class="stat-label">Gesamte Lernzeit</span><span class="stat-value" id="plannedStudy">0:00</span></div>
+      <div class="header-stat"><span class="stat-label">Erledigte Lernzeit</span><span class="stat-value" id="doneStudy">0:00</span></div>
+      <div class="header-stat"><span class="stat-label">Prozess</span><span class="stat-value" id="progressPct">0 %</span></div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="schedule">
+      <thead><tr><th>#</th><th>Aufgabe</th><th>Start</th><th>Ende</th><th>Erledigt</th><th>Geplant (min)</th><th>Vergangen</th><th>Rest</th><th>Aktion</th></tr></thead>
+      <tbody id="scheduleBody"></tbody>
+    </table>
+  </div>
 </section>
 </div>
+
 <div class="toast" id="toast"><strong id="toastTitle"></strong><span id="toastText"></span></div>
+
 <script>
 (function(){
 'use strict';
@@ -685,17 +445,5 @@ function tick(){
 render();setInterval(tick,1000);
 })();
 </script>
-<script id="fspTimerThemeScript">
-(function(){
-  var old=document.getElementById('themeToggle'); if(!old) return;
-  var b=old.cloneNode(false); b.id='themeToggle'; b.className='theme-toggle'; b.type='button';
-  b.innerHTML='<span class="theme-sun sun" aria-hidden="true">☀</span><span class="theme-moon moon" aria-hidden="true">☾</span>';
-  old.replaceWith(b);
-  var root=document.documentElement, saved='';
-  try{saved=localStorage.getItem('fsp-theme')||''}catch(e){}
-  function apply(t){if(t==='dark')root.setAttribute('data-theme','dark');else root.removeAttribute('data-theme');b.setAttribute('title',t==='dark'?'Normal theme':'Dark theme');b.setAttribute('aria-label',t==='dark'?'Normal theme':'Dark theme')}
-  var t=saved==='dark'?'dark':(saved==='light'?'light':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));apply(t);
-  b.addEventListener('click',function(){t=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem('fsp-theme',t)}catch(e){}apply(t)});
-})();
-</script></body>
+</body>
 </html>

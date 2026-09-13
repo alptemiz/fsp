@@ -236,242 +236,9 @@ html[data-theme="dark"] .floating-control{
 .patient-qa-case{display:none}
 .patient-qa-case.active{display:block}
 .patient-qa-case h3{margin-top:14px}
-</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script><style>
-/* ===== FSP unified navigation and control bar ===== */
-.site-header.fsp-unified-header{
-  position:sticky !important;
-  top:0 !important;
-  z-index:12000 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  min-height:43px !important;
-  padding:6px 52px 6px 10px !important;
-  border-bottom:1px solid var(--border, var(--border-color, #d9dee7)) !important;
-  background:color-mix(in srgb, var(--surface, #fff) 96%, transparent) !important;
-  backdrop-filter:blur(8px);
-}
-.site-header.fsp-unified-header .site-nav{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  flex-wrap:wrap !important;
-  gap:5px !important;
-  margin:0 !important;
-}
-.site-header.fsp-unified-header .site-nav a{
-  display:inline-flex !important;
-  align-items:center !important;
-  min-height:29px !important;
-  padding:5px 9px !important;
-  border:1px solid transparent !important;
-  border-radius:7px !important;
-  color:var(--text, var(--text-color, #374151)) !important;
-  text-decoration:none !important;
-  font-size:14px !important;
-  font-weight:600 !important;
-  line-height:1.2 !important;
-  white-space:nowrap !important;
-}
-.site-header.fsp-unified-header .site-nav a:hover{
-  background:var(--hover, var(--soft, #eef1f5)) !important;
-}
-.site-header.fsp-unified-header .site-nav a.active{
-  background:var(--accent-soft, #e8edf7) !important;
-  border-color:var(--border, var(--border-color, #cbd5e1)) !important;
-  color:var(--accent, var(--button-color, #1e3a6d)) !important;
-}
-html[data-theme="dark"] .site-header.fsp-unified-header .site-nav a.active{
-  background:#29344a !important;
-  border-color:#46546d !important;
-  color:#dbeafe !important;
-}
-.site-header.fsp-unified-header .theme-toggle{
-  position:absolute !important;
-  right:10px !important;
-  top:6px !important;
-  left:auto !important;
-  bottom:auto !important;
-  transform:none !important;
-  z-index:1 !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:32px !important;
-  height:32px !important;
-  min-width:32px !important;
-  padding:0 !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #d9dee7)) !important;
-  border-radius:8px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  box-shadow:none !important;
-  font:inherit !important;
-  font-size:18px !important;
-  cursor:pointer !important;
-}
-.theme-toggle .theme-sun,.theme-toggle .theme-moon,.theme-toggle .sun,.theme-toggle .moon{display:none !important}
-html[data-theme="dark"] .theme-toggle .theme-sun{display:inline !important}
-html:not([data-theme="dark"]) .theme-toggle .theme-moon{display:inline !important}
-
-.fsp-standard-controls{
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-start;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:0 0 14px !important;
-  padding:9px 10px !important;
-  border:1px solid var(--border, var(--border-color, #d9dee7));
-  border-radius:9px;
-  background:var(--surface, #fff);
-}
-.fsp-control-slot:empty{display:none !important}
-.fsp-control-slot{display:flex;align-items:flex-end;gap:8px;min-width:0}
-.fsp-select-control,
-.case-select-control,
-.comparison-select-control,
-.case-tools,
-.case-selector-row.fsp-top-case-control{
-  display:flex !important;
-  align-items:center !important;
-  gap:7px !important;
-  flex-wrap:nowrap !important;
-  width:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  position:static !important;
-  inset:auto !important;
-  transform:none !important;
-}
-.fsp-standard-controls label{
-  margin:0 !important;
-  color:var(--text, var(--text-color, #374151)) !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  white-space:nowrap !important;
-}
-.fsp-standard-controls select,
-.fsp-standard-controls input[type="search"]{
-  box-sizing:border-box !important;
-  width:250px !important;
-  min-width:250px !important;
-  max-width:250px !important;
-  height:34px !important;
-  padding:5px 30px 5px 9px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  line-height:1.2 !important;
-}
-.fsp-standard-controls .mode-switch{
-  display:flex !important;
-  align-items:center !important;
-  gap:4px !important;
-  flex-wrap:nowrap !important;
-  margin:0 !important;
-  padding:0 !important;
-  position:static !important;
-  inset:auto !important;
-  transform:none !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-.fsp-standard-controls .mode-switch button{
-  box-sizing:border-box !important;
-  min-width:73px !important;
-  height:34px !important;
-  padding:5px 9px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  line-height:1.2 !important;
-  box-shadow:none !important;
-  cursor:pointer !important;
-}
-.fsp-standard-controls .mode-switch button.active{
-  background:var(--accent, var(--button-color, #315fbd)) !important;
-  border-color:var(--accent, var(--button-color, #315fbd)) !important;
-  color:#fff !important;
-}
-.fsp-standard-controls .simulation-copy-tools{
-  display:flex !important;
-  align-items:center !important;
-  margin:0 !important;
-  padding:0 !important;
-}
-.fsp-standard-controls .simulation-copy-tools button,
-.fsp-standard-controls #copySimulationCaseBtn{
-  box-sizing:border-box !important;
-  height:34px !important;
-  padding:5px 10px !important;
-  margin:0 !important;
-  border:1px solid var(--border, var(--border-color, #cbd5e1)) !important;
-  border-radius:7px !important;
-  background:var(--surface, #fff) !important;
-  color:var(--text, var(--text-color, #1f2937)) !important;
-  font:inherit !important;
-  font-size:13px !important;
-  font-weight:700 !important;
-  line-height:1.2 !important;
-  white-space:nowrap !important;
-  box-shadow:none !important;
-}
-.fsp-standard-controls .simulation-copy-tools button:hover,
-.fsp-standard-controls #copySimulationCaseBtn:hover{
-  background:var(--hover, var(--soft, #eef1f5)) !important;
-}
-.fsp-standard-controls .floating-control{position:static !important;inset:auto !important;transform:none !important}
-
-/* Generic learning modes for pages that did not originally have them. */
-.fsp-mask-word{display:inline;white-space:normal}
-.initial-mode .fsp-generic-learn .fsp-mask-rest{color:transparent !important}
-.initial-mode .fsp-generic-learn .fsp-mask-word:hover .fsp-mask-rest{color:inherit !important}
-.blank-mode .fsp-generic-learn,
-.blank-mode .fsp-generic-learn *{color:transparent !important;text-shadow:none !important}
-
-/* Keep embedded/local selectors visually compatible. */
-.case-selector-row:not(.fsp-top-case-control) select,
-.patient-qa-selector-row select,
-.module-tools select,
-.controls select,
-.controls input[type="search"]{
-  box-sizing:border-box;
-  min-height:34px;
-  border-radius:7px;
-}
-
-@media(max-width:760px){
-  .site-header.fsp-unified-header{position:static !important;padding-right:44px !important}
-  .site-header.fsp-unified-header .site-nav a{font-size:13px !important;padding:5px 7px !important}
-  .fsp-standard-controls{align-items:stretch}
-  .fsp-control-slot{width:100%;align-items:stretch}
-  .fsp-select-control,.case-select-control,.comparison-select-control,.case-tools,.case-selector-row.fsp-top-case-control{width:100% !important;flex-wrap:wrap !important}
-  .fsp-standard-controls select{width:100% !important;min-width:0 !important;max-width:none !important}
-  .fsp-standard-controls .mode-switch{width:100% !important}
-  .fsp-standard-controls .mode-switch button{flex:1 1 0;min-width:0 !important}
-}
-</style><style>
-/* Preserve comparison-mode visibility semantics inside the unified toolbar. */
-.fsp-standard-controls .comparison-select-control{display:none !important}
-body.all-comparison-mode .fsp-standard-controls .comparison-select-control{display:flex !important}
-body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:none !important}
-</style></head><body class="full-mode integrated-page" data-page="anamnese"><header class="site-header fsp-unified-header"><nav aria-label="Hauptnavigation" class="site-nav"><a class="active" href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a href="lerntimer.html">Lerntimer</a></nav><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="theme-sun sun">☀</span><span aria-hidden="true" class="theme-moon moon">☾</span></button></header><main><div class="fsp-standard-controls" id="fspStandardControls"><div class="fsp-control-slot" id="fspModeSlot"><div aria-label="Lernmodus" class="mode-switch"><button class="active" data-mode="full" id="btnFull" type="button">Vollmodus</button><button data-mode="initial" id="btnInitial" type="button">Initialen</button><button data-mode="blank" id="btnBlank" type="button">Blank</button></div></div><div class="fsp-control-slot" id="fspCaseSlot"><div class="fsp-select-control case-select-control"><label for="caseSelector">Fall auswählen:</label><select aria-label="Anamnese-Fall auswählen" id="caseSelector">
-<option selected="" value="case-1">1A. Schulterschmerzen</option><option value="case-3">1B. Lumbaler Bandscheibenvorfall</option><option value="case-5">1C. Knieschmerzen</option><option value="case-2">2A. Brustenge (KHK)</option><option value="case-7">2B. Asthma bronchiale</option><option value="case-13">2C. Bronchialkarzinom</option><option value="case-6">3A. Divertikulitis</option><option value="case-8">3B. Bauchschmerzen</option><option value="case-10">3C. Kolonkarzinom</option><option value="case-12">3D. Obere GI-Blutung</option><option value="case-0">4A. Harnsteinleiden</option><option value="case-15">5A. Ösophaguskarzinom</option><option value="case-9">6A. Migräne</option><option value="case-16">6B. Schwindel</option><option value="case-4">7A. Fatigue und Halsschmerzen</option><option value="case-11">7B. COVID-19</option><option value="case-14">7C. Burn-out nach Dengue</option></select></div></div><div class="fsp-control-slot" id="fspSectionSlot"></div><div class="fsp-control-slot" id="fspCopySlot"></div></div><article class="document"><h1>Anamnese</h1>
+</style><script>(function(){try{var t=localStorage.getItem('fsp-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script><link rel="stylesheet" href="fsp-common.css"/>
+<script src="fsp-common.js"></script>
+</head><body class="full-mode integrated-page" data-page="anamnese"><header class="site-header"><div class="header-inner"><div aria-label="Lernmodus" class="mode-switch"><button class="active" data-mode="full" id="btnFull" type="button">Vollmodus</button><button data-mode="initial" id="btnInitial" type="button">Initialen</button><button data-mode="blank" id="btnBlank" type="button">Blank</button></div><nav aria-label="Hauptnavigation" class="site-nav"><a class="active" href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a href="lerntimer.html">Lerntimer</a></nav></div><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀</span><span aria-hidden="true" class="moon theme-moon">☾</span></button></header><main><article class="document"><h1>Anamnese</h1>
 <h2>1. Begrüßung und Personalien</h2>
 <ul>
 <li class="learn-item masked"><template>Guten Tag. Mein Name ist Temiz und ich bin Allgemeinarzt.</template></li>
@@ -491,10 +258,12 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li class="learn-item masked"><template>Ich würde jetzt noch einmal einige Punkte genauer durchgehen, damit uns keine wichtigen Details entgehen.</template></li>
 <ul><li class="learn-item masked"><template>Falls sich etwas wiederholt, wundern Sie sich bitte nicht.</template></li></ul>
 <h4 class="module-heading">Beschwerden</h4>
+
 <li class="learn-item masked"><template>Seit wann bestehen die Beschwerden?</template></li>
 <li class="learn-item masked"><template>Haben die Beschwerden plötzlich oder allmählich begonnen?</template></li>
 <li class="learn-item masked"><template>Sind die Beschwerden seitdem besser, schlimmer oder gleich geblieben?</template></li>
-<h4 class="module-heading">Schmerzanamnese</h4>
+    <h4 class="module-heading">Schmerzanamnese</h4>
+
 <li class="learn-item masked"><template>Wo genau spüren Sie die Schmerzen?</template></li>
 <li class="learn-item masked"><template>Strahlen die Schmerzen irgendwohin aus?</template></li>
 <li class="learn-item masked"><template>Sind die Schmerzen eher dumpf, stechend, brennend oder krampfartig?</template></li>
@@ -539,11 +308,13 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li class="domain-group"><span class="domain-group-title">Brustschmerzen</span><ul>
 <li class="learn-item masked"><template>Wann treten die Beschwerden typischerweise auf, eher bei Belastung oder auch in Ruhe?</template></li>
 <li class="learn-item masked"><template>Gibt es bestimmte Auslöser, zum Beispiel Kälte, Stress oder Essen?</template></li>
+
 <li class="learn-item masked"><template>Haben Sie Herzrasen oder Herzstolpern bemerkt?</template></li>
 <li class="learn-item masked"><template>Haben Sie dabei Atemnot, Übelkeit oder kalten Schweiß bemerkt?</template></li>
 <li class="learn-item masked"><template>Hatten Sie Schwindel oder sind Sie ohnmächtig geworden?</template></li>
 <li class="learn-item masked"><template>Haben Sie Schwellungen an den Beinen bemerkt?</template></li>
 <li class="learn-item masked"><template>Wie lange halten die Brustschmerzen an?</template></li>
+    
 </ul></li>
 <li class="domain-group"><span class="domain-group-title">Husten und Atemnot</span><ul>
 <li class="learn-item masked"><template>Ist der Husten trocken oder kommt Schleim mit hoch?</template></li>
@@ -640,7 +411,100 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li class="learn-item masked"><template>Vielen Dank für die Informationen.</template></li>
 <li class="learn-item masked"><template>Bevor ich weitere Fragen stelle, möchte ich kurz zusammenfassen, was ich bisher verstanden habe.</template></li>
 </ul>
-
+<div class="case-variable-box">
+<div class="case-selector-row">
+<label for="caseSelector">Fall auswählen:</label>
+<select aria-label="Anamnese-Fall auswählen" id="caseSelector">
+<option selected="" value="case-1">1A. Schulterschmerzen</option><option value="case-3">1B. Lumbaler Bandscheibenvorfall</option><option value="case-5">1C. Knieschmerzen</option><option value="case-2">2A. Brustenge (KHK)</option><option value="case-7">2B. Asthma bronchiale</option><option value="case-13">2C. Bronchialkarzinom</option><option value="case-6">3A. Divertikulitis</option><option value="case-8">3B. Bauchschmerzen</option><option value="case-10">3C. Kolonkarzinom</option><option value="case-12">3D. Obere GI-Blutung</option><option value="case-0">4A. Harnsteinleiden</option><option value="case-15">5A. Ösophaguskarzinom</option><option value="case-9">6A. Migräne</option><option value="case-16">6B. Schwindel</option><option value="case-4">7A. Fatigue und Halsschmerzen</option><option value="case-11">7B. COVID-19</option><option value="case-14">7C. Burn-out nach Dengue</option></select>
+</div>
+<div class="case-summaries">
+<div aria-label="Zwischenzusammenfassung: 1A. Schulterschmerzen" class="case-summary active" id="case-1" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über starke Schmerzen in der rechten Schulter.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit einem Sturz beim Handballtraining.</template></li>
+<li class="learn-item masked"><template>Die Schulter ist leicht geschwollen und deutlich in der Bewegung eingeschränkt.</template></li>
+<li class="learn-item masked"><template>Taubheitsgefühl oder Kribbeln im Arm bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 1B. Lumbaler Bandscheibenvorfall" class="case-summary" id="case-3" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über zunehmende Schmerzen im unteren Rücken.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit dem Heben eines schweren Gegenstands vor zwei Wochen.</template></li>
+<li class="learn-item masked"><template>Die Schmerzen strahlen bis in den rechten Fuß aus und werden beim Sitzen und Bücken stärker.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie Kribbeln und ein Schwächegefühl im rechten Bein. Eine Stuhl- oder Harninkontinenz besteht nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 1C. Knieschmerzen" class="case-summary" id="case-5" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über starke Schmerzen im linken Knie.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit einer Verdrehung beim Badminton.</template></li>
+<li class="learn-item masked"><template>Das Knie ist deutlich geschwollen, instabil und kaum belastbar.</template></li>
+<li class="learn-item masked"><template>Taubheitsgefühl, Fieber oder sichtbare Blutergüsse bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 2A. Brustenge (KHK)" class="case-summary" id="case-2" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über Druck und Enge hinter dem Brustbein.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden treten seit drei Monaten wiederholt bei körperlicher Belastung auf.</template></li>
+<li class="learn-item masked"><template>In Ruhe verschwinden sie nach wenigen Minuten.</template></li>
+<li class="learn-item masked"><template>Begleitend haben Sie Belastungsatemnot, jedoch keine Beschwerden in Ruhe.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 2B. Asthma bronchiale" class="case-summary" id="case-7" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über trockenen Husten und Brustenge seit mehreren Wochen.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden verstärken sich bei Staubkontakt und in geschlossenen Räumen.</template></li>
+<li class="learn-item masked"><template>Zusätzlich treten nächtliche Hustenanfälle und gelegentliche Belastungsatemnot auf.</template></li>
+<li class="learn-item masked"><template>Gewichtsverlust, Nachtschweiß oder blutiger Auswurf bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 2C. Bronchialkarzinom" class="case-summary" id="case-13" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über Husten und Brustenge seit drei Monaten.</template></li>
+<li class="learn-item masked"><template>Seit vier Wochen haben Sie außerdem Blut im Auswurf.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Atemnot bei Belastung, Nachtschweiß und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template>Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 3A. Divertikulitis" class="case-summary" id="case-6" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Tagen, nehmen zu und sind dauerhaft vorhanden.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen leichtes Fieber, Übelkeit, Appetitlosigkeit und wechselnder Stuhlgang.</template></li>
+<li class="learn-item masked"><template>Blut im Stuhl oder Erbrechen bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 3B. Bauchschmerzen" class="case-summary" id="case-8" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über diffuse Bauchschmerzen, vor allem im Oberbauch.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit drei Tagen, nehmen zu und strahlen teilweise in den Rücken aus.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Übelkeit, Appetitlosigkeit und ein veränderter Stuhlgang.</template></li>
+<li class="learn-item masked"><template>Fieber, Erbrechen, Blut im Stuhl oder Gewichtsverlust bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 3C. Kolonkarzinom" class="case-summary" id="case-10" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über wiederkehrende Schmerzen im linken Unterbauch.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Monaten und haben zuletzt zugenommen.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie wechselnden Stuhlgang mit Schleim und Blut, Appetitlosigkeit und Müdigkeit.</template></li>
+<li class="learn-item masked"><template>Außerdem haben Sie etwa fünf Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 3D. Obere GI-Blutung" class="case-summary" id="case-12" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über schwarzen, teerartigen Stuhl seit gestern.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie zunehmende Schwäche und Atemnot bei Belastung.</template></li>
+<li class="learn-item masked"><template>Heute haben Sie zweimal erbrochen. Zuletzt waren vermutlich kaffeesatzartige Beimengungen vorhanden.</template></li>
+<li class="learn-item masked"><template>Seit zwei Wochen bestehen außerdem leichte Oberbauchschmerzen.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 4A. Harnsteinleiden" class="case-summary" id="case-0" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über leichte, ziehende Schmerzen in der rechten Flanke.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit fünf Tagen.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie häufigeren Harndrang, Brennen beim Wasserlassen und einen schwachen Harnstrahl.</template></li>
+<li class="learn-item masked"><template>Fieber, Übelkeit, Erbrechen oder Blut im Urin bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 5A. Ösophaguskarzinom" class="case-summary" id="case-15" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über zunehmende Schluckbeschwerden seit sechs Wochen.</template></li>
+<li class="learn-item masked"><template>Zunächst waren nur feste Speisen betroffen, inzwischen auch Flüssigkeiten.</template></li>
+<li class="learn-item masked"><template>Zusätzlich bestehen Schmerzen hinter dem Brustbein, Hochkommen von Nahrung und Husten beim Essen.</template></li>
+<li class="learn-item masked"><template>Sie haben etwa vier Kilogramm ungewollt abgenommen. Fieber, Übelkeit oder Erbrechen bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 6A. Migräne" class="case-summary" id="case-9" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über einseitige, pochende Kopfschmerzattacken.</template></li>
+<li class="learn-item masked"><template>Die Attacken treten seit drei Monaten etwa zweimal im Monat auf und dauern vier bis 24 Stunden.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Übelkeit sowie Licht- und Geräuschempfindlichkeit.</template></li>
+<li class="learn-item masked"><template>Vor den Kopfschmerzen treten für 15 bis 30 Minuten Sehstörungen auf.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 6B. Schwindel" class="case-summary" id="case-16" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über zunehmenden Schwankschwindel seit drei Tagen.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden treten besonders beim Aufstehen, Gehen und Drehen des Kopfes auf.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Benommenheit, Konzentrationsprobleme und leichte dumpfe Kopfschmerzen.</template></li>
+<li class="learn-item masked"><template>Seh-, Sprach- oder Hörstörungen, Erbrechen, Bewusstseinsverlust oder Fieber bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 7A. Fatigue und Halsschmerzen" class="case-summary" id="case-4" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über starke Erschöpfung seit fünf bis sechs Tagen.</template></li>
+<li class="learn-item masked"><template>Seit drei Tagen haben Sie zusätzlich Halsschmerzen.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Fieber, Kopf- und Gliederschmerzen, Nachtschweiß und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template>Husten, Schnupfen, Atemnot, Erbrechen oder Durchfall bestehen nicht.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 7B. COVID-19" class="case-summary" id="case-11" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über trockenen Husten, Fieber und ein starkes Krankheitsgefühl.</template></li>
+<li class="learn-item masked"><template>Die Beschwerden bestehen seit vier Tagen und nehmen zu.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie Kopfschmerzen, Müdigkeit sowie einen deutlich verminderten Geruchs- und Geschmackssinn.</template></li>
+<li class="learn-item masked"><template>In Ruhe besteht keine Atemnot. Bei Belastung geraten Sie jedoch schneller außer Atem.</template></li>
+</ul></div><div aria-label="Zwischenzusammenfassung: 7C. Burn-out nach Dengue" class="case-summary" id="case-14" role="region"><ul>
+<li class="learn-item masked"><template>Sie berichten über zunehmende Erschöpfung seit drei Monaten.</template></li>
+<li class="learn-item masked"><template>Zusätzlich haben Sie Konzentrationsprobleme, Schlafstörungen und innere Unruhe.</template></li>
+<li class="learn-item masked"><template>Begleitend bestehen Herzklopfen, Kopfdruck, unspezifische Schmerzen und verminderter Appetit.</template></li>
+<li class="learn-item masked"><template>Sie haben etwa drei Kilogramm abgenommen. Fieber oder andere akute Infektzeichen bestehen nicht.</template></li>
+</ul></div></div>
+</div>
 <ul>
 <li class="learn-item masked"><template>Habe ich das so richtig verstanden, oder möchten Sie noch etwas ergänzen oder korrigieren?</template></li>
 </ul>
@@ -697,32 +561,38 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li class="learn-item masked"><template>Waren Sie in der letzten Zeit im Ausland?</template></li>
 </ul>
 <h2>12. Weiteres Vorgehen und Abschluss</h2>
+
 <ul>
-<li class="learn-item masked"><template>Damit sind wir mit den Fragen durch.</template></li>
-<li class="learn-item masked"><template>Ich erkläre Ihnen jetzt kurz, wie es weitergeht.</template></li>
-<li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben.</template></li>
-<li class="learn-item masked"><template>Um herauszufinden, was genau bei Ihnen vorliegt, werde ich Sie nun körperlich untersuchen.</template></li>
-<li class="learn-item masked"><template>Außerdem werden wir ... und ...</template></li>
-<ul>
-<li class="learn-item masked"><template>Blut abnehmen</template></li>
-<li class="learn-item masked"><template>eine Urinprobe untersuchen</template></li>
-<li class="learn-item masked"><template>eine Stuhlprobe untersuchen</template></li>
-<li class="learn-item masked"><template>ein EKG schreiben</template></li>
-<li class="learn-item masked"><template>eine Ultraschalluntersuchung durchführen</template></li>
-<li class="learn-item masked"><template>eine neurologische Untersuchung durchführen</template></li>
+  <li class="learn-item masked"><template>Damit sind wir mit den Fragen durch.</template></li>
+  <li class="learn-item masked"><template>Ich erkläre Ihnen jetzt kurz, wie es weitergeht.</template></li>
+  <li class="learn-item masked"><template>Ihre Beschwerden können verschiedene Ursachen haben.</template></li>
+  <li class="learn-item masked"><template>Um herauszufinden, was genau bei Ihnen vorliegt, werde ich Sie nun körperlich untersuchen.</template></li>
+
+  <li class="learn-item masked"><template>Außerdem werden wir ... und ...</template></li>
+  <ul>
+    <li class="learn-item masked"><template>Blut abnehmen</template></li>
+    <li class="learn-item masked"><template>eine Urinprobe untersuchen</template></li>
+    <li class="learn-item masked"><template>eine Stuhlprobe untersuchen</template></li>
+    <li class="learn-item masked"><template>ein EKG schreiben</template></li>
+    <li class="learn-item masked"><template>eine Ultraschalluntersuchung durchführen</template></li>
+    <li class="learn-item masked"><template>eine neurologische Untersuchung durchführen</template></li>
+  </ul>
+
+  <li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind, zum Beispiel ... oder ...</template></li>
+  <ul>
+    <li class="learn-item masked"><template>ein Röntgenbild</template></li>
+    <li class="learn-item masked"><template>eine MRT-Untersuchung</template></li>
+    <li class="learn-item masked"><template>eine Ultraschalluntersuchung</template></li>
+    <li class="learn-item masked"><template>eine CT-Untersuchung</template></li>
+    <li class="learn-item masked"><template>eine eine Magenspiegelung</template></li>
+    <li class="learn-item masked"><template>eine Darmspiegelung</template></li>
+  </ul>
+
+  <li class="learn-item masked"><template>Anschließend besprechen wir gemeinsam die Ergebnisse und das weitere Vorgehen.</template></li>
+  <li class="learn-item masked"><template>Haben Sie dazu noch Fragen?</template></li>
 </ul>
-<li class="learn-item masked"><template>Danach entscheiden wir, ob weitere Untersuchungen notwendig sind, zum Beispiel ... oder ...</template></li>
-<ul>
-<li class="learn-item masked"><template>ein Röntgenbild</template></li>
-<li class="learn-item masked"><template>eine MRT-Untersuchung</template></li>
-<li class="learn-item masked"><template>eine Ultraschalluntersuchung</template></li>
-<li class="learn-item masked"><template>eine CT-Untersuchung</template></li>
-<li class="learn-item masked"><template>eine eine Magenspiegelung</template></li>
-<li class="learn-item masked"><template>eine Darmspiegelung</template></li>
-</ul>
-<li class="learn-item masked"><template>Anschließend besprechen wir gemeinsam die Ergebnisse und das weitere Vorgehen.</template></li>
-<li class="learn-item masked"><template>Haben Sie dazu noch Fragen?</template></li>
-</ul>
+
+    
 <h2>13. Patientenfragen und Antworten nach Fall</h2>
 <div class="patient-qa-cases"><div class="case-selector-row patient-qa-selector-row"><label for="patientQaSelector">Fall auswählen:</label><select aria-label="Patientenfragen-Fall auswählen" id="patientQaSelector"><option selected="" value="patient-qa-case-0">1A. Schulterschmerzen</option><option value="patient-qa-case-1">1B. Lumbaler Bandscheibenvorfall</option><option value="patient-qa-case-2">1C. Knieschmerzen</option><option value="patient-qa-case-3">2A. Brustenge (KHK)</option><option value="patient-qa-case-4">2B. Asthma bronchiale</option><option value="patient-qa-case-5">2C. Bronchialkarzinom</option><option value="patient-qa-case-6">3A. Divertikulitis</option><option value="patient-qa-case-7">3B. Bauchschmerzen</option><option value="patient-qa-case-8">3C. Kolonkarzinom</option><option value="patient-qa-case-9">3D. Obere GI-Blutung</option><option value="patient-qa-case-10">4A. Harnsteinleiden</option><option value="patient-qa-case-11">5A. Ösophaguskarzinom</option><option value="patient-qa-case-12">6A. Migräne</option><option value="patient-qa-case-13">6B. Schwindel</option><option value="patient-qa-case-14">7A. Fatigue und Halsschmerzen</option><option value="patient-qa-case-15">7B. COVID-19</option><option value="patient-qa-case-16">7C. Burn-out nach Dengue</option></select></div><div class="patient-qa-panels"><section aria-label="Patientenfragen: 1A. Schulterschmerzen" class="patient-qa-case active" id="patient-qa-case-0" role="region"><h3>1A. Schulterschmerzen</h3><ul>
 <li class="learn-item masked"><template>Ist meine Schulter ausgekugelt?</template></li>
@@ -928,6 +798,9 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li class="learn-item masked"><template>Könnte das auch eine Depression sein?</template></li>
 <ul><li class="learn-item masked"><template>Ja, Ihre Beschwerden könnten auch zu einer Depression passen.</template></li><li class="learn-item masked"><template>Sicher sagen können wir das aber erst nach einer genaueren Abklärung.</template></li></ul>
 </ul></section></div></div>
+
+
+
 <h2>14. Häufige Patientenfragen und mögliche Antworten</h2>
 <ul>
 <li class="learn-item masked"><template>Wann darf ich wieder Sport treiben?</template></li>
@@ -951,6 +824,9 @@ body.all-comparison-mode .fsp-standard-controls .simulation-copy-tools{display:n
 <li><strong>Krankenhaus / ambulante Behandlung</strong><ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Wenn wir Warnzeichen feststellen, würde ich Sie ins Krankenhaus einweisen.</template></li></ul></li>
 <li><strong>Überweisung</strong><ul><li class="learn-item masked"><template>Das hängt vom Befund ab.</template></li><li class="learn-item masked"><template>Ob eine Überweisung notwendig ist, können wir erst nach der Untersuchung besser einschätzen.</template></li></ul></li>
 <li><strong>Warnzeichen / Wiedervorstellung</strong><ul><li class="learn-item masked"><template>Wenn sich die Beschwerden verschlechtern oder neue Beschwerden auftreten, sollten Sie sich früher wieder vorstellen.</template></li></ul></li></ol>
+
+
+    
 </article></main><script>
 function escapeHtml(text){return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
 function decodeHtml(text){const t=document.createElement("textarea");t.innerHTML=text;return t.value;}
@@ -1060,195 +936,5 @@ scheduleComparisonAlignment();</script>
   }
   selector.addEventListener('change',updatePatientQaCase);
   updatePatientQaCase();
-})();
-</script><script id="fspUnifiedUiScript">
-(function(){
-  'use strict';
-
-  function byId(id){ return document.getElementById(id); }
-
-  function normalizeControls(){
-    var toolbar=byId('fspStandardControls');
-    if(!toolbar) return;
-
-    var modeSlot=byId('fspModeSlot');
-    var caseSlot=byId('fspCaseSlot');
-    var sectionSlot=byId('fspSectionSlot');
-    var copySlot=byId('fspCopySlot');
-
-    var mode=document.querySelector('.mode-switch');
-    if(mode && modeSlot && mode.parentElement!==modeSlot){
-      mode.classList.remove('floating-control');
-      mode.removeAttribute('style');
-      modeSlot.appendChild(mode);
-    }
-
-    var caseSelect=byId('caseSelect') || byId('caseSelector');
-    if(caseSelect && caseSlot){
-      var wrap=caseSelect.closest('.fsp-select-control,.case-select-control,.case-tools,.case-selector-row,.tools');
-      if(wrap && wrap.classList.contains('tools')){
-        var lab=document.querySelector('label[for="'+caseSelect.id+'"]');
-        var box=document.createElement('div');
-        box.className='fsp-select-control case-select-control';
-        if(lab) box.appendChild(lab);
-        box.appendChild(caseSelect);
-        caseSlot.appendChild(box);
-      }else if(wrap && wrap.parentElement!==caseSlot){
-        wrap.classList.add('fsp-select-control');
-        wrap.classList.remove('floating-control');
-        wrap.removeAttribute('style');
-        caseSlot.appendChild(wrap);
-      }
-    }
-
-    var sectionSelect=byId('comparisonSectionSelect');
-    if(sectionSelect && sectionSlot){
-      var swrap=sectionSelect.closest('.comparison-select-control,.fsp-select-control');
-      if(!swrap){
-        swrap=document.createElement('div');
-        swrap.className='comparison-select-control fsp-select-control';
-        var slab=document.querySelector('label[for="comparisonSectionSelect"]');
-        if(slab) swrap.appendChild(slab);
-        swrap.appendChild(sectionSelect);
-      }
-      swrap.classList.add('fsp-select-control');
-      swrap.classList.remove('floating-control');
-      swrap.removeAttribute('style');
-      if(swrap.parentElement!==sectionSlot) sectionSlot.appendChild(swrap);
-    }
-
-    var copy=byId('simulationCopyTools');
-    if(copy && copySlot && copy.parentElement!==copySlot){
-      copy.classList.remove('floating-control');
-      copy.removeAttribute('style');
-      copySlot.appendChild(copy);
-    }
-
-    document.querySelectorAll('.floating-control').forEach(function(el){
-      if(el.closest('#fspStandardControls')){
-        el.classList.remove('floating-control');
-        el.removeAttribute('style');
-      }
-    });
-  }
-
-  function setupTheme(){
-    var old=byId('themeToggle');
-    if(!old) return;
-    /* Replacing the node removes legacy click handlers, so every page uses exactly one theme function. */
-    var b=old.cloneNode(false);
-    b.id='themeToggle';
-    b.className='theme-toggle';
-    b.type='button';
-    b.innerHTML='<span class="theme-sun sun" aria-hidden="true">☀</span><span class="theme-moon moon" aria-hidden="true">☾</span>';
-    old.replaceWith(b);
-
-    var root=document.documentElement;
-    var saved='';
-    try{ saved=localStorage.getItem('fsp-theme') || ''; }catch(e){}
-    var theme=saved==='dark'?'dark':(saved==='light'?'light':(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-
-    function apply(next){
-      if(next==='dark') root.setAttribute('data-theme','dark');
-      else root.removeAttribute('data-theme');
-      root.classList.remove('dark');
-      b.setAttribute('aria-label',next==='dark'?'Normal theme':'Dark theme');
-      b.setAttribute('title',next==='dark'?'Normal theme':'Dark theme');
-      b.setAttribute('aria-pressed',next==='dark'?'true':'false');
-    }
-    apply(theme);
-    b.addEventListener('click',function(){
-      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
-      try{ localStorage.setItem('fsp-theme',next); }catch(e){}
-      apply(next);
-    });
-  }
-
-  function setupModes(){
-    var mode=document.querySelector('.mode-switch');
-    if(!mode) return;
-    var buttons=Array.from(mode.querySelectorAll('button'));
-    buttons.forEach(function(btn){
-      if(!btn.dataset.mode){
-        var t=(btn.textContent||'').trim().toLowerCase();
-        if(t.indexOf('voll')===0) btn.dataset.mode='full';
-        else if(t.indexOf('initial')===0) btn.dataset.mode='initial';
-        else if(t.indexOf('blank')===0) btn.dataset.mode='blank';
-      }
-      btn.type='button';
-    });
-
-    function applyMode(modeName){
-      document.body.classList.remove('initial-mode','blank-mode','full-mode');
-      if(modeName==='initial') document.body.classList.add('initial-mode');
-      else if(modeName==='blank') document.body.classList.add('blank-mode');
-      else document.body.classList.add('full-mode');
-      buttons.forEach(function(x){x.classList.toggle('active',x.dataset.mode===modeName)});
-    }
-
-    buttons.forEach(function(btn){
-      btn.addEventListener('click',function(){applyMode(btn.dataset.mode || 'full')});
-    });
-    applyMode('full');
-  }
-
-  function wrapTextNode(node){
-    var text=node.nodeValue;
-    if(!text || !/[A-Za-zÄÖÜäöüß0-9]/.test(text)) return;
-    var frag=document.createDocumentFragment();
-    var re=/([A-Za-zÄÖÜäöüß0-9]+)/g;
-    var last=0, m;
-    while((m=re.exec(text))!==null){
-      if(m.index>last) frag.appendChild(document.createTextNode(text.slice(last,m.index)));
-      var word=m[0];
-      var w=document.createElement('span');
-      w.className='fsp-mask-word';
-      var first=document.createElement('span');
-      first.className='fsp-mask-first';
-      first.textContent=word.charAt(0);
-      var rest=document.createElement('span');
-      rest.className='fsp-mask-rest';
-      rest.textContent=word.slice(1);
-      w.appendChild(first); w.appendChild(rest); frag.appendChild(w);
-      last=re.lastIndex;
-    }
-    if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-    node.parentNode.replaceChild(frag,node);
-  }
-
-  function maskElement(el){
-    if(!el || el.dataset.fspMasked==='1') return;
-    el.dataset.fspMasked='1';
-    el.classList.add('fsp-generic-learn');
-    var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
-      if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-      var p=n.parentElement;
-      if(!p || p.closest('script,style,select,option,input,button,textarea')) return NodeFilter.FILTER_REJECT;
-      if(p.closest('.fsp-mask-word')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }});
-    var nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(wrapTextNode);
-  }
-
-  function setupGenericLearning(){
-    var page=document.body.dataset.page || '';
-    var selectors=[];
-    if(page==='anamnese-faelle') selectors=['.case-card p','.case-card li'];
-    if(page==='begriffe') selectors=['#glossary td.lay','#glossary td.medical','#glossary td.meaning'];
-    selectors.forEach(function(sel){document.querySelectorAll(sel).forEach(maskElement)});
-  }
-
-  normalizeControls();
-  setupTheme();
-  setupGenericLearning();
-  setupModes();
-  normalizeControls();
-
-  var obs=new MutationObserver(function(){ normalizeControls(); });
-  obs.observe(document.body,{childList:true,subtree:true});
-  setTimeout(normalizeControls,0);
-  setTimeout(normalizeControls,100);
-  setTimeout(normalizeControls,500);
 })();
 </script></body></html>
