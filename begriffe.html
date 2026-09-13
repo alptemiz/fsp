@@ -220,5 +220,32 @@ th,td{
   applyFilters();
 })();
 </script>
+
+<script>
+(function () {
+  const button = document.getElementById("themeToggle");
+  if (!button) return;
+
+  const root = document.documentElement;
+  const storageKey = "fsp-theme";
+
+  function applyTheme(theme) {
+    root.classList.toggle("dark", theme === "dark");
+    button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    button.textContent = theme === "dark" ? "☀" : "☾";
+  }
+
+  const saved = localStorage.getItem(storageKey);
+  const initial = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  applyTheme(initial);
+
+  button.addEventListener("click", function () {
+    const next = root.classList.contains("dark") ? "light" : "dark";
+    localStorage.setItem(storageKey, next);
+    applyTheme(next);
+  });
+})();
+</script>
+
 </body>
 </html>
