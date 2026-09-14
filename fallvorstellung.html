@@ -128,7 +128,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
 <script src="fsp-common.js"></script>
 </head>
 <body data-page="fallvorstellung-faelle">
-<header class="site-header"><div class="header-inner"><div aria-label="Darstellung und Lernmodus" class="mode-switch"><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀︎</span><span aria-hidden="true" class="moon theme-moon">⏾</span></button><span aria-hidden="true" class="control-separator"></span><button aria-label="Vollmodus" title="Vollmodus" class="mode-button active" data-mode="full" id="btnFull" type="button">●</button><button aria-label="Initialen" title="Initialen" class="mode-button" data-mode="initial" id="btnInitial" type="button">◐</button><button aria-label="Blank" title="Blank" class="mode-button" data-mode="blank" id="btnBlank" type="button">○</button><button class="header-copy-button" id="copySimulationCaseBtn" type="button" aria-label="Prompt + ausgewählten Fall kopieren" title="Prompt + ausgewählten Fall kopieren">⧉</button></div><nav aria-label="Hauptnavigation" class="site-nav"><a class="nav-blue" href="anamnese.html" title="Anamnese">Anm</a><a class="nav-blue" href="anamnese-faelle.html" title="Anamnese Fälle">Anm-F</a><a class="nav-orange" href="aufklaerung.html" title="Aufklärung">Aufkl</a><a class="nav-orange" href="aufklaerung-ablauf.html" title="Aufklärung Ablauf">Aufkl-A</a><a class="nav-green active" href="fallvorstellung.html" title="Fallvorstellung">Vorst</a><a class="nav-purple" href="arztbrief-faelle.html" title="Arztbrief Fälle">Brief</a><a class="nav-neutral nav-icon" href="begriffe.html" title="Begriffe" aria-label="Begriffe">🕮︎</a><a class="nav-neutral nav-icon" href="lerntimer.html" title="Lerntimer" aria-label="Lerntimer">⏱︎</a></nav></div></header>
+<header class="site-header"><div class="header-inner"><div aria-label="Darstellung, Lernmodus und Sprechtempo" class="mode-switch"><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀︎</span><span aria-hidden="true" class="moon theme-moon">⏾</span></button><span aria-hidden="true" class="control-separator"></span><button aria-label="Vollmodus" title="Vollmodus" class="mode-button active" data-mode="full" id="btnFull" type="button">●</button><button aria-label="Initialen" title="Initialen" class="mode-button" data-mode="initial" id="btnInitial" type="button">◐</button><button aria-label="Blank" title="Blank" class="mode-button" data-mode="blank" id="btnBlank" type="button">○</button><span aria-hidden="true" class="control-separator"></span><button aria-label="Sprechtempo 1, nicht verfügbar" title="Sprechtempo hier nicht verfügbar" class="tts-rate-button is-unavailable" type="button" disabled aria-disabled="true">1</button><button aria-label="Sprechtempo 1,5, nicht verfügbar" title="Sprechtempo hier nicht verfügbar" class="tts-rate-button is-unavailable" type="button" disabled aria-disabled="true">³⁄₂</button><button aria-label="Sprechtempo 2, nicht verfügbar" title="Sprechtempo hier nicht verfügbar" class="tts-rate-button is-unavailable" type="button" disabled aria-disabled="true">2</button><button class="header-copy-button" id="copySimulationCaseBtn" type="button" aria-label="Prompt + ausgewählten Fall kopieren" title="Prompt + ausgewählten Fall kopieren">⧉</button></div><nav aria-label="Hauptnavigation" class="site-nav"><a class="nav-blue" href="anamnese.html" title="Anamnese">Anm</a><a class="nav-blue" href="anamnese-faelle.html" title="Anamnese Fälle">Anm-F</a><a class="nav-orange" href="aufklaerung.html" title="Aufklärung">Aufkl</a><a class="nav-orange" href="aufklaerung-ablauf.html" title="Aufklärung Ablauf">Aufkl-A</a><a class="nav-green active" href="fallvorstellung.html" title="Fallvorstellung">Vorst</a><a class="nav-purple" href="arztbrief-faelle.html" title="Arztbrief Fälle">Brief</a><a class="nav-neutral nav-icon" href="begriffe.html" title="Begriffe" aria-label="Begriffe">🕮︎</a><a class="nav-neutral nav-icon" href="lerntimer.html" title="Lerntimer" aria-label="Lerntimer">⏱︎</a></nav></div></header>
 
 <main>
 
@@ -9323,9 +9323,13 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
     document.body.classList.toggle('all-comparison-mode',value==='all');
     const copyBtn=document.getElementById('copySimulationCaseBtn');
     if(copyBtn){
-      copyBtn.disabled=value==='all';
-      copyBtn.style.visibility=value==='all'?'hidden':'visible';
-      copyBtn.textContent='Prompt + ausgewählten Fall kopieren';
+      const unavailable=value==='all';
+      copyBtn.disabled=unavailable;
+      copyBtn.classList.toggle('is-unavailable',unavailable);
+      copyBtn.setAttribute('aria-disabled',unavailable?'true':'false');
+      copyBtn.style.visibility='visible';
+      copyBtn.textContent=copyBtn.classList.contains('header-copy-button')?'⧉':'Prompt + ausgewählten Fall kopieren';
+      copyBtn.title=unavailable?'Einzelfall auswählen, um den Prompt zu kopieren':'Prompt + ausgewählten Fall kopieren';
     }
   }
   if(cases.length){sel.value='all';show('all');}
@@ -9458,27 +9462,7 @@ html[data-theme="dark"] .comparison-select-control.floating-control{background:v
   }
   document.querySelectorAll('.learn-item').forEach(renderLearnItem);
 
-  const modes={full:'',initial:'initial-mode',blank:'blank-mode'};
-  document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
-    document.body.classList.remove('initial-mode','blank-mode');
-    if(modes[button.dataset.mode]) document.body.classList.add(modes[button.dataset.mode]);
-    document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===button));
-  }));
-
-  const modeSwitch=document.querySelector('.mode-switch');
-  if(modeSwitch){
-    modeSwitch.classList.add('floating-control');
-    if(modeSwitch.parentElement!==document.body) document.body.appendChild(modeSwitch);
-  }
-
-  const caseSelectControl=document.querySelector('.case-select-control');
-  if(caseSelectControl){
-    caseSelectControl.classList.add('floating-control');
-    if(caseSelectControl.parentElement!==document.body) document.body.appendChild(caseSelectControl);
-  }
-
-  const toolsContainer=document.querySelector('.tools');
-  if(toolsContainer&&!toolsContainer.children.length) toolsContainer.remove();
+  /* Lernmodus und Header-Position werden zentral in fsp-common.js gesteuert. */
 
   const themeButton=document.getElementById('themeToggle');
   function syncThemeTitle(){
