@@ -242,21 +242,29 @@ html[data-theme="dark"] .floating-control{
 .patient-qa-case h3{margin-top:14px}
 
 
-/* Sentence pronunciation */
+/* Sentence pronunciation: speaker icon replaces the normal list bullet */
+.learn-item.audio-marker{
+  list-style:none;
+  position:relative;
+}
+.learn-item.audio-marker::marker{content:""}
 .audio-button{
+  position:absolute;
+  left:-24px;
+  top:.12em;
   display:inline-flex;align-items:center;justify-content:center;
-  width:26px;height:26px;margin-left:7px;padding:0;
-  border:1px solid var(--border-color);border-radius:50%;
+  width:20px;height:20px;padding:0;margin:0;
+  border:0;border-radius:50%;
   background:transparent;color:var(--muted-color);
-  font-size:14px;line-height:1;vertical-align:middle;
+  font-size:13px;line-height:1;
   opacity:.72;box-shadow:none;
 }
 .audio-button:hover{background:var(--accent-soft);color:var(--text-color);opacity:1}
 .audio-button.is-speaking{background:var(--accent-soft);color:var(--button-color);opacity:1}
-.audio-button:focus-visible{outline:2px solid var(--button-color);outline-offset:2px}
+.audio-button:focus-visible{outline:2px solid var(--button-color);outline-offset:1px}
 .blank-mode .audio-button,.blank-mode .audio-button *{color:var(--muted-color)!important}
 .blank-mode .audio-button:hover,.blank-mode .audio-button.is-speaking{color:var(--text-color)!important}
-html[data-theme="dark"] .audio-button{border-color:var(--border-color);background:transparent;color:var(--muted-color)}
+html[data-theme="dark"] .audio-button{background:transparent;color:var(--muted-color)}
 html[data-theme="dark"] .audio-button:hover,html[data-theme="dark"] .audio-button.is-speaking{background:var(--accent-soft);color:var(--text-color)}
 
 .tts-settings-toggle{
@@ -278,7 +286,7 @@ html[data-theme="dark"] .audio-button:hover,html[data-theme="dark"] .audio-butto
 .tts-settings select{width:100%;min-width:0;padding:5px 7px;border:1px solid var(--border-color);border-radius:7px;background:var(--surface);color:var(--text-color);font:inherit;font-size:13px}
 .tts-rate-wrap{display:flex;align-items:center;gap:7px}.tts-rate-wrap input{width:100%}.tts-rate-value{min-width:34px;font-size:12px;color:var(--muted-color);text-align:right}
 .tts-status{margin-top:7px;font-size:11px;line-height:1.3;color:var(--muted-color)}
-@media(max-width:760px){.audio-button{width:28px;height:28px;margin-left:6px}.tts-settings-toggle{right:8px;bottom:8px}.tts-settings{right:8px;bottom:50px;width:calc(100vw - 16px)}}
+@media(max-width:760px){.audio-button{left:-23px;width:20px;height:20px}.tts-settings-toggle{right:8px;bottom:8px}.tts-settings{right:8px;bottom:50px;width:calc(100vw - 16px)}}
 
 
 /* Canonical Anamnese prompt copy */
@@ -616,14 +624,13 @@ html[data-theme="dark"] .audio-button:hover,html[data-theme="dark"] .audio-butto
 </ul>
 <h2>9. Gynäkologische Anamnese</h2>
 <ul>
-<li><strong>Bei Frauen im gebärfähigen Alter:</strong></li>
-<ul><li class="learn-item masked"><template>Besteht aktuell die Möglichkeit einer Schwangerschaft?</template></li></ul>
+<li class="learn-item masked"><template>Besteht aktuell die Möglichkeit einer Schwangerschaft?</template></li>
 </ul>
-<h2>10. Impfstatus, falls relevant</h2>
+<h2>10. Impfstatus</h2>
 <ul>
 <li class="learn-item masked"><template>Sind Ihre Impfungen vollständig und aktuell?</template></li>
 </ul>
-<h2>11. Reiseanamnese, falls relevant</h2>
+<h2>11. Reiseanamnese</h2>
 <ul>
 <li class="learn-item masked"><template>Waren Sie in der letzten Zeit im Ausland?</template></li>
 </ul>
@@ -979,7 +986,7 @@ function makeAudioButton(text){
 function renderMaskedItem(el){
   const t=el.querySelector('template');if(!t)return;
   const itemText=decodeHtml(t.innerHTML).trim();
-  el.innerHTML=maskText(itemText);el.appendChild(makeAudioButton(itemText));
+  el.innerHTML=maskText(itemText);el.classList.add('audio-marker');el.insertBefore(makeAudioButton(itemText),el.firstChild);
 }
 
 
