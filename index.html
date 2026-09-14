@@ -91,7 +91,7 @@ html[data-theme="dark"] .floating-control{
 <script src="fsp-common.js"></script>
 </head>
 <body data-page="index">
-<header class="site-header"><div class="header-inner"><nav aria-label="Hauptnavigation" class="site-nav"><a href="anamnese.html">Anamnese</a><a href="anamnese-faelle.html">Anamnese Fälle</a><a href="aufklaerung.html">Aufklärung</a><a href="aufklaerung-ablauf.html">Aufklärung Ablauf</a><a href="fallvorstellung.html">Fallvorstellung</a><a href="arztbrief-faelle.html">Arztbrief Fälle</a><a href="begriffe.html">Begriffe</a><a href="lerntimer.html">Lerntimer</a></nav></div><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀</span><span aria-hidden="true" class="moon theme-moon">☾</span></button></header>
+<header class="site-header"><div class="header-inner"><div class="header-primary-controls"><button aria-label="Dark theme" class="theme-toggle" id="themeToggle" title="Dark theme" type="button"><span aria-hidden="true" class="sun theme-sun">☀︎</span><span aria-hidden="true" class="moon theme-moon">⏾</span></button></div><nav aria-label="Hauptnavigation" class="site-nav"><a class="nav-blue" href="anamnese.html" title="Anamnese">Anm</a><a class="nav-blue" href="anamnese-faelle.html" title="Anamnese Fälle">Anm-F</a><a class="nav-orange" href="aufklaerung.html" title="Aufklärung">Aufkl</a><a class="nav-orange" href="aufklaerung-ablauf.html" title="Aufklärung Ablauf">Aufkl-A</a><a class="nav-green" href="fallvorstellung.html" title="Fallvorstellung">Vorst</a><a class="nav-purple" href="arztbrief-faelle.html" title="Arztbrief Fälle">Brief</a><a class="nav-neutral nav-icon" href="begriffe.html" title="Begriffe" aria-label="Begriffe">🕮︎</a><a class="nav-neutral nav-icon" href="lerntimer.html" title="Lerntimer" aria-label="Lerntimer">⏱︎</a></nav></div></header>
 <main>
 <h1>FSP Trainer</h1>
 <p class="lead">Wählen Sie den Bereich, den Sie bearbeiten möchten.</p>
@@ -108,23 +108,6 @@ html[data-theme="dark"] .floating-control{
 </main>
 <script>document.querySelectorAll('.site-nav a').forEach(a=>a.classList.toggle('active',a.dataset.page==='home'));</script>
 <script>(function(){var b=document.getElementById('themeToggle');if(!b)return;function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';var label=d?'Normal theme':'Dark theme';b.setAttribute('aria-label',label);b.setAttribute('title',label);}b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';if(d){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('fsp-theme','light')}catch(e){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('fsp-theme','dark')}catch(e){}}sync();});sync();})();</script>
-<script>
-(function(){
-  function detachFloatingControls(){
-    var mode=document.querySelector('.mode-switch');
-    var theme=document.getElementById('themeToggle');
-    [mode,theme].forEach(function(el){
-      if(!el) return;
-      el.classList.add('floating-control');
-      if(el.parentElement!==document.body) document.body.appendChild(el);
-    });
-  }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',detachFloatingControls);
-  }else{
-    detachFloatingControls();
-  }
-})();
-</script>
+
 </body>
 </html>

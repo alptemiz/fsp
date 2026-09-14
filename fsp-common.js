@@ -30,8 +30,7 @@
   function initModeSwitch(){
     var mode=document.querySelector('.mode-switch');
     if(!mode) return;
-    mode.classList.add('floating-control');
-    if(mode.parentElement!==document.body) document.body.appendChild(mode);
+    mode.classList.remove('floating-control');
     mode.querySelectorAll('[data-mode]').forEach(function(btn){
       btn.addEventListener('click',function(){ setMode(btn.dataset.mode); });
     });
@@ -41,15 +40,14 @@
   function initTheme(){
     var b=document.getElementById('themeToggle');
     if(!b) return;
-    b.classList.add('floating-control');
-    if(b.parentElement!==document.body) document.body.appendChild(b);
+    b.classList.remove('floating-control');
     function sync(){
       var dark=document.documentElement.getAttribute('data-theme')==='dark';
       var label=dark?'Normal theme':'Dark theme';
       b.setAttribute('aria-label',label);
       b.setAttribute('title',label);
     }
-    /* All content pages already have their own theme listener. Lerntimer does not. */
+    /* Lerntimer has no page-local theme listener, so shared JS handles it there. */
     if(document.body.classList.contains('fsp-timer-page')){
       b.addEventListener('click',function(){
         var dark=document.documentElement.getAttribute('data-theme')==='dark';
@@ -92,8 +90,10 @@
     var sectionSelect=document.getElementById('comparisonSectionSelect');
     var sectionControl=sectionSelect ? (sectionSelect.closest('.comparison-select-control') || wrapCaseSelector(sectionSelect)) : null;
     var copyControl=document.getElementById('simulationCopyTools');
+    if(copyControl && copyControl.closest('.site-header')) copyControl=null;
     if(!copyControl){
       var copyBtn=document.getElementById('copySimulationCaseBtn');
+      if(copyBtn && copyBtn.closest('.site-header')) copyBtn=null;
       if(copyBtn){
         copyControl=document.createElement('div');
         copyControl.className='simulation-copy-tools';
