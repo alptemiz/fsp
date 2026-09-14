@@ -971,7 +971,7 @@ function speakSentence(text,button){
 
 function makeAudioButton(text){
   const button=document.createElement('button');
-  button.type='button';button.className='audio-button';button.setAttribute('aria-label','Satz anhören');button.setAttribute('aria-pressed','false');button.title='Satz anhören';button.textContent='🔊';
+  button.type='button';button.className='audio-button';button.setAttribute('aria-label','Satz anhören');button.setAttribute('aria-pressed','false');button.title='Satz anhören';button.textContent='🔊︎';
   button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();speakSentence(text,button);});
   return button;
 }
