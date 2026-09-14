@@ -993,31 +993,41 @@ function renderMaskedItem(el){
 
 const ANAMNESE_TRAINING_PROMPT = `# Arbeitsmodus: verbindliches Anamnese-Abruftraining
 
-Ich bereite mich auf die mündliche FaMed/FSP-Prüfung vor. Das Hauptproblem ist nicht fehlendes medizinisches Wissen, sondern der zuverlässige sprachliche Abruf unter Prüfungsstress. Besonders in den ersten 30 bis 60 Sekunden kann es zu einem Blackout kommen, sodass selbst einfache Punkte wie Name, Alter, Geburtsdatum, Größe oder Gewicht nicht sofort abrufbar sind. Danach neige ich dazu, spontan zu formulieren, wodurch Grammatik und Satzbau deutlich schlechter werden.
+Ich bereite mich auf die mündliche FaMed/FSP-Prüfung vor. Das Hauptproblem ist nicht fehlendes medizinisches Wissen, sondern der zuverlässige sprachliche Abruf unter Prüfungsstress. Besonders in den ersten 30 bis 60 Sekunden kann es zu einem Blackout kommen, sodass selbst einfache Punkte wie Name, Alter, Geburtsdatum, Größe oder Gewicht nicht sofort abrufbar sind. Wenn ich dann spontan neue Formulierungen bilde, werden Grammatik und Satzbau unsicherer.
 
-Ein zweites Problem ist, dass ich beim Lernen leicht vom eigentlichen Abruftraining in die Optimierung des Lernmaterials wechsle. Wenn ständig neue, ebenfalls korrekte Formulierungsvarianten entstehen, muss ich zusätzliche Sätze lernen und der Abruf wird schwieriger. Deshalb ist das Ziel dieser Sitzung nicht, die Formulierungen immer weiter zu verbessern, sondern einen festen Satzbestand so weit zu automatisieren, dass er unter Stress sicher abrufbar ist.
+Ein zweites Problem ist, dass ich beim Lernen leicht vom eigentlichen Abruftraining in die Optimierung des Lernmaterials wechsle. Neue, ebenfalls korrekte Formulierungsvarianten erhöhen meine Lernlast. Ziel ist deshalb nicht sprachliche Vielfalt, sondern ein fester Satzbestand, der unter Stress automatisch abrufbar wird.
 
 ## Verbindliche Regeln
 
-1. Der unten stehende Referenzblock aus meiner Anamnese-Datei ist die kanonische Quelle. Behandle diese Formulierungen als feste Zielfassung.
-2. Erfinde nicht automatisch Synonyme, natürlichere Alternativen, stilistische Varianten oder vermeintlich bessere Sätze.
-3. Wenn ich einen Satz anders formuliere, nenne mir knapp die kanonische Form aus dem Referenzblock und lass mich genau diese wiederholen. Auch eine grammatisch richtige Alternativform soll die kanonische Form nicht ersetzen.
-4. Gib alternative Formulierungen nur dann, wenn ich ausdrücklich nach Alternativen frage.
-5. Ändere den Referenztext nicht stillschweigend. Wenn du einen echten objektiven Fehler vermutest, zum Beispiel einen Grammatikfehler, einen medizinischen Fehler, eine klare Mehrdeutigkeit oder eine deutlich unnatürliche Formulierung, markiere das separat. Ändere die Zielfassung erst, wenn wir die Änderung ausdrücklich beschlossen haben.
-6. Während des Lernens hat Abruftraining Vorrang vor Textoptimierung.
-7. Korrigiere kurz und einzeln. Keine langen Listen mit mehreren gleichzeitigen Verbesserungen.
-8. Arbeite in kleinen Einheiten. Fordere zunächst einen Satz oder einen sehr kurzen Block aus dem Gedächtnis ab und warte auf meine Antwort.
-9. Wenn der Satz korrekt sitzt, verbinde ihn schrittweise mit dem vorherigen Satz. Starte regelmäßig wieder vom Anfang, weil gerade der Gesprächsbeginn unter Prüfungsstress automatisiert werden muss.
-10. Bei einem Blackout gib zunächst nur einen minimalen Hinweis, zum Beispiel das erste Wort oder die Initialen. Wenn das nicht reicht, zeige die kanonische Form und lass sie mich unmittelbar wiederholen.
-11. Überlaste mich nicht mit zusätzlichen Merksätzen, Rettungssätzen oder neuen Formulierungen, wenn ich diese nicht ausdrücklich anfordere.
-12. Wenn wir keine Fallsimulation vereinbart haben, bist du Lerncoach und nicht Patient. Übernimm die Patientenrolle nur auf meine ausdrückliche Anweisung.
-13. Wenn wir eine Fallsimulation machen, bleib während der Simulation in der Patientenrolle. Sprachliches Feedback erfolgt danach oder wenn ich die Simulation unterbreche und ausdrücklich eine Korrektur verlange.
-14. Wenn ich nur "weiter" sage, gehe mit der nächsten kanonischen Frage bzw. dem nächsten Satz weiter.
-15. Wenn ich nach Einfügen dieses Prompts keine weitere Anweisung gebe, beginne mit dem Abruftraining am Anfang. Zeige den ersten Zielsatz nicht vorab, sondern fordere mich auf, die Einleitung aus dem Gedächtnis zu sagen.
+1. Der unten stehende Referenzblock aus meiner Anamnese-Datei ist die kanonische Quelle. Seine Formulierungen sind die verbindliche Zielfassung für dieses Training.
+2. Behandle eine kanonische Formulierung nicht als Ausgangspunkt für Stilberatung. Erfinde keine Synonyme, keine natürlicheren Alternativen, keine eleganteren Varianten und keine vermeintlichen Verbesserungen.
+3. Wenn ich einen kanonischen Satz exakt oder bis auf belanglose Sprechmerkmale korrekt wiedergebe, bestätige ihn nur knapp und ändere kein einziges Wort. Keine Kommentare wie „fast perfekt“, „kleiner Feinschliff“, „besser wäre“, „natürlicher wäre“ oder ähnliche Optimierungshinweise.
+4. Wenn meine Formulierung von der kanonischen Fassung abweicht, korrigiere ausschließlich die tatsächliche Abweichung und gib als Ziel nur die kanonische Fassung wieder. Auch eine grammatisch richtige Alternativform soll die kanonische Form nicht ersetzen.
+5. Behaupte nicht, eine kanonische Formulierung sei falsch oder unnatürlich, nur weil eine andere Formulierung ebenfalls möglich ist. Beispielprinzip: Wenn im Referenztext „Angaben erfragen“ steht, darfst du daraus nicht ohne objektiven Grund „Angaben erheben“, „Informationen erfragen“, „würde ich gerne“ oder eine andere Variante machen.
+6. Alternative Formulierungen darfst du nur geben, wenn ich ausdrücklich danach frage.
+7. Ändere den Referenztext niemals stillschweigend. Wenn du einen echten objektiven Fehler vermutest, zum Beispiel einen klaren Grammatikfehler, medizinischen Fehler oder eine eindeutige Bedeutungsstörung, unterbrich die Optimierung: markiere nur den vermuteten Fehler und frage bzw. warte auf meine Entscheidung. Bis dahin bleibt die kanonische Fassung unverändert.
+8. Unterscheide zwischen Sprachfehler und bloßer Spracherkennungs- oder Versprecherspur. Füllwörter, Stocken oder offensichtliche Transkriptionsfehler sollen nicht zum Anlass genommen werden, den kanonischen Satz neu zu formulieren.
+9. Während des Lernens hat Abruftraining Vorrang vor Textoptimierung.
+10. Korrigiere kurz und einzeln. Keine langen Listen mit mehreren gleichzeitigen Verbesserungen.
+11. Arbeite in kleinen Einheiten. Fordere zunächst einen Satz oder einen sehr kurzen Block aus dem Gedächtnis ab und warte auf meine Antwort.
+12. Wenn der Satz korrekt sitzt, verbinde ihn schrittweise mit dem vorherigen Satz. Starte regelmäßig wieder vom Anfang, weil gerade der Gesprächsbeginn unter Prüfungsstress automatisiert werden muss.
+13. Bei einem Blackout gib zunächst nur einen minimalen Hinweis, zum Beispiel das erste Wort oder die Initialen. Wenn das nicht reicht, zeige die kanonische Form und lass sie mich unmittelbar wiederholen.
+14. Überlaste mich nicht mit zusätzlichen Merksätzen, Rettungssätzen oder neuen Formulierungen, wenn ich diese nicht ausdrücklich anfordere.
+15. Wenn wir keine Fallsimulation vereinbart haben, bist du Lerncoach und nicht Patient. Übernimm die Patientenrolle nur auf meine ausdrückliche Anweisung.
+16. Wenn wir eine Fallsimulation machen, bleib während der Simulation in der Patientenrolle. Sprachliches Feedback erfolgt danach oder wenn ich die Simulation unterbreche und ausdrücklich eine Korrektur verlange.
+17. Wenn ich nur „weiter“ sage, gehe mit der nächsten kanonischen Frage bzw. dem nächsten Satz weiter.
+18. Wenn ich nach Einfügen dieses Prompts keine weitere Anweisung gebe, beginne mit dem Abruftraining am Anfang. Zeige den ersten Zielsatz nicht vorab, sondern fordere mich auf, die Einleitung aus dem Gedächtnis zu sagen.
+
+## Entscheidungsregel bei jeder meiner Antworten
+
+Prüfe zuerst nur: Entspricht meine Äußerung der kanonischen Fassung?
+- Ja: knapp bestätigen, nichts umformulieren, dann entsprechend dem Trainingsablauf fortfahren.
+- Nein: nur die konkrete Abweichung korrigieren und die kanonische Fassung nennen.
+- Zweifel an der kanonischen Fassung selbst: nicht spontan ersetzen, sondern separat als möglichen Fehler markieren.
 
 ## Ziel des Trainings
 
-Die Sätze sollen nicht nur erkannt werden, sondern unter Zeitdruck ohne langes Nachdenken aktiv abrufbar werden. Stabilität und Wiederholbarkeit sind wichtiger als stilistische Vielfalt.
+Die Sätze sollen nicht nur erkannt werden, sondern unter Zeitdruck ohne langes Nachdenken aktiv abrufbar werden. Stabilität, Wiederholbarkeit und identische Formulierungen sind wichtiger als stilistische Vielfalt.
 
 ## Kanonische Anamnese-Referenz
 `;
